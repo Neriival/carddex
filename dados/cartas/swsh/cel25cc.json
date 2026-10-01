@@ -11,8 +11,8 @@
   "categoria": "Pokémon",
   "ilustrador": "Ken Sugimori",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/cel25c/2_A_hires.png",
+  "mini": "assets/img/cartas/swsh/cel25cc/CC001-mini.webp"
  },
  {
   "id": "cel25cc-CC002",
@@ -26,8 +26,8 @@
   "categoria": "Pokémon",
   "ilustrador": "Mitsuhiro Arita",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/cel25c/4_A_hires.png",
+  "mini": "assets/img/cartas/swsh/cel25cc/CC002-mini.webp"
  },
  {
   "id": "cel25cc-CC003",
@@ -41,8 +41,8 @@
   "categoria": "Pokémon",
   "ilustrador": "Mitsuhiro Arita",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/cel25c/15_A_hires.png",
+  "mini": "assets/img/cartas/swsh/cel25cc/CC003-mini.webp"
  },
  {
   "id": "cel25cc-CC004",
@@ -54,8 +54,8 @@
   "categoria": "Treinador",
   "ilustrador": "Ken Sugimori",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/cel25c/73_A_hires.png",
+  "mini": "assets/img/cartas/swsh/cel25cc/CC004-mini.webp"
  },
  {
   "id": "cel25cc-CC005",
@@ -69,8 +69,8 @@
   "categoria": "Pokémon",
   "ilustrador": "Kagemaru Himeno",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/cel25c/8_A_hires.png",
+  "mini": "assets/img/cartas/swsh/cel25cc/CC005-mini.webp"
  },
  {
   "id": "cel25cc-CC006",
@@ -82,8 +82,8 @@
   "categoria": "Treinador",
   "ilustrador": "Ken Sugimori",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/cel25c/15_B_hires.png",
+  "mini": "assets/img/cartas/swsh/cel25cc/CC006-mini.webp"
  },
  {
   "id": "cel25cc-CC007",
@@ -97,8 +97,8 @@
   "categoria": "Pokémon",
   "ilustrador": "Shin-ichi Yoshida",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/cel25c/15_C_hires.png",
+  "mini": "assets/img/cartas/swsh/cel25cc/CC007-mini.webp"
  },
  {
   "id": "cel25cc-CC008",
@@ -112,8 +112,8 @@
   "categoria": "Pokémon",
   "ilustrador": "Kagemaru Himeno",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/cel25c/24_A_hires.png",
+  "mini": "assets/img/cartas/swsh/cel25cc/CC008-mini.webp"
  },
  {
   "id": "cel25cc-CC009",
@@ -127,8 +127,8 @@
   "categoria": "Pokémon",
   "ilustrador": "Kagemaru Himeno",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/cel25c/20_A_hires.png",
+  "mini": "assets/img/cartas/swsh/cel25cc/CC009-mini.webp"
  },
  {
   "id": "cel25cc-CC010",
@@ -142,8 +142,8 @@
   "categoria": "Pokémon",
   "ilustrador": "Ken Sugimori",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/cel25c/66_A_hires.png",
+  "mini": "assets/img/cartas/swsh/cel25cc/CC010-mini.webp"
  },
  {
   "id": "cel25cc-CC011",
@@ -157,8 +157,8 @@
   "categoria": "Pokémon",
   "ilustrador": "Kazuo Yazawa",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/cel25c/9_A_hires.png",
+  "mini": "assets/img/cartas/swsh/cel25cc/CC011-mini.webp"
  },
  {
   "id": "cel25cc-CC012",
@@ -170,8 +170,8 @@
   "categoria": "Treinador",
   "ilustrador": "Ken Sugimori",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/cel25c/86_A_hires.png",
+  "mini": "assets/img/cartas/swsh/cel25cc/CC012-mini.webp"
  },
  {
   "id": "cel25cc-CC013",
@@ -185,8 +185,8 @@
   "categoria": "Pokémon",
   "ilustrador": "Ryo Ueda",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/cel25c/88_A_hires.png",
+  "mini": "assets/img/cartas/swsh/cel25cc/CC013-mini.webp"
  },
  {
   "id": "cel25cc-CC014",
@@ -200,8 +200,8 @@
   "categoria": "Pokémon",
   "ilustrador": "Masahiko Ishii",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/cel25c/93_A_hires.png",
+  "mini": "assets/img/cartas/swsh/cel25cc/CC014-mini.webp"
  },
  {
   "id": "cel25cc-CC015",
@@ -215,8 +215,8 @@
   "categoria": "Pokémon",
   "ilustrador": "Masakazu Fukuda",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/cel25c/17_A_hires.png",
+  "mini": "assets/img/cartas/swsh/cel25cc/CC015-mini.webp"
  },
  {
   "id": "cel25cc-CC016",
@@ -230,8 +230,8 @@
   "categoria": "Pokémon",
   "ilustrador": "Midori Harada",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/cel25c/15_D_hires.png",
+  "mini": "assets/img/cartas/swsh/cel25cc/CC016-mini.webp"
  },
  {
   "id": "cel25cc-CC017",
@@ -245,8 +245,8 @@
   "categoria": "Pokémon",
   "ilustrador": "Mitsuhiro Arita",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/cel25c/109_A_hires.png",
+  "mini": "assets/img/cartas/swsh/cel25cc/CC017-mini.webp"
  },
  {
   "id": "cel25cc-CC018",
@@ -260,8 +260,8 @@
   "categoria": "Pokémon",
   "ilustrador": "Shizurow",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/cel25c/145_A_hires.png",
+  "mini": "assets/img/cartas/swsh/cel25cc/CC018-mini.webp"
  },
  {
   "id": "cel25cc-CC019",
@@ -275,8 +275,8 @@
   "categoria": "Pokémon",
   "ilustrador": "Kent Kanetsuna",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/cel25c/107_A_hires.png",
+  "mini": "assets/img/cartas/swsh/cel25cc/CC019-mini.webp"
  },
  {
   "id": "cel25cc-CC020",
@@ -290,8 +290,8 @@
   "categoria": "Pokémon",
   "ilustrador": "5ban Graphics",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/cel25c/113_A_hires.png",
+  "mini": "assets/img/cartas/swsh/cel25cc/CC020-mini.webp"
  },
  {
   "id": "cel25cc-CC021",
@@ -305,8 +305,8 @@
   "categoria": "Pokémon",
   "ilustrador": "5ban Graphics",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/cel25c/114_A_hires.png",
+  "mini": "assets/img/cartas/swsh/cel25cc/CC021-mini.webp"
  },
  {
   "id": "cel25cc-CC022",
@@ -320,8 +320,8 @@
   "categoria": "Pokémon",
   "ilustrador": "Shizurow",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/cel25c/54_A_hires.png",
+  "mini": "assets/img/cartas/swsh/cel25cc/CC022-mini.webp"
  },
  {
   "id": "cel25cc-CC023",
@@ -335,8 +335,8 @@
   "categoria": "Pokémon",
   "ilustrador": "5ban Graphics",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/cel25c/97_A_hires.png",
+  "mini": "assets/img/cartas/swsh/cel25cc/CC023-mini.webp"
  },
  {
   "id": "cel25cc-CC024",
@@ -350,8 +350,8 @@
   "categoria": "Pokémon",
   "ilustrador": "5ban Graphics",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/cel25c/76_A_hires.png",
+  "mini": "assets/img/cartas/swsh/cel25cc/CC024-mini.webp"
  },
  {
   "id": "cel25cc-CC025",
@@ -365,7 +365,7 @@
   "categoria": "Pokémon",
   "ilustrador": "5ban Graphics",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/cel25c/60_A_hires.png",
+  "mini": "assets/img/cartas/swsh/cel25cc/CC025-mini.webp"
  }
 ]

@@ -367,7 +367,7 @@
   "categoria": "Pokémon",
   "ilustrador": "Saki Hayashiro",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/cel25/25_hires.png",
+  "mini": "assets/img/cartas/swsh/cel25/025-mini.webp"
  }
 ]

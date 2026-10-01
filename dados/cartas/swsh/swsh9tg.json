@@ -11,8 +11,8 @@
   "categoria": "Pokémon",
   "ilustrador": "You Iribi",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/swsh9tg/TG01_hires.png",
+  "mini": "assets/img/cartas/swsh/swsh9tg/TG01-mini.webp"
  },
  {
   "id": "swsh9tg-TG02",
@@ -26,8 +26,8 @@
   "categoria": "Pokémon",
   "ilustrador": "Jiro Sasumo",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/swsh9tg/TG02_hires.png",
+  "mini": "assets/img/cartas/swsh/swsh9tg/TG02-mini.webp"
  },
  {
   "id": "swsh9tg-TG03",
@@ -41,8 +41,8 @@
   "categoria": "Pokémon",
   "ilustrador": "Shinya Komatsu",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/swsh9tg/TG03_hires.png",
+  "mini": "assets/img/cartas/swsh/swsh9tg/TG03-mini.webp"
  },
  {
   "id": "swsh9tg-TG04",
@@ -56,8 +56,8 @@
   "categoria": "Pokémon",
   "ilustrador": "DOM",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/swsh9tg/TG04_hires.png",
+  "mini": "assets/img/cartas/swsh/swsh9tg/TG04-mini.webp"
  },
  {
   "id": "swsh9tg-TG05",
@@ -71,8 +71,8 @@
   "categoria": "Pokémon",
   "ilustrador": "AKIRA EGAWA",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/swsh9tg/TG05_hires.png",
+  "mini": "assets/img/cartas/swsh/swsh9tg/TG05-mini.webp"
  },
  {
   "id": "swsh9tg-TG06",
@@ -86,8 +86,8 @@
   "categoria": "Pokémon",
   "ilustrador": "Megumi Higuchi",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/swsh9tg/TG06_hires.png",
+  "mini": "assets/img/cartas/swsh/swsh9tg/TG06-mini.webp"
  },
  {
   "id": "swsh9tg-TG07",
@@ -101,8 +101,8 @@
   "categoria": "Pokémon",
   "ilustrador": "kurumitsu",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/swsh9tg/TG07_hires.png",
+  "mini": "assets/img/cartas/swsh/swsh9tg/TG07-mini.webp"
  },
  {
   "id": "swsh9tg-TG08",
@@ -116,8 +116,8 @@
   "categoria": "Pokémon",
   "ilustrador": "OKACHEKE",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/swsh9tg/TG08_hires.png",
+  "mini": "assets/img/cartas/swsh/swsh9tg/TG08-mini.webp"
  },
  {
   "id": "swsh9tg-TG09",
@@ -131,8 +131,8 @@
   "categoria": "Pokémon",
   "ilustrador": "Shiburingaru",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/swsh9tg/TG09_hires.png",
+  "mini": "assets/img/cartas/swsh/swsh9tg/TG09-mini.webp"
  },
  {
   "id": "swsh9tg-TG10",
@@ -146,8 +146,8 @@
   "categoria": "Pokémon",
   "ilustrador": "NC Empire",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/swsh9tg/TG10_hires.png",
+  "mini": "assets/img/cartas/swsh/swsh9tg/TG10-mini.webp"
  },
  {
   "id": "swsh9tg-TG11",
@@ -161,8 +161,8 @@
   "categoria": "Pokémon",
   "ilustrador": "Souichirou Gunjima",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/swsh9tg/TG11_hires.png",
+  "mini": "assets/img/cartas/swsh/swsh9tg/TG11-mini.webp"
  },
  {
   "id": "swsh9tg-TG12",
@@ -176,8 +176,8 @@
   "categoria": "Pokémon",
   "ilustrador": "Akira Komayama",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/swsh9tg/TG12_hires.png",
+  "mini": "assets/img/cartas/swsh/swsh9tg/TG12-mini.webp"
  },
  {
   "id": "swsh9tg-TG13",
@@ -191,8 +191,8 @@
   "categoria": "Pokémon",
   "ilustrador": "GIDORA",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/swsh9tg/TG13_hires.png",
+  "mini": "assets/img/cartas/swsh/swsh9tg/TG13-mini.webp"
  },
  {
   "id": "swsh9tg-TG14",
@@ -206,8 +206,8 @@
   "categoria": "Pokémon",
   "ilustrador": "Megumi Mizutani",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/swsh9tg/TG14_hires.png",
+  "mini": "assets/img/cartas/swsh/swsh9tg/TG14-mini.webp"
  },
  {
   "id": "swsh9tg-TG15",
@@ -221,8 +221,8 @@
   "categoria": "Pokémon",
   "ilustrador": "sui",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/swsh9tg/TG15_hires.png",
+  "mini": "assets/img/cartas/swsh/swsh9tg/TG15-mini.webp"
  },
  {
   "id": "swsh9tg-TG16",
@@ -236,8 +236,8 @@
   "categoria": "Pokémon",
   "ilustrador": "saino misaki",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/swsh9tg/TG16_hires.png",
+  "mini": "assets/img/cartas/swsh/swsh9tg/TG16-mini.webp"
  },
  {
   "id": "swsh9tg-TG17",
@@ -251,8 +251,8 @@
   "categoria": "Pokémon",
   "ilustrador": "Naoki Saito",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/swsh9tg/TG17_hires.png",
+  "mini": "assets/img/cartas/swsh/swsh9tg/TG17-mini.webp"
  },
  {
   "id": "swsh9tg-TG18",
@@ -266,8 +266,8 @@
   "categoria": "Pokémon",
   "ilustrador": "Yuu Nishida",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/swsh9tg/TG18_hires.png",
+  "mini": "assets/img/cartas/swsh/swsh9tg/TG18-mini.webp"
  },
  {
   "id": "swsh9tg-TG19",
@@ -281,8 +281,8 @@
   "categoria": "Pokémon",
   "ilustrador": "kodama",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/swsh9tg/TG19_hires.png",
+  "mini": "assets/img/cartas/swsh/swsh9tg/TG19-mini.webp"
  },
  {
   "id": "swsh9tg-TG20",
@@ -296,8 +296,8 @@
   "categoria": "Pokémon",
   "ilustrador": "takuyoa",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/swsh9tg/TG20_hires.png",
+  "mini": "assets/img/cartas/swsh/swsh9tg/TG20-mini.webp"
  },
  {
   "id": "swsh9tg-TG21",
@@ -311,8 +311,8 @@
   "categoria": "Pokémon",
   "ilustrador": "Scav",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/swsh9tg/TG21_hires.png",
+  "mini": "assets/img/cartas/swsh/swsh9tg/TG21-mini.webp"
  },
  {
   "id": "swsh9tg-TG22",
@@ -326,8 +326,8 @@
   "categoria": "Pokémon",
   "ilustrador": "Ligton",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/swsh9tg/TG22_hires.png",
+  "mini": "assets/img/cartas/swsh/swsh9tg/TG22-mini.webp"
  },
  {
   "id": "swsh9tg-TG23",
@@ -341,8 +341,8 @@
   "categoria": "Pokémon",
   "ilustrador": "kawayoo",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/swsh9tg/TG23_hires.png",
+  "mini": "assets/img/cartas/swsh/swsh9tg/TG23-mini.webp"
  },
  {
   "id": "swsh9tg-TG24",
@@ -354,8 +354,8 @@
   "categoria": "Treinador",
   "ilustrador": "yuu",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/swsh9tg/TG24_hires.png",
+  "mini": "assets/img/cartas/swsh/swsh9tg/TG24-mini.webp"
  },
  {
   "id": "swsh9tg-TG25",
@@ -367,8 +367,8 @@
   "categoria": "Treinador",
   "ilustrador": "Sanosuke Sakuma",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/swsh9tg/TG25_hires.png",
+  "mini": "assets/img/cartas/swsh/swsh9tg/TG25-mini.webp"
  },
  {
   "id": "swsh9tg-TG26",
@@ -380,8 +380,8 @@
   "categoria": "Treinador",
   "ilustrador": "Naoki Saito",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/swsh9tg/TG26_hires.png",
+  "mini": "assets/img/cartas/swsh/swsh9tg/TG26-mini.webp"
  },
  {
   "id": "swsh9tg-TG27",
@@ -393,8 +393,8 @@
   "categoria": "Treinador",
   "ilustrador": "KIYOTAKA OSHIYAMA",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/swsh9tg/TG27_hires.png",
+  "mini": "assets/img/cartas/swsh/swsh9tg/TG27-mini.webp"
  },
  {
   "id": "swsh9tg-TG28",
@@ -406,8 +406,8 @@
   "categoria": "Treinador",
   "ilustrador": "Souichirou Gunjima",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/swsh9tg/TG28_hires.png",
+  "mini": "assets/img/cartas/swsh/swsh9tg/TG28-mini.webp"
  },
  {
   "id": "swsh9tg-TG29",
@@ -421,8 +421,8 @@
   "categoria": "Pokémon",
   "ilustrador": "PLANETA Tsuji",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/swsh9tg/TG29_hires.png",
+  "mini": "assets/img/cartas/swsh/swsh9tg/TG29-mini.webp"
  },
  {
   "id": "swsh9tg-TG30",
@@ -436,7 +436,7 @@
   "categoria": "Pokémon",
   "ilustrador": "PLANETA Tsuji",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/swsh9tg/TG30_hires.png",
+  "mini": "assets/img/cartas/swsh/swsh9tg/TG30-mini.webp"
  }
 ]

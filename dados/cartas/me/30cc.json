@@ -11,8 +11,8 @@
   "categoria": "Pokémon",
   "ilustrador": "Mitsuhiro Arita",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "assets/img/cartas/me/30cc/001.webp",
+  "mini": "assets/img/cartas/me/30cc/001-mini.webp"
  },
  {
   "id": "30th-c-002",
@@ -26,8 +26,8 @@
   "categoria": "Pokémon",
   "ilustrador": "Atsuko Nishida",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "assets/img/cartas/me/30cc/002.webp",
+  "mini": "assets/img/cartas/me/30cc/002-mini.webp"
  },
  {
   "id": "30th-c-003",
@@ -41,8 +41,8 @@
   "categoria": "Pokémon",
   "ilustrador": "Masakazu Fukuda",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "assets/img/cartas/me/30cc/003.webp",
+  "mini": "assets/img/cartas/me/30cc/003-mini.webp"
  },
  {
   "id": "30th-c-004",
@@ -56,8 +56,8 @@
   "categoria": "Pokémon",
   "ilustrador": "Eske Yoshinob",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "assets/img/cartas/me/30cc/004.webp",
+  "mini": "assets/img/cartas/me/30cc/004-mini.webp"
  },
  {
   "id": "30th-c-005",
@@ -69,8 +69,8 @@
   "categoria": "Treinador",
   "ilustrador": "Ken Sugimori",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "assets/img/cartas/me/30cc/005.webp",
+  "mini": "assets/img/cartas/me/30cc/005-mini.webp"
  },
  {
   "id": "30th-c-006",
@@ -84,8 +84,8 @@
   "categoria": "Pokémon",
   "ilustrador": "Nakaoka",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "assets/img/cartas/me/30cc/006.webp",
+  "mini": "assets/img/cartas/me/30cc/006-mini.webp"
  },
  {
   "id": "30th-c-007",
@@ -99,8 +99,8 @@
   "categoria": "Pokémon",
   "ilustrador": "Ken Sugimori",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "assets/img/cartas/me/30cc/007.webp",
+  "mini": "assets/img/cartas/me/30cc/007-mini.webp"
  },
  {
   "id": "30th-c-008",
@@ -114,8 +114,8 @@
   "categoria": "Pokémon",
   "ilustrador": "Mitsuhiro Arita",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "assets/img/cartas/me/30cc/008.webp",
+  "mini": "assets/img/cartas/me/30cc/008-mini.webp"
  },
  {
   "id": "30th-c-009",
@@ -129,8 +129,8 @@
   "categoria": "Pokémon",
   "ilustrador": "5ban Graphics",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "assets/img/cartas/me/30cc/009.webp",
+  "mini": "assets/img/cartas/me/30cc/009-mini.webp"
  },
  {
   "id": "30th-c-010",
@@ -144,8 +144,8 @@
   "categoria": "Pokémon",
   "ilustrador": "Ken Sugimori",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "assets/img/cartas/me/30cc/010.webp",
+  "mini": "assets/img/cartas/me/30cc/010-mini.webp"
  },
  {
   "id": "30th-c-011",
@@ -159,8 +159,8 @@
   "categoria": "Pokémon",
   "ilustrador": "Makoto Imai",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "assets/img/cartas/me/30cc/011.webp",
+  "mini": "assets/img/cartas/me/30cc/011-mini.webp"
  },
  {
   "id": "30th-c-012",
@@ -174,8 +174,8 @@
   "categoria": "Pokémon",
   "ilustrador": "Hideki Ishikawa",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "assets/img/cartas/me/30cc/012.webp",
+  "mini": "assets/img/cartas/me/30cc/012-mini.webp"
  },
  {
   "id": "30th-c-013",
@@ -189,8 +189,8 @@
   "categoria": "Pokémon",
   "ilustrador": "5ban Graphics",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "assets/img/cartas/me/30cc/013.webp",
+  "mini": "assets/img/cartas/me/30cc/013-mini.webp"
  },
  {
   "id": "30th-c-014",
@@ -204,8 +204,8 @@
   "categoria": "Pokémon",
   "ilustrador": "Mitsuhiro Arita",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "assets/img/cartas/me/30cc/014.webp",
+  "mini": "assets/img/cartas/me/30cc/014-mini.webp"
  },
  {
   "id": "30th-c-015",
@@ -219,8 +219,8 @@
   "categoria": "Pokémon",
   "ilustrador": "Ken Sugimori",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "assets/img/cartas/me/30cc/015.webp",
+  "mini": "assets/img/cartas/me/30cc/015-mini.webp"
  },
  {
   "id": "30th-c-016",
@@ -234,8 +234,8 @@
   "categoria": "Pokémon",
   "ilustrador": "Eske Yoshinob",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "assets/img/cartas/me/30cc/016.webp",
+  "mini": "assets/img/cartas/me/30cc/016-mini.webp"
  },
  {
   "id": "30th-c-017",
@@ -249,8 +249,8 @@
   "categoria": "Pokémon",
   "ilustrador": "PLANETA",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "assets/img/cartas/me/30cc/017.webp",
+  "mini": "assets/img/cartas/me/30cc/017-mini.webp"
  },
  {
   "id": "30th-c-018",
@@ -264,8 +264,8 @@
   "categoria": "Pokémon",
   "ilustrador": "Takashi Yamaguchi",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "assets/img/cartas/me/30cc/018.webp",
+  "mini": "assets/img/cartas/me/30cc/018-mini.webp"
  },
  {
   "id": "30th-c-019",
@@ -279,8 +279,8 @@
   "categoria": "Pokémon",
   "ilustrador": "Shinji Higuchi + Noriko Takaya 樋口 真嗣 + 高屋 法子",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "assets/img/cartas/me/30cc/019.webp",
+  "mini": "assets/img/cartas/me/30cc/019-mini.webp"
  },
  {
   "id": "30th-c-020",
@@ -294,8 +294,8 @@
   "categoria": "Pokémon",
   "ilustrador": "Shinji Higuchi",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "assets/img/cartas/me/30cc/020.webp",
+  "mini": "assets/img/cartas/me/30cc/020-mini.webp"
  },
  {
   "id": "30th-c-021",
@@ -307,8 +307,8 @@
   "categoria": "Treinador",
   "ilustrador": "Ken Sugimori",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "assets/img/cartas/me/30cc/021.webp",
+  "mini": "assets/img/cartas/me/30cc/021-mini.webp"
  },
  {
   "id": "30th-c-022",
@@ -322,8 +322,8 @@
   "categoria": "Pokémon",
   "ilustrador": "Ryo Ueda",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "assets/img/cartas/me/30cc/022.webp",
+  "mini": "assets/img/cartas/me/30cc/022-mini.webp"
  },
  {
   "id": "30th-c-023",
@@ -337,8 +337,8 @@
   "categoria": "Pokémon",
   "ilustrador": "5ban Graphics",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "assets/img/cartas/me/30cc/023.webp",
+  "mini": "assets/img/cartas/me/30cc/023-mini.webp"
  },
  {
   "id": "30th-c-024",
@@ -352,8 +352,8 @@
   "categoria": "Pokémon",
   "ilustrador": "Hironobu Yoshida",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "assets/img/cartas/me/30cc/024.webp",
+  "mini": "assets/img/cartas/me/30cc/024-mini.webp"
  },
  {
   "id": "30th-c-025",
@@ -367,8 +367,8 @@
   "categoria": "Pokémon",
   "ilustrador": "Mitsuhiro Arita",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "assets/img/cartas/me/30cc/025.webp",
+  "mini": "assets/img/cartas/me/30cc/025-mini.webp"
  },
  {
   "id": "30th-c-026",
@@ -382,8 +382,8 @@
   "categoria": "Pokémon",
   "ilustrador": "5ban Graphics",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "assets/img/cartas/me/30cc/026.webp",
+  "mini": "assets/img/cartas/me/30cc/026-mini.webp"
  },
  {
   "id": "30th-c-027",
@@ -397,8 +397,8 @@
   "categoria": "Pokémon",
   "ilustrador": "5ban Graphics",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "assets/img/cartas/me/30cc/027.webp",
+  "mini": "assets/img/cartas/me/30cc/027-mini.webp"
  },
  {
   "id": "30th-c-028",
@@ -412,8 +412,8 @@
   "categoria": "Pokémon",
   "ilustrador": "5ban Graphics",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "assets/img/cartas/me/30cc/028.webp",
+  "mini": "assets/img/cartas/me/30cc/028-mini.webp"
  },
  {
   "id": "30th-c-029",
@@ -427,8 +427,8 @@
   "categoria": "Pokémon",
   "ilustrador": "Naoyo Kimura",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "assets/img/cartas/me/30cc/029.webp",
+  "mini": "assets/img/cartas/me/30cc/029-mini.webp"
  },
  {
   "id": "30th-c-030",
@@ -442,7 +442,7 @@
   "categoria": "Pokémon",
   "ilustrador": "Shinji Kanda",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "assets/img/cartas/me/30cc/030.webp",
+  "mini": "assets/img/cartas/me/30cc/030-mini.webp"
  }
 ]

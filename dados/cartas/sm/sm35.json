@@ -521,8 +521,8 @@
   "categoria": "Pokémon",
   "ilustrador": "nagimiso",
   "idioma": "pt",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://images.pokemontcg.io/sm35/35_hires.png",
+  "mini": "assets/img/cartas/sm/sm35/035-mini.webp"
  },
  {
   "id": "sm3.5-36",
