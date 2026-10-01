@@ -13,7 +13,7 @@ COMO USAR
 ESTRUTURA (tudo separado por série e por coleção)
  index.html
  css/        global, layout, componentes, responsivo
- js/         dados, telas, modal, main
+ js/         dados, telas, modal, compartilhar, main
  dados/series.json              séries e coleções (em ordem de lançamento)
  dados/cartas/<serie>/<colecao>.json
  assets/img/cartas/<serie>/<colecao>/001.webp, 001-mini.webp ...
@@ -40,4 +40,5 @@ ONDE MEXER
  Cores ........ css/global.css (variáveis no topo)
  Telas ........ js/telas.js
  Carta grande . js/modal.js e css/componentes.css
+ Imagem das cartas que faltam (WhatsApp) . js/compartilhar.js
  Dados ........ js/dados.js e dados/series.json

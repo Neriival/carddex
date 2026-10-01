@@ -38,10 +38,10 @@ function telaInicio(ir) {
   if (alvo) alvo.scrollIntoView({ behavior: 'smooth' }); else window.scrollTo(0, 0);
 }
 
-// TELA 2 – Série: lista as coleções da série, da mais antiga para a mais nova
+// TELA 2 – Série: lista as coleções da série, da mais nova para a mais antiga
 function telaSerie(id) {
   var s = acharSerie(id);
-  app.innerHTML = '<h2><button class="voltar" onclick="telaInicio(\'series\')">← Séries</button></h2><h2 style="margin-top:0">' + esc(s.nome) + '</h2><span class="sub">Coleções em ordem de lançamento</span><div class="colecoes">' + s.colecoes.map(botaoColecao).join('') + '</div>';
+  app.innerHTML = '<h2><button class="voltar" onclick="telaInicio(\'series\')">← Séries</button></h2><h2 style="margin-top:0">' + esc(s.nome) + '</h2><span class="sub">Coleções da mais nova para a mais antiga</span><div class="colecoes">' + s.colecoes.map(botaoColecao).join('') + '</div>';
   window.scrollTo(0, 0);
 }
 
@@ -70,7 +70,8 @@ function desenharColecao() {
   }).join('');
   var p = Math.round(meu.length / lista.length * 100);
   app.innerHTML = '<h2><button class="voltar" onclick="telaSerie(\'' + s.id + '\')">← ' + esc(s.nome) + '</button></h2><h2 style="margin-top:0">' + esc(c.nome) + '</h2><span class="sub" id="prog-txt"></span><div class="barra"><i id="prog-bar" style="width:' + p + '%"></i></div>' +
-    (c.obs ? '<div class="aviso">' + esc(c.obs) + '</div>' : '') + '<div class="filtros">' + [['todas', 'Todas'], ['tenho', 'Tenho'], ['faltam', 'Faltam']].map(function (f) { return '<button class="' + (ESTADO.filtro === f[0] ? 'on' : '') + '" onclick="ESTADO.filtro=\'' + f[0] + '\';desenharColecao()">' + f[1] + '</button>'; }).join('') + '</div><div class="grade">' + html + '</div>';
+    (c.obs ? '<div class="aviso">' + esc(c.obs) + '</div>' : '') + '<div class="filtros">' + [['todas', 'Todas'], ['tenho', 'Tenho'], ['faltam', 'Faltam']].map(function (f) { return '<button class="' + (ESTADO.filtro === f[0] ? 'on' : '') + '" onclick="ESTADO.filtro=\'' + f[0] + '\';desenharColecao()">' + f[1] + '</button>'; }).join('') + '</div>' +
+    '<button class="btn btn-sec btn-compartilhar" onclick="abrirCompartilhar()">Compartilhar cartas que faltam</button><div class="grade">' + html + '</div>';
   atualizarProgresso();
 }
 

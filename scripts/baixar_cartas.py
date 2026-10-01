@@ -79,9 +79,15 @@ def processar_carta(args):
     num = numero(ref.get('localId', cid.split('-')[-1]))
     pasta = RAIZ / 'assets' / 'img' / 'cartas' / serie_id / colecao
     rel = f'assets/img/cartas/{serie_id}/{colecao}/{num}'
-    base = d.get('image') or ref.get('image')
-    tem = bool(base) and salvar_imagem(base + '/high.webp', pasta / f'{num}.webp') \
-        and salvar_imagem(base + '/low.webp', pasta / f'{num}-mini.webp')
+    # imagem em português; se não existir no servidor, usa a imagem em inglês
+    bases = [b for b in (d.get('image'), ref.get('image')) if b]
+    bases += [b.replace('/pt/', '/en/') for b in bases if '/pt/' in b]
+    tem = False
+    for base in bases:
+        if salvar_imagem(base + '/high.webp', pasta / f'{num}.webp') \
+                and salvar_imagem(base + '/low.webp', pasta / f'{num}-mini.webp'):
+            tem = True
+            break
     return {
         'id': cid, 'numero': num, 'nome': d.get('name') or ref.get('name'),
         'raridade': d.get('rarity'), 'tipos': d.get('types') or [], 'ps': d.get('hp'),
@@ -129,7 +135,9 @@ def main():
             # logo da coleção: tenta o do conjunto em português; se não tiver, o em inglês
             logo = conj.get('logo') or (baixar(f'{API}/en/sets/{tid}') or {}).get('logo')
             if logo:
-                salvar_imagem(logo + '.webp', RAIZ / 'assets' / 'img' / 'colecoes' / serie['id'] / f'{cid}.webp')
+                destino = RAIZ / 'assets' / 'img' / 'colecoes' / serie['id'] / f'{cid}.webp'
+                if not salvar_imagem(logo + '.webp', destino) and '/pt/' in logo:
+                    salvar_imagem(logo.replace('/pt/', '/en/') + '.webp', destino)
             cartas = conj.get('cards', [])
             res = []
             with ThreadPoolExecutor(max_workers=6) as ex:

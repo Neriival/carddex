@@ -56,8 +56,8 @@
   "categoria": "Pokémon",
   "ilustrador": "aspara",
   "idioma": "pt",
-  "imagem": null,
-  "mini": null
+  "imagem": "assets/img/cartas/me/me01/004.webp",
+  "mini": "assets/img/cartas/me/me01/004-mini.webp"
  },
  {
   "id": "me01-005",

@@ -25,15 +25,18 @@ function resumoSerie(s) {
   return { total: t, tenho: m, pct: t ? Math.round(m / t * 100) : 0 };
 }
 
-// Lê dados/series.json e deixa as coleções em ordem de lançamento
+// Lê dados/series.json e deixa séries e coleções em ordem de lançamento (mais novas primeiro)
 async function carregarSeries() {
   var r = await fetch('dados/series.json');
   ESTADO.series = (await r.json()).series;
-  // coleções em ordem de lançamento (da mais antiga para a mais nova)
+  // coleções: da mais nova para a mais antiga
   ESTADO.series.forEach(function (s) {
     s.colecoes.forEach(function (c) { c.serie = s.id; });
-    s.colecoes.sort(function (a, b) { return a.lancamento < b.lancamento ? -1 : 1; });
+    s.colecoes.sort(function (a, b) { return a.lancamento < b.lancamento ? 1 : -1; });
+    s.lancamento = s.colecoes.length ? s.colecoes[s.colecoes.length - 1].lancamento : '';
   });
+  // séries: pela data da primeira coleção, a série mais nova primeiro
+  ESTADO.series.sort(function (a, b) { return a.lancamento < b.lancamento ? 1 : -1; });
 }
 
 // Descobre o id da coleção na TCGdex (pelo nome em inglês, ou pelo id informado)

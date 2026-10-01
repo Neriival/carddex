@@ -81,3 +81,13 @@ nav a{display:inline-flex;align-items:center;min-height:44px}
 .campo input{background:var(--bg);border:1px solid var(--line);color:var(--text);border-radius:12px;min-height:48px;padding:0 14px;font:inherit}
 .campo input:focus{outline:none;border-color:var(--gold)}
 .erro{color:#ff9a9a;font-size:.9rem;min-height:1.2em}
+
+/* ===== COMPARTILHAR CARTAS QUE FALTAM ===== */
+.btn-compartilhar{margin:0 0 14px}
+.share-box{margin:auto;width:min(560px,100%);background:var(--p1);border:1px solid var(--line);border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:8px;animation:entrar .4s both;user-select:text;-webkit-user-select:text}
+.share-box h3{margin:0;font-size:1.5rem;color:var(--gold)}
+.share-prev{width:100%;max-height:60vh;object-fit:contain;object-position:top;border-radius:12px;border:1px solid var(--line);background:var(--bg);margin-top:8px}
+.share-acoes{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.share-acoes .btn{min-width:0;width:100%;padding:0 14px}
+.share-msg:empty{display:none}
+@media(max-width:760px){.btn-compartilhar{width:100%}.share-acoes{grid-template-columns:1fr}}

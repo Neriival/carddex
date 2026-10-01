@@ -75,10 +75,9 @@
           "id": "30c",
           "nome": "Celebração de 30 Anos",
           "busca": "30th Celebration",
-          "tcgdex": "me05.5",
+          "tcgdex": "30th",
           "lancamento": "2026-09-16",
-          "total": 2,
-          "obs": "A base de dados da TCGdex ainda tem poucas cartas desta coleção (lançada há poucos dias). Rode o script de novo mais tarde: python scripts/baixar_cartas.py 30c"
+          "total": 158
         }
       ]
     }
