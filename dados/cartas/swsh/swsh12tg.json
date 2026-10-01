@@ -1,0 +1,440 @@
+[
+ {
+  "id": "swsh12tg-TG01",
+  "numero": "TG01",
+  "nome": "Braixen",
+  "raridade": "Rara Holo",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "Naoki Saito",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12tg-TG02",
+  "numero": "TG02",
+  "nome": "Milotic",
+  "raridade": "Rara Holo",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 130,
+  "categoria": "Pokémon",
+  "ilustrador": "chibi",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12tg-TG03",
+  "numero": "TG03",
+  "nome": "Flaaffy",
+  "raridade": "Rara Holo",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "saino misaki",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12tg-TG04",
+  "numero": "TG04",
+  "nome": "Jynx",
+  "raridade": "Rara Holo",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 100,
+  "categoria": "Pokémon",
+  "ilustrador": "HYOGONOSUKE",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12tg-TG05",
+  "numero": "TG05",
+  "nome": "Gardevoir",
+  "raridade": "Rara Holo",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 150,
+  "categoria": "Pokémon",
+  "ilustrador": "AKIRA EGAWA",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12tg-TG06",
+  "numero": "TG06",
+  "nome": "Malamar",
+  "raridade": "Rara Holo",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 120,
+  "categoria": "Pokémon",
+  "ilustrador": "Fumie Kittaka",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12tg-TG07",
+  "numero": "TG07",
+  "nome": "Rockruff",
+  "raridade": "Rara Holo",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Hideki Ishikawa",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12tg-TG08",
+  "numero": "TG08",
+  "nome": "Passimian",
+  "raridade": "Rara Holo",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 110,
+  "categoria": "Pokémon",
+  "ilustrador": "nagimiso",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12tg-TG09",
+  "numero": "TG09",
+  "nome": "Druddigon",
+  "raridade": "Rara Holo",
+  "tipos": [
+   "Dragão"
+  ],
+  "ps": 120,
+  "categoria": "Pokémon",
+  "ilustrador": "Teeziro",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12tg-TG10",
+  "numero": "TG10",
+  "nome": "Smeargle",
+  "raridade": "Rara Holo",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "KIYOTAKA OSHIYAMA",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12tg-TG11",
+  "numero": "TG11",
+  "nome": "Altaria",
+  "raridade": "Rara Holo",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 110,
+  "categoria": "Pokémon",
+  "ilustrador": "Yuu Nishida",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12tg-TG12",
+  "numero": "TG12",
+  "nome": "Kricketune V",
+  "raridade": "Rara Holo V",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 180,
+  "categoria": "Pokémon",
+  "ilustrador": "HYOGONOSUKE",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12tg-TG13",
+  "numero": "TG13",
+  "nome": "Serperior V",
+  "raridade": "Rara Holo V",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 210,
+  "categoria": "Pokémon",
+  "ilustrador": "Teeziro",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12tg-TG14",
+  "numero": "TG14",
+  "nome": "Blaziken V",
+  "raridade": "Rara Holo V",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 210,
+  "categoria": "Pokémon",
+  "ilustrador": "nagimiso",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12tg-TG15",
+  "numero": "TG15",
+  "nome": "Blaziken VMAX",
+  "raridade": "Rara Holo VMAX",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 320,
+  "categoria": "Pokémon",
+  "ilustrador": "KIYOTAKA OSHIYAMA",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12tg-TG16",
+  "numero": "TG16",
+  "nome": "Zeraora V",
+  "raridade": "Rara Holo V",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 210,
+  "categoria": "Pokémon",
+  "ilustrador": "yuu",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12tg-TG17",
+  "numero": "TG17",
+  "nome": "Mawile V",
+  "raridade": "Rara Holo V",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 200,
+  "categoria": "Pokémon",
+  "ilustrador": "saino misaki",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12tg-TG18",
+  "numero": "TG18",
+  "nome": "Corviknight V",
+  "raridade": "Rara Holo V",
+  "tipos": [
+   "Metal"
+  ],
+  "ps": 210,
+  "categoria": "Pokémon",
+  "ilustrador": "KIYOTAKA OSHIYAMA",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12tg-TG19",
+  "numero": "TG19",
+  "nome": "Corviknight VMAX",
+  "raridade": "Rara Holo VMAX",
+  "tipos": [
+   "Metal"
+  ],
+  "ps": 320,
+  "categoria": "Pokémon",
+  "ilustrador": "Shigenori Negishi",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12tg-TG20",
+  "numero": "TG20",
+  "nome": "Rayquaza VMAX",
+  "raridade": "Rara Holo VMAX",
+  "tipos": [
+   "Dragão"
+  ],
+  "ps": 320,
+  "categoria": "Pokémon",
+  "ilustrador": "Hideki Ishikawa",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12tg-TG21",
+  "numero": "TG21",
+  "nome": "Duraludon VMAX",
+  "raridade": "Rara Holo VMAX",
+  "tipos": [
+   "Dragão"
+  ],
+  "ps": 330,
+  "categoria": "Pokémon",
+  "ilustrador": "AKIRA EGAWA",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12tg-TG22",
+  "numero": "TG22",
+  "nome": "Blissey V",
+  "raridade": "Rara Holo V",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 250,
+  "categoria": "Pokémon",
+  "ilustrador": "You Iribi",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12tg-TG23",
+  "numero": "TG23",
+  "nome": "Amigos em Galar",
+  "raridade": "Arte Completa de Treinador",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Sanosuke Sakuma",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12tg-TG24",
+  "numero": "TG24",
+  "nome": "Godinho",
+  "raridade": "Arte Completa de Treinador",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Ryuta Fuse",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12tg-TG25",
+  "numero": "TG25",
+  "nome": "Juiz",
+  "raridade": "Arte Completa de Treinador",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Ryuta Fuse",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12tg-TG26",
+  "numero": "TG26",
+  "nome": "Professora Bruna",
+  "raridade": "Arte Completa de Treinador",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "kirisAki",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12tg-TG27",
+  "numero": "TG27",
+  "nome": "Roy",
+  "raridade": "Arte Completa de Treinador",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "take",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12tg-TG28",
+  "numero": "TG28",
+  "nome": "Espadarnaldo e Escudoberto",
+  "raridade": "Arte Completa de Treinador",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "nagimiso",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12tg-TG29",
+  "numero": "TG29",
+  "nome": "Rayquaza VMAX",
+  "raridade": "Rare Secreta",
+  "tipos": [
+   "Dragão"
+  ],
+  "ps": 320,
+  "categoria": "Pokémon",
+  "ilustrador": "PLANETA Mochizuki",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12tg-TG30",
+  "numero": "TG30",
+  "nome": "Duraludon VMAX",
+  "raridade": "Rare Secreta",
+  "tipos": [
+   "Dragão"
+  ],
+  "ps": 330,
+  "categoria": "Pokémon",
+  "ilustrador": "PLANETA Mochizuki",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ }
+]

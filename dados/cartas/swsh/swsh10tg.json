@@ -1,0 +1,442 @@
+[
+ {
+  "id": "swsh10tg-TG01",
+  "numero": "TG01",
+  "nome": "Abomasnow",
+  "raridade": "Rara",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 140,
+  "categoria": "Pokémon",
+  "ilustrador": "Mitsuhiro Arita",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh10tg-TG02",
+  "numero": "TG02",
+  "nome": "Flapple",
+  "raridade": "Rara",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "Misaki Hashimoto",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh10tg-TG03",
+  "numero": "TG03",
+  "nome": "Kingdra",
+  "raridade": "Rara",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 150,
+  "categoria": "Pokémon",
+  "ilustrador": "Taira Akitsu",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh10tg-TG04",
+  "numero": "TG04",
+  "nome": "Frosmoth",
+  "raridade": "Rara",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "aoki",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh10tg-TG05",
+  "numero": "TG05",
+  "nome": "Gardevoir",
+  "raridade": "Rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 140,
+  "categoria": "Pokémon",
+  "ilustrador": "Sanosuke Sakuma",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh10tg-TG06",
+  "numero": "TG06",
+  "nome": "Wyrdeer",
+  "raridade": "Rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 140,
+  "categoria": "Pokémon",
+  "ilustrador": "kirisAki",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh10tg-TG07",
+  "numero": "TG07",
+  "nome": "Falinks",
+  "raridade": "Rara",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 110,
+  "categoria": "Pokémon",
+  "ilustrador": "Kinu Nishimura",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh10tg-TG08",
+  "numero": "TG08",
+  "nome": "Kleavor",
+  "raridade": "Rara",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 140,
+  "categoria": "Pokémon",
+  "ilustrador": "Souichirou Gunjima",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh10tg-TG09",
+  "numero": "TG09",
+  "nome": "Mightyena",
+  "raridade": "Rara",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 110,
+  "categoria": "Pokémon",
+  "ilustrador": "GOSSAN",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh10tg-TG10",
+  "numero": "TG10",
+  "nome": "Obstagoon de Galar",
+  "raridade": "Rara",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 160,
+  "categoria": "Pokémon",
+  "ilustrador": "GOSSAN",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh10tg-TG11",
+  "numero": "TG11",
+  "nome": "Bronzong",
+  "raridade": "Rara",
+  "tipos": [
+   "Metal"
+  ],
+  "ps": 110,
+  "categoria": "Pokémon",
+  "ilustrador": "Hataya",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh10tg-TG12",
+  "numero": "TG12",
+  "nome": "Hoothoot",
+  "raridade": "Rara",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 50,
+  "categoria": "Pokémon",
+  "ilustrador": "HYOGONOSUKE",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh10tg-TG13",
+  "numero": "TG13",
+  "nome": "Starmie V",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 190,
+  "categoria": "Pokémon",
+  "ilustrador": "Akira Komayama",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh10tg-TG14",
+  "numero": "TG14",
+  "nome": "Calyrex Cavaleiro Glacial V",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 210,
+  "categoria": "Pokémon",
+  "ilustrador": "Mitsuhiro Arita",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh10tg-TG15",
+  "numero": "TG15",
+  "nome": "Calyrex Cavaleiro Glacial VMAX",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 320,
+  "categoria": "Pokémon",
+  "ilustrador": "Hitoshi Ariga",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh10tg-TG16",
+  "numero": "TG16",
+  "nome": "Articuno de Galar V",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 210,
+  "categoria": "Pokémon",
+  "ilustrador": "Kouki Saitou",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh10tg-TG17",
+  "numero": "TG17",
+  "nome": "Calyrex Cavaleiro Espectral V",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 210,
+  "categoria": "Pokémon",
+  "ilustrador": "Oswaldo KATO",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh10tg-TG18",
+  "numero": "TG18",
+  "nome": "Calyrex Cavaleiro Espectral VMAX",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 320,
+  "categoria": "Pokémon",
+  "ilustrador": "chibi",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh10tg-TG19",
+  "numero": "TG19",
+  "nome": "Zapdos de Galar V",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 200,
+  "categoria": "Pokémon",
+  "ilustrador": "kirisAki",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh10tg-TG20",
+  "numero": "TG20",
+  "nome": "Moltres de Galar V",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 220,
+  "categoria": "Pokémon",
+  "ilustrador": "Jiro Sasumo",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh10tg-TG21",
+  "numero": "TG21",
+  "nome": "Zacian V",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Metal"
+  ],
+  "ps": 220,
+  "categoria": "Pokémon",
+  "ilustrador": "aoki",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh10tg-TG22",
+  "numero": "TG22",
+  "nome": "Zamazenta V",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Metal"
+  ],
+  "ps": 230,
+  "categoria": "Pokémon",
+  "ilustrador": "Ryuta Fuse",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh10tg-TG23",
+  "numero": "TG23",
+  "nome": "Garchomp V",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Dragão"
+  ],
+  "ps": 200,
+  "categoria": "Pokémon",
+  "ilustrador": "Taira Akitsu",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh10tg-TG24",
+  "numero": "TG24",
+  "nome": "Allister",
+  "raridade": "Ultra Rara",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Jiro Sasumo",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh10tg-TG25",
+  "numero": "TG25",
+  "nome": "Bia",
+  "raridade": "Ultra Rara",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Souichirou Gunjima",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh10tg-TG26",
+  "numero": "TG26",
+  "nome": "Melony",
+  "raridade": "Ultra Rara",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "nagimiso",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh10tg-TG27",
+  "numero": "TG27",
+  "nome": "Milo",
+  "raridade": "Ultra Rara",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Sanosuke Sakuma",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh10tg-TG28",
+  "numero": "TG28",
+  "nome": "Pietro",
+  "raridade": "Ultra Rara",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "GOSSAN",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh10tg-TG29",
+  "numero": "TG29",
+  "nome": "Calyrex Cavaleiro Glacial VMAX",
+  "raridade": "Rare Secreta",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 320,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh10tg-TG30",
+  "numero": "TG30",
+  "nome": "Calyrex Cavaleiro Espectral VMAX",
+  "raridade": "Rare Secreta",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 320,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ }
+]

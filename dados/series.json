@@ -1,8 +1,24 @@
 {
+  "jogos": [
+    {
+      "id": "pokemon",
+      "nome": "Pokémon"
+    },
+    {
+      "id": "yugioh",
+      "nome": "Yu-Gi-Oh!"
+    },
+    {
+      "id": "dragonball",
+      "nome": "Dragon Ball"
+    }
+  ],
   "series": [
     {
       "id": "sv",
       "nome": "Escarlate e Violeta",
+      "jogo": "pokemon",
+      "imagens": "mini",
       "colecoes": [
         {
           "id": "sv01",
@@ -21,12 +37,103 @@
           "nome": "Obsidiana em Chamas",
           "lancamento": "2023-08-11",
           "total": 230
+        },
+        {
+          "id": "sv035",
+          "nome": "151",
+          "tcgdex": "sv03.5",
+          "lancamento": "2023-09-22",
+          "total": 207
+        },
+        {
+          "id": "mfb",
+          "nome": "My First Battle",
+          "lancamento": "2023-09-29",
+          "total": 34
+        },
+        {
+          "id": "sv04",
+          "nome": "Fenda Paradoxal",
+          "lancamento": "2023-11-03",
+          "total": 266
+        },
+        {
+          "id": "sv045",
+          "nome": "Destinos de Paldea",
+          "tcgdex": "sv04.5",
+          "lancamento": "2024-01-26",
+          "total": 245
+        },
+        {
+          "id": "sv05",
+          "nome": "Forças Temporais",
+          "lancamento": "2024-03-22",
+          "total": 218
+        },
+        {
+          "id": "sv06",
+          "nome": "Máscaras do Crepúsculo",
+          "lancamento": "2024-05-24",
+          "total": 226
+        },
+        {
+          "id": "sv065",
+          "nome": "Fábulas Nebulosas",
+          "tcgdex": "sv06.5",
+          "lancamento": "2024-08-02",
+          "total": 99
+        },
+        {
+          "id": "sv07",
+          "nome": "Coroa Estelar",
+          "lancamento": "2024-09-13",
+          "total": 175
+        },
+        {
+          "id": "sv08",
+          "nome": "Fagulhas Impetuosas",
+          "lancamento": "2024-11-08",
+          "total": 252
+        },
+        {
+          "id": "sv085",
+          "nome": "Evoluções Prismáticas",
+          "tcgdex": "sv08.5",
+          "lancamento": "2025-01-17",
+          "total": 180
+        },
+        {
+          "id": "sv09",
+          "nome": "Amigos de Jornada",
+          "lancamento": "2025-03-28",
+          "total": 190
+        },
+        {
+          "id": "sv10",
+          "nome": "Rivais Predestinados",
+          "lancamento": "2025-05-30",
+          "total": 244
+        },
+        {
+          "id": "sv105w",
+          "nome": "Fogo Branco",
+          "tcgdex": "sv10.5w",
+          "lancamento": "2025-07-17",
+          "total": 173
+        },
+        {
+          "id": "sv105b",
+          "nome": "Raio Preto",
+          "tcgdex": "sv10.5b",
+          "lancamento": "2025-07-17",
+          "total": 172
         }
       ]
     },
     {
       "id": "me",
       "nome": "Mega Evolução",
+      "jogo": "pokemon",
       "colecoes": [
         {
           "id": "me01",
@@ -78,6 +185,289 @@
           "tcgdex": "30th",
           "lancamento": "2026-09-16",
           "total": 158
+        },
+        {
+          "id": "30cc",
+          "nome": "Coleção Clássica de 30 Anos",
+          "tcgdex": "30th-c",
+          "lancamento": "2026-09-16",
+          "total": 30
+        }
+      ]
+    },
+    {
+      "id": "swsh",
+      "nome": "Espada e Escudo",
+      "jogo": "pokemon",
+      "imagens": "mini",
+      "colecoes": [
+        {
+          "id": "swsh1",
+          "nome": "Espada e Escudo",
+          "lancamento": "2020-02-07",
+          "total": 216
+        },
+        {
+          "id": "swsh2",
+          "nome": "Rixa Rebelde",
+          "lancamento": "2020-05-01",
+          "total": 209
+        },
+        {
+          "id": "swsh3",
+          "nome": "Escuridão Incandescente",
+          "lancamento": "2020-08-14",
+          "total": 201
+        },
+        {
+          "id": "fut2020",
+          "nome": "Pokémon Futsal 2020",
+          "lancamento": "2020-09-11",
+          "total": 5
+        },
+        {
+          "id": "swsh35",
+          "nome": "Caminho do Campeão",
+          "tcgdex": "swsh3.5",
+          "lancamento": "2020-09-25",
+          "total": 80
+        },
+        {
+          "id": "swsh4",
+          "nome": "Voltagem Vívida",
+          "lancamento": "2020-11-13",
+          "total": 203
+        },
+        {
+          "id": "swsh45",
+          "nome": "Destinos Brilhantes",
+          "tcgdex": "swsh4.5",
+          "lancamento": "2021-02-19",
+          "total": 73
+        },
+        {
+          "id": "swsh45sv",
+          "nome": "Destinos Brilhantes Cofre Brilhante",
+          "tcgdex": "swsh4.5sv",
+          "lancamento": "2021-02-19",
+          "total": 122
+        },
+        {
+          "id": "swsh5",
+          "nome": "Estilos de Batalha",
+          "lancamento": "2021-03-19",
+          "total": 183
+        },
+        {
+          "id": "swsh6",
+          "nome": "Reinado Arrepiante",
+          "lancamento": "2021-06-18",
+          "total": 233
+        },
+        {
+          "id": "swsh7",
+          "nome": "Céus em Evolução",
+          "lancamento": "2021-08-27",
+          "total": 237
+        },
+        {
+          "id": "cel25",
+          "nome": "Celebrações",
+          "lancamento": "2021-10-08",
+          "total": 25
+        },
+        {
+          "id": "cel25cc",
+          "nome": "Celebrações Coleção Clássica",
+          "lancamento": "2021-10-08",
+          "total": 25
+        },
+        {
+          "id": "swsh8",
+          "nome": "Golpe Fusão",
+          "lancamento": "2021-11-12",
+          "total": 284
+        },
+        {
+          "id": "swsh9",
+          "nome": "Astros Cintilantes",
+          "lancamento": "2022-02-25",
+          "total": 186
+        },
+        {
+          "id": "swsh9tg",
+          "nome": "Astros Cintilantes Galeria de Treinador",
+          "lancamento": "2022-02-25",
+          "total": 30
+        },
+        {
+          "id": "swsh10",
+          "nome": "Estrelas Radiantes",
+          "lancamento": "2022-05-27",
+          "total": 216
+        },
+        {
+          "id": "swsh10tg",
+          "nome": "Estrelas Radiantes Galeria de Treinador",
+          "lancamento": "2022-05-27",
+          "total": 30
+        },
+        {
+          "id": "swsh105",
+          "nome": "Pokémon GO",
+          "tcgdex": "swsh10.5",
+          "lancamento": "2022-07-01",
+          "total": 88
+        },
+        {
+          "id": "swsh11",
+          "nome": "Origem Perdida",
+          "lancamento": "2022-09-09",
+          "total": 217
+        },
+        {
+          "id": "swsh11tg",
+          "nome": "Origem Perdida Galeria de Treinador",
+          "lancamento": "2022-09-09",
+          "total": 30
+        },
+        {
+          "id": "swsh12",
+          "nome": "Tempestade Prateada",
+          "lancamento": "2022-11-11",
+          "total": 215
+        },
+        {
+          "id": "swsh12tg",
+          "nome": "Tempestade Prateada Galeria de Treinador",
+          "lancamento": "2022-11-11",
+          "total": 30
+        },
+        {
+          "id": "swsh125",
+          "nome": "Realeza Absoluta",
+          "tcgdex": "swsh12.5",
+          "lancamento": "2023-01-20",
+          "total": 160
+        },
+        {
+          "id": "swsh125gg",
+          "nome": "Realeza Absoluta Galeria de Galar",
+          "tcgdex": "swsh12.5gg",
+          "lancamento": "2023-01-20",
+          "total": 70
+        }
+      ]
+    },
+    {
+      "id": "sm",
+      "nome": "Sol e Lua",
+      "jogo": "pokemon",
+      "imagens": "mini",
+      "colecoes": [
+        {
+          "id": "sm1",
+          "nome": "Sol e Lua",
+          "lancamento": "2017-02-03",
+          "total": 172
+        },
+        {
+          "id": "sm2",
+          "nome": "Guardiões Ascendentes",
+          "lancamento": "2017-05-05",
+          "total": 169
+        },
+        {
+          "id": "sm3",
+          "nome": "Sombras Ardentes",
+          "lancamento": "2017-08-04",
+          "total": 169
+        },
+        {
+          "id": "sm35",
+          "nome": "Lendas Luminescentes",
+          "tcgdex": "sm3.5",
+          "lancamento": "2017-10-06",
+          "total": 78
+        },
+        {
+          "id": "sm4",
+          "nome": "Invasão Carmim",
+          "lancamento": "2017-11-03",
+          "total": 125
+        },
+        {
+          "id": "sm5",
+          "nome": "Ultra Prisma",
+          "lancamento": "2018-02-02",
+          "total": 173
+        },
+        {
+          "id": "sm6",
+          "nome": "Luz Proibida",
+          "lancamento": "2018-05-04",
+          "total": 146
+        },
+        {
+          "id": "sm7",
+          "nome": "Tempestade Celestial",
+          "lancamento": "2018-08-03",
+          "total": 183
+        },
+        {
+          "id": "sm75",
+          "nome": "Dragões Soberanos",
+          "tcgdex": "sm7.5",
+          "lancamento": "2018-09-07",
+          "total": 78
+        },
+        {
+          "id": "sm8",
+          "nome": "Trovões Perdidos",
+          "lancamento": "2018-11-02",
+          "total": 236
+        },
+        {
+          "id": "sm9",
+          "nome": "União de Aliados",
+          "lancamento": "2019-01-31",
+          "total": 196
+        },
+        {
+          "id": "det1",
+          "nome": "Detetive Pikachu",
+          "lancamento": "2019-03-29",
+          "total": 18
+        },
+        {
+          "id": "sm10",
+          "nome": "Elos Inquebráveis",
+          "lancamento": "2019-05-03",
+          "total": 234
+        },
+        {
+          "id": "sm11",
+          "nome": "Sintonia Mental",
+          "lancamento": "2019-08-02",
+          "total": 258
+        },
+        {
+          "id": "sm115",
+          "nome": "Destinos Ocultos",
+          "lancamento": "2019-08-23",
+          "total": 69
+        },
+        {
+          "id": "sma",
+          "nome": "Destinos Ocultos Cofre Brilhante",
+          "lancamento": "2019-08-23",
+          "total": 94
+        },
+        {
+          "id": "sm12",
+          "nome": "Eclipse Cósmico",
+          "lancamento": "2019-11-01",
+          "total": 271
         }
       ]
     }

@@ -1,0 +1,373 @@
+[
+ {
+  "id": "cel25-1",
+  "numero": "001",
+  "nome": "Ho-Oh",
+  "raridade": "Rara",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 130,
+  "categoria": "Pokémon",
+  "ilustrador": "Kouki Saitou",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/swsh/cel25/1/high.webp",
+  "mini": "assets/img/cartas/swsh/cel25/001-mini.webp"
+ },
+ {
+  "id": "cel25-2",
+  "numero": "002",
+  "nome": "Reshiram",
+  "raridade": "Rara",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 130,
+  "categoria": "Pokémon",
+  "ilustrador": "Aya Kusube",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/swsh/cel25/2/high.webp",
+  "mini": "assets/img/cartas/swsh/cel25/002-mini.webp"
+ },
+ {
+  "id": "cel25-3",
+  "numero": "003",
+  "nome": "Kyogre",
+  "raridade": "Rara",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 130,
+  "categoria": "Pokémon",
+  "ilustrador": "Ryuta Fuse",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/swsh/cel25/3/high.webp",
+  "mini": "assets/img/cartas/swsh/cel25/003-mini.webp"
+ },
+ {
+  "id": "cel25-4",
+  "numero": "004",
+  "nome": "Palkia",
+  "raridade": "Rara",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 130,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/swsh/cel25/4/high.webp",
+  "mini": "assets/img/cartas/swsh/cel25/004-mini.webp"
+ },
+ {
+  "id": "cel25-5",
+  "numero": "005",
+  "nome": "Pikachu",
+  "raridade": "Rara Holo",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Mitsuhiro Arita",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/swsh/cel25/5/high.webp",
+  "mini": "assets/img/cartas/swsh/cel25/005-mini.webp"
+ },
+ {
+  "id": "cel25-6",
+  "numero": "006",
+  "nome": "Pikachu Voador V",
+  "raridade": "Rara Holo V",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 190,
+  "categoria": "Pokémon",
+  "ilustrador": "aky CG Works",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/swsh/cel25/6/high.webp",
+  "mini": "assets/img/cartas/swsh/cel25/006-mini.webp"
+ },
+ {
+  "id": "cel25-7",
+  "numero": "007",
+  "nome": "Pikachu Voador VMAX",
+  "raridade": "Rara Holo VMAX",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 310,
+  "categoria": "Pokémon",
+  "ilustrador": "aky CG Works",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/swsh/cel25/7/high.webp",
+  "mini": "assets/img/cartas/swsh/cel25/007-mini.webp"
+ },
+ {
+  "id": "cel25-8",
+  "numero": "008",
+  "nome": "Pikachu Surfista V",
+  "raridade": "Rara Holo V",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 200,
+  "categoria": "Pokémon",
+  "ilustrador": "aky CG Works",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/swsh/cel25/8/high.webp",
+  "mini": "assets/img/cartas/swsh/cel25/008-mini.webp"
+ },
+ {
+  "id": "cel25-9",
+  "numero": "009",
+  "nome": "Pikachu Surfista VMAX",
+  "raridade": "Rara Holo VMAX",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 310,
+  "categoria": "Pokémon",
+  "ilustrador": "aky CG Works",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/swsh/cel25/9/high.webp",
+  "mini": "assets/img/cartas/swsh/cel25/009-mini.webp"
+ },
+ {
+  "id": "cel25-10",
+  "numero": "010",
+  "nome": "Zekrom",
+  "raridade": "Rara",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 130,
+  "categoria": "Pokémon",
+  "ilustrador": "Aya Kusube",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/swsh/cel25/10/high.webp",
+  "mini": "assets/img/cartas/swsh/cel25/010-mini.webp"
+ },
+ {
+  "id": "cel25-11",
+  "numero": "011",
+  "nome": "Mew",
+  "raridade": "Rara Holo",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Yuu Nishida",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/swsh/cel25/11/high.webp",
+  "mini": "assets/img/cartas/swsh/cel25/011-mini.webp"
+ },
+ {
+  "id": "cel25-12",
+  "numero": "012",
+  "nome": "Xerneas",
+  "raridade": "Rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 120,
+  "categoria": "Pokémon",
+  "ilustrador": "AKIRA EGAWA",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/swsh/cel25/12/high.webp",
+  "mini": "assets/img/cartas/swsh/cel25/012-mini.webp"
+ },
+ {
+  "id": "cel25-13",
+  "numero": "013",
+  "nome": "Cosmog",
+  "raridade": "Rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "kirisAki",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/swsh/cel25/13/high.webp",
+  "mini": "assets/img/cartas/swsh/cel25/013-mini.webp"
+ },
+ {
+  "id": "cel25-14",
+  "numero": "014",
+  "nome": "Cosmoem",
+  "raridade": "Rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "kirisAki",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/swsh/cel25/14/high.webp",
+  "mini": "assets/img/cartas/swsh/cel25/014-mini.webp"
+ },
+ {
+  "id": "cel25-15",
+  "numero": "015",
+  "nome": "Lunala",
+  "raridade": "Rara Holo",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 160,
+  "categoria": "Pokémon",
+  "ilustrador": "kirisAki",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/swsh/cel25/15/high.webp",
+  "mini": "assets/img/cartas/swsh/cel25/015-mini.webp"
+ },
+ {
+  "id": "cel25-16",
+  "numero": "016",
+  "nome": "Zacian V",
+  "raridade": "Rara Holo V",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 220,
+  "categoria": "Pokémon",
+  "ilustrador": "Mitsuhiro Arita",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/swsh/cel25/16/high.webp",
+  "mini": "assets/img/cartas/swsh/cel25/016-mini.webp"
+ },
+ {
+  "id": "cel25-17",
+  "numero": "017",
+  "nome": "Groudon",
+  "raridade": "Rara",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 130,
+  "categoria": "Pokémon",
+  "ilustrador": "Ryuta Fuse",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/swsh/cel25/17/high.webp",
+  "mini": "assets/img/cartas/swsh/cel25/017-mini.webp"
+ },
+ {
+  "id": "cel25-18",
+  "numero": "018",
+  "nome": "Zamazenta V",
+  "raridade": "Rara Holo V",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 220,
+  "categoria": "Pokémon",
+  "ilustrador": "Mitsuhiro Arita",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/swsh/cel25/18/high.webp",
+  "mini": "assets/img/cartas/swsh/cel25/018-mini.webp"
+ },
+ {
+  "id": "cel25-19",
+  "numero": "019",
+  "nome": "Yveltal",
+  "raridade": "Rara",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 120,
+  "categoria": "Pokémon",
+  "ilustrador": "AKIRA EGAWA",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/swsh/cel25/19/high.webp",
+  "mini": "assets/img/cartas/swsh/cel25/019-mini.webp"
+ },
+ {
+  "id": "cel25-20",
+  "numero": "020",
+  "nome": "Dialga",
+  "raridade": "Rara",
+  "tipos": [
+   "Metal"
+  ],
+  "ps": 130,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/swsh/cel25/20/high.webp",
+  "mini": "assets/img/cartas/swsh/cel25/020-mini.webp"
+ },
+ {
+  "id": "cel25-21",
+  "numero": "021",
+  "nome": "Solgaleo",
+  "raridade": "Rara Holo",
+  "tipos": [
+   "Metal"
+  ],
+  "ps": 170,
+  "categoria": "Pokémon",
+  "ilustrador": "kirisAki",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/swsh/cel25/21/high.webp",
+  "mini": "assets/img/cartas/swsh/cel25/021-mini.webp"
+ },
+ {
+  "id": "cel25-22",
+  "numero": "022",
+  "nome": "Lugia",
+  "raridade": "Rara",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 130,
+  "categoria": "Pokémon",
+  "ilustrador": "Kouki Saitou",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/swsh/cel25/22/high.webp",
+  "mini": "assets/img/cartas/swsh/cel25/022-mini.webp"
+ },
+ {
+  "id": "cel25-23",
+  "numero": "023",
+  "nome": "Pesquisa de Professores",
+  "raridade": "Rara Holo",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "KIYOTAKA OSHIYAMA",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/swsh/cel25/23/high.webp",
+  "mini": "assets/img/cartas/swsh/cel25/023-mini.webp"
+ },
+ {
+  "id": "cel25-24",
+  "numero": "024",
+  "nome": "Pesquisa de Professores",
+  "raridade": "Ultra Rara",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Ken Sugimori",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/swsh/cel25/24/high.webp",
+  "mini": "assets/img/cartas/swsh/cel25/024-mini.webp"
+ },
+ {
+  "id": "cel25-25",
+  "numero": "025",
+  "nome": "Mew",
+  "raridade": "Rare Secreta",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Saki Hayashiro",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ }
+]

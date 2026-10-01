@@ -89,10 +89,10 @@ function alternarTenho() {
   ESTADO.tenho[id] = l; salvarTenho();
   document.querySelector('.info .btn').textContent = i < 0 ? '✓ Tenho esta carta' : 'Marcar como tenho';
 }
-// Fecha a janela, redesenha a grade e volta para a mesma posição da página
+// Fecha a janela, redesenha a tela (coleção ou Minhas cartas) e volta para a mesma posição da página
 function fecharCarta() {
   tokenModal++; modal.hidden = true;
-  var y = window.scrollY; desenharColecao(); window.scrollTo(0, y);
+  var y = window.scrollY; if (ESTADO.redesenhar) ESTADO.redesenhar(); window.scrollTo(0, y);
 }
 document.addEventListener('keydown', function (e) {
   if (modal.hidden) return;

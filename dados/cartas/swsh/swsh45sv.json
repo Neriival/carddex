@@ -1,0 +1,1832 @@
+[
+ {
+  "id": "swsh4.5sv-SV001",
+  "numero": "SV001",
+  "nome": "Rowlet",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 50,
+  "categoria": "Pokémon",
+  "ilustrador": "Akira Komayama",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV002",
+  "numero": "SV002",
+  "nome": "Dartrix",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "Masakazu Fukuda",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV003",
+  "numero": "SV003",
+  "nome": "Decidueye",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 140,
+  "categoria": "Pokémon",
+  "ilustrador": "nagimiso",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV004",
+  "numero": "SV004",
+  "nome": "Grookey",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Sanosuke Sakuma",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV005",
+  "numero": "SV005",
+  "nome": "Thwackey",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "tetsuya koizumi",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV006",
+  "numero": "SV006",
+  "nome": "Rillaboom",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 170,
+  "categoria": "Pokémon",
+  "ilustrador": "Ryuta Fuse",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV007",
+  "numero": "SV007",
+  "nome": "Blipbug",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 50,
+  "categoria": "Pokémon",
+  "ilustrador": "Kyoko Umemoto",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV008",
+  "numero": "SV008",
+  "nome": "Dottler",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "tetsuya koizumi",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV009",
+  "numero": "SV009",
+  "nome": "Orbeetle",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 130,
+  "categoria": "Pokémon",
+  "ilustrador": "SATOSHI NAKAI",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV010",
+  "numero": "SV010",
+  "nome": "Gossifleur",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 50,
+  "categoria": "Pokémon",
+  "ilustrador": "Kyoko Umemoto",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV011",
+  "numero": "SV011",
+  "nome": "Eldegoss",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "Mizue",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV012",
+  "numero": "SV012",
+  "nome": "Applin",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 40,
+  "categoria": "Pokémon",
+  "ilustrador": "otumami",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV013",
+  "numero": "SV013",
+  "nome": "Flapple",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "Shigenori Negishi",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV014",
+  "numero": "SV014",
+  "nome": "Appletun",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "Kouki Saitou",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV015",
+  "numero": "SV015",
+  "nome": "Scorbunny",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "MAHOU",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV016",
+  "numero": "SV016",
+  "nome": "Raboot",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "Lee HyunJung",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV017",
+  "numero": "SV017",
+  "nome": "Cinderace",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 170,
+  "categoria": "Pokémon",
+  "ilustrador": "Hitoshi Ariga",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV018",
+  "numero": "SV018",
+  "nome": "Sizzlipede",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Shigenori Negishi",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV019",
+  "numero": "SV019",
+  "nome": "Centiskorch",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 130,
+  "categoria": "Pokémon",
+  "ilustrador": "SATOSHI NAKAI",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV020",
+  "numero": "SV020",
+  "nome": "Mr. Mime de Galar",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "Masakazu Fukuda",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV021",
+  "numero": "SV021",
+  "nome": "Mr. Rime de Galar",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 120,
+  "categoria": "Pokémon",
+  "ilustrador": "Hideki Ishikawa",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV022",
+  "numero": "SV022",
+  "nome": "Suicune",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 120,
+  "categoria": "Pokémon",
+  "ilustrador": "Kagemaru Himeno",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV023",
+  "numero": "SV023",
+  "nome": "Darumaka de Galar",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "SATOSHI NAKAI",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV024",
+  "numero": "SV024",
+  "nome": "Darmanitan de Galar",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 140,
+  "categoria": "Pokémon",
+  "ilustrador": "nagimiso",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV025",
+  "numero": "SV025",
+  "nome": "Sobble",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Saya Tsuruta",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV026",
+  "numero": "SV026",
+  "nome": "Drizzile",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "Ryuta Fuse",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV027",
+  "numero": "SV027",
+  "nome": "Inteleon",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 160,
+  "categoria": "Pokémon",
+  "ilustrador": "nagimiso",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV028",
+  "numero": "SV028",
+  "nome": "Chewtle",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "otumami",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV029",
+  "numero": "SV029",
+  "nome": "Drednaw",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 130,
+  "categoria": "Pokémon",
+  "ilustrador": "Shin Nagasawa",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV030",
+  "numero": "SV030",
+  "nome": "Cramorant",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 110,
+  "categoria": "Pokémon",
+  "ilustrador": "Akira Komayama",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV031",
+  "numero": "SV031",
+  "nome": "Arrokuda",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Shigenori Negishi",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV032",
+  "numero": "SV032",
+  "nome": "Barraskewda",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 120,
+  "categoria": "Pokémon",
+  "ilustrador": "Misa Tsutsui",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV033",
+  "numero": "SV033",
+  "nome": "Snom",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 50,
+  "categoria": "Pokémon",
+  "ilustrador": "Yumi",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV034",
+  "numero": "SV034",
+  "nome": "Frosmoth",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "Akira Komayama",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV035",
+  "numero": "SV035",
+  "nome": "Eiscue",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 120,
+  "categoria": "Pokémon",
+  "ilustrador": "Shigenori Negishi",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV036",
+  "numero": "SV036",
+  "nome": "Dracovish",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 150,
+  "categoria": "Pokémon",
+  "ilustrador": "SATOSHI NAKAI",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV037",
+  "numero": "SV037",
+  "nome": "Arctovish",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 150,
+  "categoria": "Pokémon",
+  "ilustrador": "Masakazu Fukuda",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV038",
+  "numero": "SV038",
+  "nome": "Rotom",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "kirisAki",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV039",
+  "numero": "SV039",
+  "nome": "Yamper",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "sowsow",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV040",
+  "numero": "SV040",
+  "nome": "Boltund",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 130,
+  "categoria": "Pokémon",
+  "ilustrador": "Kagemaru Himeno",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV041",
+  "numero": "SV041",
+  "nome": "Toxel",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Kouki Saitou",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV042",
+  "numero": "SV042",
+  "nome": "Toxtricity",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 120,
+  "categoria": "Pokémon",
+  "ilustrador": "Hideki Ishikawa",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV043",
+  "numero": "SV043",
+  "nome": "Pincurchin",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "Motofumi Fujiwara",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV044",
+  "numero": "SV044",
+  "nome": "Morpeko",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "Akira Komayama",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV045",
+  "numero": "SV045",
+  "nome": "Dracozolt",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 160,
+  "categoria": "Pokémon",
+  "ilustrador": "Shin Nagasawa",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV046",
+  "numero": "SV046",
+  "nome": "Arctozolt",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 130,
+  "categoria": "Pokémon",
+  "ilustrador": "nagimiso",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV047",
+  "numero": "SV047",
+  "nome": "Ponyta de Galar",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Sanosuke Sakuma",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV048",
+  "numero": "SV048",
+  "nome": "Rapidash de Galar",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 100,
+  "categoria": "Pokémon",
+  "ilustrador": "Kagemaru Himeno",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV049",
+  "numero": "SV049",
+  "nome": "Corsola de Galar",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "Mizue",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV050",
+  "numero": "SV050",
+  "nome": "Cursola de Galar",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 100,
+  "categoria": "Pokémon",
+  "ilustrador": "Shin Nagasawa",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV051",
+  "numero": "SV051",
+  "nome": "Dedenne",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Mizue",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV052",
+  "numero": "SV052",
+  "nome": "Sinistea",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 30,
+  "categoria": "Pokémon",
+  "ilustrador": "MAHOU",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV053",
+  "numero": "SV053",
+  "nome": "Polteageist",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Sanosuke Sakuma",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV054",
+  "numero": "SV054",
+  "nome": "Hatenna",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "otumami",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV055",
+  "numero": "SV055",
+  "nome": "Hattrem",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "Lee HyunJung",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV056",
+  "numero": "SV056",
+  "nome": "Hatterene",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 150,
+  "categoria": "Pokémon",
+  "ilustrador": "Akira Komayama",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV057",
+  "numero": "SV057",
+  "nome": "Milcery",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 50,
+  "categoria": "Pokémon",
+  "ilustrador": "Motofumi Fujiwara",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV058",
+  "numero": "SV058",
+  "nome": "Alcremie",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 110,
+  "categoria": "Pokémon",
+  "ilustrador": "MAHOU",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV059",
+  "numero": "SV059",
+  "nome": "Indeedee",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 100,
+  "categoria": "Pokémon",
+  "ilustrador": "Saya Tsuruta",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV060",
+  "numero": "SV060",
+  "nome": "Dreepy",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Masakazu Fukuda",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV061",
+  "numero": "SV061",
+  "nome": "Drakloak",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "tetsuya koizumi",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV062",
+  "numero": "SV062",
+  "nome": "Dragapult",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 150,
+  "categoria": "Pokémon",
+  "ilustrador": "Naoki Saito",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV063",
+  "numero": "SV063",
+  "nome": "Farfetch'd de Galar",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "Kagemaru Himeno",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV064",
+  "numero": "SV064",
+  "nome": "Sirfetch'd de Galar",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 130,
+  "categoria": "Pokémon",
+  "ilustrador": "Kouki Saitou",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV065",
+  "numero": "SV065",
+  "nome": "Yamask de Galar",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "sowsow",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV066",
+  "numero": "SV066",
+  "nome": "Runerigus de Galar",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 100,
+  "categoria": "Pokémon",
+  "ilustrador": "Shin Nagasawa",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV067",
+  "numero": "SV067",
+  "nome": "Rolycoly",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Shigenori Negishi",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV068",
+  "numero": "SV068",
+  "nome": "Carkol",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 100,
+  "categoria": "Pokémon",
+  "ilustrador": "tetsuya koizumi",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV069",
+  "numero": "SV069",
+  "nome": "Coalossal",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 160,
+  "categoria": "Pokémon",
+  "ilustrador": "nagimiso",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV070",
+  "numero": "SV070",
+  "nome": "Silicobra",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "Akira Komayama",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV071",
+  "numero": "SV071",
+  "nome": "Sandaconda",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 140,
+  "categoria": "Pokémon",
+  "ilustrador": "Shin Nagasawa",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV072",
+  "numero": "SV072",
+  "nome": "Clobbopus",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Kyoko Umemoto",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV073",
+  "numero": "SV073",
+  "nome": "Grapploct",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 130,
+  "categoria": "Pokémon",
+  "ilustrador": "Masakazu Fukuda",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV074",
+  "numero": "SV074",
+  "nome": "Falinks",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "Kouki Saitou",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV075",
+  "numero": "SV075",
+  "nome": "Stonjourner",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 140,
+  "categoria": "Pokémon",
+  "ilustrador": "Hitoshi Ariga",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV076",
+  "numero": "SV076",
+  "nome": "Koffing",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Yumi",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV077",
+  "numero": "SV077",
+  "nome": "Weezing de Galar",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 130,
+  "categoria": "Pokémon",
+  "ilustrador": "Kouki Saitou",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV078",
+  "numero": "SV078",
+  "nome": "Zigzagoon de Galar",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Misa Tsutsui",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV079",
+  "numero": "SV079",
+  "nome": "Linoone de Galar",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 100,
+  "categoria": "Pokémon",
+  "ilustrador": "Shin Nagasawa",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV080",
+  "numero": "SV080",
+  "nome": "Obstagoon de Galar",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 160,
+  "categoria": "Pokémon",
+  "ilustrador": "Ryuta Fuse",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV081",
+  "numero": "SV081",
+  "nome": "Nickit",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Saya Tsuruta",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV082",
+  "numero": "SV082",
+  "nome": "Thievul",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 100,
+  "categoria": "Pokémon",
+  "ilustrador": "Kagemaru Himeno",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV083",
+  "numero": "SV083",
+  "nome": "Impidimp",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Misa Tsutsui",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV084",
+  "numero": "SV084",
+  "nome": "Morgrem",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "SATOSHI NAKAI",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV085",
+  "numero": "SV085",
+  "nome": "Grimmsnarl",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 170,
+  "categoria": "Pokémon",
+  "ilustrador": "Kouki Saitou",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV086",
+  "numero": "SV086",
+  "nome": "Meowth de Galar",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Metal"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Shigenori Negishi",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV087",
+  "numero": "SV087",
+  "nome": "Perrserker de Galar",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Metal"
+  ],
+  "ps": 120,
+  "categoria": "Pokémon",
+  "ilustrador": "Ryuta Fuse",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV088",
+  "numero": "SV088",
+  "nome": "Stunfisk de Galar",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Metal"
+  ],
+  "ps": 120,
+  "categoria": "Pokémon",
+  "ilustrador": "tetsuya koizumi",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV089",
+  "numero": "SV089",
+  "nome": "Corviknight",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Metal"
+  ],
+  "ps": 170,
+  "categoria": "Pokémon",
+  "ilustrador": "kirisAki",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV090",
+  "numero": "SV090",
+  "nome": "Cufant",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Metal"
+  ],
+  "ps": 100,
+  "categoria": "Pokémon",
+  "ilustrador": "sowsow",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV091",
+  "numero": "SV091",
+  "nome": "Copperajah",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Metal"
+  ],
+  "ps": 190,
+  "categoria": "Pokémon",
+  "ilustrador": "Shin Nagasawa",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV092",
+  "numero": "SV092",
+  "nome": "Duraludon",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Metal"
+  ],
+  "ps": 130,
+  "categoria": "Pokémon",
+  "ilustrador": "Souichirou Gunjima",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV093",
+  "numero": "SV093",
+  "nome": "Minccino",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "MAHOU",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV094",
+  "numero": "SV094",
+  "nome": "Cinccino",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "kirisAki",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV095",
+  "numero": "SV095",
+  "nome": "Ducklett",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 50,
+  "categoria": "Pokémon",
+  "ilustrador": "Kyoko Umemoto",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV096",
+  "numero": "SV096",
+  "nome": "Swanna",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 110,
+  "categoria": "Pokémon",
+  "ilustrador": "Kagemaru Himeno",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV097",
+  "numero": "SV097",
+  "nome": "Bunnelby",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 40,
+  "categoria": "Pokémon",
+  "ilustrador": "Misa Tsutsui",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV098",
+  "numero": "SV098",
+  "nome": "Oranguru",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 120,
+  "categoria": "Pokémon",
+  "ilustrador": "nagimiso",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV099",
+  "numero": "SV099",
+  "nome": "Skwovet",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Naoki Saito",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV100",
+  "numero": "SV100",
+  "nome": "Greedent",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 120,
+  "categoria": "Pokémon",
+  "ilustrador": "Hideki Ishikawa",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV101",
+  "numero": "SV101",
+  "nome": "Rookidee",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Lee HyunJung",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV102",
+  "numero": "SV102",
+  "nome": "Corvisquire",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "Masakazu Fukuda",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV103",
+  "numero": "SV103",
+  "nome": "Wooloo",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Kyoko Umemoto",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV104",
+  "numero": "SV104",
+  "nome": "Dubwool",
+  "raridade": "Shiny rara",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 130,
+  "categoria": "Pokémon",
+  "ilustrador": "Kouki Saitou",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV105",
+  "numero": "SV105",
+  "nome": "Rillaboom V",
+  "raridade": "Shiny rara V",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 220,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV106",
+  "numero": "SV106",
+  "nome": "Rillaboom VMAX",
+  "raridade": "Shiny rara VMAX",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 330,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV107",
+  "numero": "SV107",
+  "nome": "Charizard VMAX",
+  "raridade": "Shiny rara VMAX",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 330,
+  "categoria": "Pokémon",
+  "ilustrador": "aky CG Works",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV108",
+  "numero": "SV108",
+  "nome": "Centiskorch V",
+  "raridade": "Shiny rara V",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 210,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV109",
+  "numero": "SV109",
+  "nome": "Centiskorch VMAX",
+  "raridade": "Shiny rara VMAX",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 320,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV110",
+  "numero": "SV110",
+  "nome": "Lapras V",
+  "raridade": "Shiny rara V",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 210,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV111",
+  "numero": "SV111",
+  "nome": "Lapras VMAX",
+  "raridade": "Shiny rara VMAX",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 320,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV112",
+  "numero": "SV112",
+  "nome": "Toxtricity V",
+  "raridade": "Shiny rara V",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 210,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV113",
+  "numero": "SV113",
+  "nome": "Toxtricity VMAX",
+  "raridade": "Shiny rara VMAX",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 320,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV114",
+  "numero": "SV114",
+  "nome": "Indeedee V",
+  "raridade": "Shiny rara V",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 180,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV115",
+  "numero": "SV115",
+  "nome": "Falinks V",
+  "raridade": "Shiny rara V",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 160,
+  "categoria": "Pokémon",
+  "ilustrador": "aky CG Works",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV116",
+  "numero": "SV116",
+  "nome": "Grimmsnarl V",
+  "raridade": "Shiny rara V",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 220,
+  "categoria": "Pokémon",
+  "ilustrador": "PLANETA Mochizuki",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV117",
+  "numero": "SV117",
+  "nome": "Grimmsnarl VMAX",
+  "raridade": "Shiny rara VMAX",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 330,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV118",
+  "numero": "SV118",
+  "nome": "Ditto V",
+  "raridade": "Shiny rara V",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 170,
+  "categoria": "Pokémon",
+  "ilustrador": "Saki Hayashiro",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV119",
+  "numero": "SV119",
+  "nome": "Ditto VMAX",
+  "raridade": "Shiny rara VMAX",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 320,
+  "categoria": "Pokémon",
+  "ilustrador": "PLANETA Tsuji",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV120",
+  "numero": "SV120",
+  "nome": "Dubwool V",
+  "raridade": "Shiny rara V",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 210,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV121",
+  "numero": "SV121",
+  "nome": "Eternatus V",
+  "raridade": "Rare Secreta",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 220,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh4.5sv-SV122",
+  "numero": "SV122",
+  "nome": "Eternatus VMAX",
+  "raridade": "Rare Secreta",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 340,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ }
+]

@@ -8,7 +8,9 @@
 
 // Endereço da API usada quando as cartas ainda não foram baixadas pelo script
 var API_TCGDEX = 'https://api.tcgdex.net/v2';
-var ESTADO = { series: [], cartas: {}, tenho: {}, filtro: 'todas', atual: null, tid: {} };
+// jogos = Pokémon, Yu-Gi-Oh!, Dragon Ball... (cada série pertence a um jogo)
+// redesenhar = função da tela atual, chamada quando a carta grande fecha
+var ESTADO = { jogos: [], series: [], cartas: {}, tenho: {}, filtro: 'todas', raridade: '', tipo: '', atual: null, tid: {}, redesenhar: null };
 try { ESTADO.tenho = JSON.parse(localStorage.getItem('carddex_tenho') || '{}'); } catch (e) {}
 // Salva/lê as cartas marcadas. ESTADO.tenho = { 'me04': ['me04-001', ...], ... }
 function salvarTenho() { try { localStorage.setItem('carddex_tenho', JSON.stringify(ESTADO.tenho)); } catch (e) {} }
@@ -17,6 +19,8 @@ function totalTenho() { return Object.keys(ESTADO.tenho).reduce(function (a, k) 
 function todasColecoes() { return ESTADO.series.reduce(function (a, s) { return a.concat(s.colecoes); }, []); }
 function acharColecao(id) { return todasColecoes().filter(function (c) { return c.id === id; })[0]; }
 function acharSerie(id) { return ESTADO.series.filter(function (s) { return s.id === id; })[0]; }
+function acharJogo(id) { return ESTADO.jogos.filter(function (j) { return j.id === id; })[0]; }
+function seriesDoJogo(id) { return ESTADO.series.filter(function (s) { return s.jogo === id; }); }
 // Ajudantes: converte '2026-05-22' em '22/05/2026' e soma o progresso de uma série inteira
 function dataBR(d) { var p = d.split('-'); return p[2] + '/' + p[1] + '/' + p[0]; }
 function resumoSerie(s) {
@@ -27,12 +31,14 @@ function resumoSerie(s) {
 
 // Lê dados/series.json e deixa séries e coleções em ordem de lançamento (mais novas primeiro)
 async function carregarSeries() {
-  var r = await fetch('dados/series.json');
-  ESTADO.series = (await r.json()).series;
+  var r = await fetch('dados/series.json'), d = await r.json();
+  ESTADO.series = d.series;
+  ESTADO.jogos = d.jogos || [{ id: 'pokemon', nome: 'Pokémon' }];
   // coleções: da mais nova para a mais antiga
   ESTADO.series.forEach(function (s) {
     s.colecoes.forEach(function (c) { c.serie = s.id; });
-    s.colecoes.sort(function (a, b) { return a.lancamento < b.lancamento ? 1 : -1; });
+    // mesma data (ex.: coleção + galeria de treinador): mantém a ordem do series.json
+    s.colecoes.sort(function (a, b) { return a.lancamento < b.lancamento ? 1 : a.lancamento > b.lancamento ? -1 : 0; });
     s.lancamento = s.colecoes.length ? s.colecoes[s.colecoes.length - 1].lancamento : '';
   });
   // séries: pela data da primeira coleção, a série mais nova primeiro

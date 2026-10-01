@@ -1,0 +1,500 @@
+[
+ {
+  "id": "mfb-1",
+  "numero": "001",
+  "nome": "Bulbasaur",
+  "raridade": null,
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Saya Tsuruta",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "mfb-2",
+  "numero": "002",
+  "nome": "Ivysaur",
+  "raridade": null,
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 100,
+  "categoria": "Pokémon",
+  "ilustrador": "Narumi Sato",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "mfb-3",
+  "numero": "003",
+  "nome": "Oddish",
+  "raridade": null,
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 50,
+  "categoria": "Pokémon",
+  "ilustrador": "Gemi",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "mfb-4",
+  "numero": "004",
+  "nome": "Gloom",
+  "raridade": null,
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "Natsumi Yashida",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "mfb-5",
+  "numero": "005",
+  "nome": "Exeggcute",
+  "raridade": null,
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Jerky",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "mfb-6",
+  "numero": "006",
+  "nome": "Exeggutor",
+  "raridade": null,
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 120,
+  "categoria": "Pokémon",
+  "ilustrador": "nagimiso",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "mfb-7",
+  "numero": "007",
+  "nome": "Scyther",
+  "raridade": null,
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "Kouki Saitou",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "mfb-8",
+  "numero": "008",
+  "nome": "Grass Energy",
+  "raridade": null,
+  "tipos": [],
+  "ps": null,
+  "categoria": "Energia",
+  "ilustrador": null,
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "mfb-9",
+  "numero": "009",
+  "nome": "Charmander",
+  "raridade": null,
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Kurata So",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "mfb-10",
+  "numero": "010",
+  "nome": "Charmeleon",
+  "raridade": null,
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 100,
+  "categoria": "Pokémon",
+  "ilustrador": "kirisAki",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "mfb-11",
+  "numero": "011",
+  "nome": "Vulpix",
+  "raridade": null,
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Mina Nakai",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "mfb-12",
+  "numero": "012",
+  "nome": "Ninetales",
+  "raridade": null,
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 100,
+  "categoria": "Pokémon",
+  "ilustrador": "Kagemaru Himeno",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "mfb-13",
+  "numero": "013",
+  "nome": "Growlithe",
+  "raridade": null,
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "Mina Nakai",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "mfb-14",
+  "numero": "014",
+  "nome": "Arcanine",
+  "raridade": null,
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 140,
+  "categoria": "Pokémon",
+  "ilustrador": "nisimana",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "mfb-15",
+  "numero": "015",
+  "nome": "Magmar",
+  "raridade": null,
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "Ryuta Fuse",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "mfb-16",
+  "numero": "016",
+  "nome": "Fire Energy",
+  "raridade": null,
+  "tipos": [],
+  "ps": null,
+  "categoria": "Energia",
+  "ilustrador": null,
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "mfb-17",
+  "numero": "017",
+  "nome": "Pikachu",
+  "raridade": null,
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Saino Misaki",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "mfb-18",
+  "numero": "018",
+  "nome": "Raichu",
+  "raridade": null,
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 100,
+  "categoria": "Pokémon",
+  "ilustrador": "Kariya",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "mfb-19",
+  "numero": "019",
+  "nome": "Magnemite",
+  "raridade": null,
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Shibuzoh.",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "mfb-20",
+  "numero": "020",
+  "nome": "Magneton",
+  "raridade": null,
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 110,
+  "categoria": "Pokémon",
+  "ilustrador": "GOSSAN",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "mfb-21",
+  "numero": "021",
+  "nome": "Voltorb",
+  "raridade": null,
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 50,
+  "categoria": "Pokémon",
+  "ilustrador": "OKACHEKE",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "mfb-22",
+  "numero": "022",
+  "nome": "Electrode",
+  "raridade": null,
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "miki kudo",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "mfb-23",
+  "numero": "023",
+  "nome": "Electabuzz",
+  "raridade": null,
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "hncl",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "mfb-24",
+  "numero": "024",
+  "nome": "Lightning Energy",
+  "raridade": null,
+  "tipos": [],
+  "ps": null,
+  "categoria": "Energia",
+  "ilustrador": null,
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "mfb-25",
+  "numero": "025",
+  "nome": "Squirtle",
+  "raridade": null,
+  "tipos": [
+   "Água"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "ryoma uratsuka",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "mfb-26",
+  "numero": "026",
+  "nome": "Wartortle",
+  "raridade": null,
+  "tipos": [
+   "Água"
+  ],
+  "ps": 100,
+  "categoria": "Pokémon",
+  "ilustrador": "Hitoshi Ariga",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "mfb-27",
+  "numero": "027",
+  "nome": "Poliwag",
+  "raridade": null,
+  "tipos": [
+   "Água"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "0313",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "mfb-28",
+  "numero": "028",
+  "nome": "Poliwhirl",
+  "raridade": null,
+  "tipos": [
+   "Água"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "Mizue",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "mfb-29",
+  "numero": "029",
+  "nome": "Magikarp",
+  "raridade": null,
+  "tipos": [
+   "Água"
+  ],
+  "ps": 30,
+  "categoria": "Pokémon",
+  "ilustrador": "Amelicart",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "mfb-30",
+  "numero": "030",
+  "nome": "Gyarados",
+  "raridade": null,
+  "tipos": [
+   "Água"
+  ],
+  "ps": 160,
+  "categoria": "Pokémon",
+  "ilustrador": "NC Empire",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "mfb-31",
+  "numero": "031",
+  "nome": "Lapras",
+  "raridade": null,
+  "tipos": [
+   "Água"
+  ],
+  "ps": 110,
+  "categoria": "Pokémon",
+  "ilustrador": "Akira Komayama",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "mfb-32",
+  "numero": "032",
+  "nome": "Water Energy",
+  "raridade": null,
+  "tipos": [],
+  "ps": null,
+  "categoria": "Energia",
+  "ilustrador": null,
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "mfb-33",
+  "numero": "033",
+  "nome": "Potion",
+  "raridade": null,
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Ayaka Yoshida",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "mfb-34",
+  "numero": "034",
+  "nome": "Switch",
+  "raridade": null,
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Studio Bora Inc.",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ }
+]

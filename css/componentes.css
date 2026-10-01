@@ -91,3 +91,26 @@ nav a{display:inline-flex;align-items:center;min-height:44px}
 .share-acoes .btn{min-width:0;width:100%;padding:0 14px}
 .share-msg:empty{display:none}
 @media(max-width:760px){.btn-compartilhar{width:100%}.share-acoes{grid-template-columns:1fr}}
+
+/* ===== JOGOS (Pokémon, Yu-Gi-Oh!, Dragon Ball) ===== */
+.jogo-btn{padding:28px 18px}.jogo-btn img{height:96px;width:96px;margin-bottom:10px}
+.jogo-btn.em-breve img{opacity:.6}.jogo-btn.em-breve .sub{color:var(--gold)}
+.titulo-jogo{display:flex;align-items:center;gap:14px}.titulo-jogo img{height:56px;width:56px}.titulo-jogo h2{margin:0}
+
+/* ===== FILTROS DE RARIDADE E TIPO ===== */
+.filtros-extra{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 12px}.filtros-extra:empty{display:none}
+.seletor{display:flex;flex-direction:column;gap:4px;flex:1;min-width:160px;max-width:235px}.seletor span{color:var(--mut);font-size:.85rem}
+.seletor select{min-height:44px;background:var(--p1);border:1px solid var(--line);color:var(--text);border-radius:12px;padding:0 12px;font:inherit;cursor:pointer}
+.seletor select:focus{outline:none;border-color:var(--gold)}
+
+/* ===== MINHAS CARTAS E BACKUP ===== */
+.backup{background:var(--p1);border:1px solid var(--line);border-radius:16px;padding:18px;margin:16px 0 8px;display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;justify-content:space-between}
+.backup>div:first-child{display:flex;flex-direction:column;gap:4px;flex:1;min-width:240px}
+.backup-acoes{display:flex;gap:10px;flex-wrap:wrap}.backup-acoes .btn{margin-top:0;min-width:180px}
+#backup-msg{width:100%;margin:0;color:var(--gold)}#backup-msg:empty{display:none}
+.minhas-col{margin-top:26px}.minhas-col .voltar h3{margin:0;color:var(--gold);font-size:1.3rem;text-align:left}.minhas-col .grade{margin-top:10px}
+@media(max-width:760px){
+  .seletor{max-width:none}.backup-acoes{width:100%}.backup-acoes .btn{flex:1;min-width:0}
+  .links{gap:2px}.links a{font-size:.82rem;white-space:nowrap}
+  .colecoes.jogos{grid-template-columns:repeat(3,1fr);gap:8px}.jogo-btn{padding:14px 6px}.jogo-btn img{height:60px;width:60px;margin-bottom:4px}.jogo-btn h3{font-size:.95rem}
+}

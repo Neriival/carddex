@@ -41,8 +41,9 @@ function retanguloArredondado(ctx, x, y, w, h, r) {
 }
 
 // Desenha a imagem e devolve o <canvas>
-async function desenharFaltantes(c, lista) {
-  var s = acharSerie(c.serie), total = ESTADO.cartas[c.id].length;
+// 'filtro' (opcional): texto dos filtros de raridade/tipo ativos, aparece no título
+async function desenharFaltantes(c, lista, filtro) {
+  var s = acharSerie(c.serie), total = cartasFiltradas(c).length;
   var W = IMG_LARGURA, M = 48, GAP = 14;
   var cols = lista.length <= 8 ? 4 : lista.length <= 24 ? 6 : lista.length <= 60 ? 8 : 10;
   var cw = (W - M * 2 - GAP * (cols - 1)) / cols, ch = cw * 7 / 5;
@@ -70,7 +71,8 @@ async function desenharFaltantes(c, lista) {
     ctx.drawImage(logo, W - M - lw, 56 - lh / 2, lw, lh);
   }
   ctx.textBaseline = 'alphabetic';
-  ctx.fillStyle = '#8fb4f0'; ctx.font = '600 24px ' + F; ctx.fillText('CARTAS QUE FALTAM', M, 160);
+  ctx.fillStyle = '#8fb4f0'; ctx.font = '600 24px ' + F;
+  ctx.fillText(cortarTexto(ctx, 'CARTAS QUE FALTAM' + (filtro ? '  ·  ' + filtro.toUpperCase() : ''), W - M * 2), M, 160);
   ctx.fillStyle = '#ffc61a'; ctx.font = '800 46px ' + F; ctx.fillText(cortarTexto(ctx, c.nome, W - M * 2), M, 212);
   ctx.fillStyle = '#eaf2ff'; ctx.font = '600 24px ' + F;
   ctx.fillText(cortarTexto(ctx, s.nome + '  ·  Faltam ' + lista.length + ' de ' + total + ' cartas', W - M * 2), M, 254);
@@ -101,14 +103,15 @@ async function desenharFaltantes(c, lista) {
 
 // Abre a janela com a prévia da imagem e os botões
 async function abrirCompartilhar() {
-  var c = ESTADO.atual, meu = ESTADO.tenho[c.id] || [];
-  var lista = ESTADO.cartas[c.id].filter(function (k) { return meu.indexOf(k.id) < 0; });
+  var c = ESTADO.atual, meu = ESTADO.tenho[c.id] || [], filtro = rotuloFiltros();
+  // respeita os filtros de raridade e tipo da tela (ex.: só as Ilustrações Raras que faltam)
+  var lista = cartasFiltradas(c).filter(function (k) { return meu.indexOf(k.id) < 0; });
   cartaAberta = null; tokenModal++; // não deixa as setas do teclado abrirem cartas por baixo
   modal.onclick = function (e) { if (e.target === modal) fecharCompartilhar(); };
   modal.innerHTML = '<button class="fechar" onclick="fecharCompartilhar()" aria-label="Fechar">×</button><div class="share-box"><p class="sub">Gerando imagem...</p></div>';
   modal.hidden = false; modal.scrollTop = 0;
 
-  var cv = await desenharFaltantes(c, lista);
+  var cv = await desenharFaltantes(c, lista, filtro);
   var blob = await new Promise(function (ok) { cv.toBlob(ok, 'image/png'); });
   if (modal.hidden) return; // fechou enquanto gerava
   var box = modal.querySelector('.share-box');
@@ -117,10 +120,10 @@ async function abrirCompartilhar() {
   var nome = 'carddex-' + c.id + '-faltam.png';
   faltantes = {
     arquivo: new File([blob], nome, { type: 'image/png' }), url: URL.createObjectURL(blob), nome: nome,
-    texto: lista.length ? 'Cartas que faltam na coleção ' + c.nome + ' (' + acharSerie(c.serie).nome + '): ' + lista.map(function (k) { return k.numero; }).join(', ')
-      : 'Completei a coleção ' + c.nome + ' (' + acharSerie(c.serie).nome + ')!'
+    texto: lista.length ? 'Cartas que faltam na coleção ' + c.nome + ' (' + acharSerie(c.serie).nome + ')' + (filtro ? ' – ' + filtro : '') + ': ' + lista.map(function (k) { return k.numero; }).join(', ')
+      : (filtro ? 'Tenho todas as cartas ' + filtro + ' da coleção ' : 'Completei a coleção ') + c.nome + ' (' + acharSerie(c.serie).nome + ')!'
   };
-  box.innerHTML = '<h3>Cartas que faltam</h3><span class="sub">' + esc(c.nome) + ' · ' + lista.length + ' carta' + (lista.length === 1 ? '' : 's') + '</span>' +
+  box.innerHTML = '<h3>Cartas que faltam</h3><span class="sub">' + esc(c.nome) + (filtro ? ' · ' + esc(filtro) : '') + ' · ' + lista.length + ' carta' + (lista.length === 1 ? '' : 's') + '</span>' +
     '<img class="share-prev" src="' + faltantes.url + '" alt="Imagem com as cartas que faltam em ' + esc(c.nome) + '">' +
     '<div class="share-acoes"><button class="btn" onclick="compartilharFaltantes()">Compartilhar no WhatsApp</button><button class="btn btn-sec" onclick="baixarFaltantes()">Baixar imagem</button></div>' +
     '<p class="sub share-msg" id="share-msg"></p>';

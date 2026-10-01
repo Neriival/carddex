@@ -1,0 +1,442 @@
+[
+ {
+  "id": "swsh9tg-TG01",
+  "numero": "TG01",
+  "nome": "Flareon",
+  "raridade": "Rara",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 110,
+  "categoria": "Pokémon",
+  "ilustrador": "You Iribi",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh9tg-TG02",
+  "numero": "TG02",
+  "nome": "Vaporeon",
+  "raridade": "Rara",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 110,
+  "categoria": "Pokémon",
+  "ilustrador": "Jiro Sasumo",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh9tg-TG03",
+  "numero": "TG03",
+  "nome": "Octillery",
+  "raridade": "Rara",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 110,
+  "categoria": "Pokémon",
+  "ilustrador": "Shinya Komatsu",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh9tg-TG04",
+  "numero": "TG04",
+  "nome": "Jolteon",
+  "raridade": "Rara",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 100,
+  "categoria": "Pokémon",
+  "ilustrador": "DOM",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh9tg-TG05",
+  "numero": "TG05",
+  "nome": "Zekrom",
+  "raridade": "Rara",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 130,
+  "categoria": "Pokémon",
+  "ilustrador": "AKIRA EGAWA",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh9tg-TG06",
+  "numero": "TG06",
+  "nome": "Dusknoir",
+  "raridade": "Rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 150,
+  "categoria": "Pokémon",
+  "ilustrador": "Megumi Higuchi",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh9tg-TG07",
+  "numero": "TG07",
+  "nome": "Dedenne",
+  "raridade": "Rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "kurumitsu",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh9tg-TG08",
+  "numero": "TG08",
+  "nome": "Alcremie",
+  "raridade": "Rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "OKACHEKE",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh9tg-TG09",
+  "numero": "TG09",
+  "nome": "Ariados",
+  "raridade": "Rara",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 110,
+  "categoria": "Pokémon",
+  "ilustrador": "Shiburingaru",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh9tg-TG10",
+  "numero": "TG10",
+  "nome": "Houndoom",
+  "raridade": "Rara",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 130,
+  "categoria": "Pokémon",
+  "ilustrador": "NC Empire",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh9tg-TG11",
+  "numero": "TG11",
+  "nome": "Eevee",
+  "raridade": "Rara",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Souichirou Gunjima",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh9tg-TG12",
+  "numero": "TG12",
+  "nome": "Oranguru",
+  "raridade": "Rara",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 120,
+  "categoria": "Pokémon",
+  "ilustrador": "Akira Komayama",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh9tg-TG13",
+  "numero": "TG13",
+  "nome": "Boltund V",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 200,
+  "categoria": "Pokémon",
+  "ilustrador": "GIDORA",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh9tg-TG14",
+  "numero": "TG14",
+  "nome": "Sylveon V",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 200,
+  "categoria": "Pokémon",
+  "ilustrador": "Megumi Mizutani",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh9tg-TG15",
+  "numero": "TG15",
+  "nome": "Sylveon VMAX",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 310,
+  "categoria": "Pokémon",
+  "ilustrador": "sui",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh9tg-TG16",
+  "numero": "TG16",
+  "nome": "Mimikyu V",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 160,
+  "categoria": "Pokémon",
+  "ilustrador": "saino misaki",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh9tg-TG17",
+  "numero": "TG17",
+  "nome": "Mimikyu VMAX",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 300,
+  "categoria": "Pokémon",
+  "ilustrador": "Naoki Saito",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh9tg-TG18",
+  "numero": "TG18",
+  "nome": "Urshifu Golpe Decisivo V",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 220,
+  "categoria": "Pokémon",
+  "ilustrador": "Yuu Nishida",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh9tg-TG19",
+  "numero": "TG19",
+  "nome": "Urshifu Golpe Decisivo VMAX",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 330,
+  "categoria": "Pokémon",
+  "ilustrador": "kodama",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh9tg-TG20",
+  "numero": "TG20",
+  "nome": "Urshifu Golpe Fluido V",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 220,
+  "categoria": "Pokémon",
+  "ilustrador": "takuyoa",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh9tg-TG21",
+  "numero": "TG21",
+  "nome": "Urshifu Golpe Fluido VMAX",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 330,
+  "categoria": "Pokémon",
+  "ilustrador": "Scav",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh9tg-TG22",
+  "numero": "TG22",
+  "nome": "Umbreon V",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 200,
+  "categoria": "Pokémon",
+  "ilustrador": "Ligton",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh9tg-TG23",
+  "numero": "TG23",
+  "nome": "Umbreon VMAX",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 310,
+  "categoria": "Pokémon",
+  "ilustrador": "kawayoo",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh9tg-TG24",
+  "numero": "TG24",
+  "nome": "Premonição da Acerola",
+  "raridade": "Ultra Rara",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "yuu",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh9tg-TG25",
+  "numero": "TG25",
+  "nome": "Mestre do Café",
+  "raridade": "Ultra Rara",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Sanosuke Sakuma",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh9tg-TG26",
+  "numero": "TG26",
+  "nome": "Glória",
+  "raridade": "Ultra Rara",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Naoki Saito",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh9tg-TG27",
+  "numero": "TG27",
+  "nome": "Mostarda Estilo Golpe Fluido",
+  "raridade": "Ultra Rara",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "KIYOTAKA OSHIYAMA",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh9tg-TG28",
+  "numero": "TG28",
+  "nome": "Mostarda Estilo Golpe Decisivo",
+  "raridade": "Ultra Rara",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Souichirou Gunjima",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh9tg-TG29",
+  "numero": "TG29",
+  "nome": "Urshifu Golpe Decisivo VMAX",
+  "raridade": "Rare Secreta",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 330,
+  "categoria": "Pokémon",
+  "ilustrador": "PLANETA Tsuji",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh9tg-TG30",
+  "numero": "TG30",
+  "nome": "Urshifu Golpe Fluido VMAX",
+  "raridade": "Rare Secreta",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 330,
+  "categoria": "Pokémon",
+  "ilustrador": "PLANETA Tsuji",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ }
+]

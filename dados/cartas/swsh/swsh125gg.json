@@ -1,0 +1,1032 @@
+[
+ {
+  "id": "swsh12.5gg-GG01",
+  "numero": "GG01",
+  "nome": "Voltorb de Hisui",
+  "raridade": "Rara",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 50,
+  "categoria": "Pokémon",
+  "ilustrador": "HYOGONOSUKE",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG02",
+  "numero": "GG02",
+  "nome": "Kricketune",
+  "raridade": "Rara",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "Nurikabe",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG03",
+  "numero": "GG03",
+  "nome": "Magmortar",
+  "raridade": "Rara",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 140,
+  "categoria": "Pokémon",
+  "ilustrador": "Saya Tsuruta",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG04",
+  "numero": "GG04",
+  "nome": "Oricorio",
+  "raridade": "Rara",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "Tomokazu Komiya",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG05",
+  "numero": "GG05",
+  "nome": "Lapras",
+  "raridade": "Rara",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 130,
+  "categoria": "Pokémon",
+  "ilustrador": "zig",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG06",
+  "numero": "GG06",
+  "nome": "Manaphy",
+  "raridade": "Rara",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Taira Akitsu",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG07",
+  "numero": "GG07",
+  "nome": "Keldeo",
+  "raridade": "Rara",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 110,
+  "categoria": "Pokémon",
+  "ilustrador": "KEIICHIRO ITO",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG08",
+  "numero": "GG08",
+  "nome": "Electivire",
+  "raridade": "Rara",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 140,
+  "categoria": "Pokémon",
+  "ilustrador": "Mina Nakai",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG09",
+  "numero": "GG09",
+  "nome": "Toxtricity",
+  "raridade": "Rara",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 120,
+  "categoria": "Pokémon",
+  "ilustrador": "Nelnal",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG10",
+  "numero": "GG10",
+  "nome": "Mew",
+  "raridade": "Rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Ryota Murayama",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG11",
+  "numero": "GG11",
+  "nome": "Lunatone",
+  "raridade": "Rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "sowsow",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG12",
+  "numero": "GG12",
+  "nome": "Deoxys",
+  "raridade": "Rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 120,
+  "categoria": "Pokémon",
+  "ilustrador": "Scav",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG13",
+  "numero": "GG13",
+  "nome": "Diancie",
+  "raridade": "Rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "Haruko Ichikawa",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG14",
+  "numero": "GG14",
+  "nome": "Comfey",
+  "raridade": "Rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Yano Keiji",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG15",
+  "numero": "GG15",
+  "nome": "Solrock",
+  "raridade": "Rara",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "Nobuhiro Imagawa",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG16",
+  "numero": "GG16",
+  "nome": "Absol",
+  "raridade": "Rara",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 100,
+  "categoria": "Pokémon",
+  "ilustrador": "Uta",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG17",
+  "numero": "GG17",
+  "nome": "Thievul",
+  "raridade": "Rara",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 100,
+  "categoria": "Pokémon",
+  "ilustrador": "NC Empire",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG18",
+  "numero": "GG18",
+  "nome": "Magnezone",
+  "raridade": "Rara",
+  "tipos": [
+   "Metal"
+  ],
+  "ps": 150,
+  "categoria": "Pokémon",
+  "ilustrador": "Shinya Komatsu",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG19",
+  "numero": "GG19",
+  "nome": "Altaria",
+  "raridade": "Rara",
+  "tipos": [
+   "Dragão"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "Asako Ito",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG20",
+  "numero": "GG20",
+  "nome": "Latias",
+  "raridade": "Rara",
+  "tipos": [
+   "Dragão"
+  ],
+  "ps": 120,
+  "categoria": "Pokémon",
+  "ilustrador": "Teeziro",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG21",
+  "numero": "GG21",
+  "nome": "Goodra de Hisui",
+  "raridade": "Rara",
+  "tipos": [
+   "Dragão"
+  ],
+  "ps": 160,
+  "categoria": "Pokémon",
+  "ilustrador": "You Iribi",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG22",
+  "numero": "GG22",
+  "nome": "Ditto",
+  "raridade": "Rara",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Miki Tanaka",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG23",
+  "numero": "GG23",
+  "nome": "Dunsparce",
+  "raridade": "Rara",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Kurata So",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG24",
+  "numero": "GG24",
+  "nome": "Miltank",
+  "raridade": "Rara",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 110,
+  "categoria": "Pokémon",
+  "ilustrador": "Yuu Nishida",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG25",
+  "numero": "GG25",
+  "nome": "Bibarel",
+  "raridade": "Rara",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 120,
+  "categoria": "Pokémon",
+  "ilustrador": "Amelicart",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG26",
+  "numero": "GG26",
+  "nome": "Riolu",
+  "raridade": "Rara",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Kouki Saitou",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG27",
+  "numero": "GG27",
+  "nome": "Swablu",
+  "raridade": "Rara",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 50,
+  "categoria": "Pokémon",
+  "ilustrador": "Kouki Saitou",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG28",
+  "numero": "GG28",
+  "nome": "Duskull",
+  "raridade": "Rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Kouki Saitou",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG29",
+  "numero": "GG29",
+  "nome": "Bidoof",
+  "raridade": "Rara",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Kouki Saitou",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG30",
+  "numero": "GG30",
+  "nome": "Pikachu",
+  "raridade": "Rara",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Kouki Saitou",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG31",
+  "numero": "GG31",
+  "nome": "Turtwig",
+  "raridade": "Rara",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "Kouki Saitou",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG32",
+  "numero": "GG32",
+  "nome": "Paras",
+  "raridade": "Rara",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Kouki Saitou",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG33",
+  "numero": "GG33",
+  "nome": "Poochyena",
+  "raridade": "Rara",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Kouki Saitou",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG34",
+  "numero": "GG34",
+  "nome": "Mareep",
+  "raridade": "Rara",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Kouki Saitou",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG35",
+  "numero": "GG35",
+  "nome": "Leafeon V-ASTRO",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 260,
+  "categoria": "Pokémon",
+  "ilustrador": "Jiro Sasumo",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG36",
+  "numero": "GG36",
+  "nome": "Entei V",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 230,
+  "categoria": "Pokémon",
+  "ilustrador": "Shigenori Negishi",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG37",
+  "numero": "GG37",
+  "nome": "Simisear V-ASTRO",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 260,
+  "categoria": "Pokémon",
+  "ilustrador": "nagano",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG38",
+  "numero": "GG38",
+  "nome": "Suicune V",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 210,
+  "categoria": "Pokémon",
+  "ilustrador": "Atsushi Furusawa",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG39",
+  "numero": "GG39",
+  "nome": "Lumineon V",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 170,
+  "categoria": "Pokémon",
+  "ilustrador": "Jerky",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG40",
+  "numero": "GG40",
+  "nome": "Glaceon V-ASTRO",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 260,
+  "categoria": "Pokémon",
+  "ilustrador": "Gemi",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG41",
+  "numero": "GG41",
+  "nome": "Raikou V",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 200,
+  "categoria": "Pokémon",
+  "ilustrador": "nagimiso",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG42",
+  "numero": "GG42",
+  "nome": "Zeraora VMAX",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 320,
+  "categoria": "Pokémon",
+  "ilustrador": "aoki",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG43",
+  "numero": "GG43",
+  "nome": "Zeraora V-ASTRO",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 270,
+  "categoria": "Pokémon",
+  "ilustrador": "Ligton",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG44",
+  "numero": "GG44",
+  "nome": "Mewtwo V-ASTRO",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 280,
+  "categoria": "Pokémon",
+  "ilustrador": "GOSSAN",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG45",
+  "numero": "GG45",
+  "nome": "Deoxys VMAX",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 330,
+  "categoria": "Pokémon",
+  "ilustrador": "Akira Komayama",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG46",
+  "numero": "GG46",
+  "nome": "Deoxys V-ASTRO",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 270,
+  "categoria": "Pokémon",
+  "ilustrador": "DOM",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG47",
+  "numero": "GG47",
+  "nome": "Hatterene VMAX",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 320,
+  "categoria": "Pokémon",
+  "ilustrador": "sui",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG48",
+  "numero": "GG48",
+  "nome": "Zacian V",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 220,
+  "categoria": "Pokémon",
+  "ilustrador": "Hataya",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG49",
+  "numero": "GG49",
+  "nome": "Drapion V",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 210,
+  "categoria": "Pokémon",
+  "ilustrador": "Yuka Morii",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG50",
+  "numero": "GG50",
+  "nome": "Darkrai V-ASTRO",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 270,
+  "categoria": "Pokémon",
+  "ilustrador": "Pani Kobayashi",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG51",
+  "numero": "GG51",
+  "nome": "Samurott de Hisui V",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 220,
+  "categoria": "Pokémon",
+  "ilustrador": "kodama",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG52",
+  "numero": "GG52",
+  "nome": "Samurott de Hisui V-ASTRO",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 270,
+  "categoria": "Pokémon",
+  "ilustrador": "Shibuzoh.",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG53",
+  "numero": "GG53",
+  "nome": "Hoopa V",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 220,
+  "categoria": "Pokémon",
+  "ilustrador": "OKACHEKE",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG54",
+  "numero": "GG54",
+  "nome": "Zamazenta V",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Metal"
+  ],
+  "ps": 220,
+  "categoria": "Pokémon",
+  "ilustrador": "Haru Akasaka",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG55",
+  "numero": "GG55",
+  "nome": "Regigigas V-ASTRO",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 300,
+  "categoria": "Pokémon",
+  "ilustrador": "Aya Kusube",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG56",
+  "numero": "GG56",
+  "nome": "Zoroark de Hisui V-ASTRO",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 270,
+  "categoria": "Pokémon",
+  "ilustrador": "SIE NANAHARA",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG57",
+  "numero": "GG57",
+  "nome": "Ádamo",
+  "raridade": "Ultra Rara",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Naoki Saito",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG58",
+  "numero": "GG58",
+  "nome": "Cuidado do Cheren",
+  "raridade": "Ultra Rara",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "chibi",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG59",
+  "numero": "GG59",
+  "nome": "Experimento do Colress",
+  "raridade": "Ultra Rara",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "kantaro",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG60",
+  "numero": "GG60",
+  "nome": "Ambição da Cíntia",
+  "raridade": "Ultra Rara",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Atsuya Uki",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG61",
+  "numero": "GG61",
+  "nome": "Vigor da Gardênia",
+  "raridade": "Ultra Rara",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Yoriyuki Ikegami",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG62",
+  "numero": "GG62",
+  "nome": "Grant",
+  "raridade": "Ultra Rara",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Oswaldo KATO",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG63",
+  "numero": "GG63",
+  "nome": "Irida",
+  "raridade": "Ultra Rara",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Naoki Saito",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG64",
+  "numero": "GG64",
+  "nome": "Melony",
+  "raridade": "Ultra Rara",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "saino misaki",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG65",
+  "numero": "GG65",
+  "nome": "Roy",
+  "raridade": "Ultra Rara",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "GIDORA",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG66",
+  "numero": "GG66",
+  "nome": "Roxanne",
+  "raridade": "Ultra Rara",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Toshinao Aoki",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG67",
+  "numero": "GG67",
+  "nome": "Palkia Forma Origem V-ASTRO",
+  "raridade": "Rare Secreta",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 280,
+  "categoria": "Pokémon",
+  "ilustrador": "AKIRA EGAWA",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG68",
+  "numero": "GG68",
+  "nome": "Dialga Forma Origem V-ASTRO",
+  "raridade": "Rare Secreta",
+  "tipos": [
+   "Metal"
+  ],
+  "ps": 280,
+  "categoria": "Pokémon",
+  "ilustrador": "AKIRA EGAWA",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG69",
+  "numero": "GG69",
+  "nome": "Giratina V-ASTRO",
+  "raridade": "Rare Secreta",
+  "tipos": [
+   "Dragão"
+  ],
+  "ps": 280,
+  "categoria": "Pokémon",
+  "ilustrador": "AKIRA EGAWA",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "swsh12.5gg-GG70",
+  "numero": "GG70",
+  "nome": "Arceus V-ASTRO",
+  "raridade": "Rare Secreta",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 280,
+  "categoria": "Pokémon",
+  "ilustrador": "AKIRA EGAWA",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ }
+]

@@ -1,8 +1,8 @@
 // js/telas.js
-// Telas: início (séries) → série (coleções) → coleção (cartas)
+// Telas: início (jogos) → jogo (séries) → série (coleções) → coleção (cartas), e Minhas cartas
 // ============================================================
 // TELAS DO SITE
-// Fluxo: Início (séries) → Série (coleções) → Coleção (cartas)
+// Fluxo: Início (jogos: Pokémon, Yu-Gi-Oh!...) → Jogo (séries) → Série (coleções) → Coleção (cartas)
 // Cada tela é uma função que desenha o HTML dentro de <main id="app">.
 // Para mudar o visual de uma tela, mexa no HTML dentro da função dela;
 // para mudar cores/tamanhos, mexa nos arquivos da pasta css/.
@@ -14,71 +14,121 @@ var app = document.getElementById('app');
 function pad(n, l) { return ('0000' + n).slice(-(l || 3)); }
 function esc(t) { return String(t == null ? '' : t).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;'); }
 function barra(p) { return '<div class="barra"><i style="width:' + p + '%"></i></div>'; }
+function pct(n, t) { return t ? Math.round(n / t * 100) : 0; }
+// Deixa sublinhado o link do menu da tela atual (0 Início, 1 Séries, 2 Minhas cartas, 3 Estatísticas)
+function marcarMenu(n) {
+  [].forEach.call(document.querySelectorAll('.links a'), function (a, i) { a.classList.toggle('on', i === n); });
+}
 // Botão de uma coleção (usado na tela da série): logo, nome, data, progresso
 function botaoColecao(c) {
-  var p = Math.round(qtdTenho(c.id) / c.total * 100);
+  var p = pct(qtdTenho(c.id), c.total);
   return '<button class="colecao" onclick="telaColecao(\'' + c.id + '\')"><img src="assets/img/colecoes/' + c.serie + '/' + c.id + '.webp" alt="" onerror="logoAlt(this)"><h3>' + esc(c.nome) + '</h3><span class="sub">Lançamento: ' + dataBR(c.lancamento) + '</span><span class="sub">' + qtdTenho(c.id) + ' de ' + c.total + ' cartas · ' + p + '%</span>' + barra(p) + '</button>';
 }
-
-// TELA 1 – Início: destaque, estatísticas e botões das SÉRIES.
-// O parâmetro 'ir' rola a página até um bloco (ex.: 'series'). A busca filtra séries e coleções.
-function telaInicio(ir) {
-  var q = ((document.getElementById('busca') || {}).value || '').toLowerCase();
-  var lista = ESTADO.series.filter(function (s) {
-    return !q || s.nome.toLowerCase().indexOf(q) > -1 || s.colecoes.some(function (c) { return c.nome.toLowerCase().indexOf(q) > -1; });
-  });
-  var botoes = lista.map(function (s) {
-    var r = resumoSerie(s);
-    return '<button class="colecao serie-btn" onclick="telaSerie(\'' + s.id + '\')"><img src="assets/img/series/' + s.id + '.webp" alt="" onerror="this.remove()"><h3>' + esc(s.nome) + '</h3><span class="sub">' + s.colecoes.length + ' coleções</span><span class="sub">' + r.tenho + ' de ' + r.total + ' cartas · ' + r.pct + '%</span>' + barra(r.pct) + '</button>';
-  }).join('');
-  app.innerHTML = '<section class="hero"><div><small>SEU ESPAÇO DE COLECIONADOR</small><h1>Seu álbum.<span>Suas conquistas.</span></h1><p>Explore as séries e marque as cartas Pokémon que você já tem.</p><button class="btn" onclick="telaInicio(\'series\')">Explorar séries →</button></div><img src="assets/img/carddex-logo.png" alt=""></section>' +
-    '<div class="stats" id="stats"><div class="stat"><div>Séries disponíveis</div><b>' + pad(ESTADO.series.length, 2) + '</b></div><div class="stat"><div>Coleções disponíveis</div><b>' + pad(todasColecoes().length, 2) + '</b></div><div class="stat"><div>Cartas que você tem</div><b>' + totalTenho() + '</b></div></div>' +
-    '<h2 id="series">Séries</h2><div class="colecoes">' + (botoes || '<p>Nenhuma série ou coleção encontrada.</p>') + '</div>';
-  var alvo = ir && document.getElementById(ir);
-  if (alvo) alvo.scrollIntoView({ behavior: 'smooth' }); else window.scrollTo(0, 0);
+// Botão de uma série (usado na tela do jogo e na busca)
+function botaoSerie(s) {
+  var r = resumoSerie(s);
+  return '<button class="colecao serie-btn" onclick="telaSerie(\'' + s.id + '\')"><img src="assets/img/series/' + s.id + '.webp" alt="" onerror="this.remove()"><h3>' + esc(s.nome) + '</h3><span class="sub">' + s.colecoes.length + ' coleções</span><span class="sub">' + r.tenho + ' de ' + r.total + ' cartas · ' + r.pct + '%</span>' + barra(r.pct) + '</button>';
+}
+// Botão de um jogo (Pokémon, Yu-Gi-Oh!...). Ícones em assets/img/jogos/<id>.svg
+function botaoJogo(j) {
+  var series = seriesDoJogo(j.id);
+  return '<button class="colecao jogo-btn' + (series.length ? '' : ' em-breve') + '" onclick="telaJogo(\'' + j.id + '\')"><img src="assets/img/jogos/' + j.id + '.svg" alt="" onerror="this.remove()"><h3>' + esc(j.nome) + '</h3><span class="sub">' +
+    (series.length ? series.length + ' séries' : 'Em breve') + '</span></button>';
 }
 
-// TELA 2 – Série: lista as coleções da série, da mais nova para a mais antiga
-function telaSerie(id) {
-  var s = acharSerie(id);
-  app.innerHTML = '<h2><button class="voltar" onclick="telaInicio(\'series\')">← Séries</button></h2><h2 style="margin-top:0">' + esc(s.nome) + '</h2><span class="sub">Coleções da mais nova para a mais antiga</span><div class="colecoes">' + s.colecoes.map(botaoColecao).join('') + '</div>';
+// TELA 1 – Início: destaque, estatísticas e botões dos JOGOS.
+// O parâmetro 'ir' rola a página até um bloco (ex.: 'series'). Com algo na busca, mostra séries e coleções encontradas.
+function telaInicio(ir) {
+  ESTADO.redesenhar = null; marcarMenu(ir === 'series' ? 1 : ir === 'stats' ? 3 : 0);
+  var q = ((document.getElementById('busca') || {}).value || '').trim().toLowerCase(), blocos;
+  if (q) {
+    var achou = function (t) { return t.toLowerCase().indexOf(q) > -1; };
+    var ss = ESTADO.series.filter(function (s) { return achou(s.nome); });
+    var cs = todasColecoes().filter(function (c) { return achou(c.nome); });
+    blocos = '<h2 id="series">Resultados da busca</h2>' + (ss.length || cs.length ? '<div class="colecoes">' + ss.map(botaoSerie).join('') + cs.map(botaoColecao).join('') + '</div>' : '<p class="sub">Nenhuma série ou coleção encontrada.</p>');
+  } else blocos = '<h2 id="series">Séries</h2><span class="sub">Escolha o jogo de cartas</span><div class="colecoes jogos">' + ESTADO.jogos.map(botaoJogo).join('') + '</div>';
+  app.innerHTML = '<section class="hero"><div><small>SEU ESPAÇO DE COLECIONADOR</small><h1>Seu álbum.<span>Suas conquistas.</span></h1><p>Explore as séries e marque as cartas que você já tem.</p><button class="btn" onclick="telaInicio(\'series\')">Explorar séries →</button></div><img src="assets/img/carddex-logo.png" alt=""></section>' +
+    '<div class="stats" id="stats"><div class="stat"><div>Séries disponíveis</div><b>' + pad(ESTADO.series.length, 2) + '</b></div><div class="stat"><div>Coleções disponíveis</div><b>' + pad(todasColecoes().length, 2) + '</b></div><div class="stat"><div>Cartas que você tem</div><b>' + totalTenho() + '</b></div></div>' + blocos;
+  var alvo = ir && document.getElementById(ir);
+  if (alvo) alvo.scrollIntoView({ behavior: 'smooth' }); else if (!q) window.scrollTo(0, 0);
+}
+
+// TELA 2 – Jogo: séries do jogo, da mais nova para a mais antiga (ou "Em breve")
+function telaJogo(id) {
+  var j = acharJogo(id), series = seriesDoJogo(id);
+  ESTADO.redesenhar = null; marcarMenu(1);
+  app.innerHTML = '<h2><button class="voltar" onclick="telaInicio(\'series\')">← Séries</button></h2><div class="titulo-jogo"><img src="assets/img/jogos/' + j.id + '.svg" alt="" onerror="this.remove()"><h2>' + esc(j.nome) + '</h2></div>' +
+    (series.length ? '<span class="sub">Séries da mais nova para a mais antiga</span><div class="colecoes">' + series.map(botaoSerie).join('') + '</div>'
+      : '<div class="aviso">As cartas de ' + esc(j.nome) + ' ainda vão chegar ao CardDex. Fique de olho!</div>');
   window.scrollTo(0, 0);
 }
 
-// TELA 3 – Coleção: carrega as cartas (dados.js) e chama desenharColecao()
+// TELA 3 – Série: lista as coleções da série, da mais nova para a mais antiga
+function telaSerie(id) {
+  var s = acharSerie(id), j = acharJogo(s.jogo) || ESTADO.jogos[0];
+  ESTADO.redesenhar = null; marcarMenu(1);
+  app.innerHTML = '<h2><button class="voltar" onclick="telaJogo(\'' + j.id + '\')">← ' + esc(j.nome) + '</button></h2><h2 style="margin-top:0">' + esc(s.nome) + '</h2><span class="sub">Coleções da mais nova para a mais antiga</span><div class="colecoes">' + s.colecoes.map(botaoColecao).join('') + '</div>';
+  window.scrollTo(0, 0);
+}
+
+// TELA 4 – Coleção: carrega as cartas (dados.js) e chama desenharColecao()
 async function telaColecao(id) {
-  var c = acharColecao(id); ESTADO.atual = c;
+  var c = acharColecao(id); ESTADO.atual = c; ESTADO.raridade = ''; ESTADO.tipo = '';
+  ESTADO.redesenhar = desenharColecao; marcarMenu(1);
   var volta = '<h2><button class="voltar" onclick="telaSerie(\'' + c.serie + '\')">← ' + esc(acharSerie(c.serie).nome) + '</button></h2>';
   app.innerHTML = volta + '<p class="sub">Carregando cartas...</p>';
   try { await carregarCartas(c); desenharColecao(); }
   catch (e) { app.innerHTML = volta + '<div class="aviso">Não foi possível carregar as cartas desta coleção. Rode o script <b>scripts/baixar_cartas.py</b> ou verifique sua internet.</div>'; }
 }
 
-// Desenha a grade de cartas da coleção atual, respeitando o filtro (Todas / Tenho / Faltam).
-// Cada carta tem 2 botões: .abrir (abre a carta grande) e .check (marca que tem).
+// Cartas da coleção que passam nos filtros de raridade e tipo (sem olhar Tenho/Faltam)
+function cartasFiltradas(c) {
+  return ESTADO.cartas[c.id].filter(function (k) {
+    return (!ESTADO.raridade || k.raridade === ESTADO.raridade) && (!ESTADO.tipo || (k.tipos || []).indexOf(ESTADO.tipo) > -1 || k.categoria === ESTADO.tipo);
+  });
+}
+// Texto dos filtros ativos (ex.: "Ilustração Rara · Fogo"), usado também na imagem do WhatsApp
+function rotuloFiltros() { return [ESTADO.raridade, ESTADO.tipo].filter(Boolean).join(' · '); }
+// Caixa de seleção de um filtro; só aparece se a coleção tiver pelo menos 2 opções
+function seletor(rotulo, campo, opcoes) {
+  if (opcoes.length < 2) return '';
+  return '<label class="seletor"><span>' + rotulo + '</span><select onchange="ESTADO.' + campo + '=this.value;desenharColecao()"><option value="">Todas</option>' +
+    opcoes.map(function (o) { return '<option' + (ESTADO[campo] === o ? ' selected' : '') + '>' + esc(o) + '</option>'; }).join('') + '</select></label>';
+}
+function unicos(l) { return l.filter(function (x, i) { return x && l.indexOf(x) === i; }).sort(function (a, b) { return a.localeCompare(b, 'pt'); }); }
+
+// Uma carta na grade: .abrir (abre a carta grande) e .check (marca que tem)
+function cartaGrade(c, k, y) {
+  var src = k.mini || k.imagem;
+  return '<div class="carta' + (y ? ' tenho' : '') + '">' +
+    '<button class="abrir" onclick="abrirCarta(\'' + c.id + '\',\'' + k.id + '\')" title="Ver ' + esc(k.nome) + '">' +
+    (src ? '<img loading="lazy" src="' + esc(src) + '" alt="' + esc(k.nome) + '">' : '<span>' + esc(k.numero) + '</span>') + '</button>' +
+    '<button class="check" onclick="marcarRapido(this,\'' + c.id + '\',\'' + k.id + '\')" aria-label="Marcar ' + esc(k.nome) + ' como tenho" title="Marcar como tenho">' + (y ? '✓' : '') + '</button></div>';
+}
+
+// Desenha a grade de cartas da coleção atual, respeitando os filtros (Todas / Tenho / Faltam, raridade e tipo).
 function desenharColecao() {
   var c = ESTADO.atual, s = acharSerie(c.serie), lista = ESTADO.cartas[c.id], meu = ESTADO.tenho[c.id] || [];
-  var html = lista.filter(function (k) {
+  var html = cartasFiltradas(c).filter(function (k) {
     var y = meu.indexOf(k.id) > -1;
     return ESTADO.filtro === 'todas' || (ESTADO.filtro === 'tenho' ? y : !y);
-  }).map(function (k) {
-    var y = meu.indexOf(k.id) > -1, src = k.mini || k.imagem;
-    return '<div class="carta' + (y ? ' tenho' : '') + '">' +
-      '<button class="abrir" onclick="abrirCarta(\'' + c.id + '\',\'' + k.id + '\')" title="Ver ' + esc(k.nome) + '">' +
-      (src ? '<img loading="lazy" src="' + esc(src) + '" alt="' + esc(k.nome) + '">' : '<span>' + esc(k.numero) + '</span>') + '</button>' +
-      '<button class="check" onclick="marcarRapido(this,\'' + c.id + '\',\'' + k.id + '\')" aria-label="Marcar ' + esc(k.nome) + ' como tenho" title="Marcar como tenho">' + (y ? '✓' : '') + '</button></div>';
-  }).join('');
-  var p = Math.round(meu.length / lista.length * 100);
-  app.innerHTML = '<h2><button class="voltar" onclick="telaSerie(\'' + s.id + '\')">← ' + esc(s.nome) + '</button></h2><h2 style="margin-top:0">' + esc(c.nome) + '</h2><span class="sub" id="prog-txt"></span><div class="barra"><i id="prog-bar" style="width:' + p + '%"></i></div>' +
+  }).map(function (k) { return cartaGrade(c, k, meu.indexOf(k.id) > -1); }).join('');
+  var rar = unicos(lista.map(function (k) { return k.raridade; }));
+  var tip = unicos([].concat.apply([], lista.map(function (k) { return (k.tipos || []).length ? k.tipos : [k.categoria]; })));
+  app.innerHTML = '<h2><button class="voltar" onclick="telaSerie(\'' + s.id + '\')">← ' + esc(s.nome) + '</button></h2><h2 style="margin-top:0">' + esc(c.nome) + '</h2><span class="sub" id="prog-txt"></span><div class="barra"><i id="prog-bar" style="width:' + pct(meu.length, lista.length) + '%"></i></div>' +
     (c.obs ? '<div class="aviso">' + esc(c.obs) + '</div>' : '') + '<div class="filtros">' + [['todas', 'Todas'], ['tenho', 'Tenho'], ['faltam', 'Faltam']].map(function (f) { return '<button class="' + (ESTADO.filtro === f[0] ? 'on' : '') + '" onclick="ESTADO.filtro=\'' + f[0] + '\';desenharColecao()">' + f[1] + '</button>'; }).join('') + '</div>' +
-    '<button class="btn btn-sec btn-compartilhar" onclick="abrirCompartilhar()">Compartilhar cartas que faltam</button><div class="grade">' + html + '</div>';
+    '<div class="filtros-extra">' + seletor('Raridade', 'raridade', rar) + seletor('Tipo', 'tipo', tip) + '</div>' +
+    '<button class="btn btn-sec btn-compartilhar" onclick="abrirCompartilhar()">Compartilhar cartas que faltam</button>' +
+    (html ? '<div class="grade">' + html + '</div>' : '<p class="sub">Nenhuma carta com esses filtros.</p>');
   atualizarProgresso();
 }
 
-// Atualiza o texto e a barra de progresso sem redesenhar a página
+// Atualiza o texto e a barra de progresso sem redesenhar a página (só na tela da coleção)
 function atualizarProgresso() {
-  var c = ESTADO.atual, n = qtdTenho(c.id), t = ESTADO.cartas[c.id].length, p = Math.round(n / t * 100);
-  document.getElementById('prog-txt').textContent = n + ' de ' + t + ' cartas · ' + p + '%';
+  var txt = document.getElementById('prog-txt');
+  if (!txt) return;
+  var c = ESTADO.atual, n = qtdTenho(c.id), t = ESTADO.cartas[c.id].length, p = pct(n, t);
+  txt.textContent = n + ' de ' + t + ' cartas · ' + p + '%';
   document.getElementById('prog-bar').style.width = p + '%';
 }
 
@@ -88,9 +138,64 @@ function marcarRapido(el, colId, cartaId) {
   if (i > -1) l.splice(i, 1); else l.push(cartaId);
   ESTADO.tenho[colId] = l; salvarTenho();
   var y = i < 0, caixa = el.parentNode;
-  if (ESTADO.filtro !== 'todas') caixa.remove();
+  if (ESTADO.redesenhar === desenharColecao && ESTADO.filtro !== 'todas') caixa.remove();
   else { caixa.classList.toggle('tenho', y); el.textContent = y ? '✓' : ''; }
   atualizarProgresso();
+}
+
+// TELA – Minhas cartas: só as cartas marcadas, separadas por coleção, + backup (exportar/importar)
+async function telaMinhas() {
+  ESTADO.redesenhar = desenharMinhas; marcarMenu(2);
+  app.innerHTML = '<h2>Minhas cartas</h2><p class="sub">Carregando...</p>';
+  var cols = todasColecoes().filter(function (c) { return qtdTenho(c.id); });
+  await Promise.all(cols.map(function (c) { return carregarCartas(c).catch(function () {}); }));
+  if (ESTADO.redesenhar === desenharMinhas) desenharMinhas();
+}
+function desenharMinhas() {
+  var blocos = ESTADO.series.map(function (s) {
+    return s.colecoes.filter(function (c) { return qtdTenho(c.id) && ESTADO.cartas[c.id]; }).map(function (c) {
+      var meu = ESTADO.tenho[c.id], l = ESTADO.cartas[c.id].filter(function (k) { return meu.indexOf(k.id) > -1; });
+      return '<section class="minhas-col"><button class="voltar" onclick="telaColecao(\'' + c.id + '\')"><h3>' + esc(c.nome) + '</h3></button><span class="sub">' + esc(s.nome) + ' · ' + meu.length + ' de ' + ESTADO.cartas[c.id].length + ' cartas</span>' +
+        '<div class="grade">' + l.map(function (k) { return cartaGrade(c, k, true); }).join('') + '</div></section>';
+    }).join('');
+  }).join('');
+  app.innerHTML = '<h2>Minhas cartas</h2><span class="sub">' + totalTenho() + ' cartas marcadas. Clique no nome da coleção para ver todas as cartas dela.</span>' +
+    '<div class="backup"><div><b>Backup da coleção</b><span class="sub">As marcações ficam salvas só neste navegador. Exporte um arquivo para não perder nada ou para levar para outro aparelho.</span></div>' +
+    '<div class="backup-acoes"><button class="btn" onclick="exportarColecao()">Exportar backup</button><button class="btn btn-sec" onclick="this.nextElementSibling.click()">Importar backup</button><input type="file" accept=".json,application/json" onchange="importarColecao(this)" hidden></div><p class="sub" id="backup-msg" role="status"></p></div>' +
+    (blocos || '<div class="aviso">Você ainda não marcou nenhuma carta. Abra uma coleção e toque no círculo da carta para marcar.</div>');
+}
+
+// BACKUP: baixa um .json com todas as marcações
+function exportarColecao() {
+  var dados = { app: 'CardDex', versao: 1, exportado: new Date().toISOString(), tenho: ESTADO.tenho };
+  var url = URL.createObjectURL(new Blob([JSON.stringify(dados, null, 1)], { type: 'application/json' }));
+  var a = document.createElement('a'); a.href = url; a.download = 'carddex-backup-' + new Date().toISOString().slice(0, 10) + '.json';
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+  document.getElementById('backup-msg').textContent = 'Backup exportado com ' + totalTenho() + ' cartas.';
+}
+// Lê um backup e JUNTA com as marcações atuais (nada que você já marcou é apagado)
+function importarColecao(input) {
+  var arq = input.files[0], msg = document.getElementById('backup-msg');
+  if (!arq) return;
+  var r = new FileReader();
+  r.onload = function () {
+    var d; try { d = JSON.parse(r.result); } catch (e) { d = null; }
+    if (!d || d.app !== 'CardDex' || typeof d.tenho !== 'object') { msg.textContent = 'Este arquivo não é um backup do CardDex.'; return; }
+    var novas = 0;
+    Object.keys(d.tenho).forEach(function (col) {
+      if (!Array.isArray(d.tenho[col])) return;
+      var l = ESTADO.tenho[col] || (ESTADO.tenho[col] = []);
+      d.tenho[col].forEach(function (id) { if (typeof id === 'string' && l.indexOf(id) < 0) { l.push(id); novas++; } });
+    });
+    salvarTenho();
+    telaMinhas().then(function () {
+      var m = document.getElementById('backup-msg');
+      if (m) m.textContent = novas ? novas + ' cartas importadas.' : 'Nenhuma carta nova: tudo do backup já estava marcado.';
+    });
+  };
+  r.readAsText(arq);
+  input.value = '';
 }
 
 // Se o logo .webp da coleção não existir, tenta o .svg; se também não existir, esconde a imagem

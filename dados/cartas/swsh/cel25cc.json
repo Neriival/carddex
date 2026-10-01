@@ -1,0 +1,371 @@
+[
+ {
+  "id": "cel25cc-CC001",
+  "numero": "CC001",
+  "nome": "Blastoise",
+  "raridade": "Classic Collection",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 100,
+  "categoria": "Pokémon",
+  "ilustrador": "Ken Sugimori",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "cel25cc-CC002",
+  "numero": "CC002",
+  "nome": "Charizard",
+  "raridade": "Classic Collection",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 120,
+  "categoria": "Pokémon",
+  "ilustrador": "Mitsuhiro Arita",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "cel25cc-CC003",
+  "numero": "CC003",
+  "nome": "Venusaur",
+  "raridade": "Classic Collection",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 100,
+  "categoria": "Pokémon",
+  "ilustrador": "Mitsuhiro Arita",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "cel25cc-CC004",
+  "numero": "CC004",
+  "nome": "Imposter Professor Oak",
+  "raridade": "Classic Collection",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Ken Sugimori",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "cel25cc-CC005",
+  "numero": "CC005",
+  "nome": "Dark Gyarados",
+  "raridade": "Classic Collection",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Kagemaru Himeno",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "cel25cc-CC006",
+  "numero": "CC006",
+  "nome": "Here Comes Team Rocket!",
+  "raridade": "Classic Collection",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Ken Sugimori",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "cel25cc-CC007",
+  "numero": "CC007",
+  "nome": "Rocket's Zapdos",
+  "raridade": "Classic Collection",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Shin-ichi Yoshida",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "cel25cc-CC008",
+  "numero": "CC008",
+  "nome": "_____'s Pikachu",
+  "raridade": "Classic Collection",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 50,
+  "categoria": "Pokémon",
+  "ilustrador": "Kagemaru Himeno",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "cel25cc-CC009",
+  "numero": "CC009",
+  "nome": "Cleffa",
+  "raridade": "Classic Collection",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 30,
+  "categoria": "Pokémon",
+  "ilustrador": "Kagemaru Himeno",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "cel25cc-CC010",
+  "numero": "CC010",
+  "nome": "Shining Magikarp",
+  "raridade": "Classic Collection",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 30,
+  "categoria": "Pokémon",
+  "ilustrador": "Ken Sugimori",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "cel25cc-CC011",
+  "numero": "CC011",
+  "nome": "Team Magma's Groudon",
+  "raridade": "Classic Collection",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 100,
+  "categoria": "Pokémon",
+  "ilustrador": "Kazuo Yazawa",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "cel25cc-CC012",
+  "numero": "CC012",
+  "nome": "Rocket's Admin.",
+  "raridade": "Classic Collection",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Ken Sugimori",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "cel25cc-CC013",
+  "numero": "CC013",
+  "nome": "Mew ex",
+  "raridade": "Classic Collection",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "Ryo Ueda",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "cel25cc-CC014",
+  "numero": "CC014",
+  "nome": "Gardevoir ex",
+  "raridade": "Classic Collection",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 150,
+  "categoria": "Pokémon",
+  "ilustrador": "Masahiko Ishii",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "cel25cc-CC015",
+  "numero": "CC015",
+  "nome": "Umbreon ☆",
+  "raridade": "Classic Collection",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Masakazu Fukuda",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "cel25cc-CC016",
+  "numero": "CC016",
+  "nome": "Claydol",
+  "raridade": "Classic Collection",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "Midori Harada",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "cel25cc-CC017",
+  "numero": "CC017",
+  "nome": "Luxray GL LV.X",
+  "raridade": "Classic Collection",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 110,
+  "categoria": "Pokémon",
+  "ilustrador": "Mitsuhiro Arita",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "cel25cc-CC018",
+  "numero": "CC018",
+  "nome": "Garchomp C LV.X",
+  "raridade": "Classic Collection",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 110,
+  "categoria": "Pokémon",
+  "ilustrador": "Shizurow",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "cel25cc-CC019",
+  "numero": "CC019",
+  "nome": "Donphan",
+  "raridade": "Classic Collection",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 120,
+  "categoria": "Pokémon",
+  "ilustrador": "Kent Kanetsuna",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "cel25cc-CC020",
+  "numero": "CC020",
+  "nome": "Reshiram",
+  "raridade": "Classic Collection",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 130,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "cel25cc-CC021",
+  "numero": "CC021",
+  "nome": "Zekrom",
+  "raridade": "Classic Collection",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 130,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "cel25cc-CC022",
+  "numero": "CC022",
+  "nome": "Mewtwo EX",
+  "raridade": "Classic Collection",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 170,
+  "categoria": "Pokémon",
+  "ilustrador": "Shizurow",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "cel25cc-CC023",
+  "numero": "CC023",
+  "nome": "Xerneas EX",
+  "raridade": "Classic Collection",
+  "tipos": [
+   "Fada"
+  ],
+  "ps": 170,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "cel25cc-CC024",
+  "numero": "CC024",
+  "nome": "M Rayquaza EX",
+  "raridade": "Classic Collection",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 220,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "cel25cc-CC025",
+  "numero": "CC025",
+  "nome": "Tapu Lele GX",
+  "raridade": "Classic Collection",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 170,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ }
+]

@@ -1,0 +1,3434 @@
+[
+ {
+  "id": "sm10-1",
+  "numero": "001",
+  "nome": "Pheromosa e Buzzwole GX",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 260,
+  "categoria": "Pokémon",
+  "ilustrador": "Mitsuhiro Arita",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/1/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/001-mini.webp"
+ },
+ {
+  "id": "sm10-2",
+  "numero": "002",
+  "nome": "Caterpie",
+  "raridade": "Comum",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 40,
+  "categoria": "Pokémon",
+  "ilustrador": "Shibuzoh.",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/2/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/002-mini.webp"
+ },
+ {
+  "id": "sm10-3",
+  "numero": "003",
+  "nome": "Metapod",
+  "raridade": "Incomum",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Shigenori Negishi",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/3/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/003-mini.webp"
+ },
+ {
+  "id": "sm10-4",
+  "numero": "004",
+  "nome": "Butterfree",
+  "raridade": "Rara",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 130,
+  "categoria": "Pokémon",
+  "ilustrador": "Midori Harada",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/4/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/004-mini.webp"
+ },
+ {
+  "id": "sm10-5",
+  "numero": "005",
+  "nome": "Oddish",
+  "raridade": "Comum",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 50,
+  "categoria": "Pokémon",
+  "ilustrador": "0313",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/5/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/005-mini.webp"
+ },
+ {
+  "id": "sm10-6",
+  "numero": "006",
+  "nome": "Oddish",
+  "raridade": "Comum",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Asako Ito",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/6/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/006-mini.webp"
+ },
+ {
+  "id": "sm10-7",
+  "numero": "007",
+  "nome": "Gloom",
+  "raridade": "Incomum",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "Anesaki Dynamic",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/7/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/007-mini.webp"
+ },
+ {
+  "id": "sm10-8",
+  "numero": "008",
+  "nome": "Vileplume",
+  "raridade": "Rara",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 140,
+  "categoria": "Pokémon",
+  "ilustrador": "Suwama Chiaki",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/8/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/008-mini.webp"
+ },
+ {
+  "id": "sm10-9",
+  "numero": "009",
+  "nome": "Venonat",
+  "raridade": "Comum",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "kirisAki",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/9/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/009-mini.webp"
+ },
+ {
+  "id": "sm10-10",
+  "numero": "010",
+  "nome": "Venonat",
+  "raridade": "Comum",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Yuka Morii",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/10/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/010-mini.webp"
+ },
+ {
+  "id": "sm10-11",
+  "numero": "011",
+  "nome": "Venomoth",
+  "raridade": "Rara",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "Mina Nakai",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/11/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/011-mini.webp"
+ },
+ {
+  "id": "sm10-12",
+  "numero": "012",
+  "nome": "Venomoth GX",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 200,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/12/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/012-mini.webp"
+ },
+ {
+  "id": "sm10-13",
+  "numero": "013",
+  "nome": "Bellsprout",
+  "raridade": "Comum",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 50,
+  "categoria": "Pokémon",
+  "ilustrador": "Ken Sugimori",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/13/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/013-mini.webp"
+ },
+ {
+  "id": "sm10-14",
+  "numero": "014",
+  "nome": "Weepinbell",
+  "raridade": "Incomum",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "otumami",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/14/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/014-mini.webp"
+ },
+ {
+  "id": "sm10-15",
+  "numero": "015",
+  "nome": "Victreebel",
+  "raridade": "Rara",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 140,
+  "categoria": "Pokémon",
+  "ilustrador": "Anesaki Dynamic",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/15/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/015-mini.webp"
+ },
+ {
+  "id": "sm10-16",
+  "numero": "016",
+  "nome": "Tangela",
+  "raridade": "Comum",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "Naoyo Kimura",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/16/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/016-mini.webp"
+ },
+ {
+  "id": "sm10-17",
+  "numero": "017",
+  "nome": "Tangrowth",
+  "raridade": "Rara",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 130,
+  "categoria": "Pokémon",
+  "ilustrador": "kodama",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/17/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/017-mini.webp"
+ },
+ {
+  "id": "sm10-18",
+  "numero": "018",
+  "nome": "Grubbin",
+  "raridade": "Comum",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Yuka Morii",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/18/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/018-mini.webp"
+ },
+ {
+  "id": "sm10-19",
+  "numero": "019",
+  "nome": "Kartana",
+  "raridade": "Rara",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Shin Nagasawa",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/19/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/019-mini.webp"
+ },
+ {
+  "id": "sm10-20",
+  "numero": "020",
+  "nome": "Reshiram e Charizard GX",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 270,
+  "categoria": "Pokémon",
+  "ilustrador": "Mitsuhiro Arita",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/20/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/020-mini.webp"
+ },
+ {
+  "id": "sm10-21",
+  "numero": "021",
+  "nome": "Growlithe",
+  "raridade": "Comum",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "tetsuya koizumi",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/21/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/021-mini.webp"
+ },
+ {
+  "id": "sm10-22",
+  "numero": "022",
+  "nome": "Arcanine",
+  "raridade": "Rara",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 140,
+  "categoria": "Pokémon",
+  "ilustrador": "Shin Nagasawa",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/22/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/022-mini.webp"
+ },
+ {
+  "id": "sm10-23",
+  "numero": "023",
+  "nome": "Darumaka",
+  "raridade": "Comum",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "Yuka Morii",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/23/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/023-mini.webp"
+ },
+ {
+  "id": "sm10-24",
+  "numero": "024",
+  "nome": "Darmanitan",
+  "raridade": "Rara",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 130,
+  "categoria": "Pokémon",
+  "ilustrador": "Midori Harada",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/24/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/024-mini.webp"
+ },
+ {
+  "id": "sm10-25",
+  "numero": "025",
+  "nome": "Volcanion",
+  "raridade": "Rara",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 120,
+  "categoria": "Pokémon",
+  "ilustrador": "Satoshi Shirai",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/25/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/025-mini.webp"
+ },
+ {
+  "id": "sm10-26",
+  "numero": "026",
+  "nome": "Litten",
+  "raridade": "Comum",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 50,
+  "categoria": "Pokémon",
+  "ilustrador": "0313",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/26/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/026-mini.webp"
+ },
+ {
+  "id": "sm10-27",
+  "numero": "027",
+  "nome": "Litten",
+  "raridade": "Comum",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Atsuko Nishida",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/27/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/027-mini.webp"
+ },
+ {
+  "id": "sm10-28",
+  "numero": "028",
+  "nome": "Torracat",
+  "raridade": "Incomum",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "tetsuya koizumi",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/28/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/028-mini.webp"
+ },
+ {
+  "id": "sm10-29",
+  "numero": "029",
+  "nome": "Incineroar",
+  "raridade": "Rara",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 160,
+  "categoria": "Pokémon",
+  "ilustrador": "Misa Tsutsui",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/29/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/029-mini.webp"
+ },
+ {
+  "id": "sm10-30",
+  "numero": "030",
+  "nome": "Salandit",
+  "raridade": "Comum",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Yusuke Ohmura",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/30/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/030-mini.webp"
+ },
+ {
+  "id": "sm10-31",
+  "numero": "031",
+  "nome": "Salazzle",
+  "raridade": "Rara",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 100,
+  "categoria": "Pokémon",
+  "ilustrador": "hatachu",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/31/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/031-mini.webp"
+ },
+ {
+  "id": "sm10-32",
+  "numero": "032",
+  "nome": "Blacephalon",
+  "raridade": "Rara",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 120,
+  "categoria": "Pokémon",
+  "ilustrador": "kawayoo",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/32/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/032-mini.webp"
+ },
+ {
+  "id": "sm10-33",
+  "numero": "033",
+  "nome": "Squirtle",
+  "raridade": "Comum",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "tetsuya koizumi",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/33/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/033-mini.webp"
+ },
+ {
+  "id": "sm10-34",
+  "numero": "034",
+  "nome": "Wartortle",
+  "raridade": "Incomum",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Hiroki Asanuma",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/34/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/034-mini.webp"
+ },
+ {
+  "id": "sm10-35",
+  "numero": "035",
+  "nome": "Blastoise GX",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 240,
+  "categoria": "Pokémon",
+  "ilustrador": "sadaji",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/35/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/035-mini.webp"
+ },
+ {
+  "id": "sm10-36",
+  "numero": "036",
+  "nome": "Poliwag",
+  "raridade": "Comum",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 50,
+  "categoria": "Pokémon",
+  "ilustrador": "Midori Harada",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/36/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/036-mini.webp"
+ },
+ {
+  "id": "sm10-37",
+  "numero": "037",
+  "nome": "Poliwag",
+  "raridade": "Comum",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Shibuzoh.",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/37/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/037-mini.webp"
+ },
+ {
+  "id": "sm10-38",
+  "numero": "038",
+  "nome": "Poliwhirl",
+  "raridade": "Incomum",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "Yukiko Baba",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/38/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/038-mini.webp"
+ },
+ {
+  "id": "sm10-39",
+  "numero": "039",
+  "nome": "Poliwrath",
+  "raridade": "Rara",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 150,
+  "categoria": "Pokémon",
+  "ilustrador": "Akira Komayama",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/39/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/039-mini.webp"
+ },
+ {
+  "id": "sm10-40",
+  "numero": "040",
+  "nome": "Tentacool",
+  "raridade": "Comum",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Shin Nagasawa",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/40/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/040-mini.webp"
+ },
+ {
+  "id": "sm10-41",
+  "numero": "041",
+  "nome": "Tentacruel",
+  "raridade": "Incomum",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 100,
+  "categoria": "Pokémon",
+  "ilustrador": "Shigenori Negishi",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/41/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/041-mini.webp"
+ },
+ {
+  "id": "sm10-42",
+  "numero": "042",
+  "nome": "Slowpoke",
+  "raridade": "Comum",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Kouki Saitou",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/42/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/042-mini.webp"
+ },
+ {
+  "id": "sm10-43",
+  "numero": "043",
+  "nome": "Slowbro",
+  "raridade": "Rara",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 120,
+  "categoria": "Pokémon",
+  "ilustrador": "Ken Sugimori",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/43/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/043-mini.webp"
+ },
+ {
+  "id": "sm10-44",
+  "numero": "044",
+  "nome": "Seel",
+  "raridade": "Comum",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "Sumiyoshi Kizuki",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/44/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/044-mini.webp"
+ },
+ {
+  "id": "sm10-45",
+  "numero": "045",
+  "nome": "Dewgong",
+  "raridade": "Rara",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 120,
+  "categoria": "Pokémon",
+  "ilustrador": "Kagemaru Himeno",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/45/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/045-mini.webp"
+ },
+ {
+  "id": "sm10-46",
+  "numero": "046",
+  "nome": "Krabby",
+  "raridade": "Comum",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Sekio",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/46/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/046-mini.webp"
+ },
+ {
+  "id": "sm10-47",
+  "numero": "047",
+  "nome": "Kingler",
+  "raridade": "Rara",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 130,
+  "categoria": "Pokémon",
+  "ilustrador": "Shigenori Negishi",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/47/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/047-mini.webp"
+ },
+ {
+  "id": "sm10-48",
+  "numero": "048",
+  "nome": "Goldeen",
+  "raridade": "Comum",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Naoyo Kimura",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/48/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/048-mini.webp"
+ },
+ {
+  "id": "sm10-49",
+  "numero": "049",
+  "nome": "Seaking",
+  "raridade": "Rara",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 100,
+  "categoria": "Pokémon",
+  "ilustrador": "Midori Harada",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/49/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/049-mini.webp"
+ },
+ {
+  "id": "sm10-50",
+  "numero": "050",
+  "nome": "Kyurem",
+  "raridade": "Rara",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 130,
+  "categoria": "Pokémon",
+  "ilustrador": "Anesaki Dynamic",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/50/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/050-mini.webp"
+ },
+ {
+  "id": "sm10-51",
+  "numero": "051",
+  "nome": "Froakie",
+  "raridade": "Comum",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Kyoko Umemoto",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/51/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/051-mini.webp"
+ },
+ {
+  "id": "sm10-52",
+  "numero": "052",
+  "nome": "Frogadier",
+  "raridade": "Incomum",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "Satoshi Shirai",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/52/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/052-mini.webp"
+ },
+ {
+  "id": "sm10-53",
+  "numero": "053",
+  "nome": "Pyukumuku",
+  "raridade": "Incomum",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Asako Ito",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/53/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/053-mini.webp"
+ },
+ {
+  "id": "sm10-54",
+  "numero": "054",
+  "nome": "Pikachu",
+  "raridade": "Comum",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "nagimiso",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/54/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/054-mini.webp"
+ },
+ {
+  "id": "sm10-55",
+  "numero": "055",
+  "nome": "Raichu",
+  "raridade": "Rara",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 120,
+  "categoria": "Pokémon",
+  "ilustrador": "Shin Nagasawa",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/55/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/055-mini.webp"
+ },
+ {
+  "id": "sm10-56",
+  "numero": "056",
+  "nome": "Stunfisk",
+  "raridade": "Rara",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 110,
+  "categoria": "Pokémon",
+  "ilustrador": "sowsow",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/56/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/056-mini.webp"
+ },
+ {
+  "id": "sm10-57",
+  "numero": "057",
+  "nome": "Dedenne GX",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 160,
+  "categoria": "Pokémon",
+  "ilustrador": "PLANETA Igarashi",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/57/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/057-mini.webp"
+ },
+ {
+  "id": "sm10-58",
+  "numero": "058",
+  "nome": "Charjabug",
+  "raridade": "Incomum",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "Sekio",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/58/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/058-mini.webp"
+ },
+ {
+  "id": "sm10-59",
+  "numero": "059",
+  "nome": "Vikavolt",
+  "raridade": "Rara",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 150,
+  "categoria": "Pokémon",
+  "ilustrador": "Hasuno",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/59/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/059-mini.webp"
+ },
+ {
+  "id": "sm10-60",
+  "numero": "060",
+  "nome": "Zeraora",
+  "raridade": "Rara",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 120,
+  "categoria": "Pokémon",
+  "ilustrador": "kawayoo",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/60/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/060-mini.webp"
+ },
+ {
+  "id": "sm10-61",
+  "numero": "061",
+  "nome": "Muk e Muk de Alola GX",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 270,
+  "categoria": "Pokémon",
+  "ilustrador": "Mitsuhiro Arita",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/61/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/061-mini.webp"
+ },
+ {
+  "id": "sm10-62",
+  "numero": "062",
+  "nome": "Ekans",
+  "raridade": "Comum",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Yumi",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/62/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/062-mini.webp"
+ },
+ {
+  "id": "sm10-63",
+  "numero": "063",
+  "nome": "Arbok",
+  "raridade": "Rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 120,
+  "categoria": "Pokémon",
+  "ilustrador": "Yukiko Baba",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/63/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/063-mini.webp"
+ },
+ {
+  "id": "sm10-64",
+  "numero": "064",
+  "nome": "Zubat",
+  "raridade": "Comum",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 50,
+  "categoria": "Pokémon",
+  "ilustrador": "Sekio",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/64/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/064-mini.webp"
+ },
+ {
+  "id": "sm10-65",
+  "numero": "065",
+  "nome": "Golbat",
+  "raridade": "Incomum",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "Shin Nagasawa",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/65/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/065-mini.webp"
+ },
+ {
+  "id": "sm10-66",
+  "numero": "066",
+  "nome": "Crobat",
+  "raridade": "Rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 130,
+  "categoria": "Pokémon",
+  "ilustrador": "Anesaki Dynamic",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/66/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/066-mini.webp"
+ },
+ {
+  "id": "sm10-67",
+  "numero": "067",
+  "nome": "Gastly",
+  "raridade": "Comum",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 40,
+  "categoria": "Pokémon",
+  "ilustrador": "chibi",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/67/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/067-mini.webp"
+ },
+ {
+  "id": "sm10-68",
+  "numero": "068",
+  "nome": "Gastly",
+  "raridade": "Comum",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "MAHOU",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/68/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/068-mini.webp"
+ },
+ {
+  "id": "sm10-69",
+  "numero": "069",
+  "nome": "Haunter",
+  "raridade": "Incomum",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Miki Tanaka",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/69/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/069-mini.webp"
+ },
+ {
+  "id": "sm10-70",
+  "numero": "070",
+  "nome": "Gengar",
+  "raridade": "Rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 130,
+  "categoria": "Pokémon",
+  "ilustrador": "so-taro",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/70/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/070-mini.webp"
+ },
+ {
+  "id": "sm10-71",
+  "numero": "071",
+  "nome": "Drowzee",
+  "raridade": "Comum",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Miki Tanaka",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/71/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/071-mini.webp"
+ },
+ {
+  "id": "sm10-72",
+  "numero": "072",
+  "nome": "Hypno",
+  "raridade": "Rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 110,
+  "categoria": "Pokémon",
+  "ilustrador": "sui",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/72/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/072-mini.webp"
+ },
+ {
+  "id": "sm10-73",
+  "numero": "073",
+  "nome": "Koffing",
+  "raridade": "Comum",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Mizue",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/73/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/073-mini.webp"
+ },
+ {
+  "id": "sm10-74",
+  "numero": "074",
+  "nome": "Weezing",
+  "raridade": "Rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 120,
+  "categoria": "Pokémon",
+  "ilustrador": "OOYAMA",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/74/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/074-mini.webp"
+ },
+ {
+  "id": "sm10-75",
+  "numero": "075",
+  "nome": "Mewtwo",
+  "raridade": "Rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 120,
+  "categoria": "Pokémon",
+  "ilustrador": "Shin Nagasawa",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/75/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/075-mini.webp"
+ },
+ {
+  "id": "sm10-76",
+  "numero": "076",
+  "nome": "Mew",
+  "raridade": "Rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "sui",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/76/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/076-mini.webp"
+ },
+ {
+  "id": "sm10-77",
+  "numero": "077",
+  "nome": "Misdreavus",
+  "raridade": "Comum",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Miki Tanaka",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/77/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/077-mini.webp"
+ },
+ {
+  "id": "sm10-78",
+  "numero": "078",
+  "nome": "Mismagius",
+  "raridade": "Rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 110,
+  "categoria": "Pokémon",
+  "ilustrador": "sui",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/78/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/078-mini.webp"
+ },
+ {
+  "id": "sm10-79",
+  "numero": "079",
+  "nome": "Espurr",
+  "raridade": "Comum",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "HYOGONOSUKE",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/79/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/079-mini.webp"
+ },
+ {
+  "id": "sm10-80",
+  "numero": "080",
+  "nome": "Meowstic",
+  "raridade": "Rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "Saya Tsuruta",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/80/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/080-mini.webp"
+ },
+ {
+  "id": "sm10-81",
+  "numero": "081",
+  "nome": "Marshadow",
+  "raridade": "Rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "chibi",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/81/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/081-mini.webp"
+ },
+ {
+  "id": "sm10-82",
+  "numero": "082",
+  "nome": "Marshadow e Machamp GX",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 270,
+  "categoria": "Pokémon",
+  "ilustrador": "Mitsuhiro Arita",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/82/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/082-mini.webp"
+ },
+ {
+  "id": "sm10-83",
+  "numero": "083",
+  "nome": "Sandshrew",
+  "raridade": "Comum",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Sekio",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/83/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/083-mini.webp"
+ },
+ {
+  "id": "sm10-84",
+  "numero": "084",
+  "nome": "Sandslash",
+  "raridade": "Rara",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 110,
+  "categoria": "Pokémon",
+  "ilustrador": "Shigenori Negishi",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/84/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/084-mini.webp"
+ },
+ {
+  "id": "sm10-85",
+  "numero": "085",
+  "nome": "Diglett",
+  "raridade": "Comum",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 50,
+  "categoria": "Pokémon",
+  "ilustrador": "Kouki Saitou",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/85/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/085-mini.webp"
+ },
+ {
+  "id": "sm10-86",
+  "numero": "086",
+  "nome": "Dugtrio",
+  "raridade": "Rara",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "Akira Komayama",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/86/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/086-mini.webp"
+ },
+ {
+  "id": "sm10-87",
+  "numero": "087",
+  "nome": "Geodude",
+  "raridade": "Comum",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Sumiyoshi Kizuki",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/87/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/087-mini.webp"
+ },
+ {
+  "id": "sm10-88",
+  "numero": "088",
+  "nome": "Graveler",
+  "raridade": "Incomum",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 110,
+  "categoria": "Pokémon",
+  "ilustrador": "Ayaka Yoshida",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/88/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/088-mini.webp"
+ },
+ {
+  "id": "sm10-89",
+  "numero": "089",
+  "nome": "Golem",
+  "raridade": "Rara",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 180,
+  "categoria": "Pokémon",
+  "ilustrador": "Kyoko Umemoto",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/89/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/089-mini.webp"
+ },
+ {
+  "id": "sm10-90",
+  "numero": "090",
+  "nome": "Cubone",
+  "raridade": "Comum",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Mizue",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/90/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/090-mini.webp"
+ },
+ {
+  "id": "sm10-91",
+  "numero": "091",
+  "nome": "Marowak",
+  "raridade": "Rara",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 110,
+  "categoria": "Pokémon",
+  "ilustrador": "kirisAki",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/91/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/091-mini.webp"
+ },
+ {
+  "id": "sm10-92",
+  "numero": "092",
+  "nome": "Rhyhorn",
+  "raridade": "Comum",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "sowsow",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/92/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/092-mini.webp"
+ },
+ {
+  "id": "sm10-93",
+  "numero": "093",
+  "nome": "Rhyhorn",
+  "raridade": "Comum",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "otumami",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/93/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/093-mini.webp"
+ },
+ {
+  "id": "sm10-94",
+  "numero": "094",
+  "nome": "Rhydon",
+  "raridade": "Incomum",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 110,
+  "categoria": "Pokémon",
+  "ilustrador": "kirisAki",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/94/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/094-mini.webp"
+ },
+ {
+  "id": "sm10-95",
+  "numero": "095",
+  "nome": "Rhyperior",
+  "raridade": "Rara",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 170,
+  "categoria": "Pokémon",
+  "ilustrador": "kawayoo",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/95/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/095-mini.webp"
+ },
+ {
+  "id": "sm10-96",
+  "numero": "096",
+  "nome": "Wooper",
+  "raridade": "Comum",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "tetsuya koizumi",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/96/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/096-mini.webp"
+ },
+ {
+  "id": "sm10-97",
+  "numero": "097",
+  "nome": "Quagsire",
+  "raridade": "Rara",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 120,
+  "categoria": "Pokémon",
+  "ilustrador": "kirisAki",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/97/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/097-mini.webp"
+ },
+ {
+  "id": "sm10-98",
+  "numero": "098",
+  "nome": "Gligar",
+  "raridade": "Comum",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Ken Sugimori",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/98/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/098-mini.webp"
+ },
+ {
+  "id": "sm10-99",
+  "numero": "099",
+  "nome": "Gliscor",
+  "raridade": "Incomum",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 110,
+  "categoria": "Pokémon",
+  "ilustrador": "Mizue",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/99/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/099-mini.webp"
+ },
+ {
+  "id": "sm10-100",
+  "numero": "100",
+  "nome": "Tyrogue",
+  "raridade": "Incomum",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Mina Nakai",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/100/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/100-mini.webp"
+ },
+ {
+  "id": "sm10-101",
+  "numero": "101",
+  "nome": "Hitmontop",
+  "raridade": "Incomum",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "Tomokazu Komiya",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/101/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/101-mini.webp"
+ },
+ {
+  "id": "sm10-102",
+  "numero": "102",
+  "nome": "Riolu",
+  "raridade": "Comum",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Mizue",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/102/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/102-mini.webp"
+ },
+ {
+  "id": "sm10-103",
+  "numero": "103",
+  "nome": "Landorus",
+  "raridade": "Rara",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 120,
+  "categoria": "Pokémon",
+  "ilustrador": "Hasuno",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/103/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/103-mini.webp"
+ },
+ {
+  "id": "sm10-104",
+  "numero": "104",
+  "nome": "Crabrawler",
+  "raridade": "Comum",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "Akira Komayama",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/104/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/104-mini.webp"
+ },
+ {
+  "id": "sm10-105",
+  "numero": "105",
+  "nome": "Crabominable",
+  "raridade": "Rara",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 140,
+  "categoria": "Pokémon",
+  "ilustrador": "Tomokazu Komiya",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/105/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/105-mini.webp"
+ },
+ {
+  "id": "sm10-106",
+  "numero": "106",
+  "nome": "Stakataka",
+  "raridade": "Rara",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 120,
+  "categoria": "Pokémon",
+  "ilustrador": "nagimiso",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/106/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/106-mini.webp"
+ },
+ {
+  "id": "sm10-107",
+  "numero": "107",
+  "nome": "Greninja e Zoroark GX",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 250,
+  "categoria": "Pokémon",
+  "ilustrador": "Mitsuhiro Arita",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/107/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/107-mini.webp"
+ },
+ {
+  "id": "sm10-108",
+  "numero": "108",
+  "nome": "Murkrow",
+  "raridade": "Comum",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "0313",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/108/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/108-mini.webp"
+ },
+ {
+  "id": "sm10-109",
+  "numero": "109",
+  "nome": "Honchkrow GX",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 210,
+  "categoria": "Pokémon",
+  "ilustrador": "sadaji",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/109/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/109-mini.webp"
+ },
+ {
+  "id": "sm10-110",
+  "numero": "110",
+  "nome": "Carvanha",
+  "raridade": "Comum",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "SATOSHI NAKAI",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/110/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/110-mini.webp"
+ },
+ {
+  "id": "sm10-111",
+  "numero": "111",
+  "nome": "Sharpedo",
+  "raridade": "Rara",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 110,
+  "categoria": "Pokémon",
+  "ilustrador": "Tomokazu Komiya",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/111/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/111-mini.webp"
+ },
+ {
+  "id": "sm10-112",
+  "numero": "112",
+  "nome": "Spiritomb",
+  "raridade": "Rara",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Kagemaru Himeno",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/112/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/112-mini.webp"
+ },
+ {
+  "id": "sm10-113",
+  "numero": "113",
+  "nome": "Sandile",
+  "raridade": "Comum",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Yuka Morii",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/113/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/113-mini.webp"
+ },
+ {
+  "id": "sm10-114",
+  "numero": "114",
+  "nome": "Sandile",
+  "raridade": "Comum",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Akira Komayama",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/114/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/114-mini.webp"
+ },
+ {
+  "id": "sm10-115",
+  "numero": "115",
+  "nome": "Krokorok",
+  "raridade": "Incomum",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "SATOSHI NAKAI",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/115/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/115-mini.webp"
+ },
+ {
+  "id": "sm10-116",
+  "numero": "116",
+  "nome": "Krookodile",
+  "raridade": "Rara",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 150,
+  "categoria": "Pokémon",
+  "ilustrador": "Anesaki Dynamic",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/116/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/116-mini.webp"
+ },
+ {
+  "id": "sm10-117",
+  "numero": "117",
+  "nome": "Greninja",
+  "raridade": "Rara",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 130,
+  "categoria": "Pokémon",
+  "ilustrador": "Yusuke Ohmura",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/117/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/117-mini.webp"
+ },
+ {
+  "id": "sm10-118",
+  "numero": "118",
+  "nome": "Inkay",
+  "raridade": "Comum",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Naoyo Kimura",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/118/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/118-mini.webp"
+ },
+ {
+  "id": "sm10-119",
+  "numero": "119",
+  "nome": "Malamar",
+  "raridade": "Rara",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 100,
+  "categoria": "Pokémon",
+  "ilustrador": "Yusuke Ohmura",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/119/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/119-mini.webp"
+ },
+ {
+  "id": "sm10-120",
+  "numero": "120",
+  "nome": "Lucario e Melmetal GX",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Metal"
+  ],
+  "ps": 260,
+  "categoria": "Pokémon",
+  "ilustrador": "Mitsuhiro Arita",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/120/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/120-mini.webp"
+ },
+ {
+  "id": "sm10-121",
+  "numero": "121",
+  "nome": "Diglett de Alola",
+  "raridade": "Comum",
+  "tipos": [
+   "Metal"
+  ],
+  "ps": 50,
+  "categoria": "Pokémon",
+  "ilustrador": "Atsuko Nishida",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/121/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/121-mini.webp"
+ },
+ {
+  "id": "sm10-122",
+  "numero": "122",
+  "nome": "Dugtrio de Alola",
+  "raridade": "Rara",
+  "tipos": [
+   "Metal"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "SATOSHI NAKAI",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/122/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/122-mini.webp"
+ },
+ {
+  "id": "sm10-123",
+  "numero": "123",
+  "nome": "Aron",
+  "raridade": "Comum",
+  "tipos": [
+   "Metal"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Ken Sugimori",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/123/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/123-mini.webp"
+ },
+ {
+  "id": "sm10-124",
+  "numero": "124",
+  "nome": "Lairon",
+  "raridade": "Incomum",
+  "tipos": [
+   "Metal"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "Suwama Chiaki",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/124/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/124-mini.webp"
+ },
+ {
+  "id": "sm10-125",
+  "numero": "125",
+  "nome": "Aggron",
+  "raridade": "Rara",
+  "tipos": [
+   "Metal"
+  ],
+  "ps": 170,
+  "categoria": "Pokémon",
+  "ilustrador": "Satoshi Shirai",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/125/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/125-mini.webp"
+ },
+ {
+  "id": "sm10-126",
+  "numero": "126",
+  "nome": "Lucario",
+  "raridade": "Rara",
+  "tipos": [
+   "Metal"
+  ],
+  "ps": 130,
+  "categoria": "Pokémon",
+  "ilustrador": "Midori Harada",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/126/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/126-mini.webp"
+ },
+ {
+  "id": "sm10-127",
+  "numero": "127",
+  "nome": "Genesect",
+  "raridade": "Rara",
+  "tipos": [
+   "Metal"
+  ],
+  "ps": 130,
+  "categoria": "Pokémon",
+  "ilustrador": "Anesaki Dynamic",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/127/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/127-mini.webp"
+ },
+ {
+  "id": "sm10-128",
+  "numero": "128",
+  "nome": "Meltan",
+  "raridade": "Comum",
+  "tipos": [
+   "Metal"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Kouki Saitou",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/128/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/128-mini.webp"
+ },
+ {
+  "id": "sm10-129",
+  "numero": "129",
+  "nome": "Melmetal",
+  "raridade": "Rara",
+  "tipos": [
+   "Metal"
+  ],
+  "ps": 150,
+  "categoria": "Pokémon",
+  "ilustrador": "Kouki Saitou",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/129/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/129-mini.webp"
+ },
+ {
+  "id": "sm10-130",
+  "numero": "130",
+  "nome": "Gardevoir e Sylveon GX",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Fada"
+  ],
+  "ps": 260,
+  "categoria": "Pokémon",
+  "ilustrador": "Mitsuhiro Arita",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/130/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/130-mini.webp"
+ },
+ {
+  "id": "sm10-131",
+  "numero": "131",
+  "nome": "Cleffa",
+  "raridade": "Incomum",
+  "tipos": [
+   "Fada"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Shibuzoh.",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/131/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/131-mini.webp"
+ },
+ {
+  "id": "sm10-132",
+  "numero": "132",
+  "nome": "Clefairy",
+  "raridade": "Comum",
+  "tipos": [
+   "Fada"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "0313",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/132/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/132-mini.webp"
+ },
+ {
+  "id": "sm10-133",
+  "numero": "133",
+  "nome": "Clefable",
+  "raridade": "Rara",
+  "tipos": [
+   "Fada"
+  ],
+  "ps": 110,
+  "categoria": "Pokémon",
+  "ilustrador": "Suwama Chiaki",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/133/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/133-mini.webp"
+ },
+ {
+  "id": "sm10-134",
+  "numero": "134",
+  "nome": "Jigglypuff",
+  "raridade": "Comum",
+  "tipos": [
+   "Fada"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Yumi",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/134/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/134-mini.webp"
+ },
+ {
+  "id": "sm10-135",
+  "numero": "135",
+  "nome": "Wigglytuff",
+  "raridade": "Rara",
+  "tipos": [
+   "Fada"
+  ],
+  "ps": 110,
+  "categoria": "Pokémon",
+  "ilustrador": "miki kudo",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/135/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/135-mini.webp"
+ },
+ {
+  "id": "sm10-136",
+  "numero": "136",
+  "nome": "Togepi",
+  "raridade": "Comum",
+  "tipos": [
+   "Fada"
+  ],
+  "ps": 50,
+  "categoria": "Pokémon",
+  "ilustrador": "Sekio",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/136/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/136-mini.webp"
+ },
+ {
+  "id": "sm10-137",
+  "numero": "137",
+  "nome": "Togetic",
+  "raridade": "Incomum",
+  "tipos": [
+   "Fada"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "sui",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/137/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/137-mini.webp"
+ },
+ {
+  "id": "sm10-138",
+  "numero": "138",
+  "nome": "Togekiss",
+  "raridade": "Rara",
+  "tipos": [
+   "Fada"
+  ],
+  "ps": 140,
+  "categoria": "Pokémon",
+  "ilustrador": "Kagemaru Himeno",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/138/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/138-mini.webp"
+ },
+ {
+  "id": "sm10-139",
+  "numero": "139",
+  "nome": "Cottonee",
+  "raridade": "Comum",
+  "tipos": [
+   "Fada"
+  ],
+  "ps": 50,
+  "categoria": "Pokémon",
+  "ilustrador": "Ken Sugimori",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/139/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/139-mini.webp"
+ },
+ {
+  "id": "sm10-140",
+  "numero": "140",
+  "nome": "Whimsicott GX",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Fada"
+  ],
+  "ps": 190,
+  "categoria": "Pokémon",
+  "ilustrador": "PLANETA Igarashi",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/140/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/140-mini.webp"
+ },
+ {
+  "id": "sm10-141",
+  "numero": "141",
+  "nome": "Spritzee",
+  "raridade": "Comum",
+  "tipos": [
+   "Fada"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "MAHOU",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/141/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/141-mini.webp"
+ },
+ {
+  "id": "sm10-142",
+  "numero": "142",
+  "nome": "Aromatisse",
+  "raridade": "Rara",
+  "tipos": [
+   "Fada"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "Saya Tsuruta",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/142/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/142-mini.webp"
+ },
+ {
+  "id": "sm10-143",
+  "numero": "143",
+  "nome": "Rattata",
+  "raridade": "Comum",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 30,
+  "categoria": "Pokémon",
+  "ilustrador": "Eri Yamaki",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/143/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/143-mini.webp"
+ },
+ {
+  "id": "sm10-144",
+  "numero": "144",
+  "nome": "Raticate",
+  "raridade": "Incomum",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Shigenori Negishi",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/144/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/144-mini.webp"
+ },
+ {
+  "id": "sm10-145",
+  "numero": "145",
+  "nome": "Spearow",
+  "raridade": "Comum",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "tetsuya koizumi",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/145/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/145-mini.webp"
+ },
+ {
+  "id": "sm10-146",
+  "numero": "146",
+  "nome": "Fearow",
+  "raridade": "Incomum",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 100,
+  "categoria": "Pokémon",
+  "ilustrador": "kawayoo",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/146/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/146-mini.webp"
+ },
+ {
+  "id": "sm10-147",
+  "numero": "147",
+  "nome": "Meowth",
+  "raridade": "Comum",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Shibuzoh.",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/147/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/147-mini.webp"
+ },
+ {
+  "id": "sm10-148",
+  "numero": "148",
+  "nome": "Persian",
+  "raridade": "Rara",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 100,
+  "categoria": "Pokémon",
+  "ilustrador": "nagimiso",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/148/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/148-mini.webp"
+ },
+ {
+  "id": "sm10-149",
+  "numero": "149",
+  "nome": "Persian GX",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 200,
+  "categoria": "Pokémon",
+  "ilustrador": "PLANETA Igarashi",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/149/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/149-mini.webp"
+ },
+ {
+  "id": "sm10-150",
+  "numero": "150",
+  "nome": "Doduo",
+  "raridade": "Comum",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "kodama",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/150/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/150-mini.webp"
+ },
+ {
+  "id": "sm10-151",
+  "numero": "151",
+  "nome": "Dodrio",
+  "raridade": "Incomum",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 100,
+  "categoria": "Pokémon",
+  "ilustrador": "Misa Tsutsui",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/151/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/151-mini.webp"
+ },
+ {
+  "id": "sm10-152",
+  "numero": "152",
+  "nome": "Lickitung",
+  "raridade": "Comum",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "Yukiko Baba",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/152/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/152-mini.webp"
+ },
+ {
+  "id": "sm10-153",
+  "numero": "153",
+  "nome": "Lickilicky",
+  "raridade": "Rara",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 130,
+  "categoria": "Pokémon",
+  "ilustrador": "sui",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/153/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/153-mini.webp"
+ },
+ {
+  "id": "sm10-154",
+  "numero": "154",
+  "nome": "Porygon",
+  "raridade": "Comum",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 50,
+  "categoria": "Pokémon",
+  "ilustrador": "Ayaka Yoshida",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/154/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/154-mini.webp"
+ },
+ {
+  "id": "sm10-155",
+  "numero": "155",
+  "nome": "Porygon",
+  "raridade": "Comum",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Suwama Chiaki",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/155/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/155-mini.webp"
+ },
+ {
+  "id": "sm10-156",
+  "numero": "156",
+  "nome": "Porygon2",
+  "raridade": "Incomum",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "sowsow",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/156/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/156-mini.webp"
+ },
+ {
+  "id": "sm10-157",
+  "numero": "157",
+  "nome": "Porygon-Z",
+  "raridade": "Rara",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 130,
+  "categoria": "Pokémon",
+  "ilustrador": "Misa Tsutsui",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/157/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/157-mini.webp"
+ },
+ {
+  "id": "sm10-158",
+  "numero": "158",
+  "nome": "Snorlax",
+  "raridade": "Rara",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 150,
+  "categoria": "Pokémon",
+  "ilustrador": "kanahei",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/158/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/158-mini.webp"
+ },
+ {
+  "id": "sm10-159",
+  "numero": "159",
+  "nome": "Glameow",
+  "raridade": "Comum",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "sowsow",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/159/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/159-mini.webp"
+ },
+ {
+  "id": "sm10-160",
+  "numero": "160",
+  "nome": "Purugly",
+  "raridade": "Rara",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 120,
+  "categoria": "Pokémon",
+  "ilustrador": "Tomokazu Komiya",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/160/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/160-mini.webp"
+ },
+ {
+  "id": "sm10-161",
+  "numero": "161",
+  "nome": "Happiny",
+  "raridade": "Incomum",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Eri Yamaki",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/161/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/161-mini.webp"
+ },
+ {
+  "id": "sm10-162",
+  "numero": "162",
+  "nome": "Chatot",
+  "raridade": "Incomum",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "HYOGONOSUKE",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/162/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/162-mini.webp"
+ },
+ {
+  "id": "sm10-163",
+  "numero": "163",
+  "nome": "Celesteela GX",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 200,
+  "categoria": "Pokémon",
+  "ilustrador": "PLANETA Igarashi",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/163/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/163-mini.webp"
+ },
+ {
+  "id": "sm10-164",
+  "numero": "164",
+  "nome": "Condutor de Criatura",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Ayaka Yoshida",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/164/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/164-mini.webp"
+ },
+ {
+  "id": "sm10-165",
+  "numero": "165",
+  "nome": "Machadinha de Gelo",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Yoshinobu Saito",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/165/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/165-mini.webp"
+ },
+ {
+  "id": "sm10-166",
+  "numero": "166",
+  "nome": "Spray de Involução Z",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Toyste Beach",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/166/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/166-mini.webp"
+ },
+ {
+  "id": "sm10-167",
+  "numero": "167",
+  "nome": "Pedra do Crepúsculo",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Ryo Ueda",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/167/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/167-mini.webp"
+ },
+ {
+  "id": "sm10-168",
+  "numero": "168",
+  "nome": "Ilha Empoeirada",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Ryo Ueda",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/168/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/168-mini.webp"
+ },
+ {
+  "id": "sm10-169",
+  "numero": "169",
+  "nome": "Radar Eletromagnético",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Yoshinobu Saito",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/169/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/169-mini.webp"
+ },
+ {
+  "id": "sm10-170",
+  "numero": "170",
+  "nome": "Inquieteco de Energias",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Ryo Ueda",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/170/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/170-mini.webp"
+ },
+ {
+  "id": "sm10-171",
+  "numero": "171",
+  "nome": "Pingente de Fada de Habilidade",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Toyste Beach",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/171/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/171-mini.webp"
+ },
+ {
+  "id": "sm10-172",
+  "numero": "172",
+  "nome": "Pingente de Fada Lightning",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Toyste Beach",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/172/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/172-mini.webp"
+ },
+ {
+  "id": "sm10-173",
+  "numero": "173",
+  "nome": "Cristal de Fogo",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Yoshinobu Saito",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/173/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/173-mini.webp"
+ },
+ {
+  "id": "sm10-174",
+  "numero": "174",
+  "nome": "Exílio do Giovanni",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Megumi Mizutani",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/174/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/174-mini.webp"
+ },
+ {
+  "id": "sm10-175",
+  "numero": "175",
+  "nome": "Desbravamento da Green",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Naoki Saito",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/175/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/175-mini.webp"
+ },
+ {
+  "id": "sm10-176",
+  "numero": "176",
+  "nome": "Janine",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Ken Sugimori",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/176/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/176-mini.webp"
+ },
+ {
+  "id": "sm10-177",
+  "numero": "177",
+  "nome": "Armadilha do Koga",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Megumi Mizutani",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/177/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/177-mini.webp"
+ },
+ {
+  "id": "sm10-178",
+  "numero": "178",
+  "nome": "Estratégia do Ten. Surge",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Megumi Mizutani",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/178/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/178-mini.webp"
+ },
+ {
+  "id": "sm10-179",
+  "numero": "179",
+  "nome": "Dojo de Artes Marciais",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "5ban Graphics",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/179/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/179-mini.webp"
+ },
+ {
+  "id": "sm10-180",
+  "numero": "180",
+  "nome": "Barreira de Núcleo Metálico",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Studio Bora Inc.",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/180/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/180-mini.webp"
+ },
+ {
+  "id": "sm10-181",
+  "numero": "181",
+  "nome": "Marcos",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Ken Sugimori",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/181/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/181-mini.webp"
+ },
+ {
+  "id": "sm10-182",
+  "numero": "182",
+  "nome": "Pokégear 3.0",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Studio Bora Inc.",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/182/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/182-mini.webp"
+ },
+ {
+  "id": "sm10-183",
+  "numero": "183",
+  "nome": "Usina Elétrica",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "aky CG Works",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/183/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/183-mini.webp"
+ },
+ {
+  "id": "sm10-184",
+  "numero": "184",
+  "nome": "Desafio do Red",
+  "raridade": "Rara",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Megumi Mizutani",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/184/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/184-mini.webp"
+ },
+ {
+  "id": "sm10-185",
+  "numero": "185",
+  "nome": "Gabriel Carvalho",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Masakazu Fukuda",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/185/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/185-mini.webp"
+ },
+ {
+  "id": "sm10-186",
+  "numero": "186",
+  "nome": "Capuz Furtivo",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Ryo Ueda",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/186/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/186-mini.webp"
+ },
+ {
+  "id": "sm10-187",
+  "numero": "187",
+  "nome": "Caixa Surpresa",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Ryo Ueda",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/187/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/187-mini.webp"
+ },
+ {
+  "id": "sm10-188",
+  "numero": "188",
+  "nome": "Kartanista da Ultrafloresta",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Masakazu Fukuda",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/188/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/188-mini.webp"
+ },
+ {
+  "id": "sm10-189",
+  "numero": "189",
+  "nome": "Soldadora",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Hitoshi Ariga",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/189/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/189-mini.webp"
+ },
+ {
+  "id": "sm10-190",
+  "numero": "190",
+  "nome": "Energia Tripla de Aceleração",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Energia",
+  "ilustrador": "5ban Graphics",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/190/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/190-mini.webp"
+ },
+ {
+  "id": "sm10-191",
+  "numero": "191",
+  "nome": "Pheromosa e Buzzwole GX",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 260,
+  "categoria": "Pokémon",
+  "ilustrador": "aky CG Works",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/191/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/191-mini.webp"
+ },
+ {
+  "id": "sm10-192",
+  "numero": "192",
+  "nome": "Pheromosa e Buzzwole GX",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 260,
+  "categoria": "Pokémon",
+  "ilustrador": "kirisAki",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/192/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/192-mini.webp"
+ },
+ {
+  "id": "sm10-193",
+  "numero": "193",
+  "nome": "Venomoth GX",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 200,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/193/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/193-mini.webp"
+ },
+ {
+  "id": "sm10-194",
+  "numero": "194",
+  "nome": "Reshiram e Charizard GX",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 270,
+  "categoria": "Pokémon",
+  "ilustrador": "aky CG Works",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/194/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/194-mini.webp"
+ },
+ {
+  "id": "sm10-195",
+  "numero": "195",
+  "nome": "Dedenne GX",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 160,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/195/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/195-mini.webp"
+ },
+ {
+  "id": "sm10-196",
+  "numero": "196",
+  "nome": "Muk e Muk de Alola GX",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 270,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/196/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/196-mini.webp"
+ },
+ {
+  "id": "sm10-197",
+  "numero": "197",
+  "nome": "Muk e Muk de Alola GX",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 270,
+  "categoria": "Pokémon",
+  "ilustrador": "Masakazu Fukuda",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/197/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/197-mini.webp"
+ },
+ {
+  "id": "sm10-198",
+  "numero": "198",
+  "nome": "Marshadow e Machamp GX",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 270,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/198/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/198-mini.webp"
+ },
+ {
+  "id": "sm10-199",
+  "numero": "199",
+  "nome": "Marshadow e Machamp GX",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 270,
+  "categoria": "Pokémon",
+  "ilustrador": "You Iribi",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/199/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/199-mini.webp"
+ },
+ {
+  "id": "sm10-200",
+  "numero": "200",
+  "nome": "Greninja e Zoroark GX",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 250,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/200/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/200-mini.webp"
+ },
+ {
+  "id": "sm10-201",
+  "numero": "201",
+  "nome": "Greninja e Zoroark GX",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 250,
+  "categoria": "Pokémon",
+  "ilustrador": "kodama",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/201/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/201-mini.webp"
+ },
+ {
+  "id": "sm10-202",
+  "numero": "202",
+  "nome": "Honchkrow GX",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 210,
+  "categoria": "Pokémon",
+  "ilustrador": "sadaji",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/202/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/202-mini.webp"
+ },
+ {
+  "id": "sm10-203",
+  "numero": "203",
+  "nome": "Lucario e Melmetal GX",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Metal"
+  ],
+  "ps": 260,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/203/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/203-mini.webp"
+ },
+ {
+  "id": "sm10-204",
+  "numero": "204",
+  "nome": "Gardevoir e Sylveon GX",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Fada"
+  ],
+  "ps": 260,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/204/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/204-mini.webp"
+ },
+ {
+  "id": "sm10-205",
+  "numero": "205",
+  "nome": "Gardevoir e Sylveon GX",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Fada"
+  ],
+  "ps": 260,
+  "categoria": "Pokémon",
+  "ilustrador": "Atsuko Nishida",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/205/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/205-mini.webp"
+ },
+ {
+  "id": "sm10-206",
+  "numero": "206",
+  "nome": "Whimsicott GX",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Fada"
+  ],
+  "ps": 190,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/206/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/206-mini.webp"
+ },
+ {
+  "id": "sm10-207",
+  "numero": "207",
+  "nome": "Persian GX",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 200,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/207/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/207-mini.webp"
+ },
+ {
+  "id": "sm10-208",
+  "numero": "208",
+  "nome": "Celesteela GX",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 200,
+  "categoria": "Pokémon",
+  "ilustrador": "aky CG Works",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/208/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/208-mini.webp"
+ },
+ {
+  "id": "sm10-209",
+  "numero": "209",
+  "nome": "Desbravamento da Green",
+  "raridade": "Ultra Rara",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Naoki Saito",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/209/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/209-mini.webp"
+ },
+ {
+  "id": "sm10-210",
+  "numero": "210",
+  "nome": "Janine",
+  "raridade": "Ultra Rara",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Hideki Ishikawa",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/210/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/210-mini.webp"
+ },
+ {
+  "id": "sm10-211",
+  "numero": "211",
+  "nome": "Armadilha do Koga",
+  "raridade": "Ultra Rara",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "TOKIYA",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/211/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/211-mini.webp"
+ },
+ {
+  "id": "sm10-212",
+  "numero": "212",
+  "nome": "Marcos",
+  "raridade": "Ultra Rara",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Masakazu Fukuda",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/212/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/212-mini.webp"
+ },
+ {
+  "id": "sm10-213",
+  "numero": "213",
+  "nome": "Desafio do Red",
+  "raridade": "Ultra Rara",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Naoki Saito",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/213/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/213-mini.webp"
+ },
+ {
+  "id": "sm10-214",
+  "numero": "214",
+  "nome": "Soldadora",
+  "raridade": "Ultra Rara",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Hitoshi Ariga",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/214/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/214-mini.webp"
+ },
+ {
+  "id": "sm10-215",
+  "numero": "215",
+  "nome": "Pheromosa e Buzzwole GX",
+  "raridade": "Rare Secreta",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 260,
+  "categoria": "Pokémon",
+  "ilustrador": "aky CG Works",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/215/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/215-mini.webp"
+ },
+ {
+  "id": "sm10-216",
+  "numero": "216",
+  "nome": "Venomoth GX",
+  "raridade": "Rare Secreta",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 200,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/216/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/216-mini.webp"
+ },
+ {
+  "id": "sm10-217",
+  "numero": "217",
+  "nome": "Reshiram e Charizard GX",
+  "raridade": "Rare Secreta",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 270,
+  "categoria": "Pokémon",
+  "ilustrador": "aky CG Works",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/217/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/217-mini.webp"
+ },
+ {
+  "id": "sm10-218",
+  "numero": "218",
+  "nome": "Blastoise GX",
+  "raridade": "Rare Secreta",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 240,
+  "categoria": "Pokémon",
+  "ilustrador": "sadaji",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/218/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/218-mini.webp"
+ },
+ {
+  "id": "sm10-219",
+  "numero": "219",
+  "nome": "Dedenne GX",
+  "raridade": "Rare Secreta",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 160,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/219/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/219-mini.webp"
+ },
+ {
+  "id": "sm10-220",
+  "numero": "220",
+  "nome": "Muk e Muk de Alola GX",
+  "raridade": "Rare Secreta",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 270,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/220/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/220-mini.webp"
+ },
+ {
+  "id": "sm10-221",
+  "numero": "221",
+  "nome": "Marshadow e Machamp GX",
+  "raridade": "Rare Secreta",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 270,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/221/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/221-mini.webp"
+ },
+ {
+  "id": "sm10-222",
+  "numero": "222",
+  "nome": "Greninja e Zoroark GX",
+  "raridade": "Rare Secreta",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 250,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/222/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/222-mini.webp"
+ },
+ {
+  "id": "sm10-223",
+  "numero": "223",
+  "nome": "Honchkrow GX",
+  "raridade": "Rare Secreta",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 210,
+  "categoria": "Pokémon",
+  "ilustrador": "sadaji",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/223/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/223-mini.webp"
+ },
+ {
+  "id": "sm10-224",
+  "numero": "224",
+  "nome": "Lucario e Melmetal GX",
+  "raridade": "Rare Secreta",
+  "tipos": [
+   "Metal"
+  ],
+  "ps": 260,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/224/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/224-mini.webp"
+ },
+ {
+  "id": "sm10-225",
+  "numero": "225",
+  "nome": "Gardevoir e Sylveon GX",
+  "raridade": "Rare Secreta",
+  "tipos": [
+   "Fada"
+  ],
+  "ps": 260,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/225/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/225-mini.webp"
+ },
+ {
+  "id": "sm10-226",
+  "numero": "226",
+  "nome": "Whimsicott GX",
+  "raridade": "Rare Secreta",
+  "tipos": [
+   "Fada"
+  ],
+  "ps": 190,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/226/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/226-mini.webp"
+ },
+ {
+  "id": "sm10-227",
+  "numero": "227",
+  "nome": "Persian GX",
+  "raridade": "Rare Secreta",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 200,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/227/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/227-mini.webp"
+ },
+ {
+  "id": "sm10-228",
+  "numero": "228",
+  "nome": "Celesteela GX",
+  "raridade": "Rare Secreta",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 200,
+  "categoria": "Pokémon",
+  "ilustrador": "aky CG Works",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/228/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/228-mini.webp"
+ },
+ {
+  "id": "sm10-229",
+  "numero": "229",
+  "nome": "Condutor de Criatura",
+  "raridade": "Rare Secreta",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Ayaka Yoshida",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/229/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/229-mini.webp"
+ },
+ {
+  "id": "sm10-230",
+  "numero": "230",
+  "nome": "Radar Eletromagnético",
+  "raridade": "Rare Secreta",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Yoshinobu Saito",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/230/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/230-mini.webp"
+ },
+ {
+  "id": "sm10-231",
+  "numero": "231",
+  "nome": "Cristal de Fogo",
+  "raridade": "Rare Secreta",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Yoshinobu Saito",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/231/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/231-mini.webp"
+ },
+ {
+  "id": "sm10-232",
+  "numero": "232",
+  "nome": "Barreira de Núcleo Metálico",
+  "raridade": "Rare Secreta",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Studio Bora Inc.",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/232/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/232-mini.webp"
+ },
+ {
+  "id": "sm10-233",
+  "numero": "233",
+  "nome": "Pokégear 3.0",
+  "raridade": "Rare Secreta",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Studio Bora Inc.",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/233/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/233-mini.webp"
+ },
+ {
+  "id": "sm10-234",
+  "numero": "234",
+  "nome": "Energia Tripla de Aceleração",
+  "raridade": "Rare Secreta",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Energia",
+  "ilustrador": "5ban Graphics",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/sm10/234/high.webp",
+  "mini": "assets/img/cartas/sm/sm10/234-mini.webp"
+ }
+]

@@ -17,6 +17,7 @@ ESTRUTURA (tudo separado por série e por coleção)
  dados/series.json              séries e coleções (em ordem de lançamento)
  dados/cartas/<serie>/<colecao>.json
  assets/img/cartas/<serie>/<colecao>/001.webp, 001-mini.webp ...
+ assets/img/jogos/<jogo>.svg    ícones de Pokémon, Yu-Gi-Oh!, Dragon Ball
  assets/img/colecoes/<serie>/<colecao>.webp
  assets/img/series/<serie>.webp
  scripts/baixar_cartas.py
@@ -29,7 +30,19 @@ Para ver os nomes/ids que a TCGdex usa:  python scripts/baixar_cartas.py --lista
 O script atualiza o "total" sozinho depois de baixar.
 
 ADICIONAR UMA SÉRIE
-Crie outro bloco em "series" com o mesmo id usado na TCGdex (ex.: "swsh") e suas coleções.
+Crie outro bloco em "series" com o mesmo id usado na TCGdex (ex.: "swsh"), "jogo": "pokemon" e suas coleções.
+Com "imagens": "mini" o script guarda só a miniatura no projeto e a carta grande vem da internet.
+Isso mantém o projeto abaixo de 1 GB, o limite do GitHub Pages (Escarlate e Violeta, Espada e Escudo
+e Sol e Lua usam esse modo; Mega Evolução guarda tudo).
+
+JOGOS (Pokémon, Yu-Gi-Oh!, Dragon Ball...)
+A lista fica em "jogos" no dados/series.json. Um jogo sem séries aparece como "Em breve".
+Para um jogo novo: inclua { "id": "...", "nome": "..." } em "jogos" e o ícone em assets/img/jogos/<id>.svg.
+As cartas de Yu-Gi-Oh! e Dragon Ball ainda não têm de onde vir: a TCGdex só tem Pokémon.
+
+BACKUP
+As marcações ficam salvas no navegador. Em "Minhas cartas" dá para exportar um arquivo .json
+e importar em outro aparelho (a importação junta com o que já está marcado, não apaga nada).
 
 LOGOS DAS COLEÇÕES
 O script baixa o logo oficial quando existe (assets/img/colecoes/<serie>/<colecao>.webp).

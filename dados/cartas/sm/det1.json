@@ -1,0 +1,272 @@
+[
+ {
+  "id": "det1-1",
+  "numero": "001",
+  "nome": "Bulbasaur",
+  "raridade": "Comum",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "MPC Film",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/det1/1/high.webp",
+  "mini": "assets/img/cartas/sm/det1/001-mini.webp"
+ },
+ {
+  "id": "det1-2",
+  "numero": "002",
+  "nome": "Ludicolo",
+  "raridade": "Rara",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 140,
+  "categoria": "Pokémon",
+  "ilustrador": "Framestore",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/det1/2/high.webp",
+  "mini": "assets/img/cartas/sm/det1/002-mini.webp"
+ },
+ {
+  "id": "det1-3",
+  "numero": "003",
+  "nome": "Morelull",
+  "raridade": "Comum",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 50,
+  "categoria": "Pokémon",
+  "ilustrador": "MPC Film",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/det1/3/high.webp",
+  "mini": "assets/img/cartas/sm/det1/003-mini.webp"
+ },
+ {
+  "id": "det1-4",
+  "numero": "004",
+  "nome": "Charmander",
+  "raridade": "Comum",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "MPC Film",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/det1/4/high.webp",
+  "mini": "assets/img/cartas/sm/det1/004-mini.webp"
+ },
+ {
+  "id": "det1-5",
+  "numero": "005",
+  "nome": "Charizard",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 180,
+  "categoria": "Pokémon",
+  "ilustrador": "Framestore",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/det1/5/high.webp",
+  "mini": "assets/img/cartas/sm/det1/005-mini.webp"
+ },
+ {
+  "id": "det1-6",
+  "numero": "006",
+  "nome": "Arcanine",
+  "raridade": "Rara",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 120,
+  "categoria": "Pokémon",
+  "ilustrador": "MPC Film",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/det1/6/high.webp",
+  "mini": "assets/img/cartas/sm/det1/006-mini.webp"
+ },
+ {
+  "id": "det1-7",
+  "numero": "007",
+  "nome": "Psyduck",
+  "raridade": "Comum",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "Framestore",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/det1/7/high.webp",
+  "mini": "assets/img/cartas/sm/det1/007-mini.webp"
+ },
+ {
+  "id": "det1-8",
+  "numero": "008",
+  "nome": "Magikarp",
+  "raridade": "Comum",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 30,
+  "categoria": "Pokémon",
+  "ilustrador": "Framestore",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/det1/8/high.webp",
+  "mini": "assets/img/cartas/sm/det1/008-mini.webp"
+ },
+ {
+  "id": "det1-9",
+  "numero": "009",
+  "nome": "Greninja",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 140,
+  "categoria": "Pokémon",
+  "ilustrador": "MPC Film",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/det1/9/high.webp",
+  "mini": "assets/img/cartas/sm/det1/009-mini.webp"
+ },
+ {
+  "id": "det1-10",
+  "numero": "010",
+  "nome": "Detective Pikachu",
+  "raridade": "Rara",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "MPC Film",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/det1/10/high.webp",
+  "mini": "assets/img/cartas/sm/det1/010-mini.webp"
+ },
+ {
+  "id": "det1-11",
+  "numero": "011",
+  "nome": "Mr. Mime",
+  "raridade": "Rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "MPC Film",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/det1/11/high.webp",
+  "mini": "assets/img/cartas/sm/det1/011-mini.webp"
+ },
+ {
+  "id": "det1-12",
+  "numero": "012",
+  "nome": "Mewtwo",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 130,
+  "categoria": "Pokémon",
+  "ilustrador": "MPC Film",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/det1/12/high.webp",
+  "mini": "assets/img/cartas/sm/det1/012-mini.webp"
+ },
+ {
+  "id": "det1-13",
+  "numero": "013",
+  "nome": "Machamp",
+  "raridade": "Rara",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 160,
+  "categoria": "Pokémon",
+  "ilustrador": "MPC Film",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/det1/13/high.webp",
+  "mini": "assets/img/cartas/sm/det1/013-mini.webp"
+ },
+ {
+  "id": "det1-14",
+  "numero": "014",
+  "nome": "Jigglypuff",
+  "raridade": "Comum",
+  "tipos": [
+   "Fada"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Framestore",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/det1/14/high.webp",
+  "mini": "assets/img/cartas/sm/det1/014-mini.webp"
+ },
+ {
+  "id": "det1-15",
+  "numero": "015",
+  "nome": "Snubbull",
+  "raridade": "Comum",
+  "tipos": [
+   "Fada"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Framestore",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/det1/15/high.webp",
+  "mini": "assets/img/cartas/sm/det1/015-mini.webp"
+ },
+ {
+  "id": "det1-16",
+  "numero": "016",
+  "nome": "Lickitung",
+  "raridade": "Comum",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 100,
+  "categoria": "Pokémon",
+  "ilustrador": "MPC Film",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/det1/16/high.webp",
+  "mini": "assets/img/cartas/sm/det1/016-mini.webp"
+ },
+ {
+  "id": "det1-17",
+  "numero": "017",
+  "nome": "Ditto",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "MPC Film",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/det1/17/high.webp",
+  "mini": "assets/img/cartas/sm/det1/017-mini.webp"
+ },
+ {
+  "id": "det1-18",
+  "numero": "018",
+  "nome": "Slaking",
+  "raridade": "Rara",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 180,
+  "categoria": "Pokémon",
+  "ilustrador": "Framestore",
+  "idioma": "pt",
+  "imagem": "https://assets.tcgdex.net/pt/sm/det1/18/high.webp",
+  "mini": "assets/img/cartas/sm/det1/018-mini.webp"
+ }
+]

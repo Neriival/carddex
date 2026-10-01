@@ -9,7 +9,7 @@ Uso (na pasta do projeto):
 
 Gera:
     dados/cartas/<serie>/<colecao>.json
-    assets/img/cartas/<serie>/<colecao>/001.webp        (grande)
+    assets/img/cartas/<serie>/<colecao>/001.webp        (grande; não baixa nas séries com "imagens": "mini")
     assets/img/cartas/<serie>/<colecao>/001-mini.webp   (miniatura rápida)
     assets/img/colecoes/<serie>/<colecao>.webp          (logo da coleção)
     assets/img/series/<serie>.webp                      (logo da série, se existir)
@@ -24,6 +24,19 @@ from concurrent.futures import ThreadPoolExecutor
 RAIZ = Path(__file__).resolve().parent.parent
 API = 'https://api.tcgdex.net/v2'
 CATEGORIAS = {'Pokemon': 'Pokémon', 'Pokémon': 'Pokémon', 'Trainer': 'Treinador', 'Energy': 'Energia'}
+# cartas sem tradução: tipo e raridade em português (nomes iguais aos da TCGdex em pt)
+TIPOS = {'Grass': 'Planta', 'Fire': 'Fogo', 'Water': 'Água', 'Lightning': 'Elétrico', 'Psychic': 'Psíquico',
+         'Fighting': 'Lutador', 'Darkness': 'Sombrio', 'Metal': 'Metal', 'Dragon': 'Dragão',
+         'Colorless': 'Incolor', 'Fairy': 'Fada'}
+RARIDADES = {'Common': 'Comum', 'Uncommon': 'Incomum', 'Rare': 'Rara', 'Double rare': 'Rara Dupla',
+             'Illustration rare': 'Ilustração Rara', 'Special illustration rare': 'Ilustração Rara Especial',
+             'Ultra Rare': 'Ultra Rara', 'Hyper rare': 'Hiper rara', 'Rare Holo': 'Rara Holo',
+             'Holo Rare': 'Rara Holo', 'Holo Rare V': 'Rara Holo V', 'Holo Rare VMAX': 'Rara Holo VMAX',
+             'Holo Rare VSTAR': 'Rara Holo VSTAR', 'Radiant Rare': 'Rara Radiante', 'Amazing Rare': 'Raras Incríveis',
+             'Secret Rare': 'Rara Secreta', 'ACE SPEC Rare': 'ACE SPEC Raro', 'Shiny rare': 'Shiny rara',
+             'Shiny rare V': 'Shiny rara V', 'Shiny rare VMAX': 'Shiny rara VMAX', 'Shiny Ultra Rare': 'Brilhante Ultra Rara',
+             'Full Art Trainer': 'Arte Completa de Treinador', 'Black White Rare': 'Rara Preto e Branco',
+             'Mega Hyper Rare': 'Mega Hiper Raro', 'None': None}
 
 def baixar(url, binario=False, tentativas=3):
     for i in range(tentativas):
@@ -64,7 +77,7 @@ def resolver_id(serie_id, col):
     return col.get('tcgdex', col['id'])
 
 def processar_carta(args):
-    serie_id, colecao, ref = args
+    serie_id, colecao, ref, so_mini = args
     cid = ref['id']
     d = baixar(f'{API}/pt/cards/{cid}')
     idioma = 'pt'
@@ -82,18 +95,24 @@ def processar_carta(args):
     # imagem em português; se não existir no servidor, usa a imagem em inglês
     bases = [b for b in (d.get('image'), ref.get('image')) if b]
     bases += [b.replace('/pt/', '/en/') for b in bases if '/pt/' in b]
-    tem = False
+    tem, grande = False, f'{rel}.webp'
     for base in bases:
-        if salvar_imagem(base + '/high.webp', pasta / f'{num}.webp') \
+        # séries com "imagens": "mini" guardam só a miniatura; a carta grande vem da internet
+        if so_mini and not (pasta / f'{num}.webp').exists():
+            if salvar_imagem(base + '/low.webp', pasta / f'{num}-mini.webp'):
+                tem, grande = True, base + '/high.webp'
+                break
+        elif salvar_imagem(base + '/high.webp', pasta / f'{num}.webp') \
                 and salvar_imagem(base + '/low.webp', pasta / f'{num}-mini.webp'):
             tem = True
             break
     return {
         'id': cid, 'numero': num, 'nome': d.get('name') or ref.get('name'),
-        'raridade': d.get('rarity'), 'tipos': d.get('types') or [], 'ps': d.get('hp'),
+        'raridade': RARIDADES.get(d.get('rarity'), d.get('rarity')),
+        'tipos': [TIPOS.get(t, t) for t in d.get('types') or []], 'ps': d.get('hp'),
         'categoria': CATEGORIAS.get(d.get('category'), d.get('category')),
         'ilustrador': d.get('illustrator'), 'idioma': idioma,
-        'imagem': f'{rel}.webp' if tem else None, 'mini': f'{rel}-mini.webp' if tem else None,
+        'imagem': grande if tem else None, 'mini': f'{rel}-mini.webp' if tem else None,
     }
 
 def listar(serie_id):
@@ -113,10 +132,11 @@ def main():
     caminho = RAIZ / 'dados' / 'series.json'
     dados = json.loads(caminho.read_text(encoding='utf-8'))
     for serie in dados['series']:
-        if serie.get('logo_baixado') is None and baixar(f"{API}/pt/series/{serie['id']}") is not None:
-            s = baixar(f"{API}/pt/series/{serie['id']}")
-            if s and s.get('logo'):
-                salvar_imagem(s['logo'] + '.webp', RAIZ / 'assets' / 'img' / 'series' / f"{serie['id']}.webp")
+        # logo da série (português; se não existir, inglês)
+        for idioma in ('pt', 'en'):
+            s = baixar(f"{API}/{idioma}/series/{serie['id']}") or {}
+            if s.get('logo') and salvar_imagem(s['logo'] + '.webp', RAIZ / 'assets' / 'img' / 'series' / f"{serie['id']}.webp"):
+                break
         for col in serie['colecoes']:
             if args and serie['id'] not in args and col['id'] not in args:
                 continue
@@ -128,7 +148,7 @@ def main():
             if not em_pt:
                 conj = baixar(f'{API}/en/sets/{tid}')
             if em_pt and conj.get('name'):
-                col['nome'] = conj['name']  # nome oficial em português
+                col['nome'] = conj['name'].strip()  # nome oficial em português
             if not conj:
                 print(f'  não encontrei "{tid}" na TCGdex. Veja: python scripts/baixar_cartas.py --listar {serie["id"]}')
                 continue
@@ -138,10 +158,15 @@ def main():
                 destino = RAIZ / 'assets' / 'img' / 'colecoes' / serie['id'] / f'{cid}.webp'
                 if not salvar_imagem(logo + '.webp', destino) and '/pt/' in logo:
                     salvar_imagem(logo.replace('/pt/', '/en/') + '.webp', destino)
-            cartas = conj.get('cards', [])
+            # junta as cartas em português com as que só existem em inglês
+            cartas = list(conj.get('cards', []))
+            if em_pt:
+                ids = {c['id'] for c in cartas}
+                cartas += [c for c in (baixar(f'{API}/en/sets/{tid}') or {}).get('cards', []) if c['id'] not in ids]
+            so_mini = serie.get('imagens') == 'mini'
             res = []
             with ThreadPoolExecutor(max_workers=6) as ex:
-                for i, r in enumerate(ex.map(processar_carta, [(serie['id'], cid, c) for c in cartas]), 1):
+                for i, r in enumerate(ex.map(processar_carta, [(serie['id'], cid, c, so_mini) for c in cartas]), 1):
                     res.append(r)
                     print(f'  {i}/{len(cartas)}', end='\r')
             res = [r for r in res if r]

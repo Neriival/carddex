@@ -1,0 +1,67 @@
+[
+ {
+  "id": "fut2020-1",
+  "numero": "001",
+  "nome": "Pikachu on the Ball",
+  "raridade": null,
+  "tipos": [],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Illus. & Direc. The Pokémon Company Art Team",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/swsh/fut2020/1/high.webp",
+  "mini": "assets/img/cartas/swsh/fut2020/001-mini.webp"
+ },
+ {
+  "id": "fut2020-2",
+  "numero": "002",
+  "nome": "Eevee on the Ball",
+  "raridade": null,
+  "tipos": [],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Illus. & Direc. The Pokémon Company Art Team",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/swsh/fut2020/2/high.webp",
+  "mini": "assets/img/cartas/swsh/fut2020/002-mini.webp"
+ },
+ {
+  "id": "fut2020-3",
+  "numero": "003",
+  "nome": "Grookey on the Ball",
+  "raridade": null,
+  "tipos": [],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Illus. & Direc. The Pokémon Company Art Team",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/swsh/fut2020/3/high.webp",
+  "mini": "assets/img/cartas/swsh/fut2020/003-mini.webp"
+ },
+ {
+  "id": "fut2020-4",
+  "numero": "004",
+  "nome": "Scorbunny on the Ball",
+  "raridade": null,
+  "tipos": [],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Illus. & Direc. The Pokémon Company Art Team",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/swsh/fut2020/4/high.webp",
+  "mini": "assets/img/cartas/swsh/fut2020/004-mini.webp"
+ },
+ {
+  "id": "fut2020-5",
+  "numero": "005",
+  "nome": "Sobble on the Ball",
+  "raridade": null,
+  "tipos": [],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Illus. & Direc. The Pokémon Company Art Team",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/swsh/fut2020/5/high.webp",
+  "mini": "assets/img/cartas/swsh/fut2020/005-mini.webp"
+ }
+]
