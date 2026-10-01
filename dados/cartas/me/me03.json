@@ -1,0 +1,1796 @@
+[
+ {
+  "id": "me03-001",
+  "numero": "001",
+  "nome": "Spinarak",
+  "raridade": "Comum",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Katsunori Sato",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/001.webp",
+  "mini": "assets/img/cartas/me/me03/001-mini.webp"
+ },
+ {
+  "id": "me03-002",
+  "numero": "002",
+  "nome": "Ariados",
+  "raridade": "Comum",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 110,
+  "categoria": "Pokémon",
+  "ilustrador": "svlt",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/002.webp",
+  "mini": "assets/img/cartas/me/me03/002-mini.webp"
+ },
+ {
+  "id": "me03-003",
+  "numero": "003",
+  "nome": "Shaymin",
+  "raridade": "Incomum",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "saino misaki",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/003.webp",
+  "mini": "assets/img/cartas/me/me03/003-mini.webp"
+ },
+ {
+  "id": "me03-004",
+  "numero": "004",
+  "nome": "Snivy",
+  "raridade": "Comum",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Narumi Sato",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/004.webp",
+  "mini": "assets/img/cartas/me/me03/004-mini.webp"
+ },
+ {
+  "id": "me03-005",
+  "numero": "005",
+  "nome": "Servine",
+  "raridade": "Comum",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 100,
+  "categoria": "Pokémon",
+  "ilustrador": "Kurata So",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/005.webp",
+  "mini": "assets/img/cartas/me/me03/005-mini.webp"
+ },
+ {
+  "id": "me03-006",
+  "numero": "006",
+  "nome": "Serperior",
+  "raridade": "Rara",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 160,
+  "categoria": "Pokémon",
+  "ilustrador": "kodama",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/006.webp",
+  "mini": "assets/img/cartas/me/me03/006-mini.webp"
+ },
+ {
+  "id": "me03-007",
+  "numero": "007",
+  "nome": "Scatterbug",
+  "raridade": "Comum",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 40,
+  "categoria": "Pokémon",
+  "ilustrador": "OKACHEKE",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/007.webp",
+  "mini": "assets/img/cartas/me/me03/007-mini.webp"
+ },
+ {
+  "id": "me03-008",
+  "numero": "008",
+  "nome": "Spewpa",
+  "raridade": "Comum",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "Ounishi",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/008.webp",
+  "mini": "assets/img/cartas/me/me03/008-mini.webp"
+ },
+ {
+  "id": "me03-009",
+  "numero": "009",
+  "nome": "Vivillon",
+  "raridade": "Incomum",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 120,
+  "categoria": "Pokémon",
+  "ilustrador": "mingo",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/009.webp",
+  "mini": "assets/img/cartas/me/me03/009-mini.webp"
+ },
+ {
+  "id": "me03-010",
+  "numero": "010",
+  "nome": "Rowlet",
+  "raridade": "Comum",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "Atsuya Uki",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/010.webp",
+  "mini": "assets/img/cartas/me/me03/010-mini.webp"
+ },
+ {
+  "id": "me03-011",
+  "numero": "011",
+  "nome": "Dartrix",
+  "raridade": "Comum",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 100,
+  "categoria": "Pokémon",
+  "ilustrador": "aspara",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/011.webp",
+  "mini": "assets/img/cartas/me/me03/011-mini.webp"
+ },
+ {
+  "id": "me03-012",
+  "numero": "012",
+  "nome": "Decidueye ex",
+  "raridade": "Rara Dupla",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 320,
+  "categoria": "Pokémon",
+  "ilustrador": "aky CG Works",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/012.webp",
+  "mini": "assets/img/cartas/me/me03/012-mini.webp"
+ },
+ {
+  "id": "me03-013",
+  "numero": "013",
+  "nome": "Fletchinder",
+  "raridade": "Comum",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "Sumiyoshi Kizuki",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/013.webp",
+  "mini": "assets/img/cartas/me/me03/013-mini.webp"
+ },
+ {
+  "id": "me03-014",
+  "numero": "014",
+  "nome": "Talonflame",
+  "raridade": "Incomum",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 150,
+  "categoria": "Pokémon",
+  "ilustrador": "Shinji Kanda",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/014.webp",
+  "mini": "assets/img/cartas/me/me03/014-mini.webp"
+ },
+ {
+  "id": "me03-015",
+  "numero": "015",
+  "nome": "Salandit",
+  "raridade": "Comum",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Kazuhisa Uragami",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/015.webp",
+  "mini": "assets/img/cartas/me/me03/015-mini.webp"
+ },
+ {
+  "id": "me03-016",
+  "numero": "016",
+  "nome": "Salazzle ex",
+  "raridade": "Rara Dupla",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 260,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/016.webp",
+  "mini": "assets/img/cartas/me/me03/016-mini.webp"
+ },
+ {
+  "id": "me03-017",
+  "numero": "017",
+  "nome": "Turtonator",
+  "raridade": "Incomum",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 120,
+  "categoria": "Pokémon",
+  "ilustrador": "Hasuno",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/017.webp",
+  "mini": "assets/img/cartas/me/me03/017-mini.webp"
+ },
+ {
+  "id": "me03-018",
+  "numero": "018",
+  "nome": "Seel",
+  "raridade": "Comum",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "Kanami Ogata",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/018.webp",
+  "mini": "assets/img/cartas/me/me03/018-mini.webp"
+ },
+ {
+  "id": "me03-019",
+  "numero": "019",
+  "nome": "Dewgong",
+  "raridade": "Rara",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 130,
+  "categoria": "Pokémon",
+  "ilustrador": "Yoshioka",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/019.webp",
+  "mini": "assets/img/cartas/me/me03/019-mini.webp"
+ },
+ {
+  "id": "me03-020",
+  "numero": "020",
+  "nome": "Staryu",
+  "raridade": "Comum",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Takeshi Nakamura",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/020.webp",
+  "mini": "assets/img/cartas/me/me03/020-mini.webp"
+ },
+ {
+  "id": "me03-021",
+  "numero": "021",
+  "nome": "Mega Starmie ex",
+  "raridade": "Rara Dupla",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 330,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/021.webp",
+  "mini": "assets/img/cartas/me/me03/021-mini.webp"
+ },
+ {
+  "id": "me03-022",
+  "numero": "022",
+  "nome": "Lapras ex",
+  "raridade": "Rara Dupla",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 210,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/022.webp",
+  "mini": "assets/img/cartas/me/me03/022-mini.webp"
+ },
+ {
+  "id": "me03-023",
+  "numero": "023",
+  "nome": "Amaura",
+  "raridade": "Comum",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 100,
+  "categoria": "Pokémon",
+  "ilustrador": "Hitoshi Ariga",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/023.webp",
+  "mini": "assets/img/cartas/me/me03/023-mini.webp"
+ },
+ {
+  "id": "me03-024",
+  "numero": "024",
+  "nome": "Aurorus",
+  "raridade": "Rara",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 170,
+  "categoria": "Pokémon",
+  "ilustrador": "HACCAN",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/024.webp",
+  "mini": "assets/img/cartas/me/me03/024-mini.webp"
+ },
+ {
+  "id": "me03-025",
+  "numero": "025",
+  "nome": "Volcanion",
+  "raridade": "Incomum",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 130,
+  "categoria": "Pokémon",
+  "ilustrador": "AKIRA EGAWA",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/025.webp",
+  "mini": "assets/img/cartas/me/me03/025-mini.webp"
+ },
+ {
+  "id": "me03-026",
+  "numero": "026",
+  "nome": "Shinx",
+  "raridade": "Comum",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Saboteri",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/026.webp",
+  "mini": "assets/img/cartas/me/me03/026-mini.webp"
+ },
+ {
+  "id": "me03-027",
+  "numero": "027",
+  "nome": "Luxio",
+  "raridade": "Incomum",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "Atsuko Nishida",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/027.webp",
+  "mini": "assets/img/cartas/me/me03/027-mini.webp"
+ },
+ {
+  "id": "me03-028",
+  "numero": "028",
+  "nome": "Luxray",
+  "raridade": "Rara",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 150,
+  "categoria": "Pokémon",
+  "ilustrador": "Taiga Kasai",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/028.webp",
+  "mini": "assets/img/cartas/me/me03/028-mini.webp"
+ },
+ {
+  "id": "me03-029",
+  "numero": "029",
+  "nome": "Dedenne",
+  "raridade": "Comum",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "sowsow",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/029.webp",
+  "mini": "assets/img/cartas/me/me03/029-mini.webp"
+ },
+ {
+  "id": "me03-030",
+  "numero": "030",
+  "nome": "Clefairy",
+  "raridade": "Comum",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Natsumi Yoshida",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/030.webp",
+  "mini": "assets/img/cartas/me/me03/030-mini.webp"
+ },
+ {
+  "id": "me03-031",
+  "numero": "031",
+  "nome": "Mega Clefable ex",
+  "raridade": "Rara Dupla",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 320,
+  "categoria": "Pokémon",
+  "ilustrador": "aky CG Works",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/031.webp",
+  "mini": "assets/img/cartas/me/me03/031-mini.webp"
+ },
+ {
+  "id": "me03-032",
+  "numero": "032",
+  "nome": "Mawile",
+  "raridade": "Comum",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 110,
+  "categoria": "Pokémon",
+  "ilustrador": "OKACHEKE",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/032.webp",
+  "mini": "assets/img/cartas/me/me03/032-mini.webp"
+ },
+ {
+  "id": "me03-033",
+  "numero": "033",
+  "nome": "Espurr",
+  "raridade": "Comum",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Terada Tera",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/033.webp",
+  "mini": "assets/img/cartas/me/me03/033-mini.webp"
+ },
+ {
+  "id": "me03-034",
+  "numero": "034",
+  "nome": "Meowstic",
+  "raridade": "Incomum",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 100,
+  "categoria": "Pokémon",
+  "ilustrador": "Kannnu",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/034.webp",
+  "mini": "assets/img/cartas/me/me03/034-mini.webp"
+ },
+ {
+  "id": "me03-035",
+  "numero": "035",
+  "nome": "Spritzee",
+  "raridade": "Comum",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Pani Kobayashi",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/035.webp",
+  "mini": "assets/img/cartas/me/me03/035-mini.webp"
+ },
+ {
+  "id": "me03-036",
+  "numero": "036",
+  "nome": "Aromatisse",
+  "raridade": "Incomum",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 120,
+  "categoria": "Pokémon",
+  "ilustrador": "Mori Yuu",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/036.webp",
+  "mini": "assets/img/cartas/me/me03/036-mini.webp"
+ },
+ {
+  "id": "me03-037",
+  "numero": "037",
+  "nome": "Nosepass",
+  "raridade": "Comum",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "Jerky",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/037.webp",
+  "mini": "assets/img/cartas/me/me03/037-mini.webp"
+ },
+ {
+  "id": "me03-038",
+  "numero": "038",
+  "nome": "Probopass",
+  "raridade": "Comum",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 140,
+  "categoria": "Pokémon",
+  "ilustrador": "Nurikabe",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/038.webp",
+  "mini": "assets/img/cartas/me/me03/038-mini.webp"
+ },
+ {
+  "id": "me03-039",
+  "numero": "039",
+  "nome": "Hippopotas",
+  "raridade": "Comum",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 100,
+  "categoria": "Pokémon",
+  "ilustrador": "Kagemaru Himeno",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/039.webp",
+  "mini": "assets/img/cartas/me/me03/039-mini.webp"
+ },
+ {
+  "id": "me03-040",
+  "numero": "040",
+  "nome": "Hippowdon",
+  "raridade": "Incomum",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 150,
+  "categoria": "Pokémon",
+  "ilustrador": "Souichirou Gunjima",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/040.webp",
+  "mini": "assets/img/cartas/me/me03/040-mini.webp"
+ },
+ {
+  "id": "me03-041",
+  "numero": "041",
+  "nome": "Landorus",
+  "raridade": "Rara",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 120,
+  "categoria": "Pokémon",
+  "ilustrador": "aoki",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/041.webp",
+  "mini": "assets/img/cartas/me/me03/041-mini.webp"
+ },
+ {
+  "id": "me03-042",
+  "numero": "042",
+  "nome": "Binacle",
+  "raridade": "Comum",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "nagimiso",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/042.webp",
+  "mini": "assets/img/cartas/me/me03/042-mini.webp"
+ },
+ {
+  "id": "me03-043",
+  "numero": "043",
+  "nome": "Barbaracle",
+  "raridade": "Incomum",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 130,
+  "categoria": "Pokémon",
+  "ilustrador": "Kazumasa Yasukuni",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/043.webp",
+  "mini": "assets/img/cartas/me/me03/043-mini.webp"
+ },
+ {
+  "id": "me03-044",
+  "numero": "044",
+  "nome": "Tyrunt",
+  "raridade": "Comum",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 100,
+  "categoria": "Pokémon",
+  "ilustrador": "Tomomi Kaneko",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/044.webp",
+  "mini": "assets/img/cartas/me/me03/044-mini.webp"
+ },
+ {
+  "id": "me03-045",
+  "numero": "045",
+  "nome": "Tyrantrum",
+  "raridade": "Rara",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 180,
+  "categoria": "Pokémon",
+  "ilustrador": "Dsuke",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/045.webp",
+  "mini": "assets/img/cartas/me/me03/045-mini.webp"
+ },
+ {
+  "id": "me03-046",
+  "numero": "046",
+  "nome": "Hawlucha",
+  "raridade": "Comum",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "osare",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/046.webp",
+  "mini": "assets/img/cartas/me/me03/046-mini.webp"
+ },
+ {
+  "id": "me03-047",
+  "numero": "047",
+  "nome": "Mega Zygarde ex",
+  "raridade": "Rara Dupla",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 310,
+  "categoria": "Pokémon",
+  "ilustrador": "takuyoa",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/047.webp",
+  "mini": "assets/img/cartas/me/me03/047-mini.webp"
+ },
+ {
+  "id": "me03-048",
+  "numero": "048",
+  "nome": "Gastly",
+  "raridade": "Comum",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "MARINA Chikazawa",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/048.webp",
+  "mini": "assets/img/cartas/me/me03/048-mini.webp"
+ },
+ {
+  "id": "me03-049",
+  "numero": "049",
+  "nome": "Haunter",
+  "raridade": "Comum",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 100,
+  "categoria": "Pokémon",
+  "ilustrador": "Kedamahadaitai Yawarakai",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/049.webp",
+  "mini": "assets/img/cartas/me/me03/049-mini.webp"
+ },
+ {
+  "id": "me03-050",
+  "numero": "050",
+  "nome": "Gengar",
+  "raridade": "Rara",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 130,
+  "categoria": "Pokémon",
+  "ilustrador": "Masako Tomii",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/050.webp",
+  "mini": "assets/img/cartas/me/me03/050-mini.webp"
+ },
+ {
+  "id": "me03-051",
+  "numero": "051",
+  "nome": "Skorupi",
+  "raridade": "Comum",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "Aya Kusube",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/051.webp",
+  "mini": "assets/img/cartas/me/me03/051-mini.webp"
+ },
+ {
+  "id": "me03-052",
+  "numero": "052",
+  "nome": "Drapion",
+  "raridade": "Incomum",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 140,
+  "categoria": "Pokémon",
+  "ilustrador": "Nelnal",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/052.webp",
+  "mini": "assets/img/cartas/me/me03/052-mini.webp"
+ },
+ {
+  "id": "me03-053",
+  "numero": "053",
+  "nome": "Yveltal ex",
+  "raridade": "Rara Dupla",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 210,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/053.webp",
+  "mini": "assets/img/cartas/me/me03/053-mini.webp"
+ },
+ {
+  "id": "me03-054",
+  "numero": "054",
+  "nome": "Chien-Pao",
+  "raridade": "Rara",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 120,
+  "categoria": "Pokémon",
+  "ilustrador": "Satoshi Ohta",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/054.webp",
+  "mini": "assets/img/cartas/me/me03/054-mini.webp"
+ },
+ {
+  "id": "me03-055",
+  "numero": "055",
+  "nome": "Mega Skarmory ex",
+  "raridade": "Rara Dupla",
+  "tipos": [
+   "Metal"
+  ],
+  "ps": 260,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/055.webp",
+  "mini": "assets/img/cartas/me/me03/055-mini.webp"
+ },
+ {
+  "id": "me03-056",
+  "numero": "056",
+  "nome": "Honedge",
+  "raridade": "Comum",
+  "tipos": [
+   "Metal"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Apios",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/056.webp",
+  "mini": "assets/img/cartas/me/me03/056-mini.webp"
+ },
+ {
+  "id": "me03-057",
+  "numero": "057",
+  "nome": "Doublade",
+  "raridade": "Comum",
+  "tipos": [
+   "Metal"
+  ],
+  "ps": 100,
+  "categoria": "Pokémon",
+  "ilustrador": "Kamome Shirahama",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/057.webp",
+  "mini": "assets/img/cartas/me/me03/057-mini.webp"
+ },
+ {
+  "id": "me03-058",
+  "numero": "058",
+  "nome": "Aegislash",
+  "raridade": "Incomum",
+  "tipos": [
+   "Metal"
+  ],
+  "ps": 150,
+  "categoria": "Pokémon",
+  "ilustrador": "Mitsuhiro Arita",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/058.webp",
+  "mini": "assets/img/cartas/me/me03/058-mini.webp"
+ },
+ {
+  "id": "me03-059",
+  "numero": "059",
+  "nome": "Klefki",
+  "raridade": "Comum",
+  "tipos": [
+   "Metal"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "MINAMINAMI Take",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/059.webp",
+  "mini": "assets/img/cartas/me/me03/059-mini.webp"
+ },
+ {
+  "id": "me03-060",
+  "numero": "060",
+  "nome": "Rattata",
+  "raridade": "Comum",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 40,
+  "categoria": "Pokémon",
+  "ilustrador": "Shinya Komatsu",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/060.webp",
+  "mini": "assets/img/cartas/me/me03/060-mini.webp"
+ },
+ {
+  "id": "me03-061",
+  "numero": "061",
+  "nome": "Raticate",
+  "raridade": "Incomum",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "Minahamu",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/061.webp",
+  "mini": "assets/img/cartas/me/me03/061-mini.webp"
+ },
+ {
+  "id": "me03-062",
+  "numero": "062",
+  "nome": "Meowth ex",
+  "raridade": "Rara Dupla",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 170,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/062.webp",
+  "mini": "assets/img/cartas/me/me03/062-mini.webp"
+ },
+ {
+  "id": "me03-063",
+  "numero": "063",
+  "nome": "Snorlax",
+  "raridade": "Comum",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 160,
+  "categoria": "Pokémon",
+  "ilustrador": "Toshinao Aoki",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/063.webp",
+  "mini": "assets/img/cartas/me/me03/063-mini.webp"
+ },
+ {
+  "id": "me03-064",
+  "numero": "064",
+  "nome": "Bunnelby",
+  "raridade": "Comum",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "MINAMINAMI Take",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/064.webp",
+  "mini": "assets/img/cartas/me/me03/064-mini.webp"
+ },
+ {
+  "id": "me03-065",
+  "numero": "065",
+  "nome": "Diggersby",
+  "raridade": "Incomum",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 150,
+  "categoria": "Pokémon",
+  "ilustrador": "Mousho",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/065.webp",
+  "mini": "assets/img/cartas/me/me03/065-mini.webp"
+ },
+ {
+  "id": "me03-066",
+  "numero": "066",
+  "nome": "Fletchling",
+  "raridade": "Comum",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "sowsow",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/066.webp",
+  "mini": "assets/img/cartas/me/me03/066-mini.webp"
+ },
+ {
+  "id": "me03-067",
+  "numero": "067",
+  "nome": "Furfrou",
+  "raridade": "Comum",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "Teeziro",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/067.webp",
+  "mini": "assets/img/cartas/me/me03/067-mini.webp"
+ },
+ {
+  "id": "me03-068",
+  "numero": "068",
+  "nome": "Fóssil de Mandíbula Arcaico",
+  "raridade": "Comum",
+  "tipos": [],
+  "ps": 60,
+  "categoria": "Treinador",
+  "ilustrador": "AYUMI ODASHIMA",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/068.webp",
+  "mini": "assets/img/cartas/me/me03/068-mini.webp"
+ },
+ {
+  "id": "me03-069",
+  "numero": "069",
+  "nome": "Fóssil de Vela Arcaico",
+  "raridade": "Comum",
+  "tipos": [],
+  "ps": 60,
+  "categoria": "Treinador",
+  "ilustrador": "AYUMI ODASHIMA",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/069.webp",
+  "mini": "assets/img/cartas/me/me03/069-mini.webp"
+ },
+ {
+  "id": "me03-070",
+  "numero": "070",
+  "nome": "Núcleo de Memória",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Toyste Beach",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/070.webp",
+  "mini": "assets/img/cartas/me/me03/070-mini.webp"
+ },
+ {
+  "id": "me03-071",
+  "numero": "071",
+  "nome": "Martelo Esmagador",
+  "raridade": "Comum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Ayaka Yoshida",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/071.webp",
+  "mini": "assets/img/cartas/me/me03/071-mini.webp"
+ },
+ {
+  "id": "me03-072",
+  "numero": "072",
+  "nome": "Busca de Energia",
+  "raridade": "Comum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Toyste Beach",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/072.webp",
+  "mini": "assets/img/cartas/me/me03/072-mini.webp"
+ },
+ {
+  "id": "me03-073",
+  "numero": "073",
+  "nome": "Mata-Energia",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Toyste Beach",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/073.webp",
+  "mini": "assets/img/cartas/me/me03/073-mini.webp"
+ },
+ {
+  "id": "me03-074",
+  "numero": "074",
+  "nome": "Pá de Cavar",
+  "raridade": "Comum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Toyste Beach",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/074.webp",
+  "mini": "assets/img/cartas/me/me03/074-mini.webp"
+ },
+ {
+  "id": "me03-075",
+  "numero": "075",
+  "nome": "Jaci",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Susumu Maeya",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/075.webp",
+  "mini": "assets/img/cartas/me/me03/075-mini.webp"
+ },
+ {
+  "id": "me03-076",
+  "numero": "076",
+  "nome": "Juiz",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "kantaro",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/076.webp",
+  "mini": "assets/img/cartas/me/me03/076-mini.webp"
+ },
+ {
+  "id": "me03-077",
+  "numero": "077",
+  "nome": "Cidade de Lumiose",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "MARINA Chikazawa",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/077.webp",
+  "mini": "assets/img/cartas/me/me03/077-mini.webp"
+ },
+ {
+  "id": "me03-078",
+  "numero": "078",
+  "nome": "Crepe de Lumiose",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "5ban Graphics",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/078.webp",
+  "mini": "assets/img/cartas/me/me03/078-mini.webp"
+ },
+ {
+  "id": "me03-079",
+  "numero": "079",
+  "nome": "Naveen",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "DOM",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/079.webp",
+  "mini": "assets/img/cartas/me/me03/079-mini.webp"
+ },
+ {
+  "id": "me03-080",
+  "numero": "080",
+  "nome": "Poké Bola",
+  "raridade": "Comum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Studio Bora Inc.",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/080.webp",
+  "mini": "assets/img/cartas/me/me03/080-mini.webp"
+ },
+ {
+  "id": "me03-081",
+  "numero": "081",
+  "nome": "Poké Tablet",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Studio Bora Inc.",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/081.webp",
+  "mini": "assets/img/cartas/me/me03/081-mini.webp"
+ },
+ {
+  "id": "me03-082",
+  "numero": "082",
+  "nome": "Pegador de Pokémon",
+  "raridade": "Comum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Studio Bora Inc.",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/082.webp",
+  "mini": "assets/img/cartas/me/me03/082-mini.webp"
+ },
+ {
+  "id": "me03-083",
+  "numero": "083",
+  "nome": "Poção",
+  "raridade": "Comum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Ayaka Yoshida",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/083.webp",
+  "mini": "assets/img/cartas/me/me03/083-mini.webp"
+ },
+ {
+  "id": "me03-084",
+  "numero": "084",
+  "nome": "Encorajamento da Rose",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Atsushi Furusawa",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/084.webp",
+  "mini": "assets/img/cartas/me/me03/084-mini.webp"
+ },
+ {
+  "id": "me03-085",
+  "numero": "085",
+  "nome": "Tarragon",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Akira Komayama",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/085.webp",
+  "mini": "assets/img/cartas/me/me03/085-mini.webp"
+ },
+ {
+  "id": "me03-086",
+  "numero": "086",
+  "nome": "Energia Grass Crescente",
+  "raridade": "Rara",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Energia",
+  "ilustrador": null,
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/086.webp",
+  "mini": "assets/img/cartas/me/me03/086-mini.webp"
+ },
+ {
+  "id": "me03-087",
+  "numero": "087",
+  "nome": "Energia Fighting Rochosa",
+  "raridade": "Rara",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Energia",
+  "ilustrador": null,
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/087.webp",
+  "mini": "assets/img/cartas/me/me03/087-mini.webp"
+ },
+ {
+  "id": "me03-088",
+  "numero": "088",
+  "nome": "Energia Psychic Telepática",
+  "raridade": "Rara",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Energia",
+  "ilustrador": null,
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/088.webp",
+  "mini": "assets/img/cartas/me/me03/088-mini.webp"
+ },
+ {
+  "id": "me03-089",
+  "numero": "089",
+  "nome": "Spewpa",
+  "raridade": "Ilustração Rara",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "kamonabe",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/089.webp",
+  "mini": "assets/img/cartas/me/me03/089-mini.webp"
+ },
+ {
+  "id": "me03-090",
+  "numero": "090",
+  "nome": "Rowlet",
+  "raridade": "Ilustração Rara",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "ryoma uratsuka",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/090.webp",
+  "mini": "assets/img/cartas/me/me03/090-mini.webp"
+ },
+ {
+  "id": "me03-091",
+  "numero": "091",
+  "nome": "Talonflame",
+  "raridade": "Ilustração Rara",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 150,
+  "categoria": "Pokémon",
+  "ilustrador": "OKACHEKE",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/091.webp",
+  "mini": "assets/img/cartas/me/me03/091-mini.webp"
+ },
+ {
+  "id": "me03-092",
+  "numero": "092",
+  "nome": "Aurorus",
+  "raridade": "Ilustração Rara",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 170,
+  "categoria": "Pokémon",
+  "ilustrador": "Masa",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/092.webp",
+  "mini": "assets/img/cartas/me/me03/092-mini.webp"
+ },
+ {
+  "id": "me03-093",
+  "numero": "093",
+  "nome": "Dedenne",
+  "raridade": "Ilustração Rara",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "HYOGONOSUKE",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/093.webp",
+  "mini": "assets/img/cartas/me/me03/093-mini.webp"
+ },
+ {
+  "id": "me03-094",
+  "numero": "094",
+  "nome": "Clefairy",
+  "raridade": "Ilustração Rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Cona Nitanda",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/094.webp",
+  "mini": "assets/img/cartas/me/me03/094-mini.webp"
+ },
+ {
+  "id": "me03-095",
+  "numero": "095",
+  "nome": "Espurr",
+  "raridade": "Ilustração Rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "MINAMINAMI Take",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/095.webp",
+  "mini": "assets/img/cartas/me/me03/095-mini.webp"
+ },
+ {
+  "id": "me03-096",
+  "numero": "096",
+  "nome": "Probopass",
+  "raridade": "Ilustração Rara",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 140,
+  "categoria": "Pokémon",
+  "ilustrador": "Kinu Nishimura",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/096.webp",
+  "mini": "assets/img/cartas/me/me03/096-mini.webp"
+ },
+ {
+  "id": "me03-097",
+  "numero": "097",
+  "nome": "Drapion",
+  "raridade": "Ilustração Rara",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 140,
+  "categoria": "Pokémon",
+  "ilustrador": "kawayoo",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/097.webp",
+  "mini": "assets/img/cartas/me/me03/097-mini.webp"
+ },
+ {
+  "id": "me03-098",
+  "numero": "098",
+  "nome": "Doublade",
+  "raridade": "Ilustração Rara",
+  "tipos": [
+   "Metal"
+  ],
+  "ps": 100,
+  "categoria": "Pokémon",
+  "ilustrador": "Anesaki Dynamic",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/098.webp",
+  "mini": "assets/img/cartas/me/me03/098-mini.webp"
+ },
+ {
+  "id": "me03-099",
+  "numero": "099",
+  "nome": "Raticate",
+  "raridade": "Ilustração Rara",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "Mina Nakai",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/099.webp",
+  "mini": "assets/img/cartas/me/me03/099-mini.webp"
+ },
+ {
+  "id": "me03-100",
+  "numero": "100",
+  "nome": "Decidueye ex",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 320,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/100.webp",
+  "mini": "assets/img/cartas/me/me03/100-mini.webp"
+ },
+ {
+  "id": "me03-101",
+  "numero": "101",
+  "nome": "Salazzle ex",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 260,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/101.webp",
+  "mini": "assets/img/cartas/me/me03/101-mini.webp"
+ },
+ {
+  "id": "me03-102",
+  "numero": "102",
+  "nome": "Mega Starmie ex",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 330,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/102.webp",
+  "mini": "assets/img/cartas/me/me03/102-mini.webp"
+ },
+ {
+  "id": "me03-103",
+  "numero": "103",
+  "nome": "Mega Clefable ex",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 320,
+  "categoria": "Pokémon",
+  "ilustrador": "aky CG Works",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/103.webp",
+  "mini": "assets/img/cartas/me/me03/103-mini.webp"
+ },
+ {
+  "id": "me03-104",
+  "numero": "104",
+  "nome": "Mega Zygarde ex",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 310,
+  "categoria": "Pokémon",
+  "ilustrador": "takuyoa",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/104.webp",
+  "mini": "assets/img/cartas/me/me03/104-mini.webp"
+ },
+ {
+  "id": "me03-105",
+  "numero": "105",
+  "nome": "Yveltal ex",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 210,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/105.webp",
+  "mini": "assets/img/cartas/me/me03/105-mini.webp"
+ },
+ {
+  "id": "me03-106",
+  "numero": "106",
+  "nome": "Mega Skarmory ex",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Metal"
+  ],
+  "ps": 260,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/106.webp",
+  "mini": "assets/img/cartas/me/me03/106-mini.webp"
+ },
+ {
+  "id": "me03-107",
+  "numero": "107",
+  "nome": "Meowth ex",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 170,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/107.webp",
+  "mini": "assets/img/cartas/me/me03/107-mini.webp"
+ },
+ {
+  "id": "me03-108",
+  "numero": "108",
+  "nome": "Reciclador de Energia",
+  "raridade": "Ultra Rara",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Toyste Beach",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/108.webp",
+  "mini": "assets/img/cartas/me/me03/108-mini.webp"
+ },
+ {
+  "id": "me03-109",
+  "numero": "109",
+  "nome": "Floresta da Vitalidade",
+  "raridade": "Ultra Rara",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "AYUMI ODASHIMA",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/109.webp",
+  "mini": "assets/img/cartas/me/me03/109-mini.webp"
+ },
+ {
+  "id": "me03-110",
+  "numero": "110",
+  "nome": "Jaci",
+  "raridade": "Ultra Rara",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Susumu Maeya",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/110.webp",
+  "mini": "assets/img/cartas/me/me03/110-mini.webp"
+ },
+ {
+  "id": "me03-111",
+  "numero": "111",
+  "nome": "Cidade de Lumiose",
+  "raridade": "Ultra Rara",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "MARINA Chikazawa",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/111.webp",
+  "mini": "assets/img/cartas/me/me03/111-mini.webp"
+ },
+ {
+  "id": "me03-112",
+  "numero": "112",
+  "nome": "Naveen",
+  "raridade": "Ultra Rara",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "DOM",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/112.webp",
+  "mini": "assets/img/cartas/me/me03/112-mini.webp"
+ },
+ {
+  "id": "me03-113",
+  "numero": "113",
+  "nome": "Poké Tablet",
+  "raridade": "Ultra Rara",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Studio Bora Inc.",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/113.webp",
+  "mini": "assets/img/cartas/me/me03/113-mini.webp"
+ },
+ {
+  "id": "me03-114",
+  "numero": "114",
+  "nome": "Encorajamento da Rose",
+  "raridade": "Ultra Rara",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Atsushi Furusawa",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/114.webp",
+  "mini": "assets/img/cartas/me/me03/114-mini.webp"
+ },
+ {
+  "id": "me03-115",
+  "numero": "115",
+  "nome": "Cinza Sagrada",
+  "raridade": "Ultra Rara",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Toyste Beach",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/115.webp",
+  "mini": "assets/img/cartas/me/me03/115-mini.webp"
+ },
+ {
+  "id": "me03-116",
+  "numero": "116",
+  "nome": "Tarragon",
+  "raridade": "Ultra Rara",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Akira Komayama",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/116.webp",
+  "mini": "assets/img/cartas/me/me03/116-mini.webp"
+ },
+ {
+  "id": "me03-117",
+  "numero": "117",
+  "nome": "Fragmento Encantado",
+  "raridade": "Ultra Rara",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Studio Bora Inc.",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/117.webp",
+  "mini": "assets/img/cartas/me/me03/117-mini.webp"
+ },
+ {
+  "id": "me03-118",
+  "numero": "118",
+  "nome": "Mega Starmie ex",
+  "raridade": "Ilustração Rara Especial",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 330,
+  "categoria": "Pokémon",
+  "ilustrador": "takuyoa",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/118.webp",
+  "mini": "assets/img/cartas/me/me03/118-mini.webp"
+ },
+ {
+  "id": "me03-119",
+  "numero": "119",
+  "nome": "Mega Clefable ex",
+  "raridade": "Ilustração Rara Especial",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 320,
+  "categoria": "Pokémon",
+  "ilustrador": "Cona Nitanda",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/119.webp",
+  "mini": "assets/img/cartas/me/me03/119-mini.webp"
+ },
+ {
+  "id": "me03-120",
+  "numero": "120",
+  "nome": "Mega Zygarde ex",
+  "raridade": "Ilustração Rara Especial",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 310,
+  "categoria": "Pokémon",
+  "ilustrador": "kantaro",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/120.webp",
+  "mini": "assets/img/cartas/me/me03/120-mini.webp"
+ },
+ {
+  "id": "me03-121",
+  "numero": "121",
+  "nome": "Meowth ex",
+  "raridade": "Ilustração Rara Especial",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 170,
+  "categoria": "Pokémon",
+  "ilustrador": "Natsumi Yoshida",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/121.webp",
+  "mini": "assets/img/cartas/me/me03/121-mini.webp"
+ },
+ {
+  "id": "me03-122",
+  "numero": "122",
+  "nome": "Jaci",
+  "raridade": "Ilustração Rara Especial",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Souichirou Gunjima",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/122.webp",
+  "mini": "assets/img/cartas/me/me03/122-mini.webp"
+ },
+ {
+  "id": "me03-123",
+  "numero": "123",
+  "nome": "Encorajamento da Rose",
+  "raridade": "Ilustração Rara Especial",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Iori Suzuki",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/123.webp",
+  "mini": "assets/img/cartas/me/me03/123-mini.webp"
+ },
+ {
+  "id": "me03-124",
+  "numero": "124",
+  "nome": "Mega Zygarde ex",
+  "raridade": "Mega Hiper Raro",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 310,
+  "categoria": "Pokémon",
+  "ilustrador": "takuyoa",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/me03/124.webp",
+  "mini": "assets/img/cartas/me/me03/124-mini.webp"
+ }
+]

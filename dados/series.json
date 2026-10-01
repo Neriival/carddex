@@ -1,0 +1,86 @@
+{
+  "series": [
+    {
+      "id": "sv",
+      "nome": "Escarlate e Violeta",
+      "colecoes": [
+        {
+          "id": "sv01",
+          "nome": "Escarlate e Violeta",
+          "lancamento": "2023-03-31",
+          "total": 258
+        },
+        {
+          "id": "sv02",
+          "nome": "Evoluções em Paldea",
+          "lancamento": "2023-06-09",
+          "total": 279
+        },
+        {
+          "id": "sv03",
+          "nome": "Obsidiana em Chamas",
+          "lancamento": "2023-08-11",
+          "total": 230
+        }
+      ]
+    },
+    {
+      "id": "me",
+      "nome": "Mega Evolução",
+      "colecoes": [
+        {
+          "id": "me01",
+          "nome": "Megaevolução",
+          "busca": "Mega Evolution",
+          "lancamento": "2025-09-26",
+          "total": 188
+        },
+        {
+          "id": "me02",
+          "nome": "Fogo Fantasmagórico",
+          "busca": "Phantasmal Flames",
+          "lancamento": "2025-11-14",
+          "total": 130
+        },
+        {
+          "id": "me025",
+          "nome": "Heróis Excelsos",
+          "busca": "Ascended Heroes",
+          "tcgdex": "me02.5",
+          "lancamento": "2026-01-30",
+          "total": 295
+        },
+        {
+          "id": "me03",
+          "nome": "Equilíbrio Perfeito",
+          "busca": "Perfect Order",
+          "lancamento": "2026-03-27",
+          "total": 124
+        },
+        {
+          "id": "me04",
+          "nome": "Caos Ascendente",
+          "busca": "Chaos Rising",
+          "lancamento": "2026-05-22",
+          "total": 122
+        },
+        {
+          "id": "me05",
+          "nome": "Escuridão Absoluta",
+          "busca": "Pitch Black",
+          "lancamento": "2026-07-17",
+          "total": 120
+        },
+        {
+          "id": "30c",
+          "nome": "Celebração de 30 Anos",
+          "busca": "30th Celebration",
+          "tcgdex": "me05.5",
+          "lancamento": "2026-09-16",
+          "total": 2,
+          "obs": "A base de dados da TCGdex ainda tem poucas cartas desta coleção (lançada há poucos dias). Rode o script de novo mais tarde: python scripts/baixar_cartas.py 30c"
+        }
+      ]
+    }
+  ]
+}

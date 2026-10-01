@@ -1,0 +1,32 @@
+[
+ {
+  "id": "30th-001",
+  "numero": "001",
+  "nome": "Exeggcute",
+  "raridade": "Comum",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Nelnal",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/30c/001.webp",
+  "mini": "assets/img/cartas/me/30c/001-mini.webp"
+ },
+ {
+  "id": "30th-002",
+  "numero": "002",
+  "nome": "Exeggutor de Alola",
+  "raridade": "Comum",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 150,
+  "categoria": "Pokémon",
+  "ilustrador": "Oswaldo KATO",
+  "idioma": "pt",
+  "imagem": "assets/img/cartas/me/30c/002.webp",
+  "mini": "assets/img/cartas/me/30c/002-mini.webp"
+ }
+]

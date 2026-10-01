@@ -1,0 +1,5 @@
+/* css/responsivo.css – adaptação a telas menores */
+/* Celular/tablet pequeno */
+@media(max-width:760px){.hero{grid-template-columns:1fr;padding:24px}.sp{display:none}.grade{grid-template-columns:repeat(auto-fill,minmax(96px,1fr))}}
+/* Respeita quem desativa animações no sistema */
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}

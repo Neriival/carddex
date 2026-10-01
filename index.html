@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CardDex – Sua coleção de cartas</title>
+<link rel="icon" href="assets/img/carddex-logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/componentes.css">
+<link rel="stylesheet" href="css/responsivo.css">
+</head>
+<body>
+<div class="wrap">
+<nav>
+<img class="mark" src="assets/img/carddex-logo.png" alt="CardDex"><div class="brand">Card<b>Dex</b></div>
+<a class="on" onclick="telaInicio()">Início</a><a onclick="telaInicio('series')">Séries</a><a onclick="telaInicio('stats')">Estatísticas</a>
+<div class="sp"></div><input class="busca" id="busca" placeholder="Buscar séries ou coleções..." oninput="telaInicio('series')">
+</nav>
+<main id="app"></main>
+</div>
+<div id="modal" class="modal" hidden></div>
+<script src="js/dados.js"></script>
+<script src="js/telas.js"></script>
+<script src="js/modal.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

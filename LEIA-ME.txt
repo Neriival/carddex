@@ -1,0 +1,43 @@
+CARDDEX – Sua coleção de cartas
+================================
+
+COMO USAR
+1) Abra a pasta no VS Code e rode com "Live Server" (clique direito no index.html).
+2) O site já funciona sozinho: busca as cartas pela internet.
+3) Para ter TUDO dentro do projeto (mais rápido e offline), rode no terminal:
+      python scripts/baixar_cartas.py            (tudo)
+      python scripts/baixar_cartas.py me         (só a série Mega Evolução)
+      python scripts/baixar_cartas.py me04       (só uma coleção)
+   Depois suba a pasta inteira para o GitHub.
+
+ESTRUTURA (tudo separado por série e por coleção)
+ index.html
+ css/        global, layout, componentes, responsivo
+ js/         dados, telas, modal, main
+ dados/series.json              séries e coleções (em ordem de lançamento)
+ dados/cartas/<serie>/<colecao>.json
+ assets/img/cartas/<serie>/<colecao>/001.webp, 001-mini.webp ...
+ assets/img/colecoes/<serie>/<colecao>.webp
+ assets/img/series/<serie>.webp
+ scripts/baixar_cartas.py
+ docs/
+
+ADICIONAR UMA COLEÇÃO
+Em dados/series.json, dentro da série, inclua:
+  { "id": "me06", "nome": "Nome em português", "busca": "Nome em inglês", "lancamento": "AAAA-MM-DD", "total": 100 }
+Para ver os nomes/ids que a TCGdex usa:  python scripts/baixar_cartas.py --listar me
+O script atualiza o "total" sozinho depois de baixar.
+
+ADICIONAR UMA SÉRIE
+Crie outro bloco em "series" com o mesmo id usado na TCGdex (ex.: "swsh") e suas coleções.
+
+LOGOS DAS COLEÇÕES
+O script baixa o logo oficial quando existe (assets/img/colecoes/<serie>/<colecao>.webp).
+Quando não existe, o site usa o .svg da mesma pasta (nome da coleção no estilo CardDex).
+Para usar um logo seu, coloque <colecao>.webp na pasta: ele tem prioridade sobre o .svg.
+
+ONDE MEXER
+ Cores ........ css/global.css (variáveis no topo)
+ Telas ........ js/telas.js
+ Carta grande . js/modal.js e css/componentes.css
+ Dados ........ js/dados.js e dados/series.json
