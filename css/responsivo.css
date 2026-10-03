@@ -1,4 +1,9 @@
 /* css/responsivo.css – adaptação a telas menores (celular e tablet) */
+/* Sem espaço para as laterais: parceiros vão para a faixa no fim da página */
+@media(max-width:1100px){
+  .pagina{display:block;padding:0}.lado{display:none}
+  .parceiros-faixa{display:block}
+}
 @media(max-width:760px){
   .wrap{padding:12px}
   /* menu em 3 linhas: logo + botão de conta / links iguais / busca */
@@ -13,6 +18,7 @@
   .caixa{gap:18px}.carta3d{width:min(340px,78vw,calc((100vh - 48px) * 5 / 7))}.info{padding:20px}
   .nav-carta{display:none}
   .login-card{padding:22px 18px}
+  .parceiros-faixa>div{gap:8px}.parceiro{font-size:.72rem;border-radius:12px}
 }
 /* Dica de arrastar: só em telas de toque */
 @media(hover:none){.dica{display:block}}

@@ -1,6 +1,9 @@
 /* css/layout.css – posição dos blocos */
 /* Estrutura da página: container, menu, destaque (hero), estatísticas e grades */
-.wrap{position:relative;max-width:1180px;margin:0 auto;padding:16px}
+/* Página em 3 colunas: parceiros (esquerda) | site | parceiros (direita) */
+.pagina{display:grid;grid-template-columns:150px minmax(0,1180px) 150px;gap:8px;justify-content:center;padding:0 16px}
+.lado{position:sticky;top:0;align-self:start;display:flex;flex-direction:column;gap:12px;padding:16px 0}
+.wrap{position:relative;max-width:1180px;margin:0 auto;padding:16px;width:100%;min-width:0}
 nav{display:flex;align-items:center;gap:20px;flex-wrap:wrap;background:var(--p1);border:1px solid var(--line);border-radius:16px;padding:8px 18px}
 nav a{color:var(--text);padding:8px 4px;border-bottom:3px solid transparent;cursor:pointer}nav a.on{color:var(--gold);border-color:var(--gold)}
 .mark{height:52px;width:52px;object-fit:cover;border-radius:50%}

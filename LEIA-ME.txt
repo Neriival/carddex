@@ -13,7 +13,8 @@ COMO USAR
 ESTRUTURA (tudo separado por série e por coleção)
  index.html
  css/        global, layout, componentes, responsivo
- js/         dados, telas, modal, compartilhar, main
+ js/         config, dados, telas, nuvem, auth, ranking, parceiros, admin, modal, compartilhar, main
+ assets/img/avatares/menino.svg e menina.svg   personagens do cadastro (pode trocar pelos seus, mesmo nome)
  dados/series.json              séries e coleções (em ordem de lançamento)
  dados/cartas/<serie>/<colecao>.json
  assets/img/cartas/<serie>/<colecao>/001.webp, 001-mini.webp ...
@@ -49,9 +50,18 @@ O script baixa o logo oficial quando existe (assets/img/colecoes/<serie>/<coleca
 Quando não existe, o site usa o .svg da mesma pasta (nome da coleção no estilo CardDex).
 Para usar um logo seu, coloque <colecao>.webp na pasta: ele tem prioridade sobre o .svg.
 
+LOGIN, RANKING, PAINEL ADM E PARCEIROS (Supabase – projeto "carddex", já configurado)
+Contas com nick, sexo e personagem; as cartas marcadas ficam salvas na conta.
+Detalhes e como refazer do zero em docs/SUPABASE.md. Depois de configurar, o link "Admin" aparece no menu
+para quem estiver na tabela "admins": lá ficam as contas criadas e os 8 quadrados de parceiros
+(4 em cada lateral; no celular eles aparecem numa faixa no fim da página).
+Sem o Supabase configurado o site funciona como antes e os quadrados mostram "Seja um parceiro".
+
 ONDE MEXER
  Cores ........ css/global.css (variáveis no topo)
  Telas ........ js/telas.js
  Carta grande . js/modal.js e css/componentes.css
  Imagem das cartas que faltam (WhatsApp) . js/compartilhar.js
  Dados ........ js/dados.js e dados/series.json
+ Supabase e contato de parceiros . js/config.js
+ Parceiros .... js/parceiros.js (laterais) e js/admin.js (painel)

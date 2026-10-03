@@ -13,7 +13,8 @@ var API_TCGDEX = 'https://api.tcgdex.net/v2';
 var ESTADO = { jogos: [], series: [], cartas: {}, tenho: {}, filtro: 'todas', raridade: '', tipo: '', atual: null, tid: {}, redesenhar: null };
 try { ESTADO.tenho = JSON.parse(localStorage.getItem('carddex_tenho') || '{}'); } catch (e) {}
 // Salva/lê as cartas marcadas. ESTADO.tenho = { 'me04': ['me04-001', ...], ... }
-function salvarTenho() { try { localStorage.setItem('carddex_tenho', JSON.stringify(ESTADO.tenho)); } catch (e) {} }
+// Logado com Supabase, também envia para a conta (js/nuvem.js)
+function salvarTenho() { try { localStorage.setItem('carddex_tenho', JSON.stringify(ESTADO.tenho)); } catch (e) {} nuvemAgendar(); }
 function qtdTenho(id) { return (ESTADO.tenho[id] || []).length; }
 function totalTenho() { return Object.keys(ESTADO.tenho).reduce(function (a, k) { return a + ESTADO.tenho[k].length; }, 0); }
 function todasColecoes() { return ESTADO.series.reduce(function (a, s) { return a.concat(s.colecoes); }, []); }

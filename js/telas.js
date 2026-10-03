@@ -15,7 +15,7 @@ function pad(n, l) { return ('0000' + n).slice(-(l || 3)); }
 function esc(t) { return String(t == null ? '' : t).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;'); }
 function barra(p) { return '<div class="barra"><i style="width:' + p + '%"></i></div>'; }
 function pct(n, t) { return t ? Math.round(n / t * 100) : 0; }
-// Deixa sublinhado o link do menu da tela atual (0 Início, 1 Séries, 2 Minhas cartas, 3 Estatísticas)
+// Deixa sublinhado o link do menu da tela atual (0 Início, 1 Séries, 2 Minhas cartas, 3 Ranking, 4 Admin; -1 nenhum)
 function marcarMenu(n) {
   [].forEach.call(document.querySelectorAll('.links a'), function (a, i) { a.classList.toggle('on', i === n); });
 }
@@ -39,7 +39,7 @@ function botaoJogo(j) {
 // TELA 1 – Início: destaque, estatísticas e botões dos JOGOS.
 // O parâmetro 'ir' rola a página até um bloco (ex.: 'series'). Com algo na busca, mostra séries e coleções encontradas.
 function telaInicio(ir) {
-  ESTADO.redesenhar = null; marcarMenu(ir === 'series' ? 1 : ir === 'stats' ? 3 : 0);
+  ESTADO.redesenhar = null; marcarMenu(ir === 'series' ? 1 : 0);
   var q = ((document.getElementById('busca') || {}).value || '').trim().toLowerCase(), blocos;
   if (q) {
     var achou = function (t) { return t.toLowerCase().indexOf(q) > -1; };
@@ -160,7 +160,7 @@ function desenharMinhas() {
     }).join('');
   }).join('');
   app.innerHTML = '<h2>Minhas cartas</h2><span class="sub">' + totalTenho() + ' cartas marcadas. Clique no nome da coleção para ver todas as cartas dela.</span>' +
-    '<div class="backup"><div><b>Backup da coleção</b><span class="sub">As marcações ficam salvas só neste navegador. Exporte um arquivo para não perder nada ou para levar para outro aparelho.</span></div>' +
+    '<div class="backup"><div><b>Backup da coleção</b><span class="sub">' + (logadoNaNuvem() ? 'Suas marcações estão salvas na sua conta e aparecem em qualquer aparelho em que você entrar. Se quiser, guarde também uma cópia em arquivo.' : 'Sem conta, as marcações ficam salvas só neste navegador. Crie uma conta para levar para qualquer aparelho, ou exporte um arquivo.') + '</span></div>' +
     '<div class="backup-acoes"><button class="btn" onclick="exportarColecao()">Exportar backup</button><button class="btn btn-sec" onclick="this.nextElementSibling.click()">Importar backup</button><input type="file" accept=".json,application/json" onchange="importarColecao(this)" hidden></div><p class="sub" id="backup-msg" role="status"></p></div>' +
     (blocos || '<div class="aviso">Você ainda não marcou nenhuma carta. Abra uma coleção e toque no círculo da carta para marcar.</div>');
 }

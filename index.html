@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>CardDex – Sua coleção de cartas</title>
 <link rel="icon" href="assets/img/carddex-logo.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#00143e">
+<link rel="apple-touch-icon" href="assets/img/app/icone-192.png">
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/global.css">
 <link rel="stylesheet" href="css/layout.css">
@@ -12,19 +15,30 @@
 <link rel="stylesheet" href="css/responsivo.css">
 </head>
 <body>
+<div class="pagina">
+<aside class="lado" id="parc-esq" aria-label="Parceiros"></aside>
 <div class="wrap">
 <nav>
 <img class="mark" src="assets/img/carddex-logo.png" alt="CardDex"><div class="brand">Card<b>Dex</b></div>
-<div class="links"><a class="on" onclick="telaInicio()">Início</a><a onclick="telaInicio('series')">Séries</a><a onclick="telaMinhas()">Minhas cartas</a><a onclick="telaInicio('stats')">Estatísticas</a></div>
+<div class="links"><a class="on" onclick="telaInicio()">Início</a><a onclick="telaInicio('series')">Séries</a><a onclick="telaMinhas()">Minhas cartas</a><a onclick="telaRanking()">Ranking</a><a id="nav-admin" onclick="telaAdmin()" hidden>Admin</a></div>
 <div class="sp"></div><input class="busca" id="busca" placeholder="Buscar séries ou coleções..." oninput="telaInicio('series')">
 <button class="nav-btn" id="nav-conta" type="button" onclick="clicarConta()">Entrar</button>
 </nav>
 <main id="app"></main>
+<section class="parceiros-faixa" id="parc-faixa" aria-label="Parceiros"></section>
+</div>
+<aside class="lado" id="parc-dir" aria-label="Parceiros"></aside>
 </div>
 <div id="modal" class="modal" hidden></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/config.js"></script>
 <script src="js/dados.js"></script>
 <script src="js/telas.js"></script>
+<script src="js/nuvem.js"></script>
 <script src="js/auth.js"></script>
+<script src="js/ranking.js"></script>
+<script src="js/parceiros.js"></script>
+<script src="js/admin.js"></script>
 <script src="js/modal.js"></script>
 <script src="js/compartilhar.js"></script>
 <script src="js/main.js"></script>
