@@ -203,11 +203,15 @@ async function enviarPerfil(e) {
   var erro = document.getElementById('login-erro'), p = lerPerfil(e.target.elements);
   erro.classList.remove('ok');
   if (typeof p === 'string') { erro.textContent = p; return; }
+  var botao = e.target.querySelector('[type=submit]');
+  botao.disabled = true; botao.textContent = 'Salvando...';
   try {
     await AUTH.salvarPerfil(p); atualizarConta();
     e.target.querySelector('.login-logo').outerHTML = imgAvatar(p.avatar, 'login-logo');
-    erro.classList.add('ok'); erro.textContent = 'Perfil salvo!';
-  } catch (x) { erro.textContent = x.message; }
+    erro.classList.add('ok'); erro.textContent = 'Perfil salvo! Voltando para o início...';
+    botao.textContent = '✓ Salvo';
+    setTimeout(function () { if (document.getElementById('login-erro') === erro) telaInicio(); }, 900);
+  } catch (x) { erro.textContent = x.message; botao.disabled = false; botao.textContent = 'Salvar'; }
 }
 async function sairDaConta(btn) {
   btn.disabled = true; btn.textContent = 'Saindo...';
