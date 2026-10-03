@@ -57,6 +57,10 @@ para quem estiver na tabela "admins": lá ficam as contas criadas e os 8 quadrad
 (4 em cada lateral; no celular eles aparecem numa faixa no fim da página).
 Sem o Supabase configurado o site funciona como antes e os quadrados mostram "Seja um parceiro".
 
+ATUALIZAR O SITE SEM CACHE
+No index.html, cada .css e .js termina com ?v=AAAAMMDD. Ao publicar mudanças, troque essa data
+(em todas as linhas) para os navegadores e o app instalado baixarem os arquivos novos na hora.
+
 ONDE MEXER
  Cores ........ css/global.css (variáveis no topo)
  Telas ........ js/telas.js
