@@ -1,5 +1,5 @@
-// js/nuvem.js
-// CARTAS MARCADAS NA CONTA (Supabase, tabela "colecoes")
+// js/base/nuvem.js
+// CARTAS MARCADAS NA CONTA (Supabase, tabela "colecoes": tenho + repetidas)
 // ============================================================
 // O navegador continua guardando uma cópia (localStorage) para o site abrir rápido.
 // Logado: cada marcação é enviada para a conta logo depois (espera 0,8 s para juntar cliques seguidos).
@@ -8,12 +8,13 @@
 // ============================================================
 var nuvemTimer = null;
 
+// true = está logado numa conta do Supabase (as marcações vão para a conta)
 function logadoNaNuvem() { return !!(sb && AUTH._u); }
 // 'carddex_pendente' = há marcações que ainda não chegaram na conta (ex.: fechou a aba logo depois de marcar)
 function nuvemPendente() { try { return localStorage.getItem('carddex_pendente') === '1'; } catch (e) { return false; } }
 function marcarPendente(p) { try { if (p) localStorage.setItem('carddex_pendente', '1'); else localStorage.removeItem('carddex_pendente'); } catch (e) {} }
 
-// Chamado por salvarTenho() (js/dados.js) a cada marcação
+// Chamado por salvarTenho() e salvarRepetidas() (js/base/marcacoes.js) a cada mudança
 function nuvemAgendar() {
   if (!logadoNaNuvem()) return;
   marcarPendente(true);
@@ -21,6 +22,7 @@ function nuvemAgendar() {
   nuvemTimer = setTimeout(nuvemEnviar, 800);
 }
 
+// Envia tudo agora (se houver algo pendente)
 async function nuvemEnviar() {
   clearTimeout(nuvemTimer); nuvemTimer = null;
   if (!logadoNaNuvem() || !nuvemPendente()) return;

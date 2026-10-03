@@ -1,0 +1,49 @@
+/* css/telas/conta.css – login, cadastro, Meu perfil (personagem/foto) e Minha vitrine */
+
+/* ===== CARTÃO CENTRAL (login e perfil) ===== */
+.na-login nav{display:none}
+.login{min-height:calc(100vh - 32px);display:grid;place-items:center;gap:16px;align-content:center}
+.login-card{width:min(420px,100%);background:var(--p1);border:1px solid var(--line);border-radius:20px;padding:28px 24px;display:flex;flex-direction:column;gap:14px}
+.login-card h3{margin:0;text-align:center;color:var(--gold);font-size:1.4rem}
+.login-card>.sub{text-align:center}
+.login-card .btn{width:100%}
+.login-logo{width:96px;height:96px;object-fit:cover;border-radius:50%;align-self:center}
+.login-tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.login-tabs button{min-height:44px;background:var(--bg);border:1px solid var(--line);color:var(--text);border-radius:999px;font:inherit;cursor:pointer}
+.login-tabs button.on{background:var(--gold);color:#1a1200;border-color:var(--gold)}
+.link-esqueci{align-self:flex-end;background:none;border:0;color:var(--blue);font:inherit;font-size:.9rem;cursor:pointer;padding:4px 0;min-height:32px}
+.link-esqueci:hover{color:var(--gold)}
+
+/* ===== PERSONAGEM OU FOTO ===== */
+.avatares{border:0;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.avatares.com-foto{grid-template-columns:repeat(3,1fr)}
+.avatares legend{color:var(--mut);font-size:.9rem;padding:0;margin-bottom:6px}
+.avatar-op{position:relative;display:flex;flex-direction:column;align-items:center;gap:6px;padding:12px;border:1px solid var(--line);border-radius:14px;background:var(--bg);cursor:pointer;transition:border-color .2s,box-shadow .2s}
+.avatar-op input{position:absolute;opacity:0;pointer-events:none}
+.avatar-op img,.foto-prev,.foto-vazia{width:84px;height:84px}
+.avatar-op:has(input:checked){border-color:var(--gold);box-shadow:0 0 14px #ffc61a55}
+.avatar-op:has(input:checked) span{color:var(--gold);font-weight:600}
+.avatar-op:has(input:focus-visible){outline:2px solid var(--blue);outline-offset:2px}
+.foto-prev,.foto-vazia{border-radius:50%}
+.foto-prev{object-fit:cover;border:3px solid var(--gold)}
+.foto-vazia{display:grid;place-items:center;border:2px dashed var(--line);color:var(--blue);font-size:2.4rem;font-weight:300;line-height:1}
+.op-foto:hover .foto-vazia{border-color:var(--gold);color:var(--gold)}
+.dica-foto{font-size:.8rem;margin-top:-4px}
+/* foto de perfil em qualquer lugar do site (menu, ranking, perfil, painel) */
+.foto-perfil{object-fit:cover;border:2px solid var(--gold);background:var(--p1)}
+.login-logo.foto-perfil{border-width:4px}
+
+/* ===== MINHA VITRINE (embaixo do Meu perfil) ===== */
+#minha-vitrine h3{margin:0;color:var(--gold)}
+#minha-vitrine h3 small{color:var(--mut);font-weight:400;font-size:.9rem}
+.vitrine.vitrine-edit{grid-template-columns:repeat(5,1fr);gap:8px;margin-top:0}
+.vitrine-edit .carta-vitrine{cursor:default;border-width:1px;box-shadow:none}
+.tirar{position:absolute;top:4px;right:4px;width:26px;height:26px;border-radius:50%;border:1px solid var(--line);background:#00143ee6;color:var(--text);font-size:1.1rem;line-height:1;cursor:pointer;display:grid;place-items:center;padding:0}
+.tirar:hover{background:var(--erro);color:#1a0000;border-color:var(--erro)}
+
+@media(max-width:760px){
+  .login-card{padding:22px 18px}
+  .nav-btn.logado{max-width:150px;min-width:0}
+  .avatar-op{padding:10px 4px}
+  .avatar-op img,.foto-prev,.foto-vazia{width:64px;height:64px}
+}

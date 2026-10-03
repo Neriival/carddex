@@ -1,7 +1,7 @@
-// js/parceiros.js
-// Quadrados de parceiros: 4 na lateral esquerda (e1–e4) e 4 na direita (d1–d4).
+// js/recursos/parceiros.js
+// QUADRADOS DE PARCEIROS: 4 na lateral esquerda (e1–e4) e 4 na direita (d1–d4).
 // Em telas estreitas (celular/tablet) os 8 aparecem numa faixa no fim da página.
-// Os parceiros ficam na tabela "parceiros" do Supabase e são editados no painel adm (js/admin.js).
+// Os parceiros ficam na tabela "parceiros" do Supabase e são editados no painel adm (js/telas/admin.js).
 // Quadrado sem parceiro mostra "Seja um parceiro" (link em CONFIG.contatoParceiro, js/config.js).
 var POSICOES = { esq: ['e1', 'e2', 'e3', 'e4'], dir: ['d1', 'd2', 'd3', 'd4'] };
 var PARCEIROS = {}; // { e1: { posicao, nome, link, imagem }, ... }
@@ -10,6 +10,7 @@ var PARCEIROS = {}; // { e1: { posicao, nome, link, imagem }, ... }
 function linkSeguro(u) { return /^https?:\/\//i.test(u || '') ? u : ''; }
 function nomePosicao(pos) { return (pos[0] === 'e' ? 'Esquerda ' : 'Direita ') + pos[1]; }
 
+// Lê os parceiros do banco e desenha os quadrados
 async function carregarParceiros() {
   if (sb) {
     try {
@@ -21,6 +22,7 @@ async function carregarParceiros() {
   desenharParceiros();
 }
 
+// Um quadrado: imagem com link para o site do parceiro, ou "Seja um parceiro"
 function quadroParceiro(pos) {
   var p = PARCEIROS[pos];
   if (p && linkSeguro(p.link) && linkSeguro(p.imagem))
@@ -30,6 +32,7 @@ function quadroParceiro(pos) {
   return c ? '<a class="parceiro vago" href="' + esc(c) + '" target="_blank" rel="noopener" title="Anuncie no CardDex">' + txt + '</a>' : '<div class="parceiro vago">' + txt + '</div>';
 }
 
+// Desenha as duas laterais e a faixa do celular
 function desenharParceiros() {
   document.getElementById('parc-esq').innerHTML = POSICOES.esq.map(quadroParceiro).join('');
   document.getElementById('parc-dir').innerHTML = POSICOES.dir.map(quadroParceiro).join('');

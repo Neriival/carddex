@@ -1,0 +1,16 @@
+/* css/componentes/parceiros.css – quadrados de parceiros nas laterais e na faixa do fim da página.
+   A troca entre laterais (computador) e faixa (celular/tablet) fica em css/responsivo.css. */
+.parceiro{display:grid;place-items:center;width:min(100%,calc((100vh - 68px) / 4));aspect-ratio:1;border-radius:16px;border:1px solid var(--line);background:var(--p1);overflow:hidden;color:var(--mut);text-decoration:none;text-align:center;font-size:.9rem;line-height:1.25;transition:border-color .2s,transform .2s}
+.parceiro img{width:100%;height:100%;object-fit:cover;display:block}
+.parceiro.vago{border-style:dashed;background:none}.parceiro.vago b{color:var(--gold)}
+a.parceiro:hover,a.parceiro:focus-visible{border-color:var(--gold);transform:translateY(-2px);outline:none}
+/* faixa do celular: 2 linhas de 4 */
+.parceiros-faixa{display:none;margin-top:32px}
+.parceiros-faixa>div{display:grid;grid-template-columns:repeat(4,minmax(0,150px));gap:10px;margin-top:8px}
+.parceiros-faixa .parceiro{width:100%}
+/* na tela de login os parceiros ficam escondidos */
+.na-login .lado,.na-login .parceiros-faixa{visibility:hidden}
+
+@media(max-width:760px){
+  .parceiros-faixa>div{gap:8px}.parceiro{font-size:.72rem;border-radius:12px}
+}

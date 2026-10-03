@@ -1,0 +1,27 @@
+/* css/telas/admin.css – painel adm: números, tabelas, formulários de parceiros e moderação de fotos */
+#adm-site{margin-top:12px}
+
+/* ===== TABELAS (contas e coleções mais colecionadas) ===== */
+.adm-tabela{overflow-x:auto;margin-top:12px;border:1px solid var(--line);border-radius:14px}
+.adm-tabela table{width:100%;border-collapse:collapse;font-size:.95rem}
+.adm-tabela th,.adm-tabela td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
+.adm-tabela th{background:var(--p1);color:var(--blue);font-weight:600}
+.adm-tabela tr:last-child td{border-bottom:0}
+/* foto da conta + "Remover foto" */
+.adm-foto{display:flex;align-items:center;gap:10px}
+.adm-mini{width:40px;height:40px;border-radius:50%;flex:none}
+.adm-remover{background:none;border:1px solid var(--erro);color:var(--erro);border-radius:999px;padding:4px 10px;font:inherit;font-size:.8rem;cursor:pointer}
+.adm-remover:hover{background:var(--erro);color:#1a0000}
+
+/* ===== PARCEIROS (um formulário por quadrado) ===== */
+.adm-parceiros{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;margin-top:12px}
+.adm-parc{background:var(--p1);border:1px solid var(--line);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:10px}
+.adm-topo{display:flex;align-items:center;gap:12px}
+.adm-topo b{color:var(--gold);font-size:1.1rem}
+.adm-topo>div:last-child{display:flex;flex-direction:column;gap:2px}
+.adm-cliques{font-size:.8rem}.adm-cliques:empty{display:none}
+.adm-prev{width:72px;height:72px;flex:none;border-radius:12px;border:1px dashed var(--line);display:grid;place-items:center;overflow:hidden;color:var(--mut);font-size:.85rem}
+.adm-prev img{width:100%;height:100%;object-fit:cover}
+.adm-parc input[type=file]{min-height:0;padding:10px;font-size:.85rem}
+.adm-parc .erro{margin:0}.adm-parc .erro:empty{display:none}
+.adm-acoes{display:flex;gap:8px}.adm-acoes .btn{flex:1;min-width:0;margin-top:0;padding:0 12px}

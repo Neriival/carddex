@@ -1,51 +1,41 @@
-// js/dados.js
-// Dados e estado do CardDex
+// js/base/dados.js
+// DADOS DAS CARTAS E ESTADO DO SITE
 // ============================================================
-// DADOS E ESTADO
-// Aqui ficam: a lista de séries/coleções, as cartas carregadas e as
-// cartas que você marcou (salvas no navegador, em localStorage).
+// - dados/series.json: jogos, séries e coleções (em ordem de lançamento)
+// - dados/cartas/<serie>/<colecao>.json: as cartas (geradas por scripts/baixar_cartas.py)
+// - se o .json da coleção não existir, as cartas vêm direto da TCGdex (internet)
+// As cartas que a pessoa marcou ficam em js/base/marcacoes.js.
 // ============================================================
 
 // Endereço da API usada quando as cartas ainda não foram baixadas pelo script
 var API_TCGDEX = 'https://api.tcgdex.net/v2';
-// jogos = Pokémon, Yu-Gi-Oh!, Dragon Ball... (cada série pertence a um jogo)
-// redesenhar = função da tela atual, chamada quando a carta grande fecha
-var ESTADO = { jogos: [], series: [], cartas: {}, tenho: {}, repetidas: {}, filtro: 'todas', raridade: '', tipo: '', atual: null, tid: {}, redesenhar: null };
-try { ESTADO.tenho = JSON.parse(localStorage.getItem('carddex_tenho') || '{}'); } catch (e) {}
-try { ESTADO.repetidas = JSON.parse(localStorage.getItem('carddex_repetidas') || '{}'); } catch (e) {}
-// Salva/lê as cartas marcadas. ESTADO.tenho = { 'me04': ['me04-001', ...], ... }
-// Logado com Supabase, também envia para a conta (js/nuvem.js)
-function salvarTenho() { try { localStorage.setItem('carddex_tenho', JSON.stringify(ESTADO.tenho)); } catch (e) {} nuvemAgendar(); }
-// REPETIDAS: quantas cópias a mais de cada carta. ESTADO.repetidas = { 'me04': { 'me04-001': 2 }, ... }
-function salvarRepetidas() { try { localStorage.setItem('carddex_repetidas', JSON.stringify(ESTADO.repetidas)); } catch (e) {} nuvemAgendar(); }
-function qtdRepetida(col, k) { return (ESTADO.repetidas[col] || {})[k] || 0; }
-function mudarRepetida(col, k, n) {
-  var m = ESTADO.repetidas[col] || (ESTADO.repetidas[col] = {});
-  if (n > 0) m[k] = Math.min(n, 99); else delete m[k];
-  if (!Object.keys(m).length) delete ESTADO.repetidas[col];
-  salvarRepetidas();
-}
-function qtdTenho(id) { return (ESTADO.tenho[id] || []).length; }
-function totalTenho() { return Object.keys(ESTADO.tenho).reduce(function (a, k) { return a + ESTADO.tenho[k].length; }, 0); }
+
+// Estado do site (tudo que muda enquanto a pessoa navega)
+var ESTADO = {
+  jogos: [],        // Pokémon, Yu-Gi-Oh!, Dragon Ball... (cada série pertence a um jogo)
+  series: [],       // séries com suas coleções (de dados/series.json)
+  cartas: {},       // cartas já carregadas, por coleção: { 'me01': [ {id, numero, nome, imagem...}, ... ] }
+  tenho: {},        // cartas marcadas (js/base/marcacoes.js)
+  repetidas: {},    // cópias a mais de cada carta (js/base/marcacoes.js)
+  filtro: 'todas',  // filtro da coleção: todas | tenho | faltam | repetidas
+  raridade: '', tipo: '', // filtros extras da coleção
+  atual: null,      // coleção aberta
+  tid: {},          // id de cada coleção na TCGdex (cache)
+  redesenhar: null  // função da tela atual, chamada quando a carta grande fecha ou chegam dados novos
+};
+
+// Procurar coisas pelo id
 function todasColecoes() { return ESTADO.series.reduce(function (a, s) { return a.concat(s.colecoes); }, []); }
 function acharColecao(id) { return todasColecoes().filter(function (c) { return c.id === id; })[0]; }
 function acharSerie(id) { return ESTADO.series.filter(function (s) { return s.id === id; })[0]; }
 function acharJogo(id) { return ESTADO.jogos.filter(function (j) { return j.id === id; })[0]; }
 function seriesDoJogo(id) { return ESTADO.series.filter(function (s) { return s.jogo === id; }); }
-// Ajudantes: converte '2026-05-22' em '22/05/2026' e soma o progresso de uma série inteira
-function dataBR(d) { var p = d.split('-'); return p[2] + '/' + p[1] + '/' + p[0]; }
-function resumoSerie(s) {
-  var t = 0, m = 0;
-  s.colecoes.forEach(function (c) { t += c.total; m += qtdTenho(c.id); });
-  return { total: t, tenho: m, pct: t ? Math.round(m / t * 100) : 0 };
-}
 
 // Lê dados/series.json e deixa séries e coleções em ordem de lançamento (mais novas primeiro)
 async function carregarSeries() {
   var r = await fetch('dados/series.json'), d = await r.json();
   ESTADO.series = d.series;
   ESTADO.jogos = d.jogos || [{ id: 'pokemon', nome: 'Pokémon' }];
-  // coleções: da mais nova para a mais antiga
   ESTADO.series.forEach(function (s) {
     s.colecoes.forEach(function (c) { c.serie = s.id; });
     // mesma data (ex.: coleção + galeria de treinador): mantém a ordem do series.json
@@ -71,7 +61,8 @@ async function idTcgdex(c) {
   return id;
 }
 
-// 1) usa dados/cartas/<serie>/<colecao>.json (gerado pelo script, com imagens locais)
+// Cartas de uma coleção:
+// 1) dados/cartas/<serie>/<colecao>.json (gerado pelo script, com imagens no projeto)
 // 2) se não existir, busca online na TCGdex (português; inglês se faltar)
 async function carregarCartas(c) {
   if (ESTADO.cartas[c.id]) return ESTADO.cartas[c.id];
@@ -90,7 +81,7 @@ async function carregarCartas(c) {
   return lista;
 }
 
-// Busca raridade, tipo, PS e ilustrador (só no modo online; no modo local já vêm no .json)
+// Raridade, tipo, PS e ilustrador (só no modo online; no modo local já vêm no .json)
 async function detalhesCarta(k) {
   if (!k.remoto || k.detalhes) return k;
   try {

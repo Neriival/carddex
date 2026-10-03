@@ -1,8 +1,7 @@
-// js/compartilhar.js
-// Gera uma imagem com as cartas que faltam (ou as repetidas) da coleção atual e compartilha (WhatsApp)
+// js/recursos/compartilhar.js
+// COMPARTILHAR NO WHATSAPP: imagem com as cartas que faltam (ou as repetidas) da coleção atual
 // ============================================================
-// COMPARTILHAR CARTAS QUE FALTAM
-// Botão na tela da coleção → abrirCompartilhar() desenha a imagem num <canvas>
+// Botões na tela da coleção → abrirCompartilhar() desenha a imagem num <canvas>
 // e mostra uma prévia. No celular, "Compartilhar" abre o menu do sistema
 // (é só escolher o WhatsApp). No computador, a imagem é baixada e o
 // WhatsApp Web abre com a lista de números para você anexar a imagem.
@@ -10,7 +9,7 @@
 // ============================================================
 
 var IMG_LARGURA = 1080; // largura da imagem gerada (px), boa para o WhatsApp
-var faltantes = null;   // { arquivo: File, url: 'blob:...', texto: '...' }
+var faltantes = null;   // imagem pronta: { arquivo: File, url: 'blob:...', nome, texto }
 
 // Carrega uma imagem e devolve null se der erro (ex.: carta sem imagem)
 function carregarImg(src) {
@@ -28,12 +27,13 @@ async function logoColecao(c) {
   var base = 'assets/img/colecoes/' + c.serie + '/' + c.id;
   return (await carregarImg(base + '.webp')) || (await carregarImg(base + '.svg'));
 }
-// Corta o texto com "…" para caber na largura
+// Corta o texto com "…" para caber na largura (canvas)
 function cortarTexto(ctx, t, larg) {
   if (ctx.measureText(t).width <= larg) return t;
   while (t.length > 1 && ctx.measureText(t + '…').width > larg) t = t.slice(0, -1);
   return t + '…';
 }
+// Caminho de um retângulo com cantos arredondados (canvas)
 function retanguloArredondado(ctx, x, y, w, h, r) {
   ctx.beginPath(); ctx.moveTo(x + r, y);
   ctx.arcTo(x + w, y, x + w, y + h, r); ctx.arcTo(x + w, y + h, x, y + h, r);
@@ -143,6 +143,7 @@ async function compartilharFaltantes() {
   window.open('https://wa.me/?text=' + encodeURIComponent(f.texto), '_blank');
   document.getElementById('share-msg').textContent = 'A imagem foi baixada. No WhatsApp, anexe o arquivo ' + f.nome + '.';
 }
+// Baixa a imagem gerada
 function baixarFaltantes() {
   var a = document.createElement('a'); a.href = faltantes.url; a.download = faltantes.nome;
   document.body.appendChild(a); a.click(); a.remove();

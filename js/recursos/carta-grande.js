@@ -1,10 +1,13 @@
-// js/modal.js
-// Carta em tamanho grande: brilho suave, inclinação 3D e arrastar para o lado (próxima/anterior)
+// js/recursos/carta-grande.js
+// CARTA GRANDE (janela que abre ao clicar na imagem da carta)
 // ============================================================
-// CARTA GRANDE (janela que abre ao clicar na imagem)
-// Para ajustar a inclinação 3D, mude MAX (graus) em abrirCarta().
-// Para ajustar a sensibilidade do arrastar, mude DIST_TROCA (pixels) mais abaixo.
-// A animação de abertura fica em css/componentes.css (@keyframes abrir).
+// Brilho suave, inclinação 3D com o mouse e arrastar para o lado (próxima/anterior).
+// Embaixo das informações: "Marcar como tenho", repetidas (− N +) e "Pôr na vitrine".
+// Aberta pela vitrine de um perfil, navega só entre as cartas da vitrine e não deixa marcar.
+// - Inclinação 3D: mude MAX (graus) em abrirCarta()
+// - Sensibilidade do arrastar: mude DIST_TROCA (pixels)
+// - Animações: css/componentes/carta-grande.css (@keyframes abrir)
+// A mesma janela (#modal) também mostra a imagem de compartilhar (js/recursos/compartilhar.js).
 // ============================================================
 
 var modal = document.getElementById('modal'), cartaAberta = null, tokenModal = 0, arr = null, arrastou = false;
@@ -29,7 +32,7 @@ async function abrirCarta(colId, cartaId, dir, daVitrine) {
     (k.imagem ? '<img draggable="false" src="' + esc(k.imagem) + '" alt="' + esc(k.nome) + '">' : '<div class="ph">' + esc(k.numero) + '</div>') + '<div class="brilho"></div></div><p class="dica sub">‹ Arraste para o lado para ver as outras cartas ›</p></div>' +
     '<div class="info"' + animI + '><h3>' + esc(k.nome) + '</h3><span class="sub">' + esc(c.nome) + '</span><dl><dt>Número</dt><dd>' + esc(k.numero) + ' de ' + lista.length + '</dd><dt>Série</dt><dd>' + esc(s.nome) + '</dd><dt>Raridade</dt><dd>' + esc(k.raridade || '—') + '</dd><dt>Tipo</dt><dd>' + esc(tipo) + '</dd><dt>PS</dt><dd>' + esc(k.ps || '—') + '</dd><dt>Ilustrador</dt><dd>' + esc(k.ilustrador || '—') + '</dd></dl>' +
     (vit ? '<p class="sub">' + (y ? '✓ Você também tem esta carta.' : 'Você ainda não tem esta carta.') + '</p>'
-      : '<button class="btn" onclick="alternarTenho()">' + (y ? '✓ Tenho esta carta' : 'Marcar como tenho') + '</button>' + contadorRepetidas(colId, k.id, y) + botaoVitrine(colId, k, y)) + '</div></div>';
+      : '<button class="btn btn-tenho" onclick="alternarTenho()">' + (y ? '✓ Tenho esta carta' : 'Marcar como tenho') + '</button>' + contadorRepetidas(colId, k.id, y) + botaoVitrine(colId, k, y)) + '</div></div>';
   modal.hidden = false; modal.scrollTop = 0;
   // já carrega as imagens vizinhas para a troca ser instantânea
   if (!vit) [lista[i - 1], lista[i + 1]].forEach(function (v) { if (v && v.imagem) new Image().src = v.imagem; });
@@ -75,7 +78,8 @@ modal.addEventListener('pointermove', function (e) {
     arr.ativo = true; arr.el.style.transition = 'none';
     try { modal.setPointerCapture(e.pointerId); } catch (x) {}
   }
-  var fim = (dx > 0 && cartaAberta.i === 0) || (dx < 0 && cartaAberta.i === ESTADO.cartas[cartaAberta.col].length - 1);
+  var pos = cartaAberta.vit ? cartaAberta.pos : cartaAberta.i, ultima = (cartaAberta.vit ? vitrineAberta : ESTADO.cartas[cartaAberta.col]).length - 1;
+  var fim = (dx > 0 && pos === 0) || (dx < 0 && pos === ultima);
   arr.dx = fim ? dx * .3 : dx; // nas pontas, a carta "resiste"
   arr.el.style.transform = 'translateX(' + arr.dx + 'px) rotate(' + arr.dx / 25 + 'deg)';
 });
@@ -91,20 +95,16 @@ function soltarArrasto(e) {
 modal.addEventListener('pointerup', soltarArrasto);
 modal.addEventListener('pointercancel', soltarArrasto);
 
-// Botão "Marcar como tenho" dentro da janela
+// Botão "Marcar como tenho"
 function alternarTenho() {
-  var id = cartaAberta.col, l = ESTADO.tenho[id] || [], i = l.indexOf(cartaAberta.k.id);
-  if (i > -1) l.splice(i, 1); else l.push(cartaAberta.k.id);
-  ESTADO.tenho[id] = l; salvarTenho();
-  if (i > -1) conferirVitrine(id, cartaAberta.k.id);
-  var b = modal.querySelector('.info .btn');
-  b.textContent = i < 0 ? '✓ Tenho esta carta' : 'Marcar como tenho';
-  if (i > -1 && qtdRepetida(id, cartaAberta.k.id)) mudarRepetida(id, cartaAberta.k.id, 0); // não tem mais = sem repetidas
+  var col = cartaAberta.col, k = cartaAberta.k, y = alternarMarcacao(col, k.id), b = modal.querySelector('.btn-tenho');
+  b.textContent = y ? '✓ Tenho esta carta' : 'Marcar como tenho';
   // repetidas e vitrine só aparecem para carta que tem
   [].forEach.call(modal.querySelectorAll('.repetidas,.btn-vitrine,.msg-vitrine'), function (x) { x.remove(); });
-  b.insertAdjacentHTML('afterend', contadorRepetidas(id, cartaAberta.k.id, i < 0) + botaoVitrine(id, cartaAberta.k, i < 0));
+  b.insertAdjacentHTML('afterend', contadorRepetidas(col, k.id, y) + botaoVitrine(col, k, y));
 }
-// REPETIDAS: − 0 + (só para carta que tem)
+
+// REPETIDAS: − N + (só para carta que tem)
 function contadorRepetidas(col, k, tenho) {
   if (!tenho) return '';
   var n = qtdRepetida(col, k);
@@ -112,16 +112,17 @@ function contadorRepetidas(col, k, tenho) {
     '<b id="rep-qtd" aria-live="polite">' + n + '</b><button type="button" onclick="ajustarRepetida(1)" aria-label="Uma repetida a mais">+</button></div></div>';
 }
 function ajustarRepetida(d) {
-  var col = cartaAberta.col, k = cartaAberta.k.id, n = Math.max(0, Math.min(99, qtdRepetida(col, k) + d));
-  mudarRepetida(col, k, n);
+  var n = somarRepetida(cartaAberta.col, cartaAberta.k.id, d);
   document.getElementById('rep-qtd').textContent = n;
   modal.querySelector('.rep-ctrl button').disabled = !n;
 }
+
 // Fecha a janela, redesenha a tela (coleção ou Minhas cartas) e volta para a mesma posição da página
 function fecharCarta() {
   tokenModal++; modal.hidden = true;
   var y = window.scrollY; if (ESTADO.redesenhar) ESTADO.redesenhar(); window.scrollTo(0, y);
 }
+// Teclado: Esc fecha, setas trocam de carta
 document.addEventListener('keydown', function (e) {
   if (modal.hidden) return;
   if (e.key === 'Escape') fecharCarta();

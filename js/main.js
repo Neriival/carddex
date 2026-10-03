@@ -1,5 +1,12 @@
 // js/main.js
-// Ponto de entrada: lê as séries e a sessão, e mostra o login (se ainda não escolheu) ou a tela inicial
+// PONTO DE ENTRADA (último script do index.html)
+// ============================================================
+// Lê as séries e a sessão da conta e decide a primeira tela:
+// - link de perfil (…/#perfil/<nick>) → perfil público, mesmo sem conta
+// - link do e-mail "Esqueci minha senha" → tela de senha nova
+// - já entrou ou escolheu "Continuar sem conta" → site (ou o atalho do app: #admin, #minhas, #ranking)
+// - primeira visita → tela de login
+// ============================================================
 carregarParceiros();
 Promise.all([carregarSeries(), AUTH.iniciar()]).then(function () {
   atualizarConta();
@@ -13,5 +20,5 @@ Promise.all([carregarSeries(), AUTH.iniciar()]).then(function () {
   document.getElementById('app').innerHTML = '<div class="aviso">Não foi possível ler dados/series.json. Abra o projeto por um servidor (Live Server do VS Code ou GitHub Pages), não direto pelo arquivo.</div>';
 });
 
-// App instalável (área de trabalho / tela inicial do celular)
+// App instalável (área de trabalho / tela inicial do celular): veja sw.js e manifest.webmanifest
 if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(function () {});

@@ -1,5 +1,6 @@
 CARDDEX – Sua coleção de cartas
 ================================
+Site: https://neriival.github.io/carddex/
 
 COMO USAR
 1) Abra a pasta no VS Code e rode com "Live Server" (clique direito no index.html).
@@ -10,19 +11,53 @@ COMO USAR
       python scripts/baixar_cartas.py me04       (só uma coleção)
    Depois suba a pasta inteira para o GitHub.
 
-ESTRUTURA (tudo separado por série e por coleção)
- index.html
- css/        global, layout, componentes, responsivo
- js/         config, dados, telas, nuvem, auth, ranking, parceiros, admin, modal, compartilhar, main
- assets/img/avatares/menino.svg e menina.svg   personagens do cadastro (pode trocar pelos seus, mesmo nome)
- dados/series.json              séries e coleções (em ordem de lançamento)
+ESTRUTURA
+ index.html                     a página (carrega todos os .css e .js, na ordem certa)
+ manifest.webmanifest, sw.js    app instalável (área de trabalho / celular)
+
+ css/
+   base.css                     cores (no topo), textos, botões e formulários
+   layout.css                   colunas da página, menu, destaque, grades
+   componentes/                 peças usadas em várias telas
+     cartas.css                   botões de jogo/série/coleção e as cartas da grade (com − N + das repetidas)
+     carta-grande.css             janela da carta grande (3D, repetidas, vitrine)
+     compartilhar.css             janela da imagem para o WhatsApp
+     parceiros.css                quadrados de parceiros
+   telas/                       uma por tela
+     colecao.css  minhas.css  conta.css (login e perfil)  ranking.css (ranking e perfil público)  admin.css
+   responsivo.css               adaptação da estrutura ao celular (cada arquivo também tem o seu no fim)
+
+ js/
+   config.js                    Supabase e contato de parceiros
+   main.js                      começa o site (decide a primeira tela)
+   base/                        o que o resto usa
+     util.js                      ajudantes (esc, pad, barra, menu...)
+     dados.js                     séries, coleções e cartas (dados/ e TCGdex)
+     marcacoes.js                 cartas que a pessoa tem e as repetidas
+     nuvem.js                     envia/baixa as marcações da conta
+   conta/
+     auth.js                      entrar, criar conta, salvar perfil, sair
+     fotos.js                     personagens e foto de perfil
+     login.js                     tela de login e botão da conta no menu
+     perfil.js                    tela Meu perfil e campos de perfil
+   recursos/                    peças usadas em várias telas
+     carta-grande.js              carta grande (3D, arrastar, tenho, repetidas, vitrine)
+     compartilhar.js              imagem das cartas que faltam / repetidas (WhatsApp)
+     parceiros.js                 quadrados de parceiros
+     vitrine.js                   as 5 cartas do perfil
+   telas/                       uma por tela
+     inicio.js (início, jogo, série)  colecao.js  minhas.js  ranking.js  perfil-publico.js  admin.js
+
+ dados/series.json              jogos, séries e coleções (em ordem de lançamento)
  dados/cartas/<serie>/<colecao>.json
  assets/img/cartas/<serie>/<colecao>/001.webp, 001-mini.webp ...
- assets/img/jogos/<jogo>.svg    ícones de Pokémon, Yu-Gi-Oh!, Dragon Ball
  assets/img/colecoes/<serie>/<colecao>.webp
  assets/img/series/<serie>.webp
- scripts/baixar_cartas.py
- docs/
+ assets/img/jogos/<jogo>.svg    ícones de Pokémon, Yu-Gi-Oh!, Dragon Ball
+ assets/img/avatares/           menino.svg e menina.svg (pode trocar pelos seus, mesmo nome)
+ assets/img/app/                ícones do app instalado
+ scripts/baixar_cartas.py       baixa cartas, imagens e logos
+ docs/                          Supabase (passo a passo e banco) e próximas fases
 
 ADICIONAR UMA COLEÇÃO
 Em dados/series.json, dentro da série, inclua:
@@ -41,31 +76,32 @@ A lista fica em "jogos" no dados/series.json. Um jogo sem séries aparece como "
 Para um jogo novo: inclua { "id": "...", "nome": "..." } em "jogos" e o ícone em assets/img/jogos/<id>.svg.
 As cartas de Yu-Gi-Oh! e Dragon Ball ainda não têm de onde vir: a TCGdex só tem Pokémon.
 
-BACKUP
-As marcações ficam salvas no navegador. Em "Minhas cartas" dá para exportar um arquivo .json
-e importar em outro aparelho (a importação junta com o que já está marcado, não apaga nada).
-
 LOGOS DAS COLEÇÕES
 O script baixa o logo oficial quando existe (assets/img/colecoes/<serie>/<colecao>.webp).
 Quando não existe, o site usa o .svg da mesma pasta (nome da coleção no estilo CardDex).
 Para usar um logo seu, coloque <colecao>.webp na pasta: ele tem prioridade sobre o .svg.
 
-LOGIN, RANKING, PAINEL ADM E PARCEIROS (Supabase – projeto "carddex", já configurado)
-Contas com nick, sexo e personagem; as cartas marcadas ficam salvas na conta.
-Detalhes e como refazer do zero em docs/SUPABASE.md. Depois de configurar, o link "Admin" aparece no menu
-para quem estiver na tabela "admins": lá ficam as contas criadas e os 8 quadrados de parceiros
-(4 em cada lateral; no celular eles aparecem numa faixa no fim da página).
-Sem o Supabase configurado o site funciona como antes e os quadrados mostram "Seja um parceiro".
+CONTAS, RANKING, PERFIS, PAINEL ADM E PARCEIROS (Supabase – projeto "carddex", já configurado)
+- Conta com nick, sexo e personagem ou foto; as cartas marcadas e as repetidas ficam salvas na conta.
+- Ranking por total de cartas; clicando em alguém abre o perfil público (com a vitrine de 5 cartas).
+- O link "Admin" do menu aparece para quem estiver na tabela "admins": contas, números do site,
+  8 quadrados de parceiros (com cliques) e moderação de fotos.
+- Banco e regras de segurança: docs/supabase.sql. Passo a passo e limites do plano grátis: docs/SUPABASE.md.
+Sem o Supabase configurado o site funciona só no navegador e os quadrados mostram "Seja um parceiro".
+
+BACKUP
+Em "Minhas cartas" dá para exportar um arquivo .json (marcações e repetidas) e importar em outro aparelho.
+A importação junta com o que já está marcado, não apaga nada.
 
 ATUALIZAR O SITE SEM CACHE
-No index.html, cada .css e .js termina com ?v=AAAAMMDD. Ao publicar mudanças, troque essa data
+No index.html, cada .css e .js termina com ?v=AAAAMMDD. Ao publicar mudanças, troque essa versão
 (em todas as linhas) para os navegadores e o app instalado baixarem os arquivos novos na hora.
 
 ONDE MEXER
- Cores ........ css/global.css (variáveis no topo)
- Telas ........ js/telas.js
- Carta grande . js/modal.js e css/componentes.css
- Imagem das cartas que faltam (WhatsApp) . js/compartilhar.js
- Dados ........ js/dados.js e dados/series.json
- Supabase e contato de parceiros . js/config.js
- Parceiros .... js/parceiros.js (laterais) e js/admin.js (painel)
+ Cores ................ css/base.css (variáveis no topo)
+ Supabase e contato ... js/config.js
+ Uma tela ............. js/telas/<tela>.js e css/telas/<tela>.css
+ Carta grande ......... js/recursos/carta-grande.js e css/componentes/carta-grande.css
+ Imagem do WhatsApp ... js/recursos/compartilhar.js
+ Dados das cartas ..... js/base/dados.js e dados/series.json
+ Parceiros ............ js/recursos/parceiros.js (quadrados) e js/telas/admin.js (painel)

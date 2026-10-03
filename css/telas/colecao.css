@@ -1,0 +1,23 @@
+/* css/telas/colecao.css – tela da coleção: filtros Todas/Tenho/Faltam/Repetidas, raridade e tipo, e compartilhar */
+
+/* ===== FILTROS PRINCIPAIS ===== */
+.filtros{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;max-width:620px;margin:12px 0}
+.filtros button{background:var(--p1);border:1px solid var(--line);color:var(--text);border-radius:999px;min-height:44px;padding:0 12px;font:inherit;cursor:pointer}
+.filtros button.on{background:var(--gold);color:#1a1200;border-color:var(--gold)}
+
+/* ===== RARIDADE E TIPO ===== */
+.filtros-extra{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 12px}.filtros-extra:empty{display:none}
+.seletor{display:flex;flex-direction:column;gap:4px;flex:1;min-width:160px;max-width:235px}
+.seletor span{color:var(--mut);font-size:.85rem}
+.seletor select{min-height:44px;background:var(--p1);border:1px solid var(--line);color:var(--text);border-radius:12px;padding:0 12px;font:inherit;cursor:pointer}
+.seletor select:focus{outline:none;border-color:var(--gold)}
+
+/* ===== BOTÕES DE COMPARTILHAR ===== */
+.compartilhar-acoes{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 14px}
+.btn-compartilhar{margin:0}
+
+@media(max-width:760px){
+  .filtros{grid-template-columns:repeat(2,1fr);max-width:none}
+  .seletor{max-width:none}
+  .btn-compartilhar{width:100%}
+}

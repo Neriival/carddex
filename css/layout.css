@@ -1,20 +1,35 @@
-/* css/layout.css – posição dos blocos */
-/* Estrutura da página: container, menu, destaque (hero), estatísticas e grades */
-/* Página em 3 colunas: parceiros (esquerda) | site | parceiros (direita) */
+/* css/layout.css – estrutura da página: colunas, menu, destaque (hero), números e grades
+   As adaptações para celular e tablet ficam em css/responsivo.css. */
+
+/* ===== PÁGINA EM 3 COLUNAS: parceiros (esquerda) | site | parceiros (direita) ===== */
 .pagina{display:grid;grid-template-columns:150px minmax(0,1180px) 150px;gap:8px;justify-content:center;padding:0 16px}
 .lado{position:sticky;top:0;align-self:start;display:flex;flex-direction:column;gap:12px;padding:16px 0}
 .wrap{position:relative;max-width:1180px;margin:0 auto;padding:16px;width:100%;min-width:0}
+
+/* ===== MENU ===== */
 nav{display:flex;align-items:center;gap:20px;flex-wrap:wrap;background:var(--p1);border:1px solid var(--line);border-radius:16px;padding:8px 18px}
-nav a{color:var(--text);padding:8px 4px;border-bottom:3px solid transparent;cursor:pointer}nav a.on{color:var(--gold);border-color:var(--gold)}
+nav a{color:var(--text);text-decoration:none;padding:8px 4px;border-bottom:3px solid transparent;cursor:pointer;display:inline-flex;align-items:center;min-height:44px}
+nav a.on{color:var(--gold);border-color:var(--gold)}
+nav a:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
 .mark{height:52px;width:52px;object-fit:cover;border-radius:50%}
 .brand{font-weight:800;font-size:1.6rem;color:var(--blue)}.brand b{color:var(--gold)}
 .sp{flex:1}
 .links{display:flex;gap:20px}
-.busca{background:var(--bg);border:1px solid var(--line);color:var(--text);border-radius:999px;padding:10px 16px;min-width:220px;font:inherit}
+.busca{background:var(--bg);border:1px solid var(--line);color:var(--text);border-radius:999px;padding:10px 16px;min-width:220px;min-height:44px;font:inherit}
+/* botão da conta: "Entrar" ou personagem/foto + nick */
+.nav-btn{background:none;border:1px solid var(--gold);color:var(--gold);border-radius:999px;min-height:44px;min-width:96px;padding:0 20px;font:inherit;font-weight:600;cursor:pointer}
+.nav-btn:hover,.nav-btn:focus-visible{background:var(--gold);color:#1a1200;outline:none}
+.nav-btn.logado{display:inline-flex;align-items:center;gap:8px;padding:0 16px 0 4px;max-width:200px}
+.nav-btn.logado span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.nav-avatar{width:36px;height:36px;border-radius:50%;flex:none}
+
+/* ===== DESTAQUE DA TELA INICIAL ===== */
 .hero{margin-top:16px;border:1px solid var(--line);border-radius:20px;padding:36px 40px;display:grid;grid-template-columns:1.1fr 1fr;gap:20px;align-items:center;background:var(--bg);overflow:hidden}
 .hero small{color:var(--blue);letter-spacing:.2em}
 .hero p{color:var(--mut);font-size:1.15rem;max-width:34ch}
 .hero img{width:100%;max-width:440px;justify-self:center;-webkit-mask-image:radial-gradient(closest-side,#000 62%,transparent 100%);mask-image:radial-gradient(closest-side,#000 62%,transparent 100%)}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:20px}
-.colecoes{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:12px;grid-auto-rows:1fr}
-.grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:12px}
+
+/* ===== GRADES ===== */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:20px}  /* cartões de números */
+.colecoes{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:12px;grid-auto-rows:1fr}  /* jogos, séries e coleções */
+.grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:12px}  /* cartas */

@@ -1,7 +1,12 @@
-// js/admin.js
-// PAINEL ADM: contas criadas e parceiros.
+// js/telas/admin.js
+// TELA – PAINEL ADM
+// ============================================================
+// Contas criadas, números do site, coleções mais colecionadas, parceiros (com cliques) e moderação de fotos.
 // Só aparece para quem está na tabela "admins" do Supabase (veja docs/SUPABASE.md).
-// O banco também confere isso: mesmo abrindo a tela por fora, quem não é admin não lê as contas nem muda os parceiros.
+// O banco também confere isso: mesmo abrindo a tela por fora, quem não é admin não lê as contas nem muda nada.
+// ============================================================
+
+var NOMES_SEXO = { masculino: 'Masculino', feminino: 'Feminino', nao_informar: 'Não informou' };
 
 function telaAdmin() {
   ESTADO.redesenhar = null; marcarMenu(4);
@@ -17,6 +22,7 @@ function telaAdmin() {
   window.scrollTo(0, 0);
   carregarContas(); carregarResumo(); carregarCliques();
 }
+// Cartão de número (… enquanto carrega)
 function statAdm(rotulo, valor) { return '<div class="stat"><div>' + rotulo + '</div><b>' + (valor == null ? '…' : valor) + '</b></div>'; }
 
 // CONTAS: totais (geral, 7 e 30 dias) e as 100 mais recentes
@@ -34,8 +40,6 @@ async function carregarContas() {
     lista.data.map(function (c) { return '<tr><td class="adm-foto">' + avatarDe(c, 'adm-mini') + (c.foto ? '<button class="adm-remover" type="button" onclick="removerFotoAdm(this,\'' + c.id + '\')">Remover foto</button>' : '') + '</td><td>' + esc(c.nick || c.nome || '–') + '</td><td>' + esc(c.email) + '</td><td>' + (NOMES_SEXO[c.sexo] || '–') + '</td><td>' + new Date(c.criado_em).toLocaleString('pt-BR', { dateStyle: 'short', timeStyle: 'short' }) + '</td></tr>'; }).join('') +
     '</tbody></table></div>' + (n[0] > 100 ? '<p class="sub">Mostrando as 100 mais recentes.</p>' : '') : '<p class="sub">Nenhuma conta criada ainda.</p>';
 }
-
-var NOMES_SEXO = { masculino: 'Masculino', feminino: 'Feminino', nao_informar: 'Não informou' };
 
 // NÚMEROS DO SITE: total de cartas marcadas, quem marcou, sexo e as 10 coleções com mais colecionadores
 async function carregarResumo() {
@@ -74,10 +78,12 @@ function formParceiro(pos) {
     '<p class="erro" role="status"></p><div class="adm-acoes"><button class="btn" type="submit">Salvar</button>' +
     (p.posicao ? '<button class="btn btn-sec" type="button" onclick="removerParceiro(this,\'' + pos + '\')">Remover</button>' : '') + '</div></form>';
 }
+// Campo de texto do formulário do parceiro
 function campoAdm(nome, rotulo, tipo, valor) {
   return '<div class="campo"><label>' + rotulo + '</label><input name="' + nome + '" type="' + tipo + '" value="' + esc(valor || '') + '"></div>';
 }
 
+// Salvar: envia a imagem nova (se tiver), grava o parceiro e apaga a imagem antiga
 async function salvarParceiro(e, pos) {
   e.preventDefault();
   var f = e.target, el = f.elements, msg = f.querySelector('.erro'), arq = el.arquivo.files[0], atual = PARCEIROS[pos] || {};
@@ -102,6 +108,7 @@ async function salvarParceiro(e, pos) {
   f.outerHTML = formParceiro(pos); mostrarCliques(pos);
 }
 
+// Remover: o quadrado volta a mostrar "Seja um parceiro"
 async function removerParceiro(btn, pos) {
   var p = PARCEIROS[pos];
   if (!p || !confirm('Remover o parceiro "' + p.nome + '" de ' + nomePosicao(pos) + '?')) return;

@@ -1,0 +1,49 @@
+/* css/base.css – base do site: cores, fonte, textos, botões e formulários
+   Para trocar a paleta inteira, mude as cores em :root (iguais às da logo). */
+
+/* ===== CORES ===== */
+:root{
+  --bg:#000d2f;    /* fundo da página */
+  --p1:#00143e;    /* fundo dos cartões */
+  --p2:#011c52;    /* fundo alternativo */
+  --line:#0f3f9e;  /* bordas */
+  --blue:#4aa3ff;  /* azul de destaque */
+  --gold:#ffc61a;  /* dourado (botões e títulos) */
+  --text:#eaf2ff;  /* texto */
+  --mut:#8fb4f0;   /* texto secundário */
+  --erro:#ff9a9a;  /* mensagens de erro */
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)
+}
+*,*:before,*:after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Outfit,system-ui,sans-serif;min-height:100vh}
+body:before{content:"";position:fixed;inset:0;background:radial-gradient(900px 500px at 75% 0,#0a3aa855,transparent),radial-gradient(700px 400px at 0 100%,#ffc61a14,transparent);pointer-events:none}
+[hidden]{display:none!important}
+button,a{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+
+/* ===== TEXTOS ===== */
+h1{font-size:clamp(2.2rem,6vw,4rem);line-height:1.05;margin:10px 0;font-weight:800}h1 span{display:block;color:var(--gold)}
+h2{margin:32px 0 6px}
+h2.titulo{margin-top:0}
+.sub{color:var(--mut);font-size:.9rem}
+.aviso{background:var(--p1);border:1px solid var(--gold);border-radius:12px;padding:12px 16px;margin:12px 0;color:var(--mut)}
+.erro{color:var(--erro);font-size:.9rem;min-height:1.2em}
+.erro.ok{color:var(--gold)}
+
+/* ===== BOTÕES (todos com a mesma altura: 48px; filtros e menu 44px) ===== */
+.btn{background:var(--gold);color:#1a1200;border:0;border-radius:12px;min-height:48px;min-width:220px;padding:0 26px;font:inherit;font-weight:800;cursor:pointer;margin-top:14px;display:inline-flex;align-items:center;justify-content:center;text-align:center}
+.btn-sec{background:none;color:var(--text);border:1px solid var(--line);margin-top:0}
+.btn-sec:hover,.btn-sec:focus-visible{border-color:var(--gold);outline:none}
+.voltar{background:none;border:0;color:var(--blue);font:inherit;cursor:pointer;min-height:44px;padding:0 4px}
+
+/* ===== FORMULÁRIOS (rótulo + campo) ===== */
+.campo{display:flex;flex-direction:column;gap:6px}
+.campo label{color:var(--mut);font-size:.9rem}
+.campo label small{color:var(--mut);font-weight:400}
+.campo input,.campo select{background:var(--bg);border:1px solid var(--line);color:var(--text);border-radius:12px;min-height:48px;padding:0 14px;font:inherit}
+.campo select{padding:0 12px;cursor:pointer}
+.campo input:focus,.campo select:focus{outline:none;border-color:var(--gold)}
+
+/* ===== BARRA DE PROGRESSO ===== */
+.barra{height:8px;background:var(--bg);border-radius:99px;margin-top:12px;overflow:hidden}
+.barra i{display:block;height:100%;background:linear-gradient(90deg,var(--blue),var(--gold))}

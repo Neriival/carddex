@@ -1,10 +1,9 @@
-// js/vitrine.js
-// VITRINE E PERFIL PÚBLICO
+// js/recursos/vitrine.js
+// VITRINE: até 5 cartas que a pessoa escolhe para mostrar no perfil público
 // ============================================================
-// Cada conta escolhe até 5 cartas que tem para mostrar no perfil (botão "Pôr na vitrine" na carta grande).
-// O perfil público mostra só: personagem/foto, nick, posição no ranking, total de cartas e a vitrine.
-// Ele abre pelo ranking ou pelo link …/#perfil/<nick> (dá para mandar no WhatsApp).
+// Botão "Pôr na vitrine" na carta grande; "Minha vitrine" no Meu perfil (com × para tirar).
 // O banco confere que só entram cartas marcadas como "tenho" (docs/supabase.sql).
+// A tela do perfil público fica em js/telas/perfil-publico.js.
 // ============================================================
 var VITRINE_MAX = 5;
 var vitrineAberta = null; // cartas da vitrine que está sendo vista (para navegar entre elas na carta grande)
@@ -34,6 +33,7 @@ async function alternarVitrine(btn) {
   } catch (e) { msg.textContent = e.message; }
   btn.disabled = false;
 }
+// Botão da carta grande (só para quem está logado e tem a carta)
 function botaoVitrine(c, k, tenho) {
   if (!logadoNaNuvem() || !tenho) return '';
   var on = naVitrine(c, k.id);
@@ -57,6 +57,7 @@ async function cartasDaVitrine(lista) {
   }));
   return r.filter(Boolean);
 }
+// As cartas da vitrine lado a lado (clicavel = abre a carta grande)
 function gradeVitrine(cartas, clicavel) {
   return '<div class="vitrine">' + cartas.map(function (v) {
     var src = v.k.mini || v.k.imagem;
@@ -64,37 +65,8 @@ function gradeVitrine(cartas, clicavel) {
       (src ? '<img loading="lazy" src="' + esc(src) + '" alt="' + esc(v.k.nome) + '">' : '<span>' + esc(v.k.numero) + '</span>') + '</button>';
   }).join('') + '</div>';
 }
+// Abre a carta grande navegando só entre as cartas da vitrine
 function abrirDaVitrine(c, k) { abrirCarta(c, k, 0, true); }
-
-// TELA – Perfil público de alguém
-async function telaPerfilPublico(nick) {
-  document.body.classList.remove('na-login');
-  ESTADO.redesenhar = null; marcarMenu(-1); vitrineAberta = null;
-  var volta = '<h2><button class="voltar" onclick="telaRanking()">← Ranking</button></h2>';
-  if (!sb) { app.innerHTML = volta + '<div class="aviso">Os perfis aparecem quando o site estiver ligado ao banco de dados.</div>'; return; }
-  app.innerHTML = volta + '<p class="sub">Carregando perfil...</p>'; window.scrollTo(0, 0);
-  var r = await sb.rpc('perfil_publico', { n: nick }), p = r.data;
-  if (r.error || !p) { app.innerHTML = volta + '<div class="aviso">Não encontramos o colecionador "' + esc(nick) + '".</div>'; return; }
-  var cartas = await cartasDaVitrine(p.vitrine || []);
-  vitrineAberta = cartas.map(function (v) { return { c: v.c, k: v.k.id }; });
-  var u = AUTH.usuario();
-  app.innerHTML = volta + '<section class="perfil-pub">' + avatarDe(p, 'perfil-avatar') + '<div class="perfil-dados"><h2>' + esc(p.nick) + (p.eu ? ' <small>(você)</small>' : '') + '</h2>' +
-    '<div class="perfil-numeros">' + (p.posicao ? '<span><b>' + p.posicao + 'º</b> no ranking</span>' : '') + '<span><b>' + p.total + '</b> cartas</span></div>' +
-    '<div class="perfil-acoes"><button class="btn" onclick="compartilharPerfil(\'' + esc(p.nick) + '\')">Compartilhar perfil</button>' + (p.eu ? '<button class="btn btn-sec" onclick="telaPerfil()">Editar meu perfil</button>' : '') + '</div>' +
-    '<p class="sub" id="msg-compartilhar" role="status"></p></div></section>' +
-    '<h2>Vitrine</h2><span class="sub">' + (p.eu ? 'Suas cartas favoritas ou mais raras. ' : 'As cartas que ' + esc(p.nick) + ' mais gosta. ') + 'Toque para ver em tamanho grande.</span>' +
-    (cartas.length ? gradeVitrine(cartas, true) : '<div class="aviso">' + (p.eu ? 'Sua vitrine está vazia. Abra uma carta que você tem e toque em <b>☆ Pôr na vitrine</b>.' : esc(p.nick) + ' ainda não escolheu as cartas da vitrine.') + '</div>') +
-    (!u ? '<div class="rank-eu"><b>Monte a sua vitrine também</b><span class="sub">Crie uma conta grátis, marque suas cartas e mostre as mais raras.</span><button class="btn" onclick="telaLogin(\'criar\')">Criar conta</button></div>' : '');
-}
-
-// Link do perfil: no celular abre o menu de compartilhar; no computador copia o link
-function linkPerfil(nick) { return location.origin + location.pathname + '#perfil/' + encodeURIComponent(nick); }
-async function compartilharPerfil(nick) {
-  var url = linkPerfil(nick), texto = 'Olha a minha coleção de cartas no CardDex!', msg = document.getElementById('msg-compartilhar');
-  if (navigator.share && matchMedia('(hover:none)').matches) { try { await navigator.share({ title: 'CardDex – ' + nick, text: texto, url: url }); } catch (e) {} return; }
-  try { await navigator.clipboard.writeText(url); msg.innerHTML = 'Link copiado! Cole onde quiser, ou <a href="https://wa.me/?text=' + encodeURIComponent(texto + ' ' + url) + '" target="_blank" rel="noopener">mande no WhatsApp</a>.'; }
-  catch (e) { msg.innerHTML = 'Seu link: <b>' + esc(url) + '</b>'; }
-}
 
 // Bloco "Minha vitrine" dentro do Meu perfil
 async function desenharMinhaVitrine() {
@@ -107,13 +79,8 @@ async function desenharMinhaVitrine() {
     }).join('') + '</div>' : '<p class="sub">Abra uma carta que você tem e toque em <b>☆ Pôr na vitrine</b>.</p>') +
     (u.nick ? '<button class="btn btn-sec" type="button" onclick="telaPerfilPublico(\'' + esc(u.nick) + '\')">Ver meu perfil público</button>' : '');
 }
+// × de cada carta na Minha vitrine
 async function tirarDaVitrine(c, k) {
   try { await salvarVitrine(minhaVitrine().filter(function (v) { return !(v.c === c && v.k === k); })); } catch (e) {}
   desenharMinhaVitrine();
 }
-
-// Link …/#perfil/<nick> aberto com o site já aberto
-window.addEventListener('hashchange', function () {
-  var m = /^#perfil\/(.+)$/.exec(location.hash);
-  if (m) telaPerfilPublico(decodeURIComponent(m[1]));
-});

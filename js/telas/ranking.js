@@ -1,6 +1,9 @@
-// js/ranking.js
-// TELA – Ranking: quem tem mais cartas marcadas. Mostra só nick e personagem (nunca o e-mail).
+// js/telas/ranking.js
+// TELA – RANKING: quem tem mais cartas marcadas
+// ============================================================
+// Mostra só nick e personagem/foto (nunca o e-mail). Clicar em alguém abre o perfil público.
 // Os dados vêm da função "ranking" do banco (docs/supabase.sql): top 50 + a sua posição.
+// ============================================================
 
 async function telaRanking() {
   ESTADO.redesenhar = telaRanking; marcarMenu(3);

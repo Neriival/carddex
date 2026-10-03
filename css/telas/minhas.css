@@ -1,0 +1,12 @@
+/* css/telas/minhas.css – Minhas cartas: caixa de backup e cartas separadas por coleção */
+.backup{background:var(--p1);border:1px solid var(--line);border-radius:16px;padding:18px;margin:16px 0 8px;display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;justify-content:space-between}
+.backup>div:first-child{display:flex;flex-direction:column;gap:4px;flex:1;min-width:240px}
+.backup-acoes{display:flex;gap:10px;flex-wrap:wrap}.backup-acoes .btn{margin-top:0;min-width:180px}
+#backup-msg{width:100%;margin:0;color:var(--gold)}#backup-msg:empty{display:none}
+.minhas-col{margin-top:26px}
+.minhas-col .voltar h3{margin:0;color:var(--gold);font-size:1.3rem;text-align:left}
+.minhas-col .grade{margin-top:10px}
+
+@media(max-width:760px){
+  .backup-acoes{width:100%}.backup-acoes .btn{flex:1;min-width:0}
+}

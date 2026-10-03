@@ -1,10 +1,10 @@
 // js/config.js
-// Configurações do CardDex
+// CONFIGURAÇÕES DO CARDDEX (carregado antes de todos os outros .js)
 // ============================================================
-// SUPABASE (login de verdade, painel adm e parceiros)
+// SUPABASE (contas, cartas na conta, ranking, perfis, painel adm e parceiros)
 // Os dois valores ficam em supabase.com → projeto carddex → Project Settings → API Keys.
 // A chave pública (publishable) pode ficar no site: quem protege os dados são as regras do banco (docs/supabase.sql).
-// Enquanto estiverem vazios, o site funciona como antes (login só no navegador, sem parceiros).
+// Se ficarem vazios, o site funciona sem banco (tudo só no navegador, sem ranking nem parceiros).
 // Passo a passo completo em docs/SUPABASE.md
 // ============================================================
 var CONFIG = {
