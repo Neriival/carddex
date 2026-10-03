@@ -14,4 +14,7 @@
 - [x] Nick, sexo e personagem no cadastro; Ranking por total de cartas
 - [x] Esqueci minha senha
 - [x] Cliques por parceiro no painel adm
+- [x] Foto de perfil (com moderação no painel)
+- [x] Perfil público com vitrine de 5 cartas e link para compartilhar
+- [x] Cartas repetidas (contador, filtro e imagem para o WhatsApp)
 - [ ] E-mails em português (o plano grátis do Supabase não deixa mudar o texto; precisa de um SMTP próprio, ex.: Resend ou Brevo)

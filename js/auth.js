@@ -34,10 +34,10 @@ var AUTH = {
   _usar: async function (user) {
     AUTH._u = null; AUTH.admin = false;
     if (!user) return;
-    var u = { id: user.id, email: user.email, nick: '', sexo: '', avatar: '', foto: '' };
+    var u = { id: user.id, email: user.email, nick: '', sexo: '', avatar: '', foto: '', vitrine: [] };
     try {
-      var r = await Promise.all([sb.from('perfis').select('nick,sexo,avatar,foto').eq('id', user.id).maybeSingle(), sb.rpc('eh_admin')]);
-      if (r[0].data) { u.nick = r[0].data.nick || ''; u.sexo = r[0].data.sexo || ''; u.avatar = r[0].data.avatar || ''; u.foto = r[0].data.foto || ''; }
+      var r = await Promise.all([sb.from('perfis').select('nick,sexo,avatar,foto,vitrine').eq('id', user.id).maybeSingle(), sb.rpc('eh_admin')]);
+      if (r[0].data) { u.nick = r[0].data.nick || ''; u.sexo = r[0].data.sexo || ''; u.avatar = r[0].data.avatar || ''; u.foto = r[0].data.foto || ''; u.vitrine = r[0].data.vitrine || []; }
       AUTH.admin = r[1].data === true;
     } catch (e) {}
     AUTH._u = u;
@@ -267,8 +267,10 @@ function telaPerfil() {
     '<h3>' + (u.nick ? 'Meu perfil' : 'Complete seu perfil') + '</h3><span class="sub">' + (u.nick ? esc(u.email) : 'Escolha um nick e um personagem para aparecer no ranking.') + '</span>' +
     campoLogin('nick', 'Nick <small>(aparece no ranking)</small>', 'text', 'nickname', u.nick, ' maxlength="16"') + campoSexo(u.sexo) + escolhaAvatar(u.foto ? 'foto' : u.avatar, u.foto) +
     '<div class="erro" id="login-erro" role="alert"></div><button class="btn" type="submit">Salvar</button>' +
-    '<button class="btn btn-sec" type="button" onclick="sairDaConta(this)">Sair da conta</button></form></section>';
+    '<button class="btn btn-sec" type="button" onclick="sairDaConta(this)">Sair da conta</button></form>' +
+    (logadoNaNuvem() ? '<div class="login-card" id="minha-vitrine"><p class="sub">Carregando vitrine...</p></div>' : '') + '</section>';
   if (u.avatar || u.foto) app.querySelector('form').dataset.avatarEscolhido = 1;
+  desenharMinhaVitrine();
   window.scrollTo(0, 0);
 }
 async function enviarPerfil(e) {

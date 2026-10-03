@@ -11,25 +11,28 @@ var modal = document.getElementById('modal'), cartaAberta = null, tokenModal = 0
 var DIST_TROCA = 70;
 
 // 'dir' (opcional): 1 = veio da próxima carta, -1 = veio da anterior (só muda a animação)
-async function abrirCarta(colId, cartaId, dir) {
+// 'daVitrine': carta da vitrine de um perfil (navega só entre as cartas da vitrine e não mostra "Marcar como tenho")
+async function abrirCarta(colId, cartaId, dir, daVitrine) {
   var c = acharColecao(colId), s = acharSerie(c.serie), lista = ESTADO.cartas[colId], tok = ++tokenModal;
   var i = lista.findIndex(function (x) { return x.id === cartaId; }), k = lista[i];
+  var vit = daVitrine && vitrineAberta, pos = vit ? vit.findIndex(function (v) { return v.c === colId && v.k === cartaId; }) : i, qtd = vit ? vit.length : lista.length;
   await detalhesCarta(k);
   if (tok !== tokenModal) return; // o usuário já foi para outra carta
-  cartaAberta = { col: colId, k: k, i: i };
+  cartaAberta = { col: colId, k: k, i: i, vit: !!vit, pos: pos };
   var y = (ESTADO.tenho[colId] || []).indexOf(k.id) > -1;
   var tipo = (k.tipos || []).join(', ') || k.categoria || '—';
   var animC = dir ? ' style="animation:' + (dir > 0 ? 'deslizarDir' : 'deslizarEsq') + ' .28s ease-out"' : '', animI = dir ? ' style="animation:none"' : '';
   modal.innerHTML = '<button class="fechar" onclick="fecharCarta()" aria-label="Fechar">×</button>' +
-    '<button class="nav-carta ant" onclick="navegarCarta(-1)" aria-label="Carta anterior"' + (i === 0 ? ' disabled' : '') + '>‹</button>' +
-    '<button class="nav-carta prox" onclick="navegarCarta(1)" aria-label="Próxima carta"' + (i === lista.length - 1 ? ' disabled' : '') + '>›</button>' +
+    '<button class="nav-carta ant" onclick="navegarCarta(-1)" aria-label="Carta anterior"' + (pos === 0 ? ' disabled' : '') + '>‹</button>' +
+    '<button class="nav-carta prox" onclick="navegarCarta(1)" aria-label="Próxima carta"' + (pos === qtd - 1 ? ' disabled' : '') + '>›</button>' +
     '<div class="caixa"><div class="palco"><div class="carta3d" id="c3d"' + animC + '>' +
     (k.imagem ? '<img draggable="false" src="' + esc(k.imagem) + '" alt="' + esc(k.nome) + '">' : '<div class="ph">' + esc(k.numero) + '</div>') + '<div class="brilho"></div></div><p class="dica sub">‹ Arraste para o lado para ver as outras cartas ›</p></div>' +
     '<div class="info"' + animI + '><h3>' + esc(k.nome) + '</h3><span class="sub">' + esc(c.nome) + '</span><dl><dt>Número</dt><dd>' + esc(k.numero) + ' de ' + lista.length + '</dd><dt>Série</dt><dd>' + esc(s.nome) + '</dd><dt>Raridade</dt><dd>' + esc(k.raridade || '—') + '</dd><dt>Tipo</dt><dd>' + esc(tipo) + '</dd><dt>PS</dt><dd>' + esc(k.ps || '—') + '</dd><dt>Ilustrador</dt><dd>' + esc(k.ilustrador || '—') + '</dd></dl>' +
-    '<button class="btn" onclick="alternarTenho()">' + (y ? '✓ Tenho esta carta' : 'Marcar como tenho') + '</button></div></div>';
+    (vit ? '<p class="sub">' + (y ? '✓ Você também tem esta carta.' : 'Você ainda não tem esta carta.') + '</p>'
+      : '<button class="btn" onclick="alternarTenho()">' + (y ? '✓ Tenho esta carta' : 'Marcar como tenho') + '</button>' + contadorRepetidas(colId, k.id, y) + botaoVitrine(colId, k, y)) + '</div></div>';
   modal.hidden = false; modal.scrollTop = 0;
   // já carrega as imagens vizinhas para a troca ser instantânea
-  [lista[i - 1], lista[i + 1]].forEach(function (v) { if (v && v.imagem) new Image().src = v.imagem; });
+  if (!vit) [lista[i - 1], lista[i + 1]].forEach(function (v) { if (v && v.imagem) new Image().src = v.imagem; });
   // inclinação leve, só quando o mouse está sobre a carta
   var el = document.getElementById('c3d'), palco = modal.querySelector('.palco'), MAX = 7;
   palco.onmousemove = function (e) {
@@ -46,6 +49,12 @@ async function abrirCarta(colId, cartaId, dir) {
 // Vai para a carta seguinte (+1) ou anterior (-1). Devolve false se não há mais cartas.
 function navegarCarta(d) {
   if (!cartaAberta) return false;
+  if (cartaAberta.vit) {
+    var m = cartaAberta.pos + d;
+    if (m < 0 || m >= vitrineAberta.length) return false;
+    abrirCarta(vitrineAberta[m].c, vitrineAberta[m].k, d, true);
+    return true;
+  }
   var l = ESTADO.cartas[cartaAberta.col], n = cartaAberta.i + d;
   if (n < 0 || n >= l.length) return false;
   abrirCarta(cartaAberta.col, l[n].id, d);
@@ -87,7 +96,26 @@ function alternarTenho() {
   var id = cartaAberta.col, l = ESTADO.tenho[id] || [], i = l.indexOf(cartaAberta.k.id);
   if (i > -1) l.splice(i, 1); else l.push(cartaAberta.k.id);
   ESTADO.tenho[id] = l; salvarTenho();
-  document.querySelector('.info .btn').textContent = i < 0 ? '✓ Tenho esta carta' : 'Marcar como tenho';
+  if (i > -1) conferirVitrine(id, cartaAberta.k.id);
+  var b = modal.querySelector('.info .btn');
+  b.textContent = i < 0 ? '✓ Tenho esta carta' : 'Marcar como tenho';
+  if (i > -1 && qtdRepetida(id, cartaAberta.k.id)) mudarRepetida(id, cartaAberta.k.id, 0); // não tem mais = sem repetidas
+  // repetidas e vitrine só aparecem para carta que tem
+  [].forEach.call(modal.querySelectorAll('.repetidas,.btn-vitrine,.msg-vitrine'), function (x) { x.remove(); });
+  b.insertAdjacentHTML('afterend', contadorRepetidas(id, cartaAberta.k.id, i < 0) + botaoVitrine(id, cartaAberta.k, i < 0));
+}
+// REPETIDAS: − 0 + (só para carta que tem)
+function contadorRepetidas(col, k, tenho) {
+  if (!tenho) return '';
+  var n = qtdRepetida(col, k);
+  return '<div class="repetidas"><span>Repetidas <small>(cópias a mais)</small></span><div class="rep-ctrl"><button type="button" onclick="ajustarRepetida(-1)" aria-label="Uma repetida a menos"' + (n ? '' : ' disabled') + '>−</button>' +
+    '<b id="rep-qtd" aria-live="polite">' + n + '</b><button type="button" onclick="ajustarRepetida(1)" aria-label="Uma repetida a mais">+</button></div></div>';
+}
+function ajustarRepetida(d) {
+  var col = cartaAberta.col, k = cartaAberta.k.id, n = Math.max(0, Math.min(99, qtdRepetida(col, k) + d));
+  mudarRepetida(col, k, n);
+  document.getElementById('rep-qtd').textContent = n;
+  modal.querySelector('.rep-ctrl button').disabled = !n;
 }
 // Fecha a janela, redesenha a tela (coleção ou Minhas cartas) e volta para a mesma posição da página
 function fecharCarta() {

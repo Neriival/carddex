@@ -97,28 +97,30 @@ function seletor(rotulo, campo, opcoes) {
 }
 function unicos(l) { return l.filter(function (x, i) { return x && l.indexOf(x) === i; }).sort(function (a, b) { return a.localeCompare(b, 'pt'); }); }
 
-// Uma carta na grade: .abrir (abre a carta grande) e .check (marca que tem)
+// Uma carta na grade: .abrir (abre a carta grande), .check (marca que tem) e o selo de repetidas (+2)
 function cartaGrade(c, k, y) {
-  var src = k.mini || k.imagem;
-  return '<div class="carta' + (y ? ' tenho' : '') + '">' +
+  var src = k.mini || k.imagem, r = y ? qtdRepetida(c.id, k.id) : 0;
+  return '<div class="carta' + (y ? ' tenho' : '') + '">' + (r ? '<span class="rep-selo" title="' + r + ' repetida' + (r > 1 ? 's' : '') + '">+' + r + '</span>' : '') +
     '<button class="abrir" onclick="abrirCarta(\'' + c.id + '\',\'' + k.id + '\')" title="Ver ' + esc(k.nome) + '">' +
     (src ? '<img loading="lazy" src="' + esc(src) + '" alt="' + esc(k.nome) + '">' : '<span>' + esc(k.numero) + '</span>') + '</button>' +
     '<button class="check" onclick="marcarRapido(this,\'' + c.id + '\',\'' + k.id + '\')" aria-label="Marcar ' + esc(k.nome) + ' como tenho" title="Marcar como tenho">' + (y ? '✓' : '') + '</button></div>';
 }
 
-// Desenha a grade de cartas da coleção atual, respeitando os filtros (Todas / Tenho / Faltam, raridade e tipo).
+// Desenha a grade de cartas da coleção atual, respeitando os filtros (Todas / Tenho / Faltam / Repetidas, raridade e tipo).
 function desenharColecao() {
   var c = ESTADO.atual, s = acharSerie(c.serie), lista = ESTADO.cartas[c.id], meu = ESTADO.tenho[c.id] || [];
   var html = cartasFiltradas(c).filter(function (k) {
     var y = meu.indexOf(k.id) > -1;
+    if (ESTADO.filtro === 'repetidas') return y && qtdRepetida(c.id, k.id) > 0;
     return ESTADO.filtro === 'todas' || (ESTADO.filtro === 'tenho' ? y : !y);
   }).map(function (k) { return cartaGrade(c, k, meu.indexOf(k.id) > -1); }).join('');
   var rar = unicos(lista.map(function (k) { return k.raridade; }));
   var tip = unicos([].concat.apply([], lista.map(function (k) { return (k.tipos || []).length ? k.tipos : [k.categoria]; })));
   app.innerHTML = '<h2><button class="voltar" onclick="telaSerie(\'' + s.id + '\')">← ' + esc(s.nome) + '</button></h2><h2 style="margin-top:0">' + esc(c.nome) + '</h2><span class="sub" id="prog-txt"></span><div class="barra"><i id="prog-bar" style="width:' + pct(meu.length, lista.length) + '%"></i></div>' +
-    (c.obs ? '<div class="aviso">' + esc(c.obs) + '</div>' : '') + '<div class="filtros">' + [['todas', 'Todas'], ['tenho', 'Tenho'], ['faltam', 'Faltam']].map(function (f) { return '<button class="' + (ESTADO.filtro === f[0] ? 'on' : '') + '" onclick="ESTADO.filtro=\'' + f[0] + '\';desenharColecao()">' + f[1] + '</button>'; }).join('') + '</div>' +
+    (c.obs ? '<div class="aviso">' + esc(c.obs) + '</div>' : '') + '<div class="filtros">' + [['todas', 'Todas'], ['tenho', 'Tenho'], ['faltam', 'Faltam'], ['repetidas', 'Repetidas']].map(function (f) { return '<button class="' + (ESTADO.filtro === f[0] ? 'on' : '') + '" onclick="ESTADO.filtro=\'' + f[0] + '\';desenharColecao()">' + f[1] + '</button>'; }).join('') + '</div>' +
     '<div class="filtros-extra">' + seletor('Raridade', 'raridade', rar) + seletor('Tipo', 'tipo', tip) + '</div>' +
-    '<button class="btn btn-sec btn-compartilhar" onclick="abrirCompartilhar()">Compartilhar cartas que faltam</button>' +
+    '<div class="compartilhar-acoes"><button class="btn btn-sec btn-compartilhar" onclick="abrirCompartilhar()">Compartilhar cartas que faltam</button>' +
+    '<button class="btn btn-sec btn-compartilhar" onclick="abrirCompartilhar(\'repetidas\')">Compartilhar repetidas</button></div>' +
     (html ? '<div class="grade">' + html + '</div>' : '<p class="sub">Nenhuma carta com esses filtros.</p>');
   atualizarProgresso();
 }
@@ -137,7 +139,9 @@ function marcarRapido(el, colId, cartaId) {
   var l = ESTADO.tenho[colId] || [], i = l.indexOf(cartaId);
   if (i > -1) l.splice(i, 1); else l.push(cartaId);
   ESTADO.tenho[colId] = l; salvarTenho();
-  var y = i < 0, caixa = el.parentNode;
+  if (i > -1) { conferirVitrine(colId, cartaId); if (qtdRepetida(colId, cartaId)) mudarRepetida(colId, cartaId, 0); }
+  var y = i < 0, caixa = el.parentNode, selo = caixa.querySelector('.rep-selo');
+  if (selo && !y) selo.remove();
   if (ESTADO.redesenhar === desenharColecao && ESTADO.filtro !== 'todas') caixa.remove();
   else { caixa.classList.toggle('tenho', y); el.textContent = y ? '✓' : ''; }
   atualizarProgresso();
@@ -167,7 +171,7 @@ function desenharMinhas() {
 
 // BACKUP: baixa um .json com todas as marcações
 function exportarColecao() {
-  var dados = { app: 'CardDex', versao: 1, exportado: new Date().toISOString(), tenho: ESTADO.tenho };
+  var dados = { app: 'CardDex', versao: 2, exportado: new Date().toISOString(), tenho: ESTADO.tenho, repetidas: ESTADO.repetidas };
   var url = URL.createObjectURL(new Blob([JSON.stringify(dados, null, 1)], { type: 'application/json' }));
   var a = document.createElement('a'); a.href = url; a.download = 'carddex-backup-' + new Date().toISOString().slice(0, 10) + '.json';
   document.body.appendChild(a); a.click(); a.remove();
@@ -188,6 +192,14 @@ function importarColecao(input) {
       var l = ESTADO.tenho[col] || (ESTADO.tenho[col] = []);
       d.tenho[col].forEach(function (id) { if (typeof id === 'string' && l.indexOf(id) < 0) { l.push(id); novas++; } });
     });
+    // repetidas (backups novos): fica a maior quantidade de cada carta
+    if (d.repetidas && typeof d.repetidas === 'object') Object.keys(d.repetidas).forEach(function (col) {
+      Object.keys(d.repetidas[col] || {}).forEach(function (k) {
+        var n = parseInt(d.repetidas[col][k], 10);
+        if (n > 0 && (ESTADO.tenho[col] || []).indexOf(k) > -1 && n > qtdRepetida(col, k)) (ESTADO.repetidas[col] || (ESTADO.repetidas[col] = {}))[k] = Math.min(n, 99);
+      });
+    });
+    try { localStorage.setItem('carddex_repetidas', JSON.stringify(ESTADO.repetidas)); } catch (e) {}
     salvarTenho();
     telaMinhas().then(function () {
       var m = document.getElementById('backup-msg');

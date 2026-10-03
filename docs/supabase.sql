@@ -23,6 +23,9 @@ alter table public.perfis drop constraint if exists perfis_foto_check;
 alter table public.perfis add constraint perfis_foto_check check (foto is null or
   foto like 'https://fqynjcaiwmeprxkzfwed.supabase.co/storage/v1/object/public/fotos/' || id::text || '/%');
 
+-- Vitrine: até 5 cartas escolhidas para o perfil público. [{ "c": "me01", "k": "me01-001" }, ...]
+alter table public.perfis add column if not exists vitrine jsonb not null default '[]'::jsonb;
+
 -- Quem pode abrir o painel adm
 create table if not exists public.admins (
   user_id uuid primary key references auth.users on delete cascade
@@ -42,6 +45,10 @@ create table if not exists public.colecoes (
   atualizado_em timestamptz not null default now()
 );
 create index if not exists colecoes_total on public.colecoes (total desc);
+-- Repetidas: quantas cópias a mais de cada carta = { "me04": { "me04-001": 2 }, ... }
+alter table public.colecoes add column if not exists repetidas jsonb not null default '{}'::jsonb;
+alter table public.colecoes drop constraint if exists colecoes_repetidas_check;
+alter table public.colecoes add constraint colecoes_repetidas_check check (jsonb_typeof(repetidas) = 'object' and pg_column_size(repetidas) < 500000);
 
 -- ============ PARCEIROS ============
 -- Os 8 quadrados: e1..e4 (esquerda) e d1..d4 (direita)
@@ -89,6 +96,32 @@ insert into public.perfis (id, nome, email, criado_em)
   select id, raw_user_meta_data ->> 'nome', email, created_at from auth.users
   on conflict (id) do nothing;
 
+-- A vitrine só aceita até 5 cartas, sem repetir, e só cartas que a pessoa marcou como "tenho"
+create or replace function public.validar_vitrine() returns trigger
+language plpgsql security definer set search_path = public as $$
+declare v jsonb; t jsonb;
+begin
+  if new.vitrine is not distinct from old.vitrine then return new; end if;
+  if jsonb_typeof(new.vitrine) <> 'array' or jsonb_array_length(new.vitrine) > 5 then
+    raise exception 'vitrine: no máximo 5 cartas';
+  end if;
+  if (select count(distinct x) from jsonb_array_elements(new.vitrine) x) <> jsonb_array_length(new.vitrine) then
+    raise exception 'vitrine: carta repetida';
+  end if;
+  select tenho into t from public.colecoes where user_id = new.id;
+  for v in select x from jsonb_array_elements(new.vitrine) x loop
+    if coalesce(jsonb_typeof(v -> 'c'), '') <> 'string' or coalesce(jsonb_typeof(v -> 'k'), '') <> 'string'
+       or not coalesce(t -> (v ->> 'c'), '[]'::jsonb) ? (v ->> 'k') then
+      raise exception 'vitrine: só cartas que você marcou como tenho';
+    end if;
+  end loop;
+  return new;
+end $$;
+
+drop trigger if exists antes_de_mudar_vitrine on public.perfis;
+create trigger antes_de_mudar_vitrine before update of vitrine on public.perfis
+  for each row execute function public.validar_vitrine();
+
 -- O nick está livre? (usado no cadastro e ao trocar o nick)
 create or replace function public.nick_disponivel(n text) returns boolean
 language sql stable security definer set search_path = public as $$
@@ -107,6 +140,24 @@ language sql stable security definer set search_path = public as $$
   ) r
   where r.posicao <= least(limite, 200) or r.eu
   order by r.posicao, r.nick;
+$$;
+
+-- Perfil público (qualquer visitante): nick, personagem/foto, total, posição no ranking e vitrine.
+-- Nunca devolve e-mail nem sexo. Cartas que a pessoa desmarcou depois somem da vitrine.
+create or replace function public.perfil_publico(n text) returns json
+language sql stable security definer set search_path = public as $$
+  select json_build_object(
+    'nick', p.nick, 'avatar', p.avatar, 'foto', p.foto,
+    'total', coalesce(c.total, 0),
+    'posicao', case when coalesce(c.total, 0) > 0 then (
+      select count(*) + 1 from public.colecoes c2 join public.perfis p2 on p2.id = c2.user_id
+      where p2.nick is not null and c2.total > c.total) end,
+    'vitrine', coalesce((
+      select json_agg(v.x order by v.i) from jsonb_array_elements(p.vitrine) with ordinality as v(x, i)
+      where coalesce(c.tenho -> (v.x ->> 'c'), '[]'::jsonb) ? (v.x ->> 'k')), '[]'::json),
+    'eu', p.id = auth.uid())
+  from public.perfis p left join public.colecoes c on c.user_id = p.id
+  where p.nick is not null and lower(p.nick) = lower(n);
 $$;
 
 -- Registra o clique num parceiro (qualquer visitante)
@@ -152,7 +203,7 @@ begin
   return r;
 end $$;
 
-grant execute on function public.nick_disponivel(text), public.ranking(integer), public.registrar_clique(text) to anon, authenticated;
+grant execute on function public.nick_disponivel(text), public.ranking(integer), public.registrar_clique(text), public.perfil_publico(text) to anon, authenticated;
 
 -- ============ REGRAS DE ACESSO (RLS) ============
 -- Permissões explícitas (funciona mesmo com "Automatically expose new tables" desligado).
@@ -176,7 +227,7 @@ create policy "perfil: dono ou admin le" on public.perfis for select using (id =
 drop policy if exists "perfil: dono edita" on public.perfis;
 create policy "perfil: dono edita" on public.perfis for update using (id = auth.uid()) with check (id = auth.uid());
 revoke insert, update, delete on public.perfis from anon, authenticated;
-grant update (nick, sexo, avatar, foto) on public.perfis to authenticated;
+grant update (nick, sexo, avatar, foto, vitrine) on public.perfis to authenticated;
 
 drop policy if exists "admins: ve a propria linha" on public.admins;
 create policy "admins: ve a propria linha" on public.admins for select using (user_id = auth.uid());

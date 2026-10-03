@@ -1,5 +1,5 @@
 // js/compartilhar.js
-// Gera uma imagem com as cartas que faltam na coleção atual e compartilha (WhatsApp)
+// Gera uma imagem com as cartas que faltam (ou as repetidas) da coleção atual e compartilha (WhatsApp)
 // ============================================================
 // COMPARTILHAR CARTAS QUE FALTAM
 // Botão na tela da coleção → abrirCompartilhar() desenha a imagem num <canvas>
@@ -42,7 +42,9 @@ function retanguloArredondado(ctx, x, y, w, h, r) {
 
 // Desenha a imagem e devolve o <canvas>
 // 'filtro' (opcional): texto dos filtros de raridade/tipo ativos, aparece no título
-async function desenharFaltantes(c, lista, filtro) {
+// 'modo': 'repetidas' desenha as repetidas (com a quantidade de cada uma); sem modo, as que faltam
+async function desenharFaltantes(c, lista, filtro, modo) {
+  var rep = modo === 'repetidas', copias = lista.reduce(function (a, k) { return a + qtdRepetida(c.id, k.id); }, 0);
   var s = acharSerie(c.serie), total = cartasFiltradas(c).length;
   var W = IMG_LARGURA, M = 48, GAP = 14;
   var cols = lista.length <= 8 ? 4 : lista.length <= 24 ? 6 : lista.length <= 60 ? 8 : 10;
@@ -72,10 +74,10 @@ async function desenharFaltantes(c, lista, filtro) {
   }
   ctx.textBaseline = 'alphabetic';
   ctx.fillStyle = '#8fb4f0'; ctx.font = '600 24px ' + F;
-  ctx.fillText(cortarTexto(ctx, 'CARTAS QUE FALTAM' + (filtro ? '  ·  ' + filtro.toUpperCase() : ''), W - M * 2), M, 160);
+  ctx.fillText(cortarTexto(ctx, (rep ? 'CARTAS REPETIDAS' : 'CARTAS QUE FALTAM') + (filtro ? '  ·  ' + filtro.toUpperCase() : ''), W - M * 2), M, 160);
   ctx.fillStyle = '#ffc61a'; ctx.font = '800 46px ' + F; ctx.fillText(cortarTexto(ctx, c.nome, W - M * 2), M, 212);
   ctx.fillStyle = '#eaf2ff'; ctx.font = '600 24px ' + F;
-  ctx.fillText(cortarTexto(ctx, s.nome + '  ·  Faltam ' + lista.length + ' de ' + total + ' cartas', W - M * 2), M, 254);
+  ctx.fillText(cortarTexto(ctx, s.nome + '  ·  ' + (rep ? lista.length + ' carta' + (lista.length === 1 ? '' : 's') + ' repetida' + (lista.length === 1 ? '' : 's') + ' (' + copias + ' cópia' + (copias === 1 ? '' : 's') + ' para troca)' : 'Faltam ' + lista.length + ' de ' + total + ' cartas'), W - M * 2), M, 254);
   ctx.fillStyle = '#0f3f9e'; ctx.fillRect(M, 276, W - M * 2, 2);
 
   // grade de cartas
@@ -87,12 +89,12 @@ async function desenharFaltantes(c, lista, filtro) {
     else { ctx.fillStyle = '#ffc61a'; ctx.font = '800 ' + Math.round(cw / 4) + 'px ' + F; ctx.textAlign = 'center'; ctx.fillText(k.numero, x + cw / 2, y + ch / 2); ctx.textAlign = 'left'; }
     ctx.restore();
     ctx.textAlign = 'center';
-    ctx.fillStyle = '#ffc61a'; ctx.font = '800 ' + fonteRot + 'px ' + F; ctx.fillText('Nº ' + k.numero, x + cw / 2, y + ch + fonteRot * 1.15);
+    ctx.fillStyle = '#ffc61a'; ctx.font = '800 ' + fonteRot + 'px ' + F; ctx.fillText('Nº ' + k.numero + (rep ? '  ·  ' + qtdRepetida(c.id, k.id) + 'x' : ''), x + cw / 2, y + ch + fonteRot * 1.15);
     ctx.fillStyle = '#eaf2ff'; ctx.font = '400 ' + Math.round(fonteRot * .85) + 'px ' + F;
     ctx.fillText(cortarTexto(ctx, k.nome || '', cw), x + cw / 2, y + ch + fonteRot * 2.2);
     ctx.textAlign = 'left';
   });
-  if (!lista.length) { ctx.fillStyle = '#ffc61a'; ctx.font = '800 40px ' + F; ctx.textAlign = 'center'; ctx.fillText('Coleção completa!', W / 2, topo + 80); ctx.textAlign = 'left'; }
+  if (!lista.length) { ctx.fillStyle = '#ffc61a'; ctx.font = '800 40px ' + F; ctx.textAlign = 'center'; ctx.fillText(rep ? 'Nenhuma carta repetida' : 'Coleção completa!', W / 2, topo + 80); ctx.textAlign = 'left'; }
 
   // rodapé
   ctx.fillStyle = '#8fb4f0'; ctx.font = '400 20px ' + F; ctx.textAlign = 'center';
@@ -101,30 +103,31 @@ async function desenharFaltantes(c, lista, filtro) {
   return cv;
 }
 
-// Abre a janela com a prévia da imagem e os botões
-async function abrirCompartilhar() {
-  var c = ESTADO.atual, meu = ESTADO.tenho[c.id] || [], filtro = rotuloFiltros();
+// Abre a janela com a prévia da imagem e os botões. modo = 'repetidas' para as repetidas.
+async function abrirCompartilhar(modo) {
+  var c = ESTADO.atual, meu = ESTADO.tenho[c.id] || [], filtro = rotuloFiltros(), rep = modo === 'repetidas';
   // respeita os filtros de raridade e tipo da tela (ex.: só as Ilustrações Raras que faltam)
-  var lista = cartasFiltradas(c).filter(function (k) { return meu.indexOf(k.id) < 0; });
+  var lista = cartasFiltradas(c).filter(function (k) { return rep ? meu.indexOf(k.id) > -1 && qtdRepetida(c.id, k.id) > 0 : meu.indexOf(k.id) < 0; });
   cartaAberta = null; tokenModal++; // não deixa as setas do teclado abrirem cartas por baixo
   modal.onclick = function (e) { if (e.target === modal) fecharCompartilhar(); };
   modal.innerHTML = '<button class="fechar" onclick="fecharCompartilhar()" aria-label="Fechar">×</button><div class="share-box"><p class="sub">Gerando imagem...</p></div>';
   modal.hidden = false; modal.scrollTop = 0;
 
-  var cv = await desenharFaltantes(c, lista, filtro);
+  var cv = await desenharFaltantes(c, lista, filtro, modo);
   var blob = await new Promise(function (ok) { cv.toBlob(ok, 'image/png'); });
   if (modal.hidden) return; // fechou enquanto gerava
   var box = modal.querySelector('.share-box');
   if (!blob) { box.innerHTML = '<div class="aviso">Não foi possível gerar a imagem neste navegador.</div>'; return; }
   if (faltantes) URL.revokeObjectURL(faltantes.url);
-  var nome = 'carddex-' + c.id + '-faltam.png';
+  var nome = 'carddex-' + c.id + (rep ? '-repetidas.png' : '-faltam.png'), serie = acharSerie(c.serie).nome;
   faltantes = {
     arquivo: new File([blob], nome, { type: 'image/png' }), url: URL.createObjectURL(blob), nome: nome,
-    texto: lista.length ? 'Cartas que faltam na coleção ' + c.nome + ' (' + acharSerie(c.serie).nome + ')' + (filtro ? ' – ' + filtro : '') + ': ' + lista.map(function (k) { return k.numero; }).join(', ')
+    texto: rep ? (lista.length ? 'Cartas repetidas da coleção ' + c.nome + ' (' + serie + ')' + (filtro ? ' – ' + filtro : '') + ', para troca: ' + lista.map(function (k) { return k.numero + ' (' + qtdRepetida(c.id, k.id) + 'x)'; }).join(', ')
+      : 'Não tenho cartas repetidas da coleção ' + c.nome + ' (' + serie + ').') : lista.length ? 'Cartas que faltam na coleção ' + c.nome + ' (' + acharSerie(c.serie).nome + ')' + (filtro ? ' – ' + filtro : '') + ': ' + lista.map(function (k) { return k.numero; }).join(', ')
       : (filtro ? 'Tenho todas as cartas ' + filtro + ' da coleção ' : 'Completei a coleção ') + c.nome + ' (' + acharSerie(c.serie).nome + ')!'
   };
-  box.innerHTML = '<h3>Cartas que faltam</h3><span class="sub">' + esc(c.nome) + (filtro ? ' · ' + esc(filtro) : '') + ' · ' + lista.length + ' carta' + (lista.length === 1 ? '' : 's') + '</span>' +
-    '<img class="share-prev" src="' + faltantes.url + '" alt="Imagem com as cartas que faltam em ' + esc(c.nome) + '">' +
+  box.innerHTML = '<h3>' + (rep ? 'Cartas repetidas' : 'Cartas que faltam') + '</h3><span class="sub">' + esc(c.nome) + (filtro ? ' · ' + esc(filtro) : '') + ' · ' + lista.length + ' carta' + (lista.length === 1 ? '' : 's') + '</span>' +
+    '<img class="share-prev" src="' + faltantes.url + '" alt="Imagem com as cartas ' + (rep ? 'repetidas' : 'que faltam') + ' em ' + esc(c.nome) + '">' +
     '<div class="share-acoes"><button class="btn" onclick="compartilharFaltantes()">Compartilhar no WhatsApp</button><button class="btn btn-sec" onclick="baixarFaltantes()">Baixar imagem</button></div>' +
     '<p class="sub share-msg" id="share-msg"></p>';
 }

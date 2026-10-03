@@ -3,7 +3,9 @@
 carregarParceiros();
 Promise.all([carregarSeries(), AUTH.iniciar()]).then(function () {
   atualizarConta();
-  if (RECUPERANDO && AUTH.usuario()) telaLogin('nova-senha');
+  var perfil = /^#perfil\/(.+)$/.exec(location.hash);
+  if (perfil) { history.replaceState(null, '', location.pathname); telaPerfilPublico(decodeURIComponent(perfil[1])); }
+  else if (RECUPERANDO && AUTH.usuario()) telaLogin('nova-senha');
   else if (AUTH.usuario() || (AUTH.convidado() && location.hash !== '#admin')) entrarNoApp();
   else telaLogin();
 }).catch(function () {
