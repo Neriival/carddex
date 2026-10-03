@@ -97,10 +97,10 @@ function seletor(rotulo, campo, opcoes) {
 }
 function unicos(l) { return l.filter(function (x, i) { return x && l.indexOf(x) === i; }).sort(function (a, b) { return a.localeCompare(b, 'pt'); }); }
 
-// Uma carta na grade: .abrir (abre a carta grande), .check (marca que tem) e o selo de repetidas (+2)
+// Uma carta na grade: .abrir (abre a carta grande), .check (marca que tem) e, se tem, o contador de repetidas embaixo
 function cartaGrade(c, k, y) {
-  var src = k.mini || k.imagem, r = y ? qtdRepetida(c.id, k.id) : 0;
-  return '<div class="carta' + (y ? ' tenho' : '') + '">' + (r ? '<span class="rep-selo" title="' + r + ' repetida' + (r > 1 ? 's' : '') + '">+' + r + '</span>' : '') +
+  var src = k.mini || k.imagem;
+  return '<div class="carta' + (y ? ' tenho' : '') + '">' + (y ? repGradeHtml(c.id, k.id) : '') +
     '<button class="abrir" onclick="abrirCarta(\'' + c.id + '\',\'' + k.id + '\')" title="Ver ' + esc(k.nome) + '">' +
     (src ? '<img loading="lazy" src="' + esc(src) + '" alt="' + esc(k.nome) + '">' : '<span>' + esc(k.numero) + '</span>') + '</button>' +
     '<button class="check" onclick="marcarRapido(this,\'' + c.id + '\',\'' + k.id + '\')" aria-label="Marcar ' + esc(k.nome) + ' como tenho" title="Marcar como tenho">' + (y ? '✓' : '') + '</button></div>';
@@ -140,11 +140,30 @@ function marcarRapido(el, colId, cartaId) {
   if (i > -1) l.splice(i, 1); else l.push(cartaId);
   ESTADO.tenho[colId] = l; salvarTenho();
   if (i > -1) { conferirVitrine(colId, cartaId); if (qtdRepetida(colId, cartaId)) mudarRepetida(colId, cartaId, 0); }
-  var y = i < 0, caixa = el.parentNode, selo = caixa.querySelector('.rep-selo');
-  if (selo && !y) selo.remove();
+  var y = i < 0, caixa = el.parentNode, ctrl = caixa.querySelector('.rep-mini');
   if (ESTADO.redesenhar === desenharColecao && ESTADO.filtro !== 'todas') caixa.remove();
-  else { caixa.classList.toggle('tenho', y); el.textContent = y ? '✓' : ''; }
+  else {
+    caixa.classList.toggle('tenho', y); el.textContent = y ? '✓' : '';
+    if (ctrl) ctrl.remove();
+    if (y) caixa.insertAdjacentHTML('afterbegin', repGradeHtml(colId, cartaId));
+  }
   atualizarProgresso();
+}
+
+// REPETIDAS NA GRADE: − N + na parte de baixo da carta (só para carta que tem)
+function repGradeHtml(col, k) {
+  var n = qtdRepetida(col, k);
+  return '<div class="rep-mini' + (n ? '' : ' zero') + '" title="Repetidas (cópias a mais)">' +
+    '<button type="button" onclick="repGrade(this,\'' + col + '\',\'' + k + '\',-1)" aria-label="Uma repetida a menos"' + (n ? '' : ' disabled') + '>−</button>' +
+    '<b aria-live="polite">' + (n ? n + ' rep.' : 'rep.') + '</b>' +
+    '<button type="button" onclick="repGrade(this,\'' + col + '\',\'' + k + '\',1)" aria-label="Uma repetida a mais">+</button></div>';
+}
+function repGrade(btn, col, k, d) {
+  var n = Math.max(0, Math.min(99, qtdRepetida(col, k) + d)), box = btn.parentNode;
+  mudarRepetida(col, k, n);
+  box.querySelector('b').textContent = n ? n + ' rep.' : 'rep.';
+  box.querySelector('button').disabled = !n;
+  box.classList.toggle('zero', !n);
 }
 
 // TELA – Minhas cartas: só as cartas marcadas, separadas por coleção, + backup (exportar/importar)

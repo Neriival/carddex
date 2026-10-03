@@ -8,7 +8,8 @@ Promise.all([carregarSeries(), AUTH.iniciar()]).then(function () {
   else if (RECUPERANDO && AUTH.usuario()) telaLogin('nova-senha');
   else if (AUTH.usuario() || (AUTH.convidado() && location.hash !== '#admin')) entrarNoApp();
   else telaLogin();
-}).catch(function () {
+}).catch(function (e) {
+  console.error(e); // o erro de verdade aparece no console (F12)
   document.getElementById('app').innerHTML = '<div class="aviso">Não foi possível ler dados/series.json. Abra o projeto por um servidor (Live Server do VS Code ou GitHub Pages), não direto pelo arquivo.</div>';
 });
 

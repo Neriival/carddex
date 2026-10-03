@@ -224,7 +224,6 @@ button.carta-vitrine:hover img{transform:scale(1.05)}
 }
 
 /* ===== REPETIDAS ===== */
-.rep-selo{position:absolute;left:6px;bottom:6px;z-index:2;background:var(--blue);color:#001033;font-weight:800;font-size:.8rem;border-radius:999px;padding:2px 8px;box-shadow:0 2px 6px #0008;pointer-events:none}
 .repetidas{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:12px;padding:8px 8px 8px 14px;border:1px solid var(--line);border-radius:12px}
 .repetidas small{color:var(--mut);font-size:.8rem}
 .rep-ctrl{display:flex;align-items:center;gap:6px}
@@ -235,3 +234,13 @@ button.carta-vitrine:hover img{transform:scale(1.05)}
 .compartilhar-acoes{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 14px}.compartilhar-acoes .btn-compartilhar{margin:0}
 @media(max-width:760px){.filtros{grid-template-columns:repeat(2,1fr)}.compartilhar-acoes .btn-compartilhar{width:100%}}
 .share-acoes .btn{margin-top:0}
+
+/* Repetidas direto na grade: barra − N + embaixo da carta que tem */
+.rep-mini{position:absolute;left:4px;right:4px;bottom:4px;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:2px;background:#00143eeb;border:1px solid var(--blue);border-radius:999px;padding:2px;box-shadow:0 2px 8px #0009}
+.rep-mini b{flex:1;text-align:center;font-size:.8rem;color:var(--blue);white-space:nowrap}
+.rep-mini button{width:28px;height:28px;flex:none;border-radius:50%;border:0;background:var(--blue);color:#001033;font:inherit;font-weight:800;font-size:1.05rem;line-height:1;cursor:pointer;display:grid;place-items:center;padding:0}
+.rep-mini button:hover:not(:disabled),.rep-mini button:focus-visible{background:var(--gold);outline:none}
+.rep-mini button:disabled{background:transparent;color:var(--line);cursor:default}
+.rep-mini.zero{border-color:var(--line);opacity:.75}.rep-mini.zero b{color:var(--mut);font-weight:400}
+.rep-mini.zero:hover,.rep-mini.zero:focus-within{opacity:1}
+@media(max-width:760px){.rep-mini{left:3px;right:3px;bottom:3px}.rep-mini button{width:24px;height:24px;font-size:.95rem}.rep-mini b{font-size:.7rem}}
