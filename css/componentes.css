@@ -178,3 +178,19 @@ a.parceiro:hover,a.parceiro:focus-visible{border-color:var(--gold);transform:tra
   .nav-btn.logado{max-width:150px;min-width:0}
   .ranking li{gap:10px;padding:6px 12px 6px 6px}.rank-pos{width:32px;font-size:1rem}.rank-avatar{width:40px;height:40px}
 }
+
+/* ===== FOTO DE PERFIL ===== */
+.foto-perfil{object-fit:cover;border:2px solid var(--gold);background:var(--p1)}
+.login-logo.foto-perfil{border-width:4px}
+.avatares.com-foto{grid-template-columns:repeat(3,1fr)}
+.avatar-op{position:relative}
+.foto-prev,.foto-vazia{width:84px;height:84px;border-radius:50%}
+.foto-prev{object-fit:cover;border:3px solid var(--gold)}
+.foto-vazia{display:grid;place-items:center;border:2px dashed var(--line);color:var(--blue);font-size:2.4rem;font-weight:300;line-height:1}
+.op-foto:hover .foto-vazia{border-color:var(--gold);color:var(--gold)}
+.dica-foto{font-size:.8rem;margin-top:-4px}
+.adm-foto{display:flex;align-items:center;gap:10px}
+.adm-mini{width:40px;height:40px;border-radius:50%;flex:none}
+.adm-remover{background:none;border:1px solid #ff9a9a;color:#ff9a9a;border-radius:999px;padding:4px 10px;font:inherit;font-size:.8rem;cursor:pointer}
+.adm-remover:hover{background:#ff9a9a;color:#1a0000}
+@media(max-width:760px){.avatar-op{padding:10px 4px}.avatar-op img,.foto-prev,.foto-vazia{width:64px;height:64px}}

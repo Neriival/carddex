@@ -30,14 +30,14 @@ var AUTH = {
     try { var r = await sb.auth.getSession(); await AUTH._usar(r.data.session && r.data.session.user); } catch (e) {}
     if (AUTH._u) await nuvemPuxar(nuvemPendente());
   },
-  // Guarda o usuário e lê o perfil dele (nick, sexo, avatar) e se é admin
+  // Guarda o usuário e lê o perfil dele (nick, sexo, avatar, foto) e se é admin
   _usar: async function (user) {
     AUTH._u = null; AUTH.admin = false;
     if (!user) return;
-    var u = { id: user.id, email: user.email, nick: '', sexo: '', avatar: '' };
+    var u = { id: user.id, email: user.email, nick: '', sexo: '', avatar: '', foto: '' };
     try {
-      var r = await Promise.all([sb.from('perfis').select('nick,sexo,avatar').eq('id', user.id).maybeSingle(), sb.rpc('eh_admin')]);
-      if (r[0].data) { u.nick = r[0].data.nick || ''; u.sexo = r[0].data.sexo || ''; u.avatar = r[0].data.avatar || ''; }
+      var r = await Promise.all([sb.from('perfis').select('nick,sexo,avatar,foto').eq('id', user.id).maybeSingle(), sb.rpc('eh_admin')]);
+      if (r[0].data) { u.nick = r[0].data.nick || ''; u.sexo = r[0].data.sexo || ''; u.avatar = r[0].data.avatar || ''; u.foto = r[0].data.foto || ''; }
       AUTH.admin = r[1].data === true;
     } catch (e) {}
     AUTH._u = u;
@@ -52,28 +52,39 @@ var AUTH = {
     try { localStorage.setItem('carddex_sessao', JSON.stringify(u)); } catch (e) {}
     return u;
   },
-  // p = { nick, sexo, avatar }. Retorna { confirmar: true } se o Supabase pedir confirmação por e-mail.
+  // p = { nick, sexo, avatar, usarFoto, arquivo }. Retorna { confirmar: true } se o Supabase pedir confirmação por e-mail.
   criar: async function (email, senha, p) {
     if (sb) {
       var livre = await sb.rpc('nick_disponivel', { n: p.nick });
       if (livre.data === false) throw new Error('O nick "' + p.nick + '" já está em uso. Escolha outro.');
-      var r = await sb.auth.signUp({ email: email, password: senha, options: { data: p } });
+      var r = await sb.auth.signUp({ email: email, password: senha, options: { data: { nick: p.nick, sexo: p.sexo, avatar: p.avatar } } });
       if (r.error) throw new Error(/database error/i.test(r.error.message) ? 'O nick "' + p.nick + '" acabou de ser escolhido por outra pessoa. Tente outro.' : erroAuth(r.error));
       if (!r.data.session) return { confirmar: true };
-      await AUTH._usar(r.data.user); await nuvemPuxar(true); return AUTH._u;
+      await AUTH._usar(r.data.user); await nuvemPuxar(true);
+      // a foto só pode subir depois que a conta existe; se falhar, a conta continua criada com o personagem
+      if (p.usarFoto && p.arquivo) { try { await AUTH.salvarPerfil(p); } catch (e) {} }
+      return AUTH._u;
     }
     var u = { nick: p.nick, sexo: p.sexo, avatar: p.avatar, email: email };
     try { localStorage.setItem('carddex_sessao', JSON.stringify(u)); } catch (e) {}
     return u;
   },
-  // Troca nick, sexo e avatar (tela Meu perfil)
+  // Troca nick, sexo, personagem e foto (tela Meu perfil). Foto nova sobe antes; a antiga é apagada depois.
   salvarPerfil: async function (p) {
+    var dados = { nick: p.nick, sexo: p.sexo, avatar: p.avatar };
     if (sb) {
-      var r = await sb.from('perfis').update(p).eq('id', AUTH._u.id);
-      if (r.error) throw new Error(r.error.code === '23505' ? 'O nick "' + p.nick + '" já está em uso. Escolha outro.' : 'Não foi possível salvar: ' + r.error.message);
-      Object.assign(AUTH._u, p); return;
+      var antiga = AUTH._u.foto || '';
+      if (p.usarFoto && p.arquivo) dados.foto = await enviarFoto(p.arquivo);
+      else if (!p.usarFoto) dados.foto = null;
+      var r = await sb.from('perfis').update(dados).eq('id', AUTH._u.id);
+      if (r.error) {
+        if (p.arquivo && dados.foto) apagarFoto(dados.foto);
+        throw new Error(r.error.code === '23505' ? 'O nick "' + p.nick + '" já está em uso. Escolha outro.' : 'Não foi possível salvar: ' + r.error.message);
+      }
+      if ('foto' in dados && antiga && antiga !== dados.foto) apagarFoto(antiga);
+      Object.assign(AUTH._u, dados, { foto: 'foto' in dados ? dados.foto || '' : antiga }); return;
     }
-    var u = Object.assign(lerJSON('carddex_sessao') || {}, p);
+    var u = Object.assign(lerJSON('carddex_sessao') || {}, dados);
     try { localStorage.setItem('carddex_sessao', JSON.stringify(u)); } catch (e) {}
   },
   // Ao sair, as marcações saem do navegador (elas continuam salvas na conta)
@@ -91,10 +102,33 @@ function campoSexo(atual) {
   return '<div class="campo"><label for="lg-sexo">Sexo <small>(só você vê)</small></label><select id="lg-sexo" name="sexo" onchange="sugerirAvatar(this)"><option value="">Selecione</option>' +
     [['masculino', 'Masculino'], ['feminino', 'Feminino'], ['nao_informar', 'Prefiro não dizer']].map(function (o) { return '<option value="' + o[0] + '"' + (atual === o[0] ? ' selected' : '') + '>' + o[1] + '</option>'; }).join('') + '</select></div>';
 }
-function escolhaAvatar(atual) {
-  return '<fieldset class="avatares"><legend>Personagem</legend>' + [['menino', 'Menino'], ['menina', 'Menina']].map(function (a) {
+// atual = 'menino' | 'menina' | 'foto'; foto = endereço da foto atual (se tiver)
+function escolhaAvatar(atual, foto) {
+  var ops = [['menino', 'Menino'], ['menina', 'Menina']].map(function (a) {
     return '<label class="avatar-op"><input type="radio" name="avatar" value="' + a[0] + '"' + (atual === a[0] ? ' checked' : '') + ' onchange="this.form.dataset.avatarEscolhido=1"><img src="assets/img/avatares/' + a[0] + '.svg" alt=""><span>' + a[1] + '</span></label>';
-  }).join('') + '</fieldset>';
+  }).join('');
+  // "Minha foto" só existe com o banco ligado (a foto fica guardada no Supabase)
+  if (sb) ops += '<label class="avatar-op op-foto" onclick="escolherFoto(event,this)"><input type="radio" name="avatar" value="foto"' + (atual === 'foto' ? ' checked' : '') + '>' +
+    (foto ? '<img class="foto-prev" src="' + esc(foto) + '" alt="">' : '<span class="foto-vazia">+</span>') + '<span>' + (foto ? 'Trocar foto' : 'Minha foto') + '</span></label>';
+  return '<fieldset class="avatares' + (sb ? ' com-foto' : '') + '"><legend>Personagem ou foto</legend>' + ops + '</fieldset>' +
+    (sb ? '<input type="file" name="arquivo" accept="image/*" hidden onchange="previaFoto(this)"><small class="sub dica-foto">A foto aparece para todos no ranking. Escolha uma em que você esteja à vontade.</small>' : '');
+}
+// Clicar em "Minha foto" abre a escolha do arquivo. Se já tem foto e outra opção estava marcada, o 1º clique só volta para a foto.
+function escolherFoto(e, op) {
+  if (e.target.type === 'radio') return; // o clique já chegou no próprio botão de opção
+  var radio = op.querySelector('[type=radio]');
+  if (!radio.checked && op.querySelector('.foto-prev')) { op.closest('form').dataset.avatarEscolhido = 1; return; }
+  e.preventDefault();
+  op.closest('form').elements.arquivo.click();
+}
+// Mostra a foto escolhida dentro da opção e marca "Minha foto"
+function previaFoto(input) {
+  var arq = input.files[0], op = input.form.querySelector('.op-foto');
+  if (!arq) return;
+  input.form.elements.avatar.value = 'foto'; input.form.dataset.avatarEscolhido = 1;
+  var velha = op.querySelector('.foto-prev,.foto-vazia');
+  velha.outerHTML = '<img class="foto-prev" src="' + URL.createObjectURL(arq) + '" alt="">';
+  op.querySelector('span:last-child').textContent = 'Trocar foto';
 }
 // Ao escolher o sexo, já marca o personagem correspondente (se a pessoa ainda não escolheu um)
 function sugerirAvatar(sel) {
@@ -102,12 +136,51 @@ function sugerirAvatar(sel) {
   if (a && !f.dataset.avatarEscolhido) f.elements.avatar.value = a;
 }
 function imgAvatar(a, cls) { return '<img class="' + cls + '" src="assets/img/avatares/' + (a === 'menina' ? 'menina' : 'menino') + '.svg" alt="">'; }
-// Confere nick, sexo e personagem do formulário. Devolve { nick, sexo, avatar } ou a mensagem de erro (texto).
+// Foto da pessoa (se tiver) ou o personagem. u = { avatar, foto }. Se a foto não carregar, volta o personagem.
+function avatarDe(u, cls) {
+  if (!u.foto || !/^https:\/\//.test(u.foto)) return imgAvatar(u.avatar, cls);
+  var reserva = 'assets/img/avatares/' + (u.avatar === 'menina' ? 'menina' : 'menino') + '.svg';
+  return '<img class="' + cls + ' foto-perfil" src="' + esc(u.foto) + '" alt="" data-reserva="' + reserva + '" onerror="fotoQuebrada(this)">';
+}
+function fotoQuebrada(img) { img.onerror = null; img.classList.remove('foto-perfil'); img.src = img.dataset.reserva; }
+
+// FOTO DE PERFIL: recorta no meio (quadrado), reduz para 256×256 e envia como WEBP.
+// Redesenhar a imagem também apaga os dados escondidos da foto (como a localização GPS).
+async function prepararFoto(arq) {
+  if (!/^image\//.test(arq.type)) throw new Error('Escolha um arquivo de imagem (JPG, PNG ou WEBP).');
+  if (arq.size > 20 * 1048576) throw new Error('A foto é muito grande (mais de 20 MB).');
+  var bmp;
+  try { bmp = await createImageBitmap(arq); } catch (e) { throw new Error('Não consegui abrir essa imagem. Tente uma foto JPG ou PNG.'); }
+  var L = 256, s = Math.min(bmp.width, bmp.height), c = document.createElement('canvas');
+  c.width = c.height = L;
+  var ctx = c.getContext('2d'); ctx.imageSmoothingQuality = 'high';
+  ctx.drawImage(bmp, (bmp.width - s) / 2, (bmp.height - s) / 2, s, s, 0, 0, L, L);
+  return new Promise(function (ok) { c.toBlob(ok, 'image/webp', 0.85); });
+}
+async function enviarFoto(arq) {
+  var blob = await prepararFoto(arq), ext = blob.type === 'image/webp' ? 'webp' : 'png';
+  var caminho = AUTH._u.id + '/foto-' + Date.now() + '.' + ext;
+  var r = await sb.storage.from('fotos').upload(caminho, blob, { contentType: blob.type });
+  if (r.error) throw new Error('Não foi possível enviar a foto: ' + r.error.message);
+  return sb.storage.from('fotos').getPublicUrl(caminho).data.publicUrl;
+}
+function apagarFoto(url) {
+  var m = /\/public\/fotos\/(.+)$/.exec(url || '');
+  if (m) sb.storage.from('fotos').remove([decodeURIComponent(m[1])]);
+}
+// Confere nick, sexo e personagem/foto do formulário.
+// Devolve { nick, sexo, avatar, usarFoto, arquivo } ou a mensagem de erro (texto).
+// Com foto, o personagem continua guardado (aparece se a foto for removida).
 function lerPerfil(f) {
-  var p = { nick: f.nick.value.trim(), sexo: f.sexo.value, avatar: f.avatar.value };
+  var escolha = f.avatar.value, u = AUTH.usuario() || {};
+  var p = { nick: f.nick.value.trim(), sexo: f.sexo.value, avatar: escolha, usarFoto: escolha === 'foto', arquivo: f.arquivo && f.arquivo.files[0] };
   if (!NICK_OK.test(p.nick)) return 'O nick precisa ter de 3 a 16 letras, números, ponto ou _ (sem espaços).';
   if (!p.sexo) return 'Escolha o sexo (ou "Prefiro não dizer").';
-  if (!p.avatar) return 'Escolha seu personagem.';
+  if (!escolha) return 'Escolha seu personagem ou uma foto.';
+  if (p.usarFoto) {
+    if (!p.arquivo && !u.foto) return 'Escolha a sua foto (toque em "Minha foto").';
+    p.avatar = u.avatar || (p.sexo === 'feminino' ? 'menina' : 'menino');
+  }
   return p;
 }
 
@@ -123,7 +196,7 @@ function telaLogin(modo) {
   else corpo = '<div class="login-tabs"><button type="button" class="' + (novo ? '' : 'on') + '" onclick="telaLogin()">Entrar</button><button type="button" class="' + (novo ? 'on' : '') + '" onclick="telaLogin(\'criar\')">Criar conta</button></div>' +
     (novo ? campoLogin('nick', 'Nick <small>(aparece no ranking)</small>', 'text', 'nickname', '', ' maxlength="16"') : '') +
     campoLogin('email', 'E-mail', 'email', 'email') + campoLogin('senha', 'Senha', 'password', novo ? 'new-password' : 'current-password') +
-    (novo ? campoSexo('') + escolhaAvatar('') : (sb ? '<button class="link-esqueci" type="button" onclick="telaLogin(\'esqueci\')">Esqueci minha senha</button>' : '')) +
+    (novo ? campoSexo('') + escolhaAvatar('', '') : (sb ? '<button class="link-esqueci" type="button" onclick="telaLogin(\'esqueci\')">Esqueci minha senha</button>' : '')) +
     '<div class="erro" id="login-erro" role="alert"></div>' +
     '<button class="btn" type="submit">' + (novo ? 'Criar conta' : 'Entrar') + '</button>' +
     '<button class="btn btn-sec" type="button" onclick="entrarNoApp(true)">Continuar sem conta</button>';
@@ -177,7 +250,7 @@ function entrarNoApp(convidado) {
 // Botão do menu: "Entrar" (visitante) ou personagem + nick (logado). O link "Admin" só aparece para administradores.
 function atualizarConta() {
   var u = AUTH.usuario(), b = document.getElementById('nav-conta');
-  b.innerHTML = u ? imgAvatar(u.avatar, 'nav-avatar') + '<span>' + esc(u.nick || 'Meu perfil') + '</span>' : 'Entrar';
+  b.innerHTML = u ? avatarDe(u, 'nav-avatar') + '<span>' + esc(u.nick || 'Meu perfil') + '</span>' : 'Entrar';
   b.classList.toggle('logado', !!u);
   b.title = u ? 'Meu perfil (' + u.email + ')' : 'Entrar na sua conta';
   document.getElementById('nav-admin').hidden = !AUTH.admin;
@@ -190,12 +263,12 @@ function telaPerfil() {
   if (!u) return telaLogin();
   document.body.classList.remove('na-login');
   ESTADO.redesenhar = null; marcarMenu(-1);
-  app.innerHTML = '<section class="login"><form class="login-card" novalidate onsubmit="enviarPerfil(event)">' + imgAvatar(u.avatar, 'login-logo') +
+  app.innerHTML = '<section class="login"><form class="login-card" novalidate onsubmit="enviarPerfil(event)">' + avatarDe(u, 'login-logo') +
     '<h3>' + (u.nick ? 'Meu perfil' : 'Complete seu perfil') + '</h3><span class="sub">' + (u.nick ? esc(u.email) : 'Escolha um nick e um personagem para aparecer no ranking.') + '</span>' +
-    campoLogin('nick', 'Nick <small>(aparece no ranking)</small>', 'text', 'nickname', u.nick, ' maxlength="16"') + campoSexo(u.sexo) + escolhaAvatar(u.avatar) +
+    campoLogin('nick', 'Nick <small>(aparece no ranking)</small>', 'text', 'nickname', u.nick, ' maxlength="16"') + campoSexo(u.sexo) + escolhaAvatar(u.foto ? 'foto' : u.avatar, u.foto) +
     '<div class="erro" id="login-erro" role="alert"></div><button class="btn" type="submit">Salvar</button>' +
     '<button class="btn btn-sec" type="button" onclick="sairDaConta(this)">Sair da conta</button></form></section>';
-  if (u.avatar) app.querySelector('form').dataset.avatarEscolhido = 1;
+  if (u.avatar || u.foto) app.querySelector('form').dataset.avatarEscolhido = 1;
   window.scrollTo(0, 0);
 }
 async function enviarPerfil(e) {
@@ -207,7 +280,7 @@ async function enviarPerfil(e) {
   botao.disabled = true; botao.textContent = 'Salvando...';
   try {
     await AUTH.salvarPerfil(p); atualizarConta();
-    e.target.querySelector('.login-logo').outerHTML = imgAvatar(p.avatar, 'login-logo');
+    e.target.querySelector('.login-logo').outerHTML = avatarDe(AUTH.usuario(), 'login-logo');
     erro.classList.add('ok'); erro.textContent = 'Perfil salvo! Voltando para o início...';
     botao.textContent = '✓ Salvo';
     setTimeout(function () { if (document.getElementById('login-erro') === erro) telaInicio(); }, 900);

@@ -14,11 +14,11 @@ async function telaRanking() {
   var lista = r.data || [], eu = lista.filter(function (x) { return x.eu; })[0];
   var meu = !u ? '<div class="rank-eu"><b>Quer aparecer aqui?</b><span class="sub">Crie uma conta, marque suas cartas e dispute o topo com outros colecionadores.</span><button class="btn" onclick="telaLogin(\'criar\')">Criar conta</button></div>'
     : !u.nick ? '<div class="rank-eu"><b>Falta escolher seu nick</b><span class="sub">Sem nick você não aparece no ranking.</span><button class="btn" onclick="telaPerfil()">Escolher nick</button></div>'
-    : '<div class="rank-eu">' + imgAvatar(u.avatar, 'rank-avatar') + '<div><b>' + (eu ? eu.posicao + 'º lugar' : 'Fora do ranking') + '</b><span class="sub">' + esc(u.nick) + ' · ' + totalTenho() + ' cartas' +
+    : '<div class="rank-eu">' + avatarDe(u, 'rank-avatar') + '<div><b>' + (eu ? eu.posicao + 'º lugar' : 'Fora do ranking') + '</b><span class="sub">' + esc(u.nick) + ' · ' + totalTenho() + ' cartas' +
       (eu ? '' : ' · marque cartas para entrar') + '</span></div></div>';
   app.innerHTML = topo + meu + (lista.length ? '<ol class="ranking">' + lista.map(function (x) {
     var med = x.posicao <= 3 ? ' top' + x.posicao : '';
-    return '<li class="' + (x.eu ? 'sou-eu' : '') + med + '"><span class="rank-pos">' + x.posicao + 'º</span>' + imgAvatar(x.avatar, 'rank-avatar') +
+    return '<li class="' + (x.eu ? 'sou-eu' : '') + med + '"><span class="rank-pos">' + x.posicao + 'º</span>' + avatarDe(x, 'rank-avatar') +
       '<span class="rank-nick">' + esc(x.nick) + (x.eu ? ' <small>(você)</small>' : '') + '</span><span class="rank-total">' + x.total + ' <small>cartas</small></span></li>';
   }).join('') + '</ol>' : '<p class="sub">Ninguém marcou cartas ainda. Seja o primeiro!</p>');
 }

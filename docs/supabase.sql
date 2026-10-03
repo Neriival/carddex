@@ -16,6 +16,13 @@ create table if not exists public.perfis (
 );
 create unique index if not exists perfis_nick_unico on public.perfis (lower(nick));
 
+-- Foto de perfil (opcional; sem foto, aparece o personagem). Só aceita foto guardada no Storage
+-- deste projeto, na pasta da própria pessoa (troque o endereço se recriar o projeto).
+alter table public.perfis add column if not exists foto text;
+alter table public.perfis drop constraint if exists perfis_foto_check;
+alter table public.perfis add constraint perfis_foto_check check (foto is null or
+  foto like 'https://fqynjcaiwmeprxkzfwed.supabase.co/storage/v1/object/public/fotos/' || id::text || '/%');
+
 -- Quem pode abrir o painel adm
 create table if not exists public.admins (
   user_id uuid primary key references auth.users on delete cascade
@@ -88,12 +95,13 @@ language sql stable security definer set search_path = public as $$
   select not exists (select 1 from public.perfis where lower(nick) = lower(n) and id is distinct from auth.uid());
 $$;
 
--- Ranking público: só nick, avatar e total de cartas
+-- Ranking público: só nick, personagem/foto e total de cartas
+drop function if exists public.ranking(integer);
 create or replace function public.ranking(limite integer default 50)
-returns table (posicao bigint, nick text, avatar text, total integer, eu boolean)
+returns table (posicao bigint, nick text, avatar text, foto text, total integer, eu boolean)
 language sql stable security definer set search_path = public as $$
   select * from (
-    select rank() over (order by c.total desc) as posicao, p.nick, p.avatar, c.total, p.id = auth.uid() as eu
+    select rank() over (order by c.total desc) as posicao, p.nick, p.avatar, p.foto, c.total, p.id = auth.uid() as eu
     from public.colecoes c join public.perfis p on p.id = c.user_id
     where c.total > 0 and p.nick is not null
   ) r
@@ -115,6 +123,14 @@ begin
   if not public.eh_admin() then raise exception 'sem permissão'; end if;
   return query select c.posicao, c.nome, count(*), count(*) filter (where c.criado_em > now() - interval '30 days')
     from public.cliques c group by c.posicao, c.nome order by 4 desc, 3 desc;
+end $$;
+
+-- PAINEL ADM: tira a foto de alguém (volta a aparecer o personagem)
+create or replace function public.remover_foto(alvo uuid) returns void
+language plpgsql security definer set search_path = public as $$
+begin
+  if not public.eh_admin() then raise exception 'sem permissão'; end if;
+  update public.perfis set foto = null where id = alvo;
 end $$;
 
 -- PAINEL ADM: números gerais e coleções mais colecionadas
@@ -146,7 +162,7 @@ grant select on public.parceiros to anon, authenticated;
 grant insert, update, delete on public.parceiros to authenticated;
 grant select on public.perfis, public.admins to authenticated;
 grant select, insert, update on public.colecoes to authenticated;
-grant execute on function public.eh_admin(), public.cliques_resumo(), public.admin_resumo() to authenticated;
+grant execute on function public.eh_admin(), public.cliques_resumo(), public.admin_resumo(), public.remover_foto(uuid) to authenticated;
 
 alter table public.perfis enable row level security;
 alter table public.admins enable row level security;
@@ -160,7 +176,7 @@ create policy "perfil: dono ou admin le" on public.perfis for select using (id =
 drop policy if exists "perfil: dono edita" on public.perfis;
 create policy "perfil: dono edita" on public.perfis for update using (id = auth.uid()) with check (id = auth.uid());
 revoke insert, update, delete on public.perfis from anon, authenticated;
-grant update (nick, sexo, avatar) on public.perfis to authenticated;
+grant update (nick, sexo, avatar, foto) on public.perfis to authenticated;
 
 drop policy if exists "admins: ve a propria linha" on public.admins;
 create policy "admins: ve a propria linha" on public.admins for select using (user_id = auth.uid());
@@ -195,6 +211,21 @@ drop policy if exists "parceiros: admin troca" on storage.objects;
 create policy "parceiros: admin troca" on storage.objects for update using (bucket_id = 'parceiros' and public.eh_admin());
 drop policy if exists "parceiros: admin apaga" on storage.objects;
 create policy "parceiros: admin apaga" on storage.objects for delete using (bucket_id = 'parceiros' and public.eh_admin());
+
+-- ============ FOTOS DE PERFIL (Storage) ============
+-- Cada pessoa só mexe na própria pasta: fotos/<id da conta>/... ; admins podem apagar qualquer uma.
+insert into storage.buckets (id, name, public, file_size_limit, allowed_mime_types)
+  values ('fotos', 'fotos', true, 524288, array['image/webp', 'image/jpeg', 'image/png'])
+  on conflict (id) do nothing;
+
+drop policy if exists "fotos: dono lista" on storage.objects;
+create policy "fotos: dono lista" on storage.objects for select using (bucket_id = 'fotos' and ((storage.foldername(name))[1] = auth.uid()::text or public.eh_admin()));
+drop policy if exists "fotos: dono envia" on storage.objects;
+create policy "fotos: dono envia" on storage.objects for insert with check (bucket_id = 'fotos' and (storage.foldername(name))[1] = auth.uid()::text);
+drop policy if exists "fotos: dono troca" on storage.objects;
+create policy "fotos: dono troca" on storage.objects for update using (bucket_id = 'fotos' and (storage.foldername(name))[1] = auth.uid()::text);
+drop policy if exists "fotos: dono ou admin apaga" on storage.objects;
+create policy "fotos: dono ou admin apaga" on storage.objects for delete using (bucket_id = 'fotos' and ((storage.foldername(name))[1] = auth.uid()::text or public.eh_admin()));
 
 -- ============ VIRAR ADMIN ============
 -- 1) Crie sua conta pelo próprio site (aba "Criar conta").

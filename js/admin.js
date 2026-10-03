@@ -25,13 +25,13 @@ async function carregarContas() {
   function contar(q) { return q.then(function (r) { return r.error ? '–' : r.count; }); }
   var base = function () { return sb.from('perfis').select('id', { count: 'exact', head: true }); };
   var n = await Promise.all([contar(base()), contar(base().gte('criado_em', desde(7))), contar(base().gte('criado_em', desde(30)))]);
-  var lista = await sb.from('perfis').select('nick,nome,email,sexo,criado_em').order('criado_em', { ascending: false }).limit(100);
+  var lista = await sb.from('perfis').select('id,nick,nome,email,sexo,avatar,foto,criado_em').order('criado_em', { ascending: false }).limit(100);
   var st = document.getElementById('adm-stats'), box = document.getElementById('adm-contas');
   if (!st) return; // saiu da tela antes de terminar
   st.innerHTML = statAdm('Contas criadas', n[0]) + statAdm('Últimos 7 dias', n[1]) + statAdm('Últimos 30 dias', n[2]);
   if (lista.error) { box.innerHTML = '<div class="aviso">Não foi possível ler as contas: ' + esc(lista.error.message) + '</div>'; return; }
-  box.innerHTML = lista.data.length ? '<div class="adm-tabela"><table><thead><tr><th>Nick</th><th>E-mail</th><th>Sexo</th><th>Criada em</th></tr></thead><tbody>' +
-    lista.data.map(function (c) { return '<tr><td>' + esc(c.nick || c.nome || '–') + '</td><td>' + esc(c.email) + '</td><td>' + (NOMES_SEXO[c.sexo] || '–') + '</td><td>' + new Date(c.criado_em).toLocaleString('pt-BR', { dateStyle: 'short', timeStyle: 'short' }) + '</td></tr>'; }).join('') +
+  box.innerHTML = lista.data.length ? '<div class="adm-tabela"><table><thead><tr><th>Foto</th><th>Nick</th><th>E-mail</th><th>Sexo</th><th>Criada em</th></tr></thead><tbody>' +
+    lista.data.map(function (c) { return '<tr><td class="adm-foto">' + avatarDe(c, 'adm-mini') + (c.foto ? '<button class="adm-remover" type="button" onclick="removerFotoAdm(this,\'' + c.id + '\')">Remover foto</button>' : '') + '</td><td>' + esc(c.nick || c.nome || '–') + '</td><td>' + esc(c.email) + '</td><td>' + (NOMES_SEXO[c.sexo] || '–') + '</td><td>' + new Date(c.criado_em).toLocaleString('pt-BR', { dateStyle: 'short', timeStyle: 'short' }) + '</td></tr>'; }).join('') +
     '</tbody></table></div>' + (n[0] > 100 ? '<p class="sub">Mostrando as 100 mais recentes.</p>' : '') : '<p class="sub">Nenhuma conta criada ainda.</p>';
 }
 
@@ -116,4 +116,15 @@ async function removerParceiro(btn, pos) {
 function apagarImagem(url) {
   var m = /\/parceiros\/([^/?]+)$/.exec(url || '');
   if (m) sb.storage.from('parceiros').remove([decodeURIComponent(m[1])]);
+}
+
+// MODERAÇÃO: tira a foto de alguém (a pessoa volta a aparecer com o personagem) e apaga o arquivo
+async function removerFotoAdm(btn, id) {
+  var img = btn.parentNode.querySelector('img'), url = img.getAttribute('src');
+  if (!confirm('Remover esta foto? A pessoa volta a aparecer com o personagem.')) return;
+  btn.disabled = true;
+  var r = await sb.rpc('remover_foto', { alvo: id });
+  if (r.error) { btn.disabled = false; alert('Não foi possível remover: ' + r.error.message); return; }
+  apagarFoto(url);
+  fotoQuebrada(img); btn.remove();
 }
