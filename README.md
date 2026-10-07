@@ -6,12 +6,13 @@ Site para fãs de Pokémon TCG marcarem as cartas que já têm, organizado por *
 
 - Carta grande com efeito 3D, informações e arrastar para o lado
 - Marcar "tenho" e contar **repetidas** direto na grade
+- **Preços em reais** de cada carta e valor da coleção (referência Cardmarket, atualizada todo dia)
 - Imagem das cartas que faltam ou das repetidas para mandar no **WhatsApp**
 - **Conta** com nick e personagem ou foto; as cartas ficam salvas na conta (qualquer aparelho)
 - **Ranking** e **perfil público** com vitrine de 5 cartas
 - **Painel adm**: contas, números do site, parceiros e moderação de fotos
 - Funciona como **app instalável** (computador e celular)
-- Dados e imagens da [TCGdex](https://tcgdex.dev); contas no [Supabase](https://supabase.com)
+- Dados e imagens da [TCGdex](https://tcgdex.dev); preços do [Cardmarket](https://www.cardmarket.com); contas no [Supabase](https://supabase.com)
 
 ## Rodar localmente
 Use o Live Server do VS Code no `index.html`.

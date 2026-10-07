@@ -10,13 +10,23 @@
 .colecao:hover,.colecao:focus-visible{border-color:var(--gold);outline:none}
 .colecao h3{margin:0}
 .colecao img{height:44px;max-width:100%;object-fit:contain;display:block;margin:0 auto 6px}
-.colecao .barra{width:100%}
+/* progresso: "4 de 188 cartas" + porcentagem em destaque + barra grossa */
+.progresso{width:100%;margin-top:10px}
+.progresso-txt{display:flex;justify-content:space-between;align-items:baseline;gap:8px;font-size:.88rem;color:var(--mut)}
+.progresso-txt b{font-size:1.35rem;font-weight:800;color:var(--gold)}
+.progresso .barra{height:12px;margin-top:6px;border:1px solid var(--line)}
+.progresso.completa .barra i{background:var(--gold)}
+.progresso.completa b{font-size:1rem}
+.colecao.completa{border-color:var(--gold);box-shadow:0 0 16px #ffc61a33}
 .serie-btn{padding:26px 18px}.serie-btn img{height:64px}
 .jogo-btn{padding:28px 18px}.jogo-btn img{height:96px;width:96px;margin-bottom:10px}
 .jogo-btn.em-breve img{opacity:.6}.jogo-btn.em-breve .sub{color:var(--gold)}
 .titulo-jogo{display:flex;align-items:center;gap:14px}.titulo-jogo img{height:56px;width:56px}.titulo-jogo h2{margin:0}
 
 /* ===== CARTA NA GRADE: escurecida = não tenho, colorida com borda dourada = tenho ===== */
+.carta-item{display:flex;flex-direction:column;gap:4px;min-width:0}
+.preco{text-align:center;font-size:.85rem;font-weight:600;color:var(--gold);white-space:nowrap}
+.preco.sem{color:var(--line)}
 .carta{position:relative;aspect-ratio:5/7;border-radius:10px;border:1px dashed var(--line);background:var(--p1);color:var(--mut);font:inherit;font-weight:600;cursor:default;padding:0;overflow:hidden}
 .carta img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1) brightness(.45);transition:filter .25s,transform .25s}
 .carta:hover img{transform:scale(1.04)}
@@ -39,5 +49,6 @@
   .colecoes.jogos{grid-template-columns:repeat(3,1fr);gap:8px}
   .jogo-btn{padding:14px 6px}.jogo-btn img{height:60px;width:60px;margin-bottom:4px}.jogo-btn h3{font-size:.95rem}
   .check{width:30px;height:30px}
+  .preco{font-size:.75rem}
   .rep-mini{left:3px;right:3px;bottom:3px}.rep-mini button{width:24px;height:24px;font-size:.95rem}.rep-mini b{font-size:.7rem}
 }

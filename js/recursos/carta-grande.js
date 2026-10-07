@@ -2,7 +2,8 @@
 // CARTA GRANDE (janela que abre ao clicar na imagem da carta)
 // ============================================================
 // Brilho suave, inclinação 3D com o mouse e arrastar para o lado (próxima/anterior).
-// Embaixo das informações: "Marcar como tenho", repetidas (− N +) e "Pôr na vitrine".
+// Informações da carta com o preço em reais (js/base/precos.js).
+// Embaixo: "Marcar como tenho", repetidas (− N +) e "Pôr na vitrine".
 // Aberta pela vitrine de um perfil, navega só entre as cartas da vitrine e não deixa marcar.
 // - Inclinação 3D: mude MAX (graus) em abrirCarta()
 // - Sensibilidade do arrastar: mude DIST_TROCA (pixels)
@@ -19,18 +20,20 @@ async function abrirCarta(colId, cartaId, dir, daVitrine) {
   var c = acharColecao(colId), s = acharSerie(c.serie), lista = ESTADO.cartas[colId], tok = ++tokenModal;
   var i = lista.findIndex(function (x) { return x.id === cartaId; }), k = lista[i];
   var vit = daVitrine && vitrineAberta, pos = vit ? vit.findIndex(function (v) { return v.c === colId && v.k === cartaId; }) : i, qtd = vit ? vit.length : lista.length;
-  await detalhesCarta(k);
+  await Promise.all([detalhesCarta(k), carregarPrecos(c.serie)]);
   if (tok !== tokenModal) return; // o usuário já foi para outra carta
   cartaAberta = { col: colId, k: k, i: i, vit: !!vit, pos: pos };
   var y = (ESTADO.tenho[colId] || []).indexOf(k.id) > -1;
-  var tipo = (k.tipos || []).join(', ') || k.categoria || '—';
+  var tipo = (k.tipos || []).join(', ') || k.categoria || '—', preco = precoCarta(c.serie, k.id);
+  var linhaPreco = preco ? '<dt>Preço</dt><dd class="preco-info">' + (preco.real ? reais(preco.real) : '—') + (preco.reverse ? '<small>Reverse holo: ' + reais(preco.reverse) + '</small>' : '') + '</dd>' : '';
   var animC = dir ? ' style="animation:' + (dir > 0 ? 'deslizarDir' : 'deslizarEsq') + ' .28s ease-out"' : '', animI = dir ? ' style="animation:none"' : '';
   modal.innerHTML = '<button class="fechar" onclick="fecharCarta()" aria-label="Fechar">×</button>' +
     '<button class="nav-carta ant" onclick="navegarCarta(-1)" aria-label="Carta anterior"' + (pos === 0 ? ' disabled' : '') + '>‹</button>' +
     '<button class="nav-carta prox" onclick="navegarCarta(1)" aria-label="Próxima carta"' + (pos === qtd - 1 ? ' disabled' : '') + '>›</button>' +
     '<div class="caixa"><div class="palco"><div class="carta3d" id="c3d"' + animC + '>' +
     (k.imagem ? '<img draggable="false" src="' + esc(k.imagem) + '" alt="' + esc(k.nome) + '">' : '<div class="ph">' + esc(k.numero) + '</div>') + '<div class="brilho"></div></div><p class="dica sub">‹ Arraste para o lado para ver as outras cartas ›</p></div>' +
-    '<div class="info"' + animI + '><h3>' + esc(k.nome) + '</h3><span class="sub">' + esc(c.nome) + '</span><dl><dt>Número</dt><dd>' + esc(k.numero) + ' de ' + lista.length + '</dd><dt>Série</dt><dd>' + esc(s.nome) + '</dd><dt>Raridade</dt><dd>' + esc(k.raridade || '—') + '</dd><dt>Tipo</dt><dd>' + esc(tipo) + '</dd><dt>PS</dt><dd>' + esc(k.ps || '—') + '</dd><dt>Ilustrador</dt><dd>' + esc(k.ilustrador || '—') + '</dd></dl>' +
+    '<div class="info"' + animI + '><h3>' + esc(k.nome) + '</h3><span class="sub">' + esc(c.nome) + '</span><dl><dt>Número</dt><dd>' + esc(k.numero) + ' de ' + lista.length + '</dd><dt>Série</dt><dd>' + esc(s.nome) + '</dd><dt>Raridade</dt><dd>' + esc(k.raridade || '—') + '</dd><dt>Tipo</dt><dd>' + esc(tipo) + '</dd><dt>PS</dt><dd>' + esc(k.ps || '—') + '</dd><dt>Ilustrador</dt><dd>' + esc(k.ilustrador || '—') + '</dd>' + linhaPreco + '</dl>' +
+    (preco ? '<p class="sub nota-preco">' + notaPreco(c.serie) + '</p>' : '') +
     (vit ? '<p class="sub">' + (y ? '✓ Você também tem esta carta.' : 'Você ainda não tem esta carta.') + '</p>'
       : '<button class="btn btn-tenho" onclick="alternarTenho()">' + (y ? '✓ Tenho esta carta' : 'Marcar como tenho') + '</button>' + contadorRepetidas(colId, k.id, y) + botaoVitrine(colId, k, y)) + '</div></div>';
   modal.hidden = false; modal.scrollTop = 0;

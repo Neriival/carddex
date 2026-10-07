@@ -3,7 +3,7 @@
 // ============================================================
 // Filtros: Todas / Tenho / Faltam / Repetidas + Raridade e Tipo (só aparecem se houver 2 opções ou mais).
 // Cada carta da grade: clique na imagem abre a carta grande (js/recursos/carta-grande.js),
-// o círculo marca "tenho", e a barra − N + embaixo conta as repetidas.
+// o círculo marca "tenho", a barra − N + conta as repetidas e embaixo fica o preço (js/base/precos.js).
 // ============================================================
 
 // TELA – Coleção: carrega as cartas e desenha
@@ -12,7 +12,7 @@ async function telaColecao(id) {
   ESTADO.redesenhar = desenharColecao; marcarMenu(1);
   var volta = '<h2><button class="voltar" onclick="telaSerie(\'' + c.serie + '\')">← ' + esc(acharSerie(c.serie).nome) + '</button></h2>';
   app.innerHTML = volta + '<p class="sub">Carregando cartas...</p>';
-  try { await carregarCartas(c); desenharColecao(); }
+  try { await Promise.all([carregarCartas(c), carregarPrecos(c.serie)]); desenharColecao(); }
   catch (e) { app.innerHTML = volta + '<div class="aviso">Não foi possível carregar as cartas desta coleção. Rode o script <b>scripts/baixar_cartas.py</b> ou verifique sua internet.</div>'; }
 }
 
@@ -32,13 +32,14 @@ function seletor(rotulo, campo, opcoes) {
     opcoes.map(function (o) { return '<option' + (ESTADO[campo] === o ? ' selected' : '') + '>' + esc(o) + '</option>'; }).join('') + '</select></label>';
 }
 
-// Uma carta na grade (também usada em Minhas cartas). y = tem a carta.
+// Uma carta na grade com o preço embaixo (também usada em Minhas cartas). y = tem a carta.
 function cartaGrade(c, k, y) {
-  var src = k.mini || k.imagem;
-  return '<div class="carta' + (y ? ' tenho' : '') + '">' + (y ? repGradeHtml(c.id, k.id) : '') +
+  var src = k.mini || k.imagem, p = precoCarta(c.serie, k.id);
+  return '<div class="carta-item"><div class="carta' + (y ? ' tenho' : '') + '">' + (y ? repGradeHtml(c.id, k.id) : '') +
     '<button class="abrir" onclick="abrirCarta(\'' + c.id + '\',\'' + k.id + '\')" title="Ver ' + esc(k.nome) + '">' +
     (src ? '<img loading="lazy" src="' + esc(src) + '" alt="' + esc(k.nome) + '">' : '<span>' + esc(k.numero) + '</span>') + '</button>' +
-    '<button class="check" onclick="marcarRapido(this,\'' + c.id + '\',\'' + k.id + '\')" aria-label="Marcar ' + esc(k.nome) + ' como tenho" title="Marcar como tenho">' + (y ? '✓' : '') + '</button></div>';
+    '<button class="check" onclick="marcarRapido(this,\'' + c.id + '\',\'' + k.id + '\')" aria-label="Marcar ' + esc(k.nome) + ' como tenho" title="Marcar como tenho">' + (y ? '✓' : '') + '</button></div>' +
+    '<span class="preco' + (p ? '' : ' sem') + '">' + (p ? reais(p.real || p.reverse) : '–') + '</span></div>';
 }
 
 // Desenha a grade da coleção atual, respeitando todos os filtros
@@ -55,7 +56,7 @@ function desenharColecao() {
     return '<button class="' + (ESTADO.filtro === f[0] ? 'on' : '') + '" onclick="ESTADO.filtro=\'' + f[0] + '\';desenharColecao()">' + f[1] + '</button>';
   }).join('');
   app.innerHTML = '<h2><button class="voltar" onclick="telaSerie(\'' + s.id + '\')">← ' + esc(s.nome) + '</button></h2><h2 class="titulo">' + esc(c.nome) + '</h2>' +
-    '<span class="sub" id="prog-txt"></span><div class="barra"><i id="prog-bar"></i></div>' +
+    '<span class="sub" id="prog-txt"></span><div class="barra grossa"><i id="prog-bar"></i></div><p class="valor-colecao" id="valor-txt"></p>' +
     (c.obs ? '<div class="aviso">' + esc(c.obs) + '</div>' : '') +
     '<div class="filtros">' + filtros + '</div>' +
     '<div class="filtros-extra">' + seletor('Raridade', 'raridade', rar) + seletor('Tipo', 'tipo', tip) + '</div>' +
@@ -65,20 +66,22 @@ function desenharColecao() {
   atualizarProgresso();
 }
 
-// Atualiza o texto e a barra de progresso sem redesenhar a página
+// Atualiza o progresso e o valor da coleção sem redesenhar a página
 function atualizarProgresso() {
   var txt = document.getElementById('prog-txt');
   if (!txt) return;
-  var c = ESTADO.atual, n = qtdTenho(c.id), t = ESTADO.cartas[c.id].length, p = pct(n, t);
+  var c = ESTADO.atual, n = qtdTenho(c.id), t = ESTADO.cartas[c.id].length, p = pct(n, t), v = valorColecao(c);
   txt.textContent = n + ' de ' + t + ' cartas · ' + p + '%';
   document.getElementById('prog-bar').style.width = p + '%';
+  document.getElementById('valor-txt').innerHTML = v ? 'Suas cartas valem <b>' + reais(v.meu) + '</b>' + (Object.keys(ESTADO.repetidas[c.id] || {}).length ? ' (com as repetidas)' : '') +
+    ' · coleção completa: ' + reais(v.completa) + ' <small>(referência Cardmarket)</small>' : '';
 }
 
 // Círculo da carta: marca/desmarca direto na grade, sem abrir a carta grande
 function marcarRapido(el, col, k) {
   var y = alternarMarcacao(col, k), caixa = el.parentNode, ctrl = caixa.querySelector('.rep-mini');
   // com filtro (Tenho, Faltam, Repetidas), a carta sai da lista
-  if (ESTADO.redesenhar === desenharColecao && ESTADO.filtro !== 'todas') caixa.remove();
+  if (ESTADO.redesenhar === desenharColecao && ESTADO.filtro !== 'todas') caixa.parentNode.remove();
   else {
     caixa.classList.toggle('tenho', y); el.textContent = y ? '✓' : '';
     if (ctrl) ctrl.remove();
@@ -100,4 +103,5 @@ function repGrade(btn, col, k, d) {
   box.querySelector('b').textContent = n ? n + ' rep.' : 'rep.';
   box.querySelector('button').disabled = !n;
   box.classList.toggle('zero', !n);
+  atualizarProgresso(); // o valor da coleção conta as repetidas
 }

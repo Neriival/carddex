@@ -47,3 +47,4 @@ h2.titulo{margin-top:0}
 /* ===== BARRA DE PROGRESSO ===== */
 .barra{height:8px;background:var(--bg);border-radius:99px;margin-top:12px;overflow:hidden}
 .barra i{display:block;height:100%;background:linear-gradient(90deg,var(--blue),var(--gold))}
+.barra.grossa{height:12px;border:1px solid var(--line)}

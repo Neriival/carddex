@@ -6,6 +6,7 @@
 .minhas-col{margin-top:26px}
 .minhas-col .voltar h3{margin:0;color:var(--gold);font-size:1.3rem;text-align:left}
 .minhas-col .grade{margin-top:10px}
+.minhas-col .valor{color:var(--gold)}
 
 @media(max-width:760px){
   .backup-acoes{width:100%}.backup-acoes .btn{flex:1;min-width:0}

@@ -1,7 +1,7 @@
 // js/telas/minhas.js
 // TELA "MINHAS CARTAS" E BACKUP
 // ============================================================
-// Mostra só as cartas marcadas, separadas por coleção.
+// Mostra só as cartas marcadas, separadas por coleção, com o valor de cada uma (referência Cardmarket).
 // Backup: exporta um .json com as marcações e as repetidas; importar JUNTA com o que já está marcado.
 // ============================================================
 
@@ -9,16 +9,19 @@ async function telaMinhas() {
   ESTADO.redesenhar = desenharMinhas; marcarMenu(2);
   app.innerHTML = '<h2>Minhas cartas</h2><p class="sub">Carregando...</p>';
   var cols = todasColecoes().filter(function (c) { return qtdTenho(c.id); });
-  await Promise.all(cols.map(function (c) { return carregarCartas(c).catch(function () {}); }));
+  var series = cols.map(function (c) { return c.serie; }).filter(function (s, i, l) { return l.indexOf(s) === i; });
+  await Promise.all(cols.map(function (c) { return carregarCartas(c).catch(function () {}); }).concat(series.map(carregarPrecos)));
   if (ESTADO.redesenhar === desenharMinhas) desenharMinhas();
 }
 
 function desenharMinhas() {
+  var total = 0;
   var blocos = ESTADO.series.map(function (s) {
     return s.colecoes.filter(function (c) { return qtdTenho(c.id) && ESTADO.cartas[c.id]; }).map(function (c) {
-      var l = ESTADO.cartas[c.id].filter(function (k) { return temCarta(c.id, k.id); });
+      var l = ESTADO.cartas[c.id].filter(function (k) { return temCarta(c.id, k.id); }), v = valorColecao(c);
+      if (v) total += v.meu;
       return '<section class="minhas-col"><button class="voltar" onclick="telaColecao(\'' + c.id + '\')"><h3>' + esc(c.nome) + '</h3></button>' +
-        '<span class="sub">' + esc(s.nome) + ' · ' + qtdTenho(c.id) + ' de ' + ESTADO.cartas[c.id].length + ' cartas</span>' +
+        '<span class="sub">' + esc(s.nome) + ' · ' + qtdTenho(c.id) + ' de ' + ESTADO.cartas[c.id].length + ' cartas' + (v ? ' · <b class="valor">' + reais(v.meu) + '</b>' : '') + '</span>' +
         '<div class="grade">' + l.map(function (k) { return cartaGrade(c, k, true); }).join('') + '</div></section>';
     }).join('');
   }).join('');
@@ -26,6 +29,7 @@ function desenharMinhas() {
     ? 'Suas marcações estão salvas na sua conta e aparecem em qualquer aparelho em que você entrar. Se quiser, guarde também uma cópia em arquivo.'
     : 'Sem conta, as marcações ficam salvas só neste navegador. Crie uma conta para levar para qualquer aparelho, ou exporte um arquivo.';
   app.innerHTML = '<h2>Minhas cartas</h2><span class="sub">' + totalTenho() + ' cartas marcadas. Clique no nome da coleção para ver todas as cartas dela.</span>' +
+    (total ? '<p class="valor-colecao">Sua coleção vale <b>' + reais(total) + '</b> <small>(referência Cardmarket, contando as repetidas)</small></p>' : '') +
     '<div class="backup"><div><b>Backup da coleção</b><span class="sub">' + textoBackup + '</span></div>' +
     '<div class="backup-acoes"><button class="btn" onclick="exportarColecao()">Exportar backup</button><button class="btn btn-sec" onclick="this.nextElementSibling.click()">Importar backup</button>' +
     '<input type="file" accept=".json,application/json" onchange="importarColecao(this)" hidden></div><p class="sub" id="backup-msg" role="status"></p></div>' +

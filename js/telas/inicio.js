@@ -5,18 +5,24 @@
 // A tela da coleção (as cartas) fica em js/telas/colecao.js.
 // ============================================================
 
+// Progresso dos botões: "4 de 188 cartas" + porcentagem em destaque + barra grossa ("✓ Completa" em 100%)
+function progresso(n, t) {
+  var p = pct(n, t), completa = t && n >= t;
+  return '<div class="progresso' + (completa ? ' completa' : '') + '"><div class="progresso-txt"><span>' + n + ' de ' + t + ' cartas</span><b>' + (completa ? '✓ Completa' : p + '%') + '</b></div>' + barra(p) + '</div>';
+}
+
 // Botão de uma coleção: logo, nome, data de lançamento e progresso
 function botaoColecao(c) {
-  var n = qtdTenho(c.id), p = pct(n, c.total);
-  return '<button class="colecao" onclick="telaColecao(\'' + c.id + '\')"><img src="assets/img/colecoes/' + c.serie + '/' + c.id + '.webp" alt="" onerror="logoAlt(this)"><h3>' + esc(c.nome) + '</h3>' +
-    '<span class="sub">Lançamento: ' + dataBR(c.lancamento) + '</span><span class="sub">' + n + ' de ' + c.total + ' cartas · ' + p + '%</span>' + barra(p) + '</button>';
+  var n = qtdTenho(c.id), completa = c.total && n >= c.total;
+  return '<button class="colecao' + (completa ? ' completa' : '') + '" onclick="telaColecao(\'' + c.id + '\')"><img src="assets/img/colecoes/' + c.serie + '/' + c.id + '.webp" alt="" onerror="logoAlt(this)"><h3>' + esc(c.nome) + '</h3>' +
+    '<span class="sub">Lançamento: ' + dataBR(c.lancamento) + '</span>' + progresso(n, c.total) + '</button>';
 }
 
 // Botão de uma série (tela do jogo e busca)
 function botaoSerie(s) {
   var r = resumoSerie(s);
   return '<button class="colecao serie-btn" onclick="telaSerie(\'' + s.id + '\')"><img src="assets/img/series/' + s.id + '.webp" alt="" onerror="this.remove()"><h3>' + esc(s.nome) + '</h3>' +
-    '<span class="sub">' + s.colecoes.length + ' coleções</span><span class="sub">' + r.tenho + ' de ' + r.total + ' cartas · ' + r.pct + '%</span>' + barra(r.pct) + '</button>';
+    '<span class="sub">' + s.colecoes.length + ' coleções</span>' + progresso(r.tenho, r.total) + '</button>';
 }
 
 // Botão de um jogo (Pokémon, Yu-Gi-Oh!...). Ícones em assets/img/jogos/<id>.svg

@@ -1,0 +1,30 @@
+# Atualiza os preços das cartas (Cardmarket → real) todo dia, sozinho.
+# Roda scripts/atualizar_precos.py e, se os preços mudaram, salva dados/precos/ no repositório
+# (o GitHub Pages publica o site de novo em seguida).
+# Também dá para rodar na hora: GitHub → Actions → "Atualizar preços" → Run workflow.
+name: Atualizar preços
+
+on:
+  schedule:
+    - cron: '0 9 * * *'   # todo dia às 6h (horário de Brasília); o Cardmarket atualiza de madrugada
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  precos:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Atualizar preços
+        run: python scripts/atualizar_precos.py
+      - name: Salvar no repositório
+        run: |
+          git config user.name "CardDex (preços automáticos)"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add dados/precos dados/cardmarket.json
+          git diff --cached --quiet || (git commit -m "Preços atualizados ($(date +%d/%m/%Y))" && git push)

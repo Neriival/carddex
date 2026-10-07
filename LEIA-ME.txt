@@ -34,6 +34,7 @@ ESTRUTURA
      util.js                      ajudantes (esc, pad, barra, menu...)
      dados.js                     séries, coleções e cartas (dados/ e TCGdex)
      marcacoes.js                 cartas que a pessoa tem e as repetidas
+     precos.js                    preços em reais (lê dados/precos/)
      nuvem.js                     envia/baixa as marcações da conta
    conta/
      auth.js                      entrar, criar conta, salvar perfil, sair
@@ -50,6 +51,8 @@ ESTRUTURA
 
  dados/series.json              jogos, séries e coleções (em ordem de lançamento)
  dados/cartas/<serie>/<colecao>.json
+ dados/precos/<serie>.json      preços do dia (gerado pelo script de preços, não editar)
+ dados/cardmarket.json          número de cada carta no Cardmarket (gerado pelo script de preços)
  assets/img/cartas/<serie>/<colecao>/001.webp, 001-mini.webp ...
  assets/img/colecoes/<serie>/<colecao>.webp
  assets/img/series/<serie>.webp
@@ -57,6 +60,7 @@ ESTRUTURA
  assets/img/avatares/           menino.svg e menina.svg (pode trocar pelos seus, mesmo nome)
  assets/img/app/                ícones do app instalado
  scripts/baixar_cartas.py       baixa cartas, imagens e logos
+ scripts/atualizar_precos.py    atualiza os preços (roda sozinho todo dia: .github/workflows/precos.yml)
  docs/                          Supabase (passo a passo e banco) e próximas fases
 
 ADICIONAR UMA COLEÇÃO
@@ -88,6 +92,14 @@ CONTAS, RANKING, PERFIS, PAINEL ADM E PARCEIROS (Supabase – projeto "carddex",
   8 quadrados de parceiros (com cliques) e moderação de fotos.
 - Banco e regras de segurança: docs/supabase.sql. Passo a passo e limites do plano grátis: docs/SUPABASE.md.
 Sem o Supabase configurado o site funciona só no navegador e os quadrados mostram "Seja um parceiro".
+
+PREÇOS (em reais)
+Referência: Cardmarket (maior loja de cartas da Europa), em euro, convertido para real pela cotação do dia.
+Não é o preço do mercado brasileiro: é um valor de referência.
+Todo dia às 6h o GitHub roda scripts/atualizar_precos.py sozinho e salva dados/precos/ no repositório.
+Para rodar na hora: GitHub → Actions → "Atualizar preços" → Run workflow (ou: python scripts/atualizar_precos.py).
+Coleção nova: rode o baixar_cartas.py normalmente; no dia seguinte ela já aparece com preços.
+ATENÇÃO: como o robô salva os preços todo dia, rode "git pull" antes de publicar mudanças suas.
 
 BACKUP
 Em "Minhas cartas" dá para exportar um arquivo .json (marcações e repetidas) e importar em outro aparelho.

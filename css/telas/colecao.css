@@ -1,5 +1,11 @@
 /* css/telas/colecao.css – tela da coleção: filtros Todas/Tenho/Faltam/Repetidas, raridade e tipo, e compartilhar */
 
+/* ===== VALOR DA COLEÇÃO (também em Minhas cartas) ===== */
+.valor-colecao{margin:10px 0 0;color:var(--mut);font-size:.95rem}
+.valor-colecao:empty{display:none}
+.valor-colecao b{color:var(--gold);font-size:1.15rem}
+.valor-colecao small{font-size:.8rem}
+
 /* ===== FILTROS PRINCIPAIS ===== */
 .filtros{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;max-width:620px;margin:12px 0}
 .filtros button{background:var(--p1);border:1px solid var(--line);color:var(--text);border-radius:999px;min-height:44px;padding:0 12px;font:inherit;cursor:pointer}

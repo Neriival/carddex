@@ -20,6 +20,9 @@
 .info h3{margin:0 0 4px;font-size:1.7rem;color:var(--gold)}
 .info dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:16px 0}.info dt{color:var(--mut)}.info dd{margin:0}
 .info .btn{width:100%}
+.preco-info{color:var(--gold);font-weight:800}
+.preco-info small{display:block;color:var(--mut);font-weight:400;font-size:.85rem}
+.nota-preco{font-size:.75rem;margin:-6px 0 4px}
 /* repetidas: − N + */
 .repetidas{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:12px;padding:8px 8px 8px 14px;border:1px solid var(--line);border-radius:12px}
 .repetidas small{color:var(--mut);font-size:.8rem}
