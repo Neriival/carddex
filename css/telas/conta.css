@@ -33,6 +33,13 @@
 .foto-perfil{object-fit:cover;border:2px solid var(--gold);background:var(--p1)}
 .login-logo.foto-perfil{border-width:4px}
 
+/* ===== OPÇÃO "DEIXAR OUTRAS PESSOAS VEREM MINHA COLEÇÃO" ===== */
+.opcao{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--bg);cursor:pointer}
+.opcao input{width:22px;height:22px;margin:2px 0 0;accent-color:var(--gold);flex:none;cursor:pointer}
+.opcao span{display:flex;flex-direction:column;gap:2px}
+.opcao small{color:var(--mut);font-size:.82rem}
+.opcao:has(input:checked){border-color:var(--gold)}
+
 /* ===== MINHA VITRINE (embaixo do Meu perfil) ===== */
 #minha-vitrine h3{margin:0;color:var(--gold)}
 #minha-vitrine h3 small{color:var(--mut);font-weight:400;font-size:.9rem}

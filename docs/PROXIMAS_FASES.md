@@ -23,4 +23,7 @@
 - [x] App instalável, com atalho para o painel adm
 - [x] Preços em reais (Cardmarket, atualizados todo dia pelo GitHub), valor da coleção e ordenar por preço
 - [x] Barra de progresso maior nas coleções, com "✓ Completa"
+- [x] Contas de admin fora do ranking e sem perfil público
+- [x] Coleção aberta para os outros (opcional), com repetidas e "Pra trocar comigo"
+- [x] Promos Black Star (EV, EE, SL) e série XY completa
 - [x] Código organizado em pastas (css/ e js/ separados por base, componentes/recursos e telas)

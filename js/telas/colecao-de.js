@@ -54,10 +54,10 @@ function desenharColecaoDe() {
 
 // Carta só para ver: repetidas dela (+N), selo "Você não tem" e o preço embaixo
 function cartaVisita(c, k, rep) {
-  var src = k.mini || k.imagem, p = precoCarta(c.serie, k.id);
+  var src = k.mini || k.imagem;
   return '<div class="carta-item"><button class="carta tenho visita" onclick="abrirDaVitrine(\'' + c.id + '\',\'' + k.id + '\')" title="Ver ' + esc(k.nome) + '">' +
     (src ? '<img loading="lazy" src="' + esc(src) + '" alt="' + esc(k.nome) + '">' : '<span>' + esc(k.numero) + '</span>') +
     (temCarta(c.id, k.id) ? '' : '<span class="falta-eu">Você não tem</span>') +
     (rep ? '<span class="rep-selo" title="' + rep + ' repetida' + (rep > 1 ? 's' : '') + '">+' + rep + '</span>' : '') + '</button>' +
-    '<span class="preco' + (p ? '' : ' sem') + '">' + (p ? reais(p.real || p.reverse) : '–') + '</span></div>';
+    precoGrade(valorCarta(c.serie, k.id)) + '</div>';
 }

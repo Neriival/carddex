@@ -5,12 +5,6 @@
 // A tela da coleção (as cartas) fica em js/telas/colecao.js.
 // ============================================================
 
-// Progresso dos botões: "4 de 188 cartas" + porcentagem em destaque + barra grossa ("✓ Completa" em 100%)
-function progresso(n, t) {
-  var p = pct(n, t), completa = t && n >= t;
-  return '<div class="progresso' + (completa ? ' completa' : '') + '"><div class="progresso-txt"><span>' + n + ' de ' + t + ' cartas</span><b>' + (completa ? '✓ Completa' : p + '%') + '</b></div>' + barra(p) + '</div>';
-}
-
 // Botão de uma coleção: logo, nome, data de lançamento e progresso
 function botaoColecao(c) {
   var n = qtdTenho(c.id), completa = c.total && n >= c.total;

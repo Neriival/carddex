@@ -16,6 +16,11 @@ function esc(t) { return String(t == null ? '' : t).replace(/&/g, '&amp;').repla
 // Porcentagem arredondada (sem dividir por zero) e a barra de progresso azul → dourada
 function pct(n, t) { return t ? Math.round(n / t * 100) : 0; }
 function barra(p) { return '<div class="barra"><i style="width:' + p + '%"></i></div>'; }
+// Progresso completo: "4 de 188 cartas" + porcentagem em destaque + barra grossa ("✓ Completa" em 100%)
+function progresso(n, t) {
+  var p = pct(n, t), completa = t && n >= t;
+  return '<div class="progresso' + (completa ? ' completa' : '') + '"><div class="progresso-txt"><span>' + n + ' de ' + t + ' cartas</span><b>' + (completa ? '✓ Completa' : p + '%') + '</b></div>' + barra(p) + '</div>';
+}
 
 // '2026-05-22' → '22/05/2026'
 function dataBR(d) { var p = d.split('-'); return p[2] + '/' + p[1] + '/' + p[0]; }

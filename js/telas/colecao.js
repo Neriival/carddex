@@ -35,7 +35,7 @@ function seletor(rotulo, campo, opcoes) {
 
 // ORDENAR: por número (padrão), mais caras primeiro ou mais baratas primeiro.
 // Cartas sem preço vão sempre para o fim. Só aparece se a coleção tiver preços.
-function valorDaCarta(c, k) { var p = precoCarta(c.serie, k.id); return p ? p.real || p.reverse : 0; }
+function valorDaCarta(c, k) { return valorCarta(c.serie, k.id); }
 function ordenarCartas(c, l) {
   if (ESTADO.ordem === 'numero') return l;
   var sinal = ESTADO.ordem === 'caras' ? -1 : 1;
@@ -55,13 +55,15 @@ function seletorOrdem(c) {
 
 // Uma carta na grade com o preço embaixo (também usada em Minhas cartas). y = tem a carta.
 function cartaGrade(c, k, y) {
-  var src = k.mini || k.imagem, p = precoCarta(c.serie, k.id);
+  var src = k.mini || k.imagem, v = valorCarta(c.serie, k.id);
   return '<div class="carta-item"><div class="carta' + (y ? ' tenho' : '') + '">' + (y ? repGradeHtml(c.id, k.id) : '') +
     '<button class="abrir" onclick="abrirCarta(\'' + c.id + '\',\'' + k.id + '\')" title="Ver ' + esc(k.nome) + '">' +
     (src ? '<img loading="lazy" src="' + esc(src) + '" alt="' + esc(k.nome) + '">' : '<span>' + esc(k.numero) + '</span>') + '</button>' +
     '<button class="check" onclick="marcarRapido(this,\'' + c.id + '\',\'' + k.id + '\')" aria-label="Marcar ' + esc(k.nome) + ' como tenho" title="Marcar como tenho">' + (y ? '✓' : '') + '</button></div>' +
-    '<span class="preco' + (p ? '' : ' sem') + '">' + (p ? reais(p.real || p.reverse) : '–') + '</span></div>';
+    precoGrade(v) + '</div>';
 }
+// Preço embaixo da carta ("–" quando não tem)
+function precoGrade(v) { return '<span class="preco' + (v ? '' : ' sem') + '">' + (v ? reais(v) : '–') + '</span>'; }
 
 // Desenha a grade da coleção atual, respeitando todos os filtros
 function desenharColecao() {
@@ -124,5 +126,7 @@ function repGrade(btn, col, k, d) {
   box.querySelector('b').textContent = n ? n + ' rep.' : 'rep.';
   box.querySelector('button').disabled = !n;
   box.classList.toggle('zero', !n);
-  atualizarProgresso(); // o valor da coleção conta as repetidas
+  // o valor da coleção conta as repetidas: atualiza na tela da coleção e em Minhas cartas
+  if (ESTADO.redesenhar === desenharMinhas) { var y = window.scrollY; desenharMinhas(); window.scrollTo(0, y); }
+  else atualizarProgresso();
 }

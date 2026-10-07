@@ -29,6 +29,10 @@ function precoCarta(serie, k) {
   return { euro: p[0], euroReverse: p[1] || 0, real: p[0] * d.eur_brl, reverse: (p[1] || 0) * d.eur_brl };
 }
 
+// Valor de referência da carta em reais (o normal; se a carta só tiver preço de reverse holo, esse). 0 = sem preço.
+// Usado na grade, na ordenação e no valor da coleção, para todos mostrarem o mesmo número.
+function valorCarta(serie, k) { var p = precoCarta(serie, k); return p ? p.real || p.reverse : 0; }
+
 // 1234.5 → "R$ 1.234,50"; € 0.06 → "€ 0,06"
 function reais(v) { return v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }); }
 function euros(v) { return v.toLocaleString('pt-BR', { style: 'currency', currency: 'EUR' }); }
@@ -37,10 +41,10 @@ function euros(v) { return v.toLocaleString('pt-BR', { style: 'currency', curren
 function valorColecao(c) {
   var meu = 0, completa = 0, tem = false;
   (ESTADO.cartas[c.id] || []).forEach(function (k) {
-    var p = precoCarta(c.serie, k.id);
-    if (!p) return;
-    tem = true; completa += p.real;
-    if (temCarta(c.id, k.id)) meu += p.real * (1 + qtdRepetida(c.id, k.id));
+    var v = valorCarta(c.serie, k.id);
+    if (!v) return;
+    tem = true; completa += v;
+    if (temCarta(c.id, k.id)) meu += v * (1 + qtdRepetida(c.id, k.id));
   });
   return tem ? { meu: meu, completa: completa } : null;
 }

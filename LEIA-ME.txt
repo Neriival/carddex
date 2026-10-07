@@ -62,6 +62,7 @@ ESTRUTURA
  assets/img/avatares/           menino.svg e menina.svg (pode trocar pelos seus, mesmo nome)
  assets/img/app/                ícones do app instalado
  scripts/baixar_cartas.py       baixa cartas, imagens e logos
+ scripts/completar_imagens.py   completa imagens que a TCGdex não tem (Pokémon TCG API)
  scripts/atualizar_precos.py    atualiza os preços (roda sozinho todo dia: .github/workflows/precos.yml)
  docs/                          Supabase (passo a passo e banco) e próximas fases
 
