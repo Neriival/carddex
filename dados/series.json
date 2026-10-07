@@ -488,6 +488,127 @@
           "nomeFixo": true
         }
       ]
+    },
+    {
+      "id": "xy",
+      "nome": "XY",
+      "jogo": "pokemon",
+      "imagens": "mini",
+      "colecoes": [
+        {
+          "id": "xyp",
+          "nome": "Promos Black Star XY",
+          "busca": "XY Black Star Promos",
+          "lancamento": "2013-10-12",
+          "total": 216,
+          "nomeFixo": true
+        },
+        {
+          "id": "xy0",
+          "nome": "Conjunto para Iniciantes Kalos",
+          "busca": "Kalos Starter Set",
+          "lancamento": "2013-11-08",
+          "total": 39
+        },
+        {
+          "id": "xy1",
+          "nome": "XY",
+          "busca": "XY",
+          "lancamento": "2014-02-05",
+          "total": 146
+        },
+        {
+          "id": "xy2",
+          "nome": "Flash de Fogo",
+          "busca": "Flashfire",
+          "lancamento": "2014-05-07",
+          "total": 110
+        },
+        {
+          "id": "xy3",
+          "nome": "Punhos Furiosos",
+          "busca": "Furious Fists",
+          "lancamento": "2014-08-13",
+          "total": 114
+        },
+        {
+          "id": "xy4",
+          "nome": "Força Fantasma",
+          "busca": "Phantom Forces",
+          "lancamento": "2014-11-05",
+          "total": 124
+        },
+        {
+          "id": "xy5",
+          "nome": "Conflito Primitivo",
+          "busca": "Primal Clash",
+          "lancamento": "2015-02-04",
+          "total": 164
+        },
+        {
+          "id": "dc1",
+          "nome": "Crise Dupla",
+          "busca": "Double Crisis",
+          "lancamento": "2015-03-25",
+          "total": 34
+        },
+        {
+          "id": "xy6",
+          "nome": "Céus Estrondosos",
+          "busca": "Roaring Skies",
+          "lancamento": "2015-05-06",
+          "total": 112
+        },
+        {
+          "id": "xy7",
+          "nome": "Origens Ancestrais",
+          "busca": "Ancient Origins",
+          "lancamento": "2015-08-12",
+          "total": 101
+        },
+        {
+          "id": "xy8",
+          "nome": "Turbo Revolução",
+          "busca": "BREAKthrough",
+          "lancamento": "2015-11-04",
+          "total": 165
+        },
+        {
+          "id": "xy9",
+          "nome": "Turbo Colisão",
+          "busca": "BREAKpoint",
+          "lancamento": "2016-02-03",
+          "total": 126
+        },
+        {
+          "id": "g1",
+          "nome": "Gerações",
+          "busca": "Generations",
+          "lancamento": "2016-02-22",
+          "total": 117
+        },
+        {
+          "id": "xy10",
+          "nome": "Fusão de Destinos",
+          "busca": "Fates Collide",
+          "lancamento": "2016-05-02",
+          "total": 129
+        },
+        {
+          "id": "xy11",
+          "nome": "Cerco de Vapor",
+          "busca": "Steam Siege",
+          "lancamento": "2016-08-03",
+          "total": 116
+        },
+        {
+          "id": "xy12",
+          "nome": "Evoluções",
+          "busca": "Evolutions",
+          "lancamento": "2016-11-02",
+          "total": 113
+        }
+      ]
     }
   ]
 }
