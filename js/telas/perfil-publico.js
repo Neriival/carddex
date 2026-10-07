@@ -2,7 +2,9 @@
 // TELA – PERFIL PÚBLICO de um colecionador
 // ============================================================
 // Mostra só: personagem/foto, nick, posição no ranking, total de cartas e a vitrine (nunca e-mail ou sexo).
+// Se a pessoa deixou a coleção aberta, aparece "Ver coleção" (js/telas/colecao-de.js).
 // Abre pelo ranking ou pelo link …/#perfil/<nick> (dá para mandar no WhatsApp), mesmo para quem não tem conta.
+// Contas de admin não têm perfil público (só o próprio admin vê o dele).
 // Os dados vêm da função "perfil_publico" do banco (docs/supabase.sql).
 // ============================================================
 
@@ -16,10 +18,14 @@ async function telaPerfilPublico(nick) {
   if (r.error || !p) { app.innerHTML = volta + '<div class="aviso">Não encontramos o colecionador "' + esc(nick) + '".</div>'; return; }
   var cartas = await cartasDaVitrine(p.vitrine || []);
   vitrineAberta = cartas.map(function (v) { return { c: v.c, k: v.k.id }; });
-  var u = AUTH.usuario();
-  app.innerHTML = volta + '<section class="perfil-pub">' + avatarDe(p, 'perfil-avatar') + '<div class="perfil-dados"><h2>' + esc(p.nick) + (p.eu ? ' <small>(você)</small>' : '') + '</h2>' +
+  var u = AUTH.usuario(), nickJs = esc(p.nick);
+  app.innerHTML = volta + (p.admin ? '<div class="aviso">Sua conta é de <b>administrador</b>: ela fica fora do ranking e este perfil só você vê.</div>' : '') +
+    '<section class="perfil-pub">' + avatarDe(p, 'perfil-avatar') + '<div class="perfil-dados"><h2>' + esc(p.nick) + (p.eu ? ' <small>(você)</small>' : '') + '</h2>' +
     '<div class="perfil-numeros">' + (p.posicao ? '<span><b>' + p.posicao + 'º</b> no ranking</span>' : '') + '<span><b>' + p.total + '</b> cartas</span></div>' +
-    '<div class="perfil-acoes"><button class="btn" onclick="compartilharPerfil(\'' + esc(p.nick) + '\')">Compartilhar perfil</button>' + (p.eu ? '<button class="btn btn-sec" onclick="telaPerfil()">Editar meu perfil</button>' : '') + '</div>' +
+    '<div class="perfil-acoes">' + (p.colecao_publica ? '<button class="btn" onclick="telaColecaoDe(\'' + nickJs + '\')">Ver coleção</button>' : '') +
+    (p.admin ? '' : '<button class="btn' + (p.colecao_publica ? ' btn-sec' : '') + '" onclick="compartilharPerfil(\'' + nickJs + '\')">Compartilhar perfil</button>') +
+    (p.eu ? '<button class="btn btn-sec" onclick="telaPerfil()">Editar meu perfil</button>' : '') + '</div>' +
+    (p.eu && !p.colecao_publica && !p.admin ? '<span class="sub">Sua coleção está fechada. Para deixar os outros verem, ligue a opção no <a href="#" onclick="telaPerfil();return false">Meu perfil</a>.</span>' : '') +
     '<p class="sub" id="msg-compartilhar" role="status"></p></div></section>' +
     '<h2>Vitrine</h2><span class="sub">' + (p.eu ? 'Suas cartas favoritas ou mais raras. ' : 'As cartas que ' + esc(p.nick) + ' mais gosta. ') + 'Toque para ver em tamanho grande.</span>' +
     (cartas.length ? gradeVitrine(cartas, true) : '<div class="aviso">' + (p.eu ? 'Sua vitrine está vazia. Abra uma carta que você tem e toque em <b>☆ Pôr na vitrine</b>.' : esc(p.nick) + ' ainda não escolheu as cartas da vitrine.') + '</div>') +

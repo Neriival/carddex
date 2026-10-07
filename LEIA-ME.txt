@@ -24,7 +24,8 @@ ESTRUTURA
      compartilhar.css             janela da imagem para o WhatsApp
      parceiros.css                quadrados de parceiros
    telas/                       uma por tela
-     colecao.css  minhas.css  conta.css (login e perfil)  ranking.css (ranking e perfil público)  admin.css
+     colecao.css  minhas.css  conta.css (login e perfil)  ranking.css (ranking e perfil público)
+     colecao-de.css (coleção de outra pessoa)  admin.css
    responsivo.css               adaptação da estrutura ao celular (cada arquivo também tem o seu no fim)
 
  js/
@@ -47,7 +48,8 @@ ESTRUTURA
      parceiros.js                 quadrados de parceiros
      vitrine.js                   as 5 cartas do perfil
    telas/                       uma por tela
-     inicio.js (início, jogo, série)  colecao.js  minhas.js  ranking.js  perfil-publico.js  admin.js
+     inicio.js (início, jogo, série)  colecao.js  minhas.js  ranking.js  perfil-publico.js
+     colecao-de.js (coleção de outra pessoa)  admin.js
 
  dados/series.json              jogos, séries e coleções (em ordem de lançamento)
  dados/cartas/<serie>/<colecao>.json

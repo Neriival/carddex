@@ -25,6 +25,8 @@ alter table public.perfis add constraint perfis_foto_check check (foto is null o
 
 -- Vitrine: até 5 cartas escolhidas para o perfil público. [{ "c": "me01", "k": "me01-001" }, ...]
 alter table public.perfis add column if not exists vitrine jsonb not null default '[]'::jsonb;
+-- true = outras pessoas podem ver a coleção completa (cartas e repetidas). Começa fechada.
+alter table public.perfis add column if not exists colecao_publica boolean not null default false;
 
 -- Quem pode abrir o painel adm
 create table if not exists public.admins (
@@ -128,7 +130,14 @@ language sql stable security definer set search_path = public as $$
   select not exists (select 1 from public.perfis where lower(nick) = lower(n) and id is distinct from auth.uid());
 $$;
 
--- Ranking público: só nick, personagem/foto e total de cartas
+-- Contas de admin ficam fora do ranking e não têm perfil público (só o próprio admin vê o dele)
+create or replace function public.conta_admin(u uuid) returns boolean
+language sql stable security definer set search_path = public as $$
+  select exists (select 1 from public.admins where user_id = u);
+$$;
+revoke execute on function public.conta_admin(uuid) from public, anon, authenticated;  -- só as funções do banco usam
+
+-- Ranking público: só nick, personagem/foto e total de cartas (sem os admins)
 drop function if exists public.ranking(integer);
 create or replace function public.ranking(limite integer default 50)
 returns table (posicao bigint, nick text, avatar text, foto text, total integer, eu boolean)
@@ -136,28 +145,42 @@ language sql stable security definer set search_path = public as $$
   select * from (
     select rank() over (order by c.total desc) as posicao, p.nick, p.avatar, p.foto, c.total, p.id = auth.uid() as eu
     from public.colecoes c join public.perfis p on p.id = c.user_id
-    where c.total > 0 and p.nick is not null
+    where c.total > 0 and p.nick is not null and not public.conta_admin(p.id)
   ) r
   where r.posicao <= least(limite, 200) or r.eu
   order by r.posicao, r.nick;
 $$;
 
--- Perfil público (qualquer visitante): nick, personagem/foto, total, posição no ranking e vitrine.
--- Nunca devolve e-mail nem sexo. Cartas que a pessoa desmarcou depois somem da vitrine.
+-- Perfil público (qualquer visitante): nick, personagem/foto, total, posição no ranking, vitrine
+-- e se a coleção está aberta para os outros. Nunca devolve e-mail nem sexo.
+-- Cartas que a pessoa desmarcou depois somem da vitrine. Admin: só ele mesmo vê (com "admin": true).
 create or replace function public.perfil_publico(n text) returns json
 language sql stable security definer set search_path = public as $$
   select json_build_object(
     'nick', p.nick, 'avatar', p.avatar, 'foto', p.foto,
     'total', coalesce(c.total, 0),
-    'posicao', case when coalesce(c.total, 0) > 0 then (
+    'posicao', case when coalesce(c.total, 0) > 0 and not public.conta_admin(p.id) then (
       select count(*) + 1 from public.colecoes c2 join public.perfis p2 on p2.id = c2.user_id
-      where p2.nick is not null and c2.total > c.total) end,
+      where p2.nick is not null and c2.total > c.total and not public.conta_admin(p2.id)) end,
     'vitrine', coalesce((
       select json_agg(v.x order by v.i) from jsonb_array_elements(p.vitrine) with ordinality as v(x, i)
       where coalesce(c.tenho -> (v.x ->> 'c'), '[]'::jsonb) ? (v.x ->> 'k')), '[]'::json),
+    'colecao_publica', p.colecao_publica,
+    'admin', public.conta_admin(p.id),
     'eu', p.id = auth.uid())
   from public.perfis p left join public.colecoes c on c.user_id = p.id
-  where p.nick is not null and lower(p.nick) = lower(n);
+  where p.nick is not null and lower(p.nick) = lower(n)
+    and (not public.conta_admin(p.id) or p.id = auth.uid());
+$$;
+
+-- Coleção de outra pessoa (só se ela deixou aberta): cartas marcadas e repetidas
+create or replace function public.colecao_de(n text) returns json
+language sql stable security definer set search_path = public as $$
+  select json_build_object('nick', p.nick, 'avatar', p.avatar, 'foto', p.foto,
+    'tenho', coalesce(c.tenho, '{}'::jsonb), 'repetidas', coalesce(c.repetidas, '{}'::jsonb))
+  from public.perfis p left join public.colecoes c on c.user_id = p.id
+  where p.nick is not null and lower(p.nick) = lower(n)
+    and (p.colecao_publica or p.id = auth.uid()) and (not public.conta_admin(p.id) or p.id = auth.uid());
 $$;
 
 -- Registra o clique num parceiro (qualquer visitante)
@@ -203,7 +226,7 @@ begin
   return r;
 end $$;
 
-grant execute on function public.nick_disponivel(text), public.ranking(integer), public.registrar_clique(text), public.perfil_publico(text) to anon, authenticated;
+grant execute on function public.nick_disponivel(text), public.ranking(integer), public.registrar_clique(text), public.perfil_publico(text), public.colecao_de(text) to anon, authenticated;
 
 -- ============ REGRAS DE ACESSO (RLS) ============
 -- Permissões explícitas (funciona mesmo com "Automatically expose new tables" desligado).
@@ -227,7 +250,7 @@ create policy "perfil: dono ou admin le" on public.perfis for select using (id =
 drop policy if exists "perfil: dono edita" on public.perfis;
 create policy "perfil: dono edita" on public.perfis for update using (id = auth.uid()) with check (id = auth.uid());
 revoke insert, update, delete on public.perfis from anon, authenticated;
-grant update (nick, sexo, avatar, foto, vitrine) on public.perfis to authenticated;
+grant update (nick, sexo, avatar, foto, vitrine, colecao_publica) on public.perfis to authenticated;
 
 drop policy if exists "admins: ve a propria linha" on public.admins;
 create policy "admins: ve a propria linha" on public.admins for select using (user_id = auth.uid());

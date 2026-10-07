@@ -2,6 +2,7 @@
 // TELA – RANKING: quem tem mais cartas marcadas
 // ============================================================
 // Mostra só nick e personagem/foto (nunca o e-mail). Clicar em alguém abre o perfil público.
+// Contas de admin ficam fora do ranking (o banco já não manda elas).
 // Os dados vêm da função "ranking" do banco (docs/supabase.sql): top 50 + a sua posição.
 // ============================================================
 
@@ -16,6 +17,7 @@ async function telaRanking() {
   if (r.error) { app.innerHTML = topo + '<div class="aviso">Não foi possível carregar o ranking. Tente de novo em instantes.</div>'; return; }
   var lista = r.data || [], eu = lista.filter(function (x) { return x.eu; })[0];
   var meu = !u ? '<div class="rank-eu"><b>Quer aparecer aqui?</b><span class="sub">Crie uma conta, marque suas cartas e dispute o topo com outros colecionadores.</span><button class="btn" onclick="telaLogin(\'criar\')">Criar conta</button></div>'
+    : AUTH.admin ? '<div class="rank-eu">' + avatarDe(u, 'rank-avatar') + '<div><b>Conta de administrador</b><span class="sub">Contas de admin ficam fora do ranking e não têm perfil público.</span></div></div>'
     : !u.nick ? '<div class="rank-eu"><b>Falta escolher seu nick</b><span class="sub">Sem nick você não aparece no ranking.</span><button class="btn" onclick="telaPerfil()">Escolher nick</button></div>'
     : '<div class="rank-eu">' + avatarDe(u, 'rank-avatar') + '<div><b>' + (eu ? eu.posicao + 'º lugar' : 'Fora do ranking') + '</b><span class="sub">' + esc(u.nick) + ' · ' + totalTenho() + ' cartas' +
       (eu ? '' : ' · marque cartas para entrar') + '</span></div></div>';

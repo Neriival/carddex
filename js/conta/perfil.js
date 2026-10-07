@@ -1,7 +1,8 @@
 // js/conta/perfil.js
 // TELA "MEU PERFIL" E OS CAMPOS DE PERFIL (usados também no cadastro)
 // ============================================================
-// Nick (público, aparece no ranking), sexo (só a pessoa e os admins veem) e personagem ou foto.
+// Nick (público, aparece no ranking), sexo (só a pessoa e os admins veem), personagem ou foto
+// e a opção de deixar a coleção aberta para os outros (começa fechada).
 // Embaixo do formulário fica a "Minha vitrine" (js/recursos/vitrine.js).
 // ============================================================
 
@@ -56,6 +57,7 @@ function sugerirAvatar(sel) {
 function lerPerfil(f) {
   var escolha = f.avatar.value, u = AUTH.usuario() || {};
   var p = { nick: f.nick.value.trim(), sexo: f.sexo.value, avatar: escolha, usarFoto: escolha === 'foto', arquivo: f.arquivo && f.arquivo.files[0] };
+  if (f.colecao_publica) p.colecao_publica = f.colecao_publica.checked;
   if (!NICK_OK.test(p.nick)) return 'O nick precisa ter de 3 a 16 letras, números, ponto ou _ (sem espaços).';
   if (!p.sexo) return 'Escolha o sexo (ou "Prefiro não dizer").';
   if (!escolha) return 'Escolha seu personagem ou uma foto.';
@@ -75,6 +77,8 @@ function telaPerfil() {
   app.innerHTML = '<section class="login"><form class="login-card" novalidate onsubmit="enviarPerfil(event)">' + avatarDe(u, 'login-logo') +
     '<h3>' + (u.nick ? 'Meu perfil' : 'Complete seu perfil') + '</h3><span class="sub">' + (u.nick ? esc(u.email) : 'Escolha um nick e um personagem para aparecer no ranking.') + '</span>' +
     campoNick(u.nick) + campoSexo(u.sexo) + escolhaAvatar(u.foto ? 'foto' : u.avatar, u.foto) +
+    (logadoNaNuvem() && !AUTH.admin ? '<label class="opcao"><input type="checkbox" name="colecao_publica"' + (u.colecao_publica ? ' checked' : '') + '>' +
+      '<span><b>Deixar outras pessoas verem minha coleção</b><small>Quem abrir seu perfil vê todas as cartas que você marcou e as suas repetidas.</small></span></label>' : '') +
     '<div class="erro" id="login-erro" role="alert"></div><button class="btn" type="submit">Salvar</button>' +
     '<button class="btn btn-sec" type="button" onclick="sairDaConta(this)">Sair da conta</button></form>' +
     (logadoNaNuvem() ? '<div class="login-card" id="minha-vitrine"><p class="sub">Carregando vitrine...</p></div>' : '') + '</section>';

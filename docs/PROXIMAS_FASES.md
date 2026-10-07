@@ -1,9 +1,8 @@
 # Próximas fases
 
 ## Falta fazer
-
 - [ ] Cartas de Yu-Gi-Oh! e Dragon Ball (precisa de uma fonte de dados para cada jogo)
-- [ ] Séries mais antigas de Pokémon (XY, Preto e Branco...)
+- [ ] Séries mais antigas de Pokémon (Preto e Branco, HeartGold e SoulSilver...)
 - [ ] Estatísticas detalhadas
 - [ ] E-mails em português (o plano grátis do Supabase não deixa mudar o texto; precisa de um SMTP próprio, ex.: Resend ou Brevo)
 

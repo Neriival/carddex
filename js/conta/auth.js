@@ -25,7 +25,7 @@ function erroAuth(e) {
 function salvarSessaoLocal(u) { try { localStorage.setItem('carddex_sessao', JSON.stringify(u)); } catch (e) {} return u; }
 
 var AUTH = {
-  _u: null,      // usuário conectado { id, email, nick, sexo, avatar, foto, vitrine }
+  _u: null,      // usuário conectado { id, email, nick, sexo, avatar, foto, vitrine, colecao_publica }
   admin: false,  // true = pode abrir o painel adm (tabela "admins" no banco)
 
   usuario: function () { return sb ? AUTH._u : lerJSON('carddex_sessao'); },
@@ -42,11 +42,11 @@ var AUTH = {
   _usar: async function (user) {
     AUTH._u = null; AUTH.admin = false;
     if (!user) return;
-    var u = { id: user.id, email: user.email, nick: '', sexo: '', avatar: '', foto: '', vitrine: [] };
+    var u = { id: user.id, email: user.email, nick: '', sexo: '', avatar: '', foto: '', vitrine: [], colecao_publica: false };
     try {
-      var r = await Promise.all([sb.from('perfis').select('nick,sexo,avatar,foto,vitrine').eq('id', user.id).maybeSingle(), sb.rpc('eh_admin')]);
+      var r = await Promise.all([sb.from('perfis').select('nick,sexo,avatar,foto,vitrine,colecao_publica').eq('id', user.id).maybeSingle(), sb.rpc('eh_admin')]);
       var p = r[0].data;
-      if (p) { u.nick = p.nick || ''; u.sexo = p.sexo || ''; u.avatar = p.avatar || ''; u.foto = p.foto || ''; u.vitrine = p.vitrine || []; }
+      if (p) { u.nick = p.nick || ''; u.sexo = p.sexo || ''; u.avatar = p.avatar || ''; u.foto = p.foto || ''; u.vitrine = p.vitrine || []; u.colecao_publica = !!p.colecao_publica; }
       AUTH.admin = r[1].data === true;
     } catch (e) {}
     AUTH._u = u;
@@ -76,10 +76,12 @@ var AUTH = {
     return AUTH._u;
   },
 
-  // Troca nick, sexo, personagem e foto (tela Meu perfil). Foto nova sobe antes; a antiga é apagada depois.
+  // Troca nick, sexo, personagem, foto e se a coleção fica aberta (tela Meu perfil).
+  // Foto nova sobe antes; a antiga é apagada depois.
   salvarPerfil: async function (p) {
     var dados = { nick: p.nick, sexo: p.sexo, avatar: p.avatar };
     if (!sb) { salvarSessaoLocal(Object.assign(lerJSON('carddex_sessao') || {}, dados)); return; }
+    if ('colecao_publica' in p) dados.colecao_publica = !!p.colecao_publica;
     var antiga = AUTH._u.foto || '';
     if (p.usarFoto && p.arquivo) dados.foto = await enviarFoto(p.arquivo);
     else if (!p.usarFoto) dados.foto = null;
