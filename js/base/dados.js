@@ -19,6 +19,7 @@ var ESTADO = {
   repetidas: {},    // cópias a mais de cada carta (js/base/marcacoes.js)
   filtro: 'todas',  // filtro da coleção: todas | tenho | faltam | repetidas
   raridade: '', tipo: '', // filtros extras da coleção
+  ordem: 'numero',  // ordem da grade: numero | caras | baratas
   atual: null,      // coleção aberta
   tid: {},          // id de cada coleção na TCGdex (cache)
   redesenhar: null  // função da tela atual, chamada quando a carta grande fecha ou chegam dados novos

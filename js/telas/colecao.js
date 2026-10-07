@@ -1,14 +1,15 @@
 // js/telas/colecao.js
 // TELA DA COLEÇÃO: a grade de cartas, filtros, marcar "tenho" e as repetidas
 // ============================================================
-// Filtros: Todas / Tenho / Faltam / Repetidas + Raridade e Tipo (só aparecem se houver 2 opções ou mais).
+// Filtros: Todas / Tenho / Faltam / Repetidas + Raridade e Tipo (só aparecem se houver 2 opções ou mais)
+// e Ordenar (número, mais caras, mais baratas).
 // Cada carta da grade: clique na imagem abre a carta grande (js/recursos/carta-grande.js),
 // o círculo marca "tenho", a barra − N + conta as repetidas e embaixo fica o preço (js/base/precos.js).
 // ============================================================
 
 // TELA – Coleção: carrega as cartas e desenha
 async function telaColecao(id) {
-  var c = acharColecao(id); ESTADO.atual = c; ESTADO.raridade = ''; ESTADO.tipo = '';
+  var c = acharColecao(id); ESTADO.atual = c; ESTADO.raridade = ''; ESTADO.tipo = ''; ESTADO.ordem = 'numero';
   ESTADO.redesenhar = desenharColecao; marcarMenu(1);
   var volta = '<h2><button class="voltar" onclick="telaSerie(\'' + c.serie + '\')">← ' + esc(acharSerie(c.serie).nome) + '</button></h2>';
   app.innerHTML = volta + '<p class="sub">Carregando cartas...</p>';
@@ -32,6 +33,26 @@ function seletor(rotulo, campo, opcoes) {
     opcoes.map(function (o) { return '<option' + (ESTADO[campo] === o ? ' selected' : '') + '>' + esc(o) + '</option>'; }).join('') + '</select></label>';
 }
 
+// ORDENAR: por número (padrão), mais caras primeiro ou mais baratas primeiro.
+// Cartas sem preço vão sempre para o fim. Só aparece se a coleção tiver preços.
+function valorDaCarta(c, k) { var p = precoCarta(c.serie, k.id); return p ? p.real || p.reverse : 0; }
+function ordenarCartas(c, l) {
+  if (ESTADO.ordem === 'numero') return l;
+  var sinal = ESTADO.ordem === 'caras' ? -1 : 1;
+  return l.slice().sort(function (a, b) {
+    var va = valorDaCarta(c, a), vb = valorDaCarta(c, b);
+    if (!va || !vb) return (vb ? 1 : 0) - (va ? 1 : 0); // sem preço no fim
+    return sinal * (va - vb);
+  });
+}
+function seletorOrdem(c) {
+  if (!ESTADO.cartas[c.id].some(function (k) { return valorDaCarta(c, k); })) return '';
+  return '<label class="seletor"><span>Ordenar</span><select onchange="ESTADO.ordem=this.value;desenharColecao()">' +
+    [['numero', 'Número'], ['caras', 'Mais caras primeiro'], ['baratas', 'Mais baratas primeiro']].map(function (o) {
+      return '<option value="' + o[0] + '"' + (ESTADO.ordem === o[0] ? ' selected' : '') + '>' + o[1] + '</option>';
+    }).join('') + '</select></label>';
+}
+
 // Uma carta na grade com o preço embaixo (também usada em Minhas cartas). y = tem a carta.
 function cartaGrade(c, k, y) {
   var src = k.mini || k.imagem, p = precoCarta(c.serie, k.id);
@@ -45,11 +66,11 @@ function cartaGrade(c, k, y) {
 // Desenha a grade da coleção atual, respeitando todos os filtros
 function desenharColecao() {
   var c = ESTADO.atual, s = acharSerie(c.serie), lista = ESTADO.cartas[c.id];
-  var html = cartasFiltradas(c).filter(function (k) {
+  var html = ordenarCartas(c, cartasFiltradas(c).filter(function (k) {
     var y = temCarta(c.id, k.id);
     if (ESTADO.filtro === 'repetidas') return y && qtdRepetida(c.id, k.id) > 0;
     return ESTADO.filtro === 'todas' || (ESTADO.filtro === 'tenho' ? y : !y);
-  }).map(function (k) { return cartaGrade(c, k, temCarta(c.id, k.id)); }).join('');
+  })).map(function (k) { return cartaGrade(c, k, temCarta(c.id, k.id)); }).join('');
   var rar = unicos(lista.map(function (k) { return k.raridade; }));
   var tip = unicos([].concat.apply([], lista.map(function (k) { return (k.tipos || []).length ? k.tipos : [k.categoria]; })));
   var filtros = [['todas', 'Todas'], ['tenho', 'Tenho'], ['faltam', 'Faltam'], ['repetidas', 'Repetidas']].map(function (f) {
@@ -59,7 +80,7 @@ function desenharColecao() {
     '<span class="sub" id="prog-txt"></span><div class="barra grossa"><i id="prog-bar"></i></div><p class="valor-colecao" id="valor-txt"></p>' +
     (c.obs ? '<div class="aviso">' + esc(c.obs) + '</div>' : '') +
     '<div class="filtros">' + filtros + '</div>' +
-    '<div class="filtros-extra">' + seletor('Raridade', 'raridade', rar) + seletor('Tipo', 'tipo', tip) + '</div>' +
+    '<div class="filtros-extra">' + seletor('Raridade', 'raridade', rar) + seletor('Tipo', 'tipo', tip) + seletorOrdem(c) + '</div>' +
     '<div class="compartilhar-acoes"><button class="btn btn-sec btn-compartilhar" onclick="abrirCompartilhar()">Compartilhar cartas que faltam</button>' +
     '<button class="btn btn-sec btn-compartilhar" onclick="abrirCompartilhar(\'repetidas\')">Compartilhar repetidas</button></div>' +
     (html ? '<div class="grade">' + html + '</div>' : '<p class="sub">Nenhuma carta com esses filtros.</p>');

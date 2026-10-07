@@ -1,7 +1,7 @@
 # Próximas fases
 
 ## Falta fazer
-- [ ] Ordenar/filtrar as cartas por preço
+
 - [ ] Cartas de Yu-Gi-Oh! e Dragon Ball (precisa de uma fonte de dados para cada jogo)
 - [ ] Séries mais antigas de Pokémon (XY, Preto e Branco...)
 - [ ] Estatísticas detalhadas
@@ -22,6 +22,6 @@
 - [x] Parceiros nas laterais, com cliques no painel adm
 - [x] Painel adm: contas, números do site, parceiros e moderação de fotos
 - [x] App instalável, com atalho para o painel adm
-- [x] Preços em reais (Cardmarket, atualizados todo dia pelo GitHub) e valor da coleção
+- [x] Preços em reais (Cardmarket, atualizados todo dia pelo GitHub), valor da coleção e ordenar por preço
 - [x] Barra de progresso maior nas coleções, com "✓ Completa"
 - [x] Código organizado em pastas (css/ e js/ separados por base, componentes/recursos e telas)
