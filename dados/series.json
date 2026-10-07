@@ -121,6 +121,14 @@
           "tcgdex": "sv10.5b",
           "lancamento": "2025-07-17",
           "total": 172
+        },
+        {
+          "id": "svp",
+          "nome": "Promos Black Star EV",
+          "busca": "SVP Black Star Promos",
+          "lancamento": "2023-03-31",
+          "total": 226,
+          "nomeFixo": true
         }
       ]
     },
@@ -350,6 +358,14 @@
           "tcgdex": "swsh12.5gg",
           "lancamento": "2023-01-20",
           "total": 70
+        },
+        {
+          "id": "swshp",
+          "nome": "Promos Black Star EE",
+          "busca": "SWSH Black Star Promos",
+          "lancamento": "2019-11-15",
+          "total": 307,
+          "nomeFixo": true
         }
       ]
     },
@@ -462,6 +478,14 @@
           "nome": "Eclipse Cósmico",
           "lancamento": "2019-11-01",
           "total": 271
+        },
+        {
+          "id": "smp",
+          "nome": "Promos Black Star SL",
+          "busca": "SM Black Star Promos",
+          "lancamento": "2017-02-03",
+          "total": 248,
+          "nomeFixo": true
         }
       ]
     }

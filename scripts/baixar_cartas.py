@@ -147,8 +147,8 @@ def main():
             em_pt = bool(conj and conj.get('cards'))
             if not em_pt:
                 conj = baixar(f'{API}/en/sets/{tid}')
-            if em_pt and conj.get('name'):
-                col['nome'] = conj['name'].strip()  # nome oficial em português
+            if em_pt and conj.get('name') and not col.get('nomeFixo'):
+                col['nome'] = conj['name'].strip()  # nome oficial em português ("nomeFixo": true mantém o nome do series.json)
             if not conj:
                 print(f'  não encontrei "{tid}" na TCGdex. Veja: python scripts/baixar_cartas.py --listar {serie["id"]}')
                 continue
