@@ -53,7 +53,8 @@ ESTRUTURA
 
  dados/series.json              jogos, séries e coleções (em ordem de lançamento)
  dados/cartas/<serie>/<colecao>.json
- dados/precos/<serie>.json      preços do dia (gerado pelo script de preços, não editar)
+ dados/precos-liga/<serie>.json preços da Liga Pokémon (gerado pelo script da Liga, não editar)
+ dados/precos/<serie>.json      preços do Cardmarket, reserva (gerado pelo script de preços, não editar)
  dados/cardmarket.json          número de cada carta no Cardmarket (gerado pelo script de preços)
  assets/img/cartas/<serie>/<colecao>/001.webp, 001-mini.webp ...
  assets/img/colecoes/<serie>/<colecao>.webp
@@ -97,11 +98,17 @@ CONTAS, RANKING, PERFIS, PAINEL ADM E PARCEIROS (Supabase – projeto "carddex",
 Sem o Supabase configurado o site funciona só no navegador e os quadrados mostram "Seja um parceiro".
 
 PREÇOS (em reais)
-Referência: Cardmarket (maior loja de cartas da Europa), em euro, convertido para real pela cotação do dia.
-Não é o preço do mercado brasileiro: é um valor de referência.
-Todo dia às 6h o GitHub roda scripts/atualizar_precos.py sozinho e salva dados/precos/ no repositório.
-Para rodar na hora: GitHub → Actions → "Atualizar preços" → Run workflow (ou: python scripts/atualizar_precos.py).
-Coleção nova: rode o baixar_cartas.py normalmente; no dia seguinte ela já aparece com preços.
+Referência principal: Liga Pokémon (ligapokemon.com.br), o mercado brasileiro. O site mostra o preço MÉDIO
+(e o menor e o maior na carta grande).
+- scripts/atualizar_precos_liga.py abre a página de cada coleção na Liga (um acesso traz todas as cartas).
+  A Liga pede 6 minutos entre acessos, então as ~85 coleções levam ~8h30: o GitHub roda o script 2x por dia
+  (4h e 16h), por até ~5h cada, sempre começando pelas coleções há mais tempo sem atualizar.
+  Para rodar na hora: GitHub → Actions → "Preços da Liga" → Run workflow.
+  Só algumas coleções, no computador: python scripts/atualizar_precos_liga.py me01 sv01
+- Coleção nova: além do baixar_cartas.py, coloque a sigla dela na Liga em SIGLAS, no começo do
+  atualizar_precos_liga.py (a sigla aparece em ligapokemon.com.br/?view=cards/edicoes).
+Reserva: Cardmarket (loja europeia), em euro convertido para real. Só é usado nas coleções que ainda não têm
+preço da Liga (por exemplo, se a Liga bloquear o acesso). Todo dia às 6h o GitHub roda scripts/atualizar_precos.py.
 ATENÇÃO: como o robô salva os preços todo dia, rode "git pull" antes de publicar mudanças suas.
 
 BACKUP

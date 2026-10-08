@@ -2,7 +2,7 @@
 // CARTA GRANDE (janela que abre ao clicar na imagem da carta)
 // ============================================================
 // Brilho suave, inclinação 3D com o mouse e arrastar para o lado (próxima/anterior).
-// Informações da carta com o preço em reais (js/base/precos.js).
+// Informações da carta com o preço em reais: médio, menor e maior da Liga Pokémon (js/base/precos.js).
 // Embaixo: "Marcar como tenho", repetidas (− N +) e "Pôr na vitrine".
 // Aberta pela vitrine de um perfil, navega só entre as cartas da vitrine e não deixa marcar.
 // - Inclinação 3D: mude MAX (graus) em abrirCarta()
@@ -24,8 +24,10 @@ async function abrirCarta(colId, cartaId, dir, daVitrine) {
   if (tok !== tokenModal) return; // o usuário já foi para outra carta
   cartaAberta = { col: colId, k: k, i: i, vit: !!vit, pos: pos };
   var y = (ESTADO.tenho[colId] || []).indexOf(k.id) > -1;
-  var tipo = (k.tipos || []).join(', ') || k.categoria || '—', preco = precoCarta(c.serie, k.id);
-  var linhaPreco = preco ? '<dt>Preço</dt><dd class="preco-info">' + (preco.real ? reais(preco.real) : '—') + (preco.reverse ? '<small>Reverse holo: ' + reais(preco.reverse) + '</small>' : '') + '</dd>' : '';
+  var tipo = (k.tipos || []).join(', ') || k.categoria || '—', preco = precoCarta(c, k.id);
+  var linhaPreco = !preco ? '' : preco.fonte === 'liga'
+    ? '<dt>Preço médio</dt><dd class="preco-info">' + reais(preco.real) + '<small>Menor: ' + reais(preco.menor) + ' · Maior: ' + reais(preco.maior) + '</small></dd>'
+    : '<dt>Preço</dt><dd class="preco-info">' + (preco.real ? reais(preco.real) : '—') + (preco.reverse ? '<small>Reverse holo: ' + reais(preco.reverse) + '</small>' : '') + '</dd>';
   var animC = dir ? ' style="animation:' + (dir > 0 ? 'deslizarDir' : 'deslizarEsq') + ' .28s ease-out"' : '', animI = dir ? ' style="animation:none"' : '';
   modal.innerHTML = '<button class="fechar" onclick="fecharCarta()" aria-label="Fechar">×</button>' +
     '<button class="nav-carta ant" onclick="navegarCarta(-1)" aria-label="Carta anterior"' + (pos === 0 ? ' disabled' : '') + '>‹</button>' +
@@ -33,7 +35,7 @@ async function abrirCarta(colId, cartaId, dir, daVitrine) {
     '<div class="caixa"><div class="palco"><div class="carta3d" id="c3d"' + animC + '>' +
     (k.imagem ? '<img draggable="false" src="' + esc(k.imagem) + '" alt="' + esc(k.nome) + '">' : '<div class="ph">' + esc(k.numero) + '</div>') + '<div class="brilho"></div></div><p class="dica sub">‹ Arraste para o lado para ver as outras cartas ›</p></div>' +
     '<div class="info"' + animI + '><h3>' + esc(k.nome) + '</h3><span class="sub">' + esc(c.nome) + '</span><dl><dt>Número</dt><dd>' + esc(k.numero) + ' de ' + lista.length + '</dd><dt>Série</dt><dd>' + esc(s.nome) + '</dd><dt>Raridade</dt><dd>' + esc(k.raridade || '—') + '</dd><dt>Tipo</dt><dd>' + esc(tipo) + '</dd><dt>PS</dt><dd>' + esc(k.ps || '—') + '</dd><dt>Ilustrador</dt><dd>' + esc(k.ilustrador || '—') + '</dd>' + linhaPreco + '</dl>' +
-    (preco ? '<p class="sub nota-preco">' + notaPreco(c.serie) + '</p>' : '') +
+    (preco ? '<p class="sub nota-preco">' + notaPreco(c.serie, colId) + '</p>' : '') +
     (vit ? '<p class="sub">' + (y ? '✓ Você também tem esta carta.' : 'Você ainda não tem esta carta.') + '</p>'
       : '<button class="btn btn-tenho" onclick="alternarTenho()">' + (y ? '✓ Tenho esta carta' : 'Marcar como tenho') + '</button>' + contadorRepetidas(colId, k.id, y) + botaoVitrine(colId, k, y)) + '</div></div>';
   modal.hidden = false; modal.scrollTop = 0;

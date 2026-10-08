@@ -35,7 +35,7 @@ function seletor(rotulo, campo, opcoes) {
 
 // ORDENAR: por número (padrão), mais caras primeiro ou mais baratas primeiro.
 // Cartas sem preço vão sempre para o fim. Só aparece se a coleção tiver preços.
-function valorDaCarta(c, k) { return valorCarta(c.serie, k.id); }
+function valorDaCarta(c, k) { return valorCarta(c, k.id); }
 function ordenarCartas(c, l) {
   if (ESTADO.ordem === 'numero') return l;
   var sinal = ESTADO.ordem === 'caras' ? -1 : 1;
@@ -55,7 +55,7 @@ function seletorOrdem(c) {
 
 // Uma carta na grade com o preço embaixo (também usada em Minhas cartas). y = tem a carta.
 function cartaGrade(c, k, y) {
-  var src = k.mini || k.imagem, v = valorCarta(c.serie, k.id);
+  var src = k.mini || k.imagem, v = valorCarta(c, k.id);
   return '<div class="carta-item"><div class="carta' + (y ? ' tenho' : '') + '">' + (y ? repGradeHtml(c.id, k.id) : '') +
     '<button class="abrir" onclick="abrirCarta(\'' + c.id + '\',\'' + k.id + '\')" title="Ver ' + esc(k.nome) + '">' +
     (src ? '<img loading="lazy" src="' + esc(src) + '" alt="' + esc(k.nome) + '">' : '<span>' + esc(k.numero) + '</span>') + '</button>' +
@@ -97,7 +97,7 @@ function atualizarProgresso() {
   txt.textContent = n + ' de ' + t + ' cartas · ' + p + '%';
   document.getElementById('prog-bar').style.width = p + '%';
   document.getElementById('valor-txt').innerHTML = v ? 'Suas cartas valem <b>' + reais(v.meu) + '</b>' + (Object.keys(ESTADO.repetidas[c.id] || {}).length ? ' (com as repetidas)' : '') +
-    ' · coleção completa: ' + reais(v.completa) + ' <small>(referência Cardmarket)</small>' : '';
+    ' · coleção completa: ' + reais(v.completa) + ' <small>(' + fontePreco(c.serie, c.id) + ')</small>' : '';
 }
 
 // Círculo da carta: marca/desmarca direto na grade, sem abrir a carta grande

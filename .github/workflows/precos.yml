@@ -27,4 +27,4 @@ jobs:
           git config user.name "CardDex (preços automáticos)"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add dados/precos dados/cardmarket.json
-          git diff --cached --quiet || (git commit -m "Preços atualizados ($(date +%d/%m/%Y))" && git push)
+          git diff --cached --quiet || (git commit -m "Preços atualizados ($(date +%d/%m/%Y))" && git pull --rebase && git push)

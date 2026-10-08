@@ -59,5 +59,5 @@ function cartaVisita(c, k, rep) {
     (src ? '<img loading="lazy" src="' + esc(src) + '" alt="' + esc(k.nome) + '">' : '<span>' + esc(k.numero) + '</span>') +
     (temCarta(c.id, k.id) ? '' : '<span class="falta-eu">Você não tem</span>') +
     (rep ? '<span class="rep-selo" title="' + rep + ' repetida' + (rep > 1 ? 's' : '') + '">+' + rep + '</span>' : '') + '</button>' +
-    precoGrade(valorCarta(c.serie, k.id)) + '</div>';
+    precoGrade(valorCarta(c, k.id)) + '</div>';
 }

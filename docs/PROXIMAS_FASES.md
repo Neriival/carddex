@@ -21,7 +21,7 @@
 - [x] Parceiros nas laterais, com cliques no painel adm
 - [x] Painel adm: contas, números do site, parceiros e moderação de fotos
 - [x] App instalável, com atalho para o painel adm
-- [x] Preços em reais (Cardmarket, atualizados todo dia pelo GitHub), valor da coleção e ordenar por preço
+- [x] Preços em reais (Liga Pokémon, com o Cardmarket de reserva; atualizados todo dia pelo GitHub), valor da coleção e ordenar por preço
 - [x] Barra de progresso maior nas coleções, com "✓ Completa"
 - [x] Contas de admin fora do ranking e sem perfil público
 - [x] Coleção aberta para os outros (opcional), com repetidas e "Pra trocar comigo"
