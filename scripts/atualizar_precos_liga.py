@@ -55,11 +55,16 @@ SIGLAS = {
     'dv1': 'DRV', 'bw7': 'BCR', 'bw8': 'PLS', 'bw9': 'PLF', 'bw10': 'PLB', 'bw11': 'LTR',
     # HeartGold SoulSilver
     'hgss1': 'HS', 'hgssp': 'HSPR', 'hgss2': 'UL', 'hgss3': 'UD', 'hgss4': 'TM', 'col1': 'CL',
+    # Platina
+    'pl1': 'PL', 'pl2': 'RR', 'pl3': 'SV', 'pl4': 'AR', 'ru1': 'RU',
 }
 
 # Coleções em que a Liga usa outra numeração (o número original de cada carta), mas na mesma ordem:
 # a carta é achada pela posição na lista.
 POR_ORDEM = {'30cc'}
+
+# Coleções em que a Liga põe letras antes do número (energias: MEE001, SVE001, SV017): tenta com cada uma
+PREFIXOS = {'mee': ['MEE'], 'sve': ['SVE', 'SV']}
 
 
 def numero(n):
@@ -144,7 +149,10 @@ def main():
             print(f'{col} ({SIGLAS[col]}): a Liga listou {len(ordem)} cartas e o CardDex tem {len(cartas)}; não dá para ligar pela ordem')
             continue
         for i, (k, num) in enumerate(cartas):
-            p = ordem[i] if col in POR_ORDEM else liga.get(numero(num))
+            if col in POR_ORDEM:
+                p = ordem[i]
+            else:
+                p = next((liga[n] for n in [numero(num)] + [x + numero(num) for x in PREFIXOS.get(col, [])] if n in liga), None)
             if p:
                 d['precos'][k] = p
             else:

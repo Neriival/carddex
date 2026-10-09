@@ -2,7 +2,7 @@
 
 ## Falta fazer
 - [ ] Cartas de Yu-Gi-Oh! e Dragon Ball (precisa de uma fonte de dados para cada jogo)
-- [ ] Séries mais antigas de Pokémon (Preto e Branco, HeartGold e SoulSilver...)
+- [ ] Séries mais antigas de Pokémon: próxima é Diamante e Pérola (dp1–dp7 e Promos DP na TCGdex; siglas da Liga DP, DPPR, MT, SW, GE, MD, LA, SF)
 - [ ] Estatísticas detalhadas
 - [ ] E-mails em português (o plano grátis do Supabase não deixa mudar o texto; precisa de um SMTP próprio, ex.: Resend ou Brevo)
 
@@ -26,4 +26,6 @@
 - [x] Contas de admin fora do ranking e sem perfil público
 - [x] Coleção aberta para os outros (opcional), com repetidas e "Pra trocar comigo"
 - [x] Promos Black Star (EV, EE, SL) e série XY completa
+- [x] Séries Preto e Branco, HeartGold SoulSilver e Platina completas; Promos ME e energias básicas EV/ME
+- [x] Número impresso da carta (ex.: PAL PT 211/193) na grade, na carta grande e na imagem de compartilhar
 - [x] Código organizado em pastas (css/ e js/ separados por base, componentes/recursos e telas)

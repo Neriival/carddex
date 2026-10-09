@@ -969,6 +969,59 @@
           "oficial": 95
         }
       ]
+    },
+    {
+      "id": "pl",
+      "nome": "Platina",
+      "jogo": "pokemon",
+      "imagens": "mini",
+      "colecoes": [
+        {
+          "id": "pl1",
+          "nome": "Platina",
+          "nomeFixo": true,
+          "lancamento": "2009-02-11",
+          "total": 133,
+          "sigla": "PL",
+          "oficial": 127
+        },
+        {
+          "id": "pl2",
+          "nome": "Rivais em Ascensão",
+          "nomeFixo": true,
+          "lancamento": "2009-05-16",
+          "total": 120,
+          "sigla": "RR",
+          "oficial": 111
+        },
+        {
+          "id": "pl3",
+          "nome": "Vencedores Supremos",
+          "nomeFixo": true,
+          "lancamento": "2009-08-19",
+          "total": 153,
+          "sigla": "SV",
+          "oficial": 147
+        },
+        {
+          "id": "pl4",
+          "nome": "Arceus",
+          "nomeFixo": true,
+          "lancamento": "2009-11-04",
+          "total": 111,
+          "sigla": "AR",
+          "oficial": 99
+        },
+        {
+          "id": "ru1",
+          "nome": "Pokémon Rumble",
+          "nomeFixo": true,
+          "lancamento": "2009-12-02",
+          "total": 16,
+          "sigla": "RM",
+          "oficial": 16
+        }
+      ]
     }
   ]
 }
