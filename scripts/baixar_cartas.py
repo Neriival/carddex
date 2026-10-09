@@ -89,7 +89,7 @@ def numeracao(tid, col):
         col['sigla'] = sigla
     oficial = (conj.get('cardCount') or {}).get('official')
     # promos não têm total impresso (a carta mostra só o número, ex.: SVP 001)
-    # "semTotal": true no series.json = reimpressões que trazem o número original da carta antiga (coleções clássicas)
+    # "semTotal": true no series.json = cartas impressas sem total (energias básicas) ou com o número original (coleções clássicas)
     if oficial and 'promo' not in conj.get('name', '').lower() and not col.get('semTotal'):
         col['oficial'] = oficial
     else:

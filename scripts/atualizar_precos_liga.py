@@ -30,12 +30,12 @@ ESPERA = 360  # segundos entre acessos (Crawl-delay da Liga)
 # Coleção do CardDex → sigla da coleção na Liga (lista em ?view=cards/edicoes)
 SIGLAS = {
     # Mega Evolução
-    'me01': 'MEG', 'me02': 'PFL', 'me025': 'ASC', 'me03': 'POR', 'me04': 'CRI', 'me05': 'PBL',
+    'me01': 'MEG', 'mep': 'MEP', 'mee': 'MEEb', 'me02': 'PFL', 'me025': 'ASC', 'me03': 'POR', 'me04': 'CRI', 'me05': 'PBL',
     '30c': '30C', '30cc': '30C-C',
     # Escarlate e Violeta
     'sv01': 'SV1', 'sv02': 'PAL', 'sv03': 'OBF', 'sv035': 'MEW', 'sv04': 'PAR', 'sv045': 'PAF',
     'sv05': 'TEF', 'sv06': 'TWM', 'sv065': 'SFA', 'sv07': 'SCR', 'sv08': 'SSP', 'sv085': 'PRE',
-    'sv09': 'JTG', 'sv10': 'DRI', 'sv105w': 'WHT', 'sv105b': 'BLK', 'svp': 'SVP',
+    'sv09': 'JTG', 'sv10': 'DRI', 'sv105w': 'WHT', 'sv105b': 'BLK', 'svp': 'SVP', 'sve': 'SV-BE',
     # Espada e Escudo
     'swsh1': 'SSH', 'swsh2': 'RCL', 'swsh3': 'DAA', 'fut2020': 'FUT20', 'swsh35': 'CPA', 'swsh4': 'VIV',
     'swsh45': 'SHF', 'swsh45sv': 'SFS', 'swsh5': 'BST', 'swsh6': 'CRE', 'swsh7': 'EVS',

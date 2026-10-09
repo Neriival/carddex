@@ -29,6 +29,24 @@
           "oficial": 198
         },
         {
+          "id": "svp",
+          "nome": "Promos Black Star EV",
+          "busca": "SVP Black Star Promos",
+          "lancamento": "2023-03-31",
+          "total": 226,
+          "nomeFixo": true,
+          "sigla": "SVP"
+        },
+        {
+          "id": "sve",
+          "nome": "Energias Básicas Escarlate e Violeta",
+          "nomeFixo": true,
+          "lancamento": "2023-03-31",
+          "total": 24,
+          "sigla": "SVE",
+          "semTotal": true
+        },
+        {
           "id": "sv02",
           "nome": "Evoluções em Paldea",
           "lancamento": "2023-06-09",
@@ -153,15 +171,6 @@
           "total": 172,
           "sigla": "BLK",
           "oficial": 86
-        },
-        {
-          "id": "svp",
-          "nome": "Promos Black Star EV",
-          "busca": "SVP Black Star Promos",
-          "lancamento": "2023-03-31",
-          "total": 226,
-          "nomeFixo": true,
-          "sigla": "SVP"
         }
       ]
     },
@@ -171,6 +180,15 @@
       "jogo": "pokemon",
       "colecoes": [
         {
+          "id": "mee",
+          "nome": "Energias Básicas Megaevolução",
+          "nomeFixo": true,
+          "lancamento": "2025-09-25",
+          "total": 8,
+          "sigla": "MEE",
+          "semTotal": true
+        },
+        {
           "id": "me01",
           "nome": "Megaevolução",
           "busca": "Mega Evolution",
@@ -178,6 +196,14 @@
           "total": 188,
           "sigla": "MEG",
           "oficial": 132
+        },
+        {
+          "id": "mep",
+          "nome": "Promos Black Star ME",
+          "nomeFixo": true,
+          "lancamento": "2025-09-26",
+          "total": 89,
+          "sigla": "MEP"
         },
         {
           "id": "me02",
@@ -252,6 +278,14 @@
       "jogo": "pokemon",
       "imagens": "mini",
       "colecoes": [
+        {
+          "id": "swshp",
+          "nome": "Promos Black Star EE",
+          "busca": "SWSH Black Star Promos",
+          "lancamento": "2019-11-15",
+          "total": 307,
+          "nomeFixo": true
+        },
         {
           "id": "swsh1",
           "nome": "Espada e Escudo",
@@ -457,14 +491,6 @@
           "total": 70,
           "sigla": "CRZ",
           "oficial": 70
-        },
-        {
-          "id": "swshp",
-          "nome": "Promos Black Star EE",
-          "busca": "SWSH Black Star Promos",
-          "lancamento": "2019-11-15",
-          "total": 307,
-          "nomeFixo": true
         }
       ]
     },
@@ -481,6 +507,15 @@
           "total": 172,
           "sigla": "SUM",
           "oficial": 149
+        },
+        {
+          "id": "smp",
+          "nome": "Promos Black Star SL",
+          "busca": "SM Black Star Promos",
+          "lancamento": "2017-02-03",
+          "total": 248,
+          "nomeFixo": true,
+          "sigla": "SMP"
         },
         {
           "id": "sm2",
@@ -611,15 +646,6 @@
           "total": 271,
           "sigla": "CEC",
           "oficial": 236
-        },
-        {
-          "id": "smp",
-          "nome": "Promos Black Star SL",
-          "busca": "SM Black Star Promos",
-          "lancamento": "2017-02-03",
-          "total": 248,
-          "nomeFixo": true,
-          "sigla": "SMP"
         }
       ]
     },
