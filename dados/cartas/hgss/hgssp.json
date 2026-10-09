@@ -1,0 +1,375 @@
+[
+ {
+  "id": "hgssp-HGSS01",
+  "numero": "HGSS01",
+  "nome": "Ho-Oh",
+  "raridade": "Promo",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "Takashi Yamaguchi",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgssp/HGSS01/high.webp",
+  "mini": "assets/img/cartas/hgss/hgssp/HGSS01-mini.webp"
+ },
+ {
+  "id": "hgssp-HGSS02",
+  "numero": "HGSS02",
+  "nome": "Lugia",
+  "raridade": "Promo",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "Takashi Yamaguchi",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgssp/HGSS02/high.webp",
+  "mini": "assets/img/cartas/hgss/hgssp/HGSS02-mini.webp"
+ },
+ {
+  "id": "hgssp-HGSS03",
+  "numero": "HGSS03",
+  "nome": "Pikachu",
+  "raridade": "Promo",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Kanako Eo",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgssp/HGSS03/high.webp",
+  "mini": "assets/img/cartas/hgss/hgssp/HGSS03-mini.webp"
+ },
+ {
+  "id": "hgssp-HGSS04",
+  "numero": "HGSS04",
+  "nome": "Wobbuffet",
+  "raridade": "Promo",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "match",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgssp/HGSS04/high.webp",
+  "mini": "assets/img/cartas/hgss/hgssp/HGSS04-mini.webp"
+ },
+ {
+  "id": "hgssp-HGSS05",
+  "numero": "HGSS05",
+  "nome": "Hoothoot",
+  "raridade": "Promo",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 50,
+  "categoria": "Pokémon",
+  "ilustrador": "Masakazu Fukuda",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgssp/HGSS05/high.webp",
+  "mini": "assets/img/cartas/hgss/hgssp/HGSS05-mini.webp"
+ },
+ {
+  "id": "hgssp-HGSS06",
+  "numero": "HGSS06",
+  "nome": "Noctowl",
+  "raridade": "Promo",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "Masakazu Fukuda",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgssp/HGSS06/high.webp",
+  "mini": "assets/img/cartas/hgss/hgssp/HGSS06-mini.webp"
+ },
+ {
+  "id": "hgssp-HGSS07",
+  "numero": "HGSS07",
+  "nome": "Feraligatr",
+  "raridade": "Promo",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 140,
+  "categoria": "Pokémon",
+  "ilustrador": "Kent Kanetsuna",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgssp/HGSS07/high.webp",
+  "mini": "assets/img/cartas/hgss/hgssp/HGSS07-mini.webp"
+ },
+ {
+  "id": "hgssp-HGSS08",
+  "numero": "HGSS08",
+  "nome": "Meganium",
+  "raridade": "Promo",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 150,
+  "categoria": "Pokémon",
+  "ilustrador": "Noriko Hotta",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgssp/HGSS08/high.webp",
+  "mini": "assets/img/cartas/hgss/hgssp/HGSS08-mini.webp"
+ },
+ {
+  "id": "hgssp-HGSS09",
+  "numero": "HGSS09",
+  "nome": "Typhlosion",
+  "raridade": "Promo",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 140,
+  "categoria": "Pokémon",
+  "ilustrador": "Wataru Kawahara",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgssp/HGSS09/high.webp",
+  "mini": "assets/img/cartas/hgss/hgssp/HGSS09-mini.webp"
+ },
+ {
+  "id": "hgssp-HGSS10",
+  "numero": "HGSS10",
+  "nome": "Latias",
+  "raridade": "Promo",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "Wataru Kawahara",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgssp/HGSS10/high.webp",
+  "mini": "assets/img/cartas/hgss/hgssp/HGSS10-mini.webp"
+ },
+ {
+  "id": "hgssp-HGSS11",
+  "numero": "HGSS11",
+  "nome": "Latios",
+  "raridade": "Promo",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "Wataru Kawahara",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgssp/HGSS11/high.webp",
+  "mini": "assets/img/cartas/hgss/hgssp/HGSS11-mini.webp"
+ },
+ {
+  "id": "hgssp-HGSS12",
+  "numero": "HGSS12",
+  "nome": "Cleffa",
+  "raridade": "Promo",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 30,
+  "categoria": "Pokémon",
+  "ilustrador": "Masakazu Fukuda",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgssp/HGSS12/high.webp",
+  "mini": "assets/img/cartas/hgss/hgssp/HGSS12-mini.webp"
+ },
+ {
+  "id": "hgssp-HGSS13",
+  "numero": "HGSS13",
+  "nome": "Smoochum",
+  "raridade": "Promo",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 30,
+  "categoria": "Pokémon",
+  "ilustrador": "Midori Harada",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgssp/HGSS13/high.webp",
+  "mini": "assets/img/cartas/hgss/hgssp/HGSS13-mini.webp"
+ },
+ {
+  "id": "hgssp-HGSS14",
+  "numero": "HGSS14",
+  "nome": "Lapras",
+  "raridade": "Promo",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "Masakazu Fukuda",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgssp/HGSS14/high.webp",
+  "mini": "assets/img/cartas/hgss/hgssp/HGSS14-mini.webp"
+ },
+ {
+  "id": "hgssp-HGSS15",
+  "numero": "HGSS15",
+  "nome": "Shuckle",
+  "raridade": "Promo",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "match",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgssp/HGSS15/high.webp",
+  "mini": "assets/img/cartas/hgss/hgssp/HGSS15-mini.webp"
+ },
+ {
+  "id": "hgssp-HGSS16",
+  "numero": "HGSS16",
+  "nome": "Plusle",
+  "raridade": "Promo",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Kouki Saitou",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgssp/HGSS16/high.webp",
+  "mini": "assets/img/cartas/hgss/hgssp/HGSS16-mini.webp"
+ },
+ {
+  "id": "hgssp-HGSS17",
+  "numero": "HGSS17",
+  "nome": "Minun",
+  "raridade": "Promo",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Kouki Saitou",
+  "idioma": "en",
+  "imagem": "https://tcgplayer-cdn.tcgplayer.com/product/87492_in_1000x1000.jpg",
+  "mini": "assets/img/cartas/hgss/hgssp/HGSS17-mini.webp"
+ },
+ {
+  "id": "hgssp-HGSS18",
+  "numero": "HGSS18",
+  "nome": "Tropical Tidal Wave",
+  "raridade": "Promo",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Sumiyoshi Kizuki",
+  "idioma": "en",
+  "imagem": "https://tcgplayer-cdn.tcgplayer.com/product/90052_in_1000x1000.jpg",
+  "mini": "assets/img/cartas/hgss/hgssp/HGSS18-mini.webp"
+ },
+ {
+  "id": "hgssp-HGSS19",
+  "numero": "HGSS19",
+  "nome": "Raikou",
+  "raridade": "Promo",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "Noriko Hotta",
+  "idioma": "en",
+  "imagem": "https://tcgplayer-cdn.tcgplayer.com/product/88535_in_1000x1000.jpg",
+  "mini": "assets/img/cartas/hgss/hgssp/HGSS19-mini.webp"
+ },
+ {
+  "id": "hgssp-HGSS20",
+  "numero": "HGSS20",
+  "nome": "Entei",
+  "raridade": "Promo",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "Yuri Umemura",
+  "idioma": "en",
+  "imagem": "https://tcgplayer-cdn.tcgplayer.com/product/85273_in_1000x1000.jpg",
+  "mini": "assets/img/cartas/hgss/hgssp/HGSS20-mini.webp"
+ },
+ {
+  "id": "hgssp-HGSS21",
+  "numero": "HGSS21",
+  "nome": "Suicune",
+  "raridade": "Promo",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "Hideaki Hakozaki",
+  "idioma": "en",
+  "imagem": "https://tcgplayer-cdn.tcgplayer.com/product/89605_in_1000x1000.jpg",
+  "mini": "assets/img/cartas/hgss/hgssp/HGSS21-mini.webp"
+ },
+ {
+  "id": "hgssp-HGSS22",
+  "numero": "HGSS22",
+  "nome": "Porygon",
+  "raridade": "Promo",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 50,
+  "categoria": "Pokémon",
+  "ilustrador": "TOKIYA",
+  "idioma": "en",
+  "imagem": "https://tcgplayer-cdn.tcgplayer.com/product/88313_in_1000x1000.jpg",
+  "mini": "assets/img/cartas/hgss/hgssp/HGSS22-mini.webp"
+ },
+ {
+  "id": "hgssp-HGSS23",
+  "numero": "HGSS23",
+  "nome": "Porygon2",
+  "raridade": "Promo",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "TOKIYA",
+  "idioma": "en",
+  "imagem": "https://tcgplayer-cdn.tcgplayer.com/product/88328_in_1000x1000.jpg",
+  "mini": "assets/img/cartas/hgss/hgssp/HGSS23-mini.webp"
+ },
+ {
+  "id": "hgssp-HGSS24",
+  "numero": "HGSS24",
+  "nome": "Hitmonchan",
+  "raridade": "Promo",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Kouki Saitou",
+  "idioma": "en",
+  "imagem": "https://tcgplayer-cdn.tcgplayer.com/product/86097_in_1000x1000.jpg",
+  "mini": "assets/img/cartas/hgss/hgssp/HGSS24-mini.webp"
+ },
+ {
+  "id": "hgssp-HGSS25",
+  "numero": "HGSS25",
+  "nome": "Hitmonlee",
+  "raridade": "Promo",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "Kouki Saitou",
+  "idioma": "en",
+  "imagem": "https://tcgplayer-cdn.tcgplayer.com/product/86109_in_1000x1000.jpg",
+  "mini": "assets/img/cartas/hgss/hgssp/HGSS25-mini.webp"
+ }
+]

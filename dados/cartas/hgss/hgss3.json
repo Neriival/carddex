@@ -1,0 +1,1353 @@
+[
+ {
+  "id": "hgss3-1",
+  "numero": "001",
+  "nome": "Bellossom",
+  "raridade": "Rara Holo",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 110,
+  "categoria": "Pokémon",
+  "ilustrador": "Mitsuhiro Arita",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/1/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/001-mini.webp"
+ },
+ {
+  "id": "hgss3-2",
+  "numero": "002",
+  "nome": "Espeon",
+  "raridade": "Rara Holo",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "match",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/2/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/002-mini.webp"
+ },
+ {
+  "id": "hgss3-3",
+  "numero": "003",
+  "nome": "Forretress",
+  "raridade": "Rara Holo",
+  "tipos": [
+   "Metal"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "Kyoko Umemoto",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/3/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/003-mini.webp"
+ },
+ {
+  "id": "hgss3-4",
+  "numero": "004",
+  "nome": "Gliscor",
+  "raridade": "Rara Holo",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "Naoki Saito",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/4/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/004-mini.webp"
+ },
+ {
+  "id": "hgss3-5",
+  "numero": "005",
+  "nome": "Houndoom",
+  "raridade": "Rara Holo",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "Kagemaru Himeno",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/5/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/005-mini.webp"
+ },
+ {
+  "id": "hgss3-6",
+  "numero": "006",
+  "nome": "Magcargo",
+  "raridade": "Rara Holo",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 100,
+  "categoria": "Pokémon",
+  "ilustrador": "Yuka Morii",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/6/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/006-mini.webp"
+ },
+ {
+  "id": "hgss3-7",
+  "numero": "007",
+  "nome": "Scizor",
+  "raridade": "Rara Holo",
+  "tipos": [
+   "Metal"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "Kent Kanetsuna/Direc. Shinji Higuchi",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/7/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/007-mini.webp"
+ },
+ {
+  "id": "hgss3-8",
+  "numero": "008",
+  "nome": "Smeargle",
+  "raridade": "Rara Holo",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Midori Harada",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/8/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/008-mini.webp"
+ },
+ {
+  "id": "hgss3-9",
+  "numero": "009",
+  "nome": "Togekiss",
+  "raridade": "Rara Holo",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 120,
+  "categoria": "Pokémon",
+  "ilustrador": "Atsuko Nishida",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/9/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/009-mini.webp"
+ },
+ {
+  "id": "hgss3-10",
+  "numero": "010",
+  "nome": "Umbreon",
+  "raridade": "Rara Holo",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "Mitsuhiro Arita",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/10/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/010-mini.webp"
+ },
+ {
+  "id": "hgss3-11",
+  "numero": "011",
+  "nome": "Dodrio",
+  "raridade": "Rara",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "Yukiko Baba",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/11/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/011-mini.webp"
+ },
+ {
+  "id": "hgss3-12",
+  "numero": "012",
+  "nome": "Drifblim",
+  "raridade": "Rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "Kagemaru Himeno",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/12/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/012-mini.webp"
+ },
+ {
+  "id": "hgss3-13",
+  "numero": "013",
+  "nome": "Forretress",
+  "raridade": "Rara",
+  "tipos": [
+   "Metal"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "Kagemaru Himeno",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/13/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/013-mini.webp"
+ },
+ {
+  "id": "hgss3-14",
+  "numero": "014",
+  "nome": "Hariyama",
+  "raridade": "Rara",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 100,
+  "categoria": "Pokémon",
+  "ilustrador": "Tomokazu Komiya",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/14/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/014-mini.webp"
+ },
+ {
+  "id": "hgss3-15",
+  "numero": "015",
+  "nome": "Honchkrow",
+  "raridade": "Rara",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "kawayoo",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/15/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/015-mini.webp"
+ },
+ {
+  "id": "hgss3-16",
+  "numero": "016",
+  "nome": "Honchkrow",
+  "raridade": "Rara",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "Masakazu Fukuda",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/16/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/016-mini.webp"
+ },
+ {
+  "id": "hgss3-17",
+  "numero": "017",
+  "nome": "Leafeon",
+  "raridade": "Rara",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "Noriko Hotta",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/17/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/017-mini.webp"
+ },
+ {
+  "id": "hgss3-18",
+  "numero": "018",
+  "nome": "Metagross",
+  "raridade": "Rara",
+  "tipos": [
+   "Metal"
+  ],
+  "ps": 130,
+  "categoria": "Pokémon",
+  "ilustrador": "TOKIYA",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/18/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/018-mini.webp"
+ },
+ {
+  "id": "hgss3-19",
+  "numero": "019",
+  "nome": "Mismagius",
+  "raridade": "Rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "Suwama Chiaki",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/19/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/019-mini.webp"
+ },
+ {
+  "id": "hgss3-20",
+  "numero": "020",
+  "nome": "Rotom",
+  "raridade": "Rara",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "MAHOU",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/20/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/020-mini.webp"
+ },
+ {
+  "id": "hgss3-21",
+  "numero": "021",
+  "nome": "Skarmory",
+  "raridade": "Rara",
+  "tipos": [
+   "Metal"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "Midori Harada",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/21/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/021-mini.webp"
+ },
+ {
+  "id": "hgss3-22",
+  "numero": "022",
+  "nome": "Tropius",
+  "raridade": "Rara",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "Masakazu Fukuda",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/22/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/022-mini.webp"
+ },
+ {
+  "id": "hgss3-23",
+  "numero": "023",
+  "nome": "Vespiquen",
+  "raridade": "Rara",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 100,
+  "categoria": "Pokémon",
+  "ilustrador": "Naoyo Kimura",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/23/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/023-mini.webp"
+ },
+ {
+  "id": "hgss3-24",
+  "numero": "024",
+  "nome": "Vileplume",
+  "raridade": "Rara",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 120,
+  "categoria": "Pokémon",
+  "ilustrador": "Mitsuhiro Arita",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/24/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/024-mini.webp"
+ },
+ {
+  "id": "hgss3-25",
+  "numero": "025",
+  "nome": "Weavile",
+  "raridade": "Rara",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "Aya Kusube",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/25/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/025-mini.webp"
+ },
+ {
+  "id": "hgss3-26",
+  "numero": "026",
+  "nome": "Flareon",
+  "raridade": "Incomum",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "kawayoo",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/26/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/026-mini.webp"
+ },
+ {
+  "id": "hgss3-27",
+  "numero": "027",
+  "nome": "Gloom",
+  "raridade": "Incomum",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "Mitsuhiro Arita",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/27/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/027-mini.webp"
+ },
+ {
+  "id": "hgss3-28",
+  "numero": "028",
+  "nome": "Jolteon",
+  "raridade": "Incomum",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "Shin Nagasawa",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/28/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/028-mini.webp"
+ },
+ {
+  "id": "hgss3-29",
+  "numero": "029",
+  "nome": "Lairon",
+  "raridade": "Incomum",
+  "tipos": [
+   "Metal"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "match",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/29/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/029-mini.webp"
+ },
+ {
+  "id": "hgss3-30",
+  "numero": "030",
+  "nome": "Metang",
+  "raridade": "Incomum",
+  "tipos": [
+   "Metal"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "TOKIYA",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/30/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/030-mini.webp"
+ },
+ {
+  "id": "hgss3-31",
+  "numero": "031",
+  "nome": "Muk",
+  "raridade": "Incomum",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 100,
+  "categoria": "Pokémon",
+  "ilustrador": "Midori Harada",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/31/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/031-mini.webp"
+ },
+ {
+  "id": "hgss3-32",
+  "numero": "032",
+  "nome": "Pinsir",
+  "raridade": "Incomum",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "match",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/32/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/032-mini.webp"
+ },
+ {
+  "id": "hgss3-33",
+  "numero": "033",
+  "nome": "Raichu",
+  "raridade": "Incomum",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "Kouki Saitou",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/33/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/033-mini.webp"
+ },
+ {
+  "id": "hgss3-34",
+  "numero": "034",
+  "nome": "Raticate",
+  "raridade": "Incomum",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "Sachiko Adachi",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/34/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/034-mini.webp"
+ },
+ {
+  "id": "hgss3-35",
+  "numero": "035",
+  "nome": "Sableye",
+  "raridade": "Incomum",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Midori Harada",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/35/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/035-mini.webp"
+ },
+ {
+  "id": "hgss3-36",
+  "numero": "036",
+  "nome": "Scyther",
+  "raridade": "Incomum",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Wataru Kawahara/Direc. Shinji Higuchi",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/36/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/036-mini.webp"
+ },
+ {
+  "id": "hgss3-37",
+  "numero": "037",
+  "nome": "Skuntank",
+  "raridade": "Incomum",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "Naoyo Kimura",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/37/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/037-mini.webp"
+ },
+ {
+  "id": "hgss3-38",
+  "numero": "038",
+  "nome": "Slowbro",
+  "raridade": "Incomum",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "Kagemaru Himeno",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/38/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/038-mini.webp"
+ },
+ {
+  "id": "hgss3-39",
+  "numero": "039",
+  "nome": "Togetic",
+  "raridade": "Incomum",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "Atsuko Nishida",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/39/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/039-mini.webp"
+ },
+ {
+  "id": "hgss3-40",
+  "numero": "040",
+  "nome": "Unown",
+  "raridade": "Incomum",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 50,
+  "categoria": "Pokémon",
+  "ilustrador": "Hideaki Hakozaki",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/40/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/040-mini.webp"
+ },
+ {
+  "id": "hgss3-41",
+  "numero": "041",
+  "nome": "Vaporeon",
+  "raridade": "Incomum",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "sui",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/41/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/041-mini.webp"
+ },
+ {
+  "id": "hgss3-42",
+  "numero": "042",
+  "nome": "Aron",
+  "raridade": "Comum",
+  "tipos": [
+   "Metal"
+  ],
+  "ps": 50,
+  "categoria": "Pokémon",
+  "ilustrador": "match",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/42/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/042-mini.webp"
+ },
+ {
+  "id": "hgss3-43",
+  "numero": "043",
+  "nome": "Beldum",
+  "raridade": "Comum",
+  "tipos": [
+   "Metal"
+  ],
+  "ps": 50,
+  "categoria": "Pokémon",
+  "ilustrador": "TOKIYA",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/43/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/043-mini.webp"
+ },
+ {
+  "id": "hgss3-44",
+  "numero": "044",
+  "nome": "Combee",
+  "raridade": "Comum",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 30,
+  "categoria": "Pokémon",
+  "ilustrador": "Naoyo Kimura",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/44/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/044-mini.webp"
+ },
+ {
+  "id": "hgss3-45",
+  "numero": "045",
+  "nome": "Doduo",
+  "raridade": "Comum",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 50,
+  "categoria": "Pokémon",
+  "ilustrador": "Yukiko Baba",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/45/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/045-mini.webp"
+ },
+ {
+  "id": "hgss3-46",
+  "numero": "046",
+  "nome": "Drifloon",
+  "raridade": "Comum",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 50,
+  "categoria": "Pokémon",
+  "ilustrador": "Kagemaru Himeno",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/46/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/046-mini.webp"
+ },
+ {
+  "id": "hgss3-47",
+  "numero": "047",
+  "nome": "Eevee",
+  "raridade": "Comum",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 50,
+  "categoria": "Pokémon",
+  "ilustrador": "Kanako Eo",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/47/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/047-mini.webp"
+ },
+ {
+  "id": "hgss3-48",
+  "numero": "048",
+  "nome": "Eevee",
+  "raridade": "Comum",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 50,
+  "categoria": "Pokémon",
+  "ilustrador": "Noriko Hotta",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/48/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/048-mini.webp"
+ },
+ {
+  "id": "hgss3-49",
+  "numero": "049",
+  "nome": "Gligar",
+  "raridade": "Comum",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Naoki Saito",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/49/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/049-mini.webp"
+ },
+ {
+  "id": "hgss3-50",
+  "numero": "050",
+  "nome": "Grimer",
+  "raridade": "Comum",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Midori Harada",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/50/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/050-mini.webp"
+ },
+ {
+  "id": "hgss3-51",
+  "numero": "051",
+  "nome": "Hitmonchan",
+  "raridade": "Comum",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Kouki Saitou",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/51/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/051-mini.webp"
+ },
+ {
+  "id": "hgss3-52",
+  "numero": "052",
+  "nome": "Hitmonlee",
+  "raridade": "Comum",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "Kouki Saitou",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/52/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/052-mini.webp"
+ },
+ {
+  "id": "hgss3-53",
+  "numero": "053",
+  "nome": "Houndour",
+  "raridade": "Comum",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 50,
+  "categoria": "Pokémon",
+  "ilustrador": "kawayoo",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/53/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/053-mini.webp"
+ },
+ {
+  "id": "hgss3-54",
+  "numero": "054",
+  "nome": "Houndour",
+  "raridade": "Comum",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 50,
+  "categoria": "Pokémon",
+  "ilustrador": "Kagemaru Himeno",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/54/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/054-mini.webp"
+ },
+ {
+  "id": "hgss3-55",
+  "numero": "055",
+  "nome": "Makuhita",
+  "raridade": "Comum",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Tomokazu Komiya",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/55/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/055-mini.webp"
+ },
+ {
+  "id": "hgss3-56",
+  "numero": "056",
+  "nome": "Mawile",
+  "raridade": "Comum",
+  "tipos": [
+   "Metal"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "TOKIYA",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/56/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/056-mini.webp"
+ },
+ {
+  "id": "hgss3-57",
+  "numero": "057",
+  "nome": "Misdreavus",
+  "raridade": "Comum",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Suwama Chiaki",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/57/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/057-mini.webp"
+ },
+ {
+  "id": "hgss3-58",
+  "numero": "058",
+  "nome": "Murkrow",
+  "raridade": "Comum",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "kawayoo",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/58/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/058-mini.webp"
+ },
+ {
+  "id": "hgss3-59",
+  "numero": "059",
+  "nome": "Murkrow",
+  "raridade": "Comum",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Masakazu Fukuda",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/59/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/059-mini.webp"
+ },
+ {
+  "id": "hgss3-60",
+  "numero": "060",
+  "nome": "Oddish",
+  "raridade": "Comum",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 40,
+  "categoria": "Pokémon",
+  "ilustrador": "Mitsuhiro Arita",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/60/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/060-mini.webp"
+ },
+ {
+  "id": "hgss3-61",
+  "numero": "061",
+  "nome": "Pikachu",
+  "raridade": "Comum",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 50,
+  "categoria": "Pokémon",
+  "ilustrador": "Kouki Saitou",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/61/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/061-mini.webp"
+ },
+ {
+  "id": "hgss3-62",
+  "numero": "062",
+  "nome": "Pineco",
+  "raridade": "Comum",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Kagemaru Himeno",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/62/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/062-mini.webp"
+ },
+ {
+  "id": "hgss3-63",
+  "numero": "063",
+  "nome": "Pineco",
+  "raridade": "Comum",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Kyoko Umemoto",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/63/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/063-mini.webp"
+ },
+ {
+  "id": "hgss3-64",
+  "numero": "064",
+  "nome": "Rattata",
+  "raridade": "Comum",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 40,
+  "categoria": "Pokémon",
+  "ilustrador": "Sachiko Adachi",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/64/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/064-mini.webp"
+ },
+ {
+  "id": "hgss3-65",
+  "numero": "065",
+  "nome": "Scyther",
+  "raridade": "Comum",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Masakazu Fukuda",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/65/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/065-mini.webp"
+ },
+ {
+  "id": "hgss3-66",
+  "numero": "066",
+  "nome": "Slowpoke",
+  "raridade": "Comum",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Kagemaru Himeno",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/66/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/066-mini.webp"
+ },
+ {
+  "id": "hgss3-67",
+  "numero": "067",
+  "nome": "Slugma",
+  "raridade": "Comum",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Yuka Morii",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/67/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/067-mini.webp"
+ },
+ {
+  "id": "hgss3-68",
+  "numero": "068",
+  "nome": "Sneasel",
+  "raridade": "Comum",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Aya Kusube",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/68/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/068-mini.webp"
+ },
+ {
+  "id": "hgss3-69",
+  "numero": "069",
+  "nome": "Stunky",
+  "raridade": "Comum",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Naoyo Kimura",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/69/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/069-mini.webp"
+ },
+ {
+  "id": "hgss3-70",
+  "numero": "070",
+  "nome": "Togepi",
+  "raridade": "Comum",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 40,
+  "categoria": "Pokémon",
+  "ilustrador": "Atsuko Nishida",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/70/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/070-mini.webp"
+ },
+ {
+  "id": "hgss3-71",
+  "numero": "071",
+  "nome": "Burned Tower",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": 0,
+  "categoria": "Treinador",
+  "ilustrador": "Ryo Ueda",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/71/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/071-mini.webp"
+ },
+ {
+  "id": "hgss3-72",
+  "numero": "072",
+  "nome": "Defender",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": 0,
+  "categoria": "Treinador",
+  "ilustrador": "Ryo Ueda",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/72/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/072-mini.webp"
+ },
+ {
+  "id": "hgss3-73",
+  "numero": "073",
+  "nome": "Energy Exchanger",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": 0,
+  "categoria": "Treinador",
+  "ilustrador": "Ryo Ueda",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/73/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/073-mini.webp"
+ },
+ {
+  "id": "hgss3-74",
+  "numero": "074",
+  "nome": "Flower Shop Lady",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": 0,
+  "categoria": "Treinador",
+  "ilustrador": "Kanako Eo",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/74/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/074-mini.webp"
+ },
+ {
+  "id": "hgss3-75",
+  "numero": "075",
+  "nome": "Legend Box",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": 0,
+  "categoria": "Treinador",
+  "ilustrador": "Shizurow",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/75/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/075-mini.webp"
+ },
+ {
+  "id": "hgss3-76",
+  "numero": "076",
+  "nome": "Ruins of Alph",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": 0,
+  "categoria": "Treinador",
+  "ilustrador": "Ryo Ueda",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/76/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/076-mini.webp"
+ },
+ {
+  "id": "hgss3-77",
+  "numero": "077",
+  "nome": "Sage's Training",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": 0,
+  "categoria": "Treinador",
+  "ilustrador": "Masakazu Fukuda",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/77/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/077-mini.webp"
+ },
+ {
+  "id": "hgss3-78",
+  "numero": "078",
+  "nome": "Team Rocket's Trickery",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": 0,
+  "categoria": "Treinador",
+  "ilustrador": "Takao Unno",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/78/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/078-mini.webp"
+ },
+ {
+  "id": "hgss3-79",
+  "numero": "079",
+  "nome": "Darkness Energy",
+  "raridade": "Incomum",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 0,
+  "categoria": "Energia",
+  "ilustrador": "Kent Kanetsuna",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/79/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/079-mini.webp"
+ },
+ {
+  "id": "hgss3-80",
+  "numero": "080",
+  "nome": "Metal Energy",
+  "raridade": "Incomum",
+  "tipos": [
+   "Metal"
+  ],
+  "ps": null,
+  "categoria": "Energia",
+  "ilustrador": "Kent Kanetsuna",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/80/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/080-mini.webp"
+ },
+ {
+  "id": "hgss3-81",
+  "numero": "081",
+  "nome": "Espeon",
+  "raridade": "Rare PRIME",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 100,
+  "categoria": "Pokémon",
+  "ilustrador": "Hideaki Hakozaki",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/81/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/081-mini.webp"
+ },
+ {
+  "id": "hgss3-82",
+  "numero": "082",
+  "nome": "Houndoom",
+  "raridade": "Rare PRIME",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 110,
+  "categoria": "Pokémon",
+  "ilustrador": "Hideaki Hakozaki",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/82/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/082-mini.webp"
+ },
+ {
+  "id": "hgss3-83",
+  "numero": "083",
+  "nome": "Raichu",
+  "raridade": "Rare PRIME",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 100,
+  "categoria": "Pokémon",
+  "ilustrador": "Takashi Yamaguchi",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/83/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/083-mini.webp"
+ },
+ {
+  "id": "hgss3-84",
+  "numero": "084",
+  "nome": "Scizor",
+  "raridade": "Rare PRIME",
+  "tipos": [
+   "Metal"
+  ],
+  "ps": 100,
+  "categoria": "Pokémon",
+  "ilustrador": "Noriko Hotta",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/84/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/084-mini.webp"
+ },
+ {
+  "id": "hgss3-85",
+  "numero": "085",
+  "nome": "Slowking",
+  "raridade": "Rare PRIME",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 100,
+  "categoria": "Pokémon",
+  "ilustrador": "Noriko Hotta",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/85/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/085-mini.webp"
+ },
+ {
+  "id": "hgss3-86",
+  "numero": "086",
+  "nome": "Umbreon",
+  "raridade": "Rare PRIME",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 100,
+  "categoria": "Pokémon",
+  "ilustrador": "Hideaki Hakozaki",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/86/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/086-mini.webp"
+ },
+ {
+  "id": "hgss3-87",
+  "numero": "087",
+  "nome": "Kyogre & Groudon LEGEND",
+  "raridade": "LEGEND",
+  "tipos": [
+   "Água",
+   "Lutador"
+  ],
+  "ps": 150,
+  "categoria": "Pokémon",
+  "ilustrador": "Shinji Higuchi + Sachiko Eba",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/87/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/087-mini.webp"
+ },
+ {
+  "id": "hgss3-88",
+  "numero": "088",
+  "nome": "Kyogre & Groudon LEGEND",
+  "raridade": "LEGEND",
+  "tipos": [
+   "Água",
+   "Lutador"
+  ],
+  "ps": 150,
+  "categoria": "Pokémon",
+  "ilustrador": "Shinji Higuchi + Sachiko Eba",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/88/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/088-mini.webp"
+ },
+ {
+  "id": "hgss3-89",
+  "numero": "089",
+  "nome": "Rayquaza & Deoxys LEGEND",
+  "raridade": "LEGEND",
+  "tipos": [
+   "Incolor",
+   "Psíquico"
+  ],
+  "ps": 140,
+  "categoria": "Pokémon",
+  "ilustrador": "Shinji Higuchi + Sachiko Eba",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/89/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/089-mini.webp"
+ },
+ {
+  "id": "hgss3-90",
+  "numero": "090",
+  "nome": "Rayquaza & Deoxys LEGEND",
+  "raridade": "LEGEND",
+  "tipos": [
+   "Incolor",
+   "Psíquico"
+  ],
+  "ps": 140,
+  "categoria": "Pokémon",
+  "ilustrador": "Shinji Higuchi + Sachiko Eba",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/90/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/090-mini.webp"
+ },
+ {
+  "id": "hgss3-THREE",
+  "numero": "THREE",
+  "nome": "Alph Lithograph",
+  "raridade": "Ultra Rara",
+  "tipos": [],
+  "ps": 0,
+  "categoria": "Treinador",
+  "ilustrador": "Milky Isobe",
+  "idioma": "en",
+  "imagem": "https://assets.tcgdex.net/en/hgss/hgss3/THREE/high.webp",
+  "mini": "assets/img/cartas/hgss/hgss3/THREE-mini.webp"
+ }
+]

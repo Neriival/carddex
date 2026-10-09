@@ -35,8 +35,8 @@ function seriesDoJogo(id) { return ESTADO.series.filter(function (s) { return s.
 // Número como vem impresso na carta: { numero: '211/193', codigo: 'PAL PT' }
 // - total depois da barra: "oficial" da coleção (series.json); promos e coleções clássicas não têm
 // - número com letras (TG01, RC5, SV1): o total é das cartas com as mesmas letras (TG01/TG30, RC5/RC32)
-// - Preto e Branco, XY e Sol e Lua imprimem sem zeros à esquerda (1/146); da Espada e Escudo em diante, com (001/202)
-var SERIES_SEM_ZEROS = ['sm', 'xy', 'bw'];
+// - HGSS, Preto e Branco, XY e Sol e Lua imprimem sem zeros à esquerda (1/146); da Espada e Escudo em diante, com (001/202)
+var SERIES_SEM_ZEROS = ['sm', 'xy', 'bw', 'hgss'];
 function numeroCarta(c, k) {
   var m = /^([A-Za-z]*)(\d+)$/.exec(k.numero), semZeros = SERIES_SEM_ZEROS.indexOf(c.serie) > -1;
   var codigo = c.sigla ? c.sigla + ' ' + (k.idioma || 'pt').toUpperCase() : '';

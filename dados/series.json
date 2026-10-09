@@ -913,6 +913,62 @@
           "oficial": 113
         }
       ]
+    },
+    {
+      "id": "hgss",
+      "nome": "HeartGold SoulSilver",
+      "jogo": "pokemon",
+      "imagens": "mini",
+      "colecoes": [
+        {
+          "id": "hgss1",
+          "nome": "HeartGold SoulSilver",
+          "nomeFixo": true,
+          "lancamento": "2010-02-10",
+          "total": 124,
+          "sigla": "HS",
+          "oficial": 123
+        },
+        {
+          "id": "hgssp",
+          "nome": "Promos Black Star HGSS",
+          "nomeFixo": true,
+          "lancamento": "2010-02-11",
+          "total": 25
+        },
+        {
+          "id": "hgss2",
+          "nome": "Revelado",
+          "lancamento": "2010-05-12",
+          "total": 96,
+          "sigla": "UL",
+          "oficial": 95
+        },
+        {
+          "id": "hgss3",
+          "nome": "Destemido",
+          "lancamento": "2010-08-18",
+          "total": 91,
+          "sigla": "UND",
+          "oficial": 90
+        },
+        {
+          "id": "hgss4",
+          "nome": "Triunfante",
+          "lancamento": "2010-11-03",
+          "total": 103,
+          "sigla": "TRI",
+          "oficial": 102
+        },
+        {
+          "id": "col1",
+          "nome": "Chamado das Lendas",
+          "lancamento": "2011-02-09",
+          "total": 106,
+          "sigla": "COL",
+          "oficial": 95
+        }
+      ]
     }
   ]
 }

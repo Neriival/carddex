@@ -53,6 +53,8 @@ SIGLAS = {
     # Preto e Branco (as cartas RC de Tesouros Lendários estão na própria LTR)
     'bw1': 'BLW', 'bwp': 'BWPR', 'bw2': 'EPO', 'bw3': 'NVI', 'bw4': 'NXD', 'bw5': 'DEX', 'bw6': 'DRX',
     'dv1': 'DRV', 'bw7': 'BCR', 'bw8': 'PLS', 'bw9': 'PLF', 'bw10': 'PLB', 'bw11': 'LTR',
+    # HeartGold SoulSilver
+    'hgss1': 'HS', 'hgssp': 'HSPR', 'hgss2': 'UL', 'hgss3': 'UD', 'hgss4': 'TM', 'col1': 'CL',
 }
 
 # Coleções em que a Liga usa outra numeração (o número original de cada carta), mas na mesma ordem:
