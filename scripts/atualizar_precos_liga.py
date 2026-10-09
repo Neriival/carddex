@@ -50,6 +50,9 @@ SIGLAS = {
     'xyp': 'XYPR', 'xy0': 'KSS', 'xy1': 'XY', 'xy2': 'FLF', 'xy3': 'FFI', 'xy4': 'PHF', 'xy5': 'PRC',
     'dc1': 'DCR', 'xy6': 'ROS', 'xy7': 'AOR', 'xy8': 'BKT', 'xy9': 'BKP', 'g1': 'GEN', 'xy10': 'FCO',
     'xy11': 'STS', 'xy12': 'EVO',
+    # Preto e Branco (as cartas RC de Tesouros Lendários estão na própria LTR)
+    'bw1': 'BLW', 'bwp': 'BWPR', 'bw2': 'EPO', 'bw3': 'NVI', 'bw4': 'NXD', 'bw5': 'DEX', 'bw6': 'DRX',
+    'dv1': 'DRV', 'bw7': 'BCR', 'bw8': 'PLS', 'bw9': 'PLF', 'bw10': 'PLB', 'bw11': 'LTR',
 }
 
 # Coleções em que a Liga usa outra numeração (o número original de cada carta), mas na mesma ordem:

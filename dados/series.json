@@ -800,6 +800,119 @@
           "oficial": 108
         }
       ]
+    },
+    {
+      "id": "bw",
+      "nome": "Preto e Branco",
+      "jogo": "pokemon",
+      "imagens": "mini",
+      "colecoes": [
+        {
+          "id": "bw1",
+          "nome": "Preto e Branco",
+          "nomeFixo": true,
+          "lancamento": "2011-04-25",
+          "total": 115,
+          "sigla": "BLW",
+          "oficial": 114
+        },
+        {
+          "id": "bwp",
+          "nome": "Promos Black Star PB",
+          "nomeFixo": true,
+          "lancamento": "2011-04-26",
+          "total": 101,
+          "sigla": "BWP"
+        },
+        {
+          "id": "bw2",
+          "nome": "Poderes Emergentes",
+          "lancamento": "2011-08-31",
+          "total": 98,
+          "sigla": "EP",
+          "oficial": 98
+        },
+        {
+          "id": "bw3",
+          "nome": "Vitórias Nobres",
+          "lancamento": "2011-11-16",
+          "total": 102,
+          "sigla": "NVI",
+          "oficial": 101
+        },
+        {
+          "id": "bw4",
+          "nome": "Próximos Destinos",
+          "lancamento": "2012-02-08",
+          "total": 103,
+          "sigla": "NXD",
+          "oficial": 99
+        },
+        {
+          "id": "bw5",
+          "nome": "Exploradores da Escuridão",
+          "lancamento": "2012-05-09",
+          "total": 111,
+          "sigla": "DEX",
+          "oficial": 108
+        },
+        {
+          "id": "bw6",
+          "nome": "Dragões Enaltecidos",
+          "lancamento": "2012-08-15",
+          "total": 128,
+          "sigla": "DRX",
+          "oficial": 124
+        },
+        {
+          "id": "dv1",
+          "nome": "Cofre do Dragão",
+          "lancamento": "2012-10-05",
+          "total": 21,
+          "sigla": "DRV",
+          "oficial": 20
+        },
+        {
+          "id": "bw7",
+          "nome": "Fronteiras Cruzadas",
+          "lancamento": "2012-11-07",
+          "total": 153,
+          "sigla": "BCR",
+          "oficial": 149
+        },
+        {
+          "id": "bw8",
+          "nome": "Tempestade de Plasma",
+          "lancamento": "2013-02-06",
+          "total": 138,
+          "sigla": "PLS",
+          "oficial": 135
+        },
+        {
+          "id": "bw9",
+          "nome": "Congelamento de Plasma",
+          "lancamento": "2013-05-08",
+          "total": 122,
+          "sigla": "PLF",
+          "oficial": 116
+        },
+        {
+          "id": "bw10",
+          "nome": "Explosão de Plasma",
+          "lancamento": "2013-08-14",
+          "total": 105,
+          "sigla": "PLB",
+          "oficial": 101
+        },
+        {
+          "id": "bw11",
+          "nome": "Tesouros Lendários",
+          "lancamento": "2013-11-06",
+          "total": 140,
+          "sigla": "LTR",
+          "oficial": 113
+        }
+      ]
     }
   ]
 }
