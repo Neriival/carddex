@@ -89,7 +89,7 @@ async function desenharFaltantes(c, lista, filtro, modo) {
     else { ctx.fillStyle = '#ffc61a'; ctx.font = '800 ' + Math.round(cw / 4) + 'px ' + F; ctx.textAlign = 'center'; ctx.fillText(k.numero, x + cw / 2, y + ch / 2); ctx.textAlign = 'left'; }
     ctx.restore();
     ctx.textAlign = 'center';
-    ctx.fillStyle = '#ffc61a'; ctx.font = '800 ' + fonteRot + 'px ' + F; ctx.fillText('Nº ' + k.numero + (rep ? '  ·  ' + qtdRepetida(c.id, k.id) + 'x' : ''), x + cw / 2, y + ch + fonteRot * 1.15);
+    ctx.fillStyle = '#ffc61a'; ctx.font = '800 ' + fonteRot + 'px ' + F; ctx.fillText('Nº ' + numeroCarta(c, k).numero + (rep ? '  ·  ' + qtdRepetida(c.id, k.id) + 'x' : ''), x + cw / 2, y + ch + fonteRot * 1.15);
     ctx.fillStyle = '#eaf2ff'; ctx.font = '400 ' + Math.round(fonteRot * .85) + 'px ' + F;
     ctx.fillText(cortarTexto(ctx, k.nome || '', cw), x + cw / 2, y + ch + fonteRot * 2.2);
     ctx.textAlign = 'left';

@@ -25,6 +25,7 @@
 
 /* ===== CARTA NA GRADE: escurecida = não tenho, colorida com borda dourada = tenho ===== */
 .carta-item{display:flex;flex-direction:column;gap:4px;min-width:0}
+.num-carta{text-align:center;font-size:.72rem;color:var(--mut);letter-spacing:.02em;white-space:nowrap;margin-bottom:-4px}
 .preco{text-align:center;font-size:.85rem;font-weight:600;color:var(--gold);white-space:nowrap}
 .preco.sem{color:var(--line)}
 .carta{position:relative;aspect-ratio:5/7;border-radius:10px;border:1px dashed var(--line);background:var(--p1);color:var(--mut);font:inherit;font-weight:600;cursor:default;padding:0;overflow:hidden}
@@ -49,6 +50,6 @@
   .colecoes.jogos{grid-template-columns:repeat(3,1fr);gap:8px}
   .jogo-btn{padding:14px 6px}.jogo-btn img{height:60px;width:60px;margin-bottom:4px}.jogo-btn h3{font-size:.95rem}
   .check{width:30px;height:30px}
-  .preco{font-size:.75rem}
+  .preco{font-size:.75rem}.num-carta{font-size:.66rem}
   .rep-mini{left:3px;right:3px;bottom:3px}.rep-mini button{width:24px;height:24px;font-size:.95rem}.rep-mini b{font-size:.7rem}
 }

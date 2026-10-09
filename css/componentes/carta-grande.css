@@ -20,6 +20,7 @@
 .info h3{margin:0 0 4px;font-size:1.7rem;color:var(--gold)}
 .info dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:16px 0}.info dt{color:var(--mut)}.info dd{margin:0}
 .info .btn{width:100%}
+.num-info .codigo{display:inline-block;margin-left:6px;padding:1px 7px;border:1px solid var(--line);border-radius:6px;font-size:.78rem;font-weight:700;letter-spacing:.06em;color:var(--mut);vertical-align:1px}
 .preco-info{color:var(--gold);font-weight:800}
 .preco-info small{display:block;color:var(--mut);font-weight:400;font-size:.85rem}
 .nota-preco{font-size:.75rem;margin:-6px 0 4px}

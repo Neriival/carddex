@@ -6,6 +6,7 @@ Uso (na pasta do projeto):
     python scripts/baixar_cartas.py me           # só a série Mega Evolução
     python scripts/baixar_cartas.py sv01 me05    # só algumas coleções
     python scripts/baixar_cartas.py --listar me  # mostra as coleções da série na TCGdex
+    python scripts/baixar_cartas.py --numeracao  # só a sigla e o total impresso de cada coleção (rápido)
 
 Gera:
     dados/cartas/<serie>/<colecao>.json
@@ -13,7 +14,9 @@ Gera:
     assets/img/cartas/<serie>/<colecao>/001-mini.webp   (miniatura rápida)
     assets/img/colecoes/<serie>/<colecao>.webp          (logo da coleção)
     assets/img/series/<serie>.webp                      (logo da série, se existir)
-Também atualiza o "total" de cada coleção no dados/series.json.
+Também atualiza no dados/series.json, em cada coleção: "total" (cartas no CardDex), "sigla" (código
+oficial impresso na carta, ex.: PAL) e "oficial" (total impresso depois da barra, ex.: 193 em 211/193).
+Uma "sigla" escrita à mão no series.json é mantida quando a TCGdex não tem a da coleção.
 Fonte: TCGdex (https://tcgdex.dev). Sem tradução em português -> usa inglês nessa carta.
 Pode rodar de novo: arquivos já baixados são pulados.
 """
@@ -76,6 +79,23 @@ def resolver_id(serie_id, col):
                 return x['id']
     return col.get('tcgdex', col['id'])
 
+def numeracao(tid, col):
+    """Sigla oficial (PAL) e total impresso na carta (193 em 211/193) da coleção, pela TCGdex em inglês."""
+    conj = baixar(f'{API}/en/sets/{tid}')
+    if not conj:
+        return False
+    sigla = ((conj.get('abbreviation') or {}).get('official') or '').split(':')[0]  # 'BRS:TG' (galeria) → 'BRS'
+    if sigla:
+        col['sigla'] = sigla
+    oficial = (conj.get('cardCount') or {}).get('official')
+    # promos não têm total impresso (a carta mostra só o número, ex.: SVP 001)
+    # "semTotal": true no series.json = reimpressões que trazem o número original da carta antiga (coleções clássicas)
+    if oficial and 'promo' not in conj.get('name', '').lower() and not col.get('semTotal'):
+        col['oficial'] = oficial
+    else:
+        col.pop('oficial', None)
+    return True
+
 def processar_carta(args):
     serie_id, colecao, ref, so_mini = args
     cid = ref['id']
@@ -131,6 +151,13 @@ def main():
         return listar(args[1] if len(args) > 1 else 'me')
     caminho = RAIZ / 'dados' / 'series.json'
     dados = json.loads(caminho.read_text(encoding='utf-8'))
+    if args and args[0] == '--numeracao':
+        for serie in dados['series']:
+            for col in serie['colecoes']:
+                ok = numeracao(resolver_id(serie['id'], col), col)
+                print(f"{col['id']:<10} {col.get('sigla', '?'):<6} {col.get('oficial', '-')}" + ('' if ok else '  (não encontrei na TCGdex)'))
+        caminho.write_text(json.dumps(dados, ensure_ascii=False, indent=2), encoding='utf-8')
+        return
     for serie in dados['series']:
         # logo da série (português; se não existir, inglês)
         for idioma in ('pt', 'en'):
@@ -175,6 +202,7 @@ def main():
             saida.parent.mkdir(parents=True, exist_ok=True)
             saida.write_text(json.dumps(res, ensure_ascii=False, indent=1), encoding='utf-8')
             col['total'] = len(res)
+            numeracao(tid, col)
             print(f'  {len(res)} cartas salvas em {saida.relative_to(RAIZ)}')
     caminho.write_text(json.dumps(dados, ensure_ascii=False, indent=2), encoding='utf-8')
     print('\nPronto! Abra o projeto com o Live Server.')

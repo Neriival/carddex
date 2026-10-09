@@ -52,6 +52,8 @@ ESTRUTURA
      colecao-de.js (coleção de outra pessoa)  admin.js
 
  dados/series.json              jogos, séries e coleções (em ordem de lançamento)
+                                em cada coleção: "sigla" (PAL) e "oficial" (193) formam o número impresso
+                                PAL PT 211/193 (preenchidos por: python scripts/baixar_cartas.py --numeracao)
  dados/cartas/<serie>/<colecao>.json
  dados/precos-liga/<serie>.json preços da Liga Pokémon (gerado pelo script da Liga, não editar)
  dados/precos/<serie>.json      preços do Cardmarket, reserva (gerado pelo script de preços, não editar)

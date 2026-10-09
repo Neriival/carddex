@@ -53,15 +53,17 @@ function seletorOrdem(c) {
     }).join('') + '</select></label>';
 }
 
-// Uma carta na grade com o preço embaixo (também usada em Minhas cartas). y = tem a carta.
+// Uma carta na grade com o número e o preço embaixo (também usada em Minhas cartas). y = tem a carta.
 function cartaGrade(c, k, y) {
   var src = k.mini || k.imagem, v = valorCarta(c, k.id);
   return '<div class="carta-item"><div class="carta' + (y ? ' tenho' : '') + '">' + (y ? repGradeHtml(c.id, k.id) : '') +
     '<button class="abrir" onclick="abrirCarta(\'' + c.id + '\',\'' + k.id + '\')" title="Ver ' + esc(k.nome) + '">' +
     (src ? '<img loading="lazy" src="' + esc(src) + '" alt="' + esc(k.nome) + '">' : '<span>' + esc(k.numero) + '</span>') + '</button>' +
     '<button class="check" onclick="marcarRapido(this,\'' + c.id + '\',\'' + k.id + '\')" aria-label="Marcar ' + esc(k.nome) + ' como tenho" title="Marcar como tenho">' + (y ? '✓' : '') + '</button></div>' +
-    precoGrade(v) + '</div>';
+    numGrade(c, k) + precoGrade(v) + '</div>';
 }
+// Número impresso embaixo da carta (211/193)
+function numGrade(c, k) { return '<span class="num-carta">' + esc(numeroCarta(c, k).numero) + '</span>'; }
 // Preço embaixo da carta ("–" quando não tem)
 function precoGrade(v) { return '<span class="preco' + (v ? '' : ' sem') + '">' + (v ? reais(v) : '–') + '</span>'; }
 

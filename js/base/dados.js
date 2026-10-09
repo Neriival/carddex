@@ -32,6 +32,22 @@ function acharSerie(id) { return ESTADO.series.filter(function (s) { return s.id
 function acharJogo(id) { return ESTADO.jogos.filter(function (j) { return j.id === id; })[0]; }
 function seriesDoJogo(id) { return ESTADO.series.filter(function (s) { return s.jogo === id; }); }
 
+// Número como vem impresso na carta: { numero: '211/193', codigo: 'PAL PT' }
+// - total depois da barra: "oficial" da coleção (series.json); promos e coleções clássicas não têm
+// - número com letras (TG01, RC5, SV1): o total é das cartas com as mesmas letras (TG01/TG30, RC5/RC32)
+// - Sol e Lua e XY imprimem sem zeros à esquerda (1/146); da Espada e Escudo em diante, com (001/202)
+var SERIES_SEM_ZEROS = ['sm', 'xy'];
+function numeroCarta(c, k) {
+  var m = /^([A-Za-z]*)(\d+)$/.exec(k.numero), semZeros = SERIES_SEM_ZEROS.indexOf(c.serie) > -1;
+  var codigo = c.sigla ? c.sigla + ' ' + (k.idioma || 'pt').toUpperCase() : '';
+  if (!m || !c.oficial) return { numero: k.numero, codigo: codigo };
+  var letras = m[1], dig = semZeros ? String(+m[2]) : m[2], total = c.oficial;
+  if (letras) total = (ESTADO.cartas[c.id] || []).filter(function (x) { var y = /^([A-Za-z]*)\d+$/.exec(x.numero); return y && y[1] === letras; }).length || total;
+  total = String(total);
+  if (!semZeros) while (total.length < dig.length) total = '0' + total;
+  return { numero: letras + dig + '/' + letras + total, codigo: codigo };
+}
+
 // Lê dados/series.json e deixa séries e coleções em ordem de lançamento (mais novas primeiro)
 async function carregarSeries() {
   var r = await fetch('dados/series.json'), d = await r.json();
