@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Completa as imagens que a TCGdex não tem: Pokémon TCG API (images.pokemontcg.io) e, se lá também não tiver, TCGplayer.
+"""Completa as imagens que a TCGdex não tem: Pokémon TCG API (images.pokemontcg.io), TCGplayer e Limitless TCG.
 
 Uso (na pasta do projeto, depois do baixar_cartas.py):
     python scripts/completar_imagens.py svp            # uma coleção
@@ -12,6 +12,8 @@ Para cada carta sem imagem em dados/cartas/<serie>/<colecao>.json:
 Se a Pokémon TCG API não tiver a carta, usa a foto da TCGplayer (o número do produto vem da TCGdex):
   - séries com "imagens": "mini" guardam só a miniatura e a carta grande fica com o endereço da TCGplayer
   - as outras guardam também a grande em <numero>.webp
+Por último tenta a Limitless TCG, pela sigla da coleção (series.json) e o número: .../tpci/SVP/SVP_102_R_EN_LG.png
+(mesma regra: miniatura sempre; a grande dentro do projeto ou com o endereço da Limitless).
 Carta que não existe em nenhuma das bases continua sem imagem (o site mostra o número).
 """
 import io, json, sys, time, urllib.request, urllib.error
@@ -22,6 +24,7 @@ RAIZ = Path(__file__).resolve().parent.parent
 IMG = 'https://images.pokemontcg.io'
 TCGDEX = 'https://api.tcgdex.net/v2/en/cards/'
 TCGPLAYER = 'https://tcgplayer-cdn.tcgplayer.com/product/{}_in_1000x1000.jpg'
+LIMITLESS = 'https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/{0}/{0}_{1}_R_EN_LG.png'
 MINI = (245, 337)  # mesmo tamanho das miniaturas da TCGdex
 
 
@@ -91,6 +94,9 @@ def main():
                 else:
                     url = foto_tcgplayer(k['id'])
                     foto = url and baixar(url)
+                    if not foto and c.get('sigla') and k['numero'].isdigit():
+                        url = LIMITLESS.format(c['sigla'], k['numero'].zfill(3))
+                        foto = baixar(url)
                     if not foto:
                         continue
                     pasta = RAIZ / 'assets' / 'img' / 'cartas' / s['id'] / c['id']

@@ -4453,8 +4453,8 @@
   "categoria": "Pokémon",
   "ilustrador": "N-DESIGN Inc.",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://tcgplayer-cdn.tcgplayer.com/product/544371_in_1000x1000.jpg",
+  "mini": "assets/img/cartas/swsh/swshp/SWSH299-mini.webp"
  },
  {
   "id": "swshp-SWSH300",
@@ -4468,8 +4468,8 @@
   "categoria": "Pokémon",
   "ilustrador": "PLANETA Mochizuki",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://tcgplayer-cdn.tcgplayer.com/product/505968_in_1000x1000.jpg",
+  "mini": "assets/img/cartas/swsh/swshp/SWSH300-mini.webp"
  },
  {
   "id": "swshp-SWSH301",
@@ -4483,8 +4483,8 @@
   "categoria": "Pokémon",
   "ilustrador": "PLANETA Mochizuki",
   "idioma": "en",
-  "imagem": null,
-  "mini": null
+  "imagem": "https://tcgplayer-cdn.tcgplayer.com/product/505996_in_1000x1000.jpg",
+  "mini": "assets/img/cartas/swsh/swshp/SWSH301-mini.webp"
  },
  {
   "id": "swshp-SWSH302",
