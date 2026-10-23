@@ -1,0 +1,15 @@
+{
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+  "editor.rulers": [120],
+  "files.encoding": "utf8",
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "[python]": {
+    "editor.tabSize": 4
+  },
+  "[markdown]": {
+    "files.trimTrailingWhitespace": false
+  }
+}

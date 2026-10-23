@@ -20,9 +20,11 @@ Uma "sigla" escrita à mão no series.json é mantida quando a TCGdex não tem a
 Fonte: TCGdex (https://tcgdex.dev). Sem tradução em português -> usa inglês nessa carta.
 Pode rodar de novo: arquivos já baixados são pulados.
 """
-import json, sys, time, urllib.request, urllib.error
+import json, sys
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
+
+from comum import baixar  # download com novas tentativas (scripts/comum.py)
 
 RAIZ = Path(__file__).resolve().parent.parent
 API = 'https://api.tcgdex.net/v2'
@@ -41,20 +43,6 @@ RARIDADES = {'Common': 'Comum', 'Uncommon': 'Incomum', 'Rare': 'Rara', 'Double r
              'Full Art Trainer': 'Arte Completa de Treinador', 'Black White Rare': 'Rara Preto e Branco',
              'Mega Hyper Rare': 'Mega Hiper Raro', 'None': None}
 
-def baixar(url, binario=False, tentativas=3):
-    for i in range(tentativas):
-        try:
-            req = urllib.request.Request(url, headers={'User-Agent': 'CardDex'})
-            with urllib.request.urlopen(req, timeout=30) as r:
-                dados = r.read()
-                return dados if binario else json.loads(dados)
-        except urllib.error.HTTPError as e:
-            if e.code == 404:
-                return None
-        except Exception:
-            pass
-        time.sleep(1 + i)
-    return None
 
 def salvar_imagem(url, destino):
     if destino.exists() and destino.stat().st_size > 0:

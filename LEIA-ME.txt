@@ -65,8 +65,12 @@ ESTRUTURA
  assets/img/avatares/           menino.svg e menina.svg (pode trocar pelos seus, mesmo nome)
  assets/img/app/                ícones do app instalado
  scripts/baixar_cartas.py       baixa cartas, imagens e logos
- scripts/completar_imagens.py   completa imagens que a TCGdex não tem (Pokémon TCG API)
- scripts/atualizar_precos.py    atualiza os preços (roda sozinho todo dia: .github/workflows/precos.yml)
+ scripts/completar_imagens.py   completa imagens que a TCGdex não tem (Pokémon TCG API, TCGplayer, Limitless)
+ scripts/atualizar_precos.py    preços do Cardmarket (roda sozinho todo dia: .github/workflows/precos.yml)
+ scripts/atualizar_precos_liga.py  preços da Liga Pokémon (rodar no computador de casa)
+ scripts/comum.py               funções usadas por mais de um script (download com novas tentativas)
+ scripts/formatar_codigo.py     deixa todo o CSS e JS no padrão de organização (veja PADRÃO DE CÓDIGO)
+ .editorconfig, .vscode/        fazem o editor seguir o padrão (2 espaços, UTF-8...)
  docs/                          Supabase (passo a passo e banco) e próximas fases
 
 ADICIONAR UMA COLEÇÃO
@@ -124,6 +128,16 @@ A importação junta com o que já está marcado, não apaga nada.
 ATUALIZAR O SITE SEM CACHE
 No index.html, cada .css e .js termina com ?v=AAAAMMDD. Ao publicar mudanças, troque essa versão
 (em todas as linhas) para os navegadores e o app instalado baixarem os arquivos novos na hora.
+
+PADRÃO DE CÓDIGO (para tudo ficar organizado igual)
+- Depois de mexer em CSS ou JS, rode:   python scripts/formatar_codigo.py
+  (uma vez antes: pip install jsbeautifier cssbeautifier esprima). Ele só arruma espaços e quebras de linha.
+  Para só conferir, sem mudar nada:     python scripts/formatar_codigo.py --conferir
+- CSS: uma propriedade por linha (terminando com ;), linha em branco entre as regras, títulos de seção
+  /* ===== NOME ===== */ e os ajustes de celular num @media(max-width:760px) no fim do próprio arquivo.
+- JS: cada arquivo começa com um cabeçalho dizendo o que faz; cada função tem um comentário de uma linha.
+- Tela nova: js/telas/<tela>.js + css/telas/<tela>.css, incluídos no index.html na seção certa.
+- Função usada em vários lugares vai para js/base/util.js (no Python, scripts/comum.py): nada de copiar e colar.
 
 ONDE MEXER
  Cores ................ css/base.css (variáveis no topo)

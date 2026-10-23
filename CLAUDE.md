@@ -22,6 +22,21 @@ No ar em https://neriival.github.io/carddex/ (GitHub Pages, branch `main`, repos
   - `scripts/` (Python): baixar_cartas.py, completar_imagens.py, atualizar_precos.py, atualizar_precos_liga.py
 - App instalável: `manifest.webmanifest` + `sw.js` (o sw não guarda cache).
 
+## Padrão de código (seguir sempre)
+- Formatação automática: **`python scripts/formatar_codigo.py`** depois de mexer em CSS/JS
+  (`--conferir` só aponta o que está fora do padrão). Precisa de `pip install jsbeautifier cssbeautifier esprima`.
+  O formatador só muda espaços/quebras e divide textos de HTML compridos; o comportamento não muda.
+- 2 espaços de recuo; Python com 4. `.editorconfig` e `.vscode/settings.json` deixam o editor no padrão.
+- CSS: uma propriedade por linha terminando em `;`, linha em branco entre regras, seções com
+  `/* ===== NOME ===== */`, ajustes de celular num `@media(max-width:760px)` no **fim do próprio arquivo**.
+- JS: blocos `{ }` abertos em várias linhas, linhas de até ~120 caracteres, HTML montado em pedaços
+  `'...>' +` um por linha. Cada arquivo começa com cabeçalho (caminho + o que faz) e cada função com
+  um comentário de uma linha dizendo o que faz. Nomes em português (telaX, desenharX, carregarX...).
+- Um arquivo por assunto: tela nova → `js/telas/<tela>.js` + `css/telas/<tela>.css`, incluídos no `index.html`
+  na seção certa. Ajudante usado em vários lugares → `js/base/util.js` (não duplicar).
+- Python: funções comuns em `scripts/comum.py` (ex.: `baixar()`); não copiar entre scripts.
+- Antes de reorganizar: tirar "foto" do estilo calculado de várias telas e comparar depois.
+
 ## Dados das cartas e preços
 - Cartas e imagens: TCGdex (+ Pokémon TCG API/TCGplayer/Limitless para imagens que faltam).
   Séries "imagens: mini" guardam só a miniatura no projeto (limite de 1 GB do GitHub Pages).

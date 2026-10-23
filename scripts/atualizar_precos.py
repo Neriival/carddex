@@ -16,9 +16,11 @@ Como funciona:
       { "atualizado": "2026-10-06", "eur_brl": 5.61, "fonte": "Cardmarket",
         "precos": { "me01-001": [0.06, 0.2], ... } }      # [preço, preço da versão reverse holo] em euro
 """
-import json, sys, time, datetime, urllib.request, urllib.error
+import json, sys, datetime
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
+
+from comum import baixar  # download com novas tentativas (scripts/comum.py)
 
 RAIZ = Path(__file__).resolve().parent.parent
 API = 'https://api.tcgdex.net/v2'
@@ -28,19 +30,6 @@ MAPA = RAIZ / 'dados' / 'cardmarket.json'
 PASTA_PRECOS = RAIZ / 'dados' / 'precos'
 
 
-def baixar(url, tentativas=3):
-    for i in range(tentativas):
-        try:
-            req = urllib.request.Request(url, headers={'User-Agent': 'CardDex (github.com/Neriival/carddex)'})
-            with urllib.request.urlopen(req, timeout=60) as r:
-                return json.loads(r.read())
-        except urllib.error.HTTPError as e:
-            if e.code == 404:
-                return None
-        except Exception:
-            pass
-        time.sleep(1 + i)
-    return None
 
 
 def id_cardmarket(carta_id):

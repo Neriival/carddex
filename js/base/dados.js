@@ -12,56 +12,111 @@ var API_TCGDEX = 'https://api.tcgdex.net/v2';
 
 // Estado do site (tudo que muda enquanto a pessoa navega)
 var ESTADO = {
-  jogos: [],        // Pokémon, Yu-Gi-Oh!, Dragon Ball... (cada série pertence a um jogo)
-  series: [],       // séries com suas coleções (de dados/series.json)
-  cartas: {},       // cartas já carregadas, por coleção: { 'me01': [ {id, numero, nome, imagem...}, ... ] }
-  tenho: {},        // cartas marcadas (js/base/marcacoes.js)
-  repetidas: {},    // cópias a mais de cada carta (js/base/marcacoes.js)
-  filtro: 'todas',  // filtro da coleção: todas | tenho | faltam | repetidas
-  raridade: '', tipo: '', // filtros extras da coleção
-  ordem: 'numero',  // ordem da grade: numero | caras | baratas
-  atual: null,      // coleção aberta
-  tid: {},          // id de cada coleção na TCGdex (cache)
-  redesenhar: null  // função da tela atual, chamada quando a carta grande fecha ou chegam dados novos
+  jogos: [], // Pokémon, Yu-Gi-Oh!, Dragon Ball... (cada série pertence a um jogo)
+  series: [], // séries com suas coleções (de dados/series.json)
+  cartas: {}, // cartas já carregadas, por coleção: { 'me01': [ {id, numero, nome, imagem...}, ... ] }
+  tenho: {}, // cartas marcadas (js/base/marcacoes.js)
+  repetidas: {}, // cópias a mais de cada carta (js/base/marcacoes.js)
+  filtro: 'todas', // filtro da coleção: todas | tenho | faltam | repetidas
+  raridade: '',
+  tipo: '', // filtros extras da coleção
+  ordem: 'numero', // ordem da grade: numero | caras | baratas
+  atual: null, // coleção aberta
+  tid: {}, // id de cada coleção na TCGdex (cache)
+  redesenhar: null // função da tela atual, chamada quando a carta grande fecha ou chegam dados novos
 };
 
 // Procurar coisas pelo id
-function todasColecoes() { return ESTADO.series.reduce(function (a, s) { return a.concat(s.colecoes); }, []); }
-function acharColecao(id) { return todasColecoes().filter(function (c) { return c.id === id; })[0]; }
-function acharSerie(id) { return ESTADO.series.filter(function (s) { return s.id === id; })[0]; }
-function acharJogo(id) { return ESTADO.jogos.filter(function (j) { return j.id === id; })[0]; }
-function seriesDoJogo(id) { return ESTADO.series.filter(function (s) { return s.jogo === id; }); }
+function todasColecoes() {
+  return ESTADO.series.reduce(function (a, s) {
+    return a.concat(s.colecoes);
+  }, []);
+}
+
+// Coleção pelo id (ex.: "me01")
+function acharColecao(id) {
+  return todasColecoes().filter(function (c) {
+    return c.id === id;
+  })[0];
+}
+
+// Série pelo id (ex.: "sv")
+function acharSerie(id) {
+  return ESTADO.series.filter(function (s) {
+    return s.id === id;
+  })[0];
+}
+
+// Jogo pelo id (ex.: "pokemon")
+function acharJogo(id) {
+  return ESTADO.jogos.filter(function (j) {
+    return j.id === id;
+  })[0];
+}
+
+// Séries de um jogo
+function seriesDoJogo(id) {
+  return ESTADO.series.filter(function (s) {
+    return s.jogo === id;
+  });
+}
 
 // Número como vem impresso na carta: { numero: '211/193', codigo: 'PAL PT' }
 // - total depois da barra: "oficial" da coleção (series.json); promos e coleções clássicas não têm
 // - número com letras (TG01, RC5, SV1): o total é das cartas com as mesmas letras (TG01/TG30, RC5/RC32)
 // - Diamante e Pérola até Sol e Lua imprimem sem zeros à esquerda (1/146); da Espada e Escudo em diante, com (001/202)
 // - Diamante e Pérola e Platina: cartas com letras (SH4, RT1, AR1) não têm total impresso
-var SERIES_SEM_ZEROS = ['sm', 'xy', 'bw', 'hgss', 'pl', 'dp'], SERIES_LETRAS_SEM_TOTAL = ['pl', 'dp'];
+var SERIES_SEM_ZEROS = ['sm', 'xy', 'bw', 'hgss', 'pl', 'dp'],
+  SERIES_LETRAS_SEM_TOTAL = ['pl', 'dp'];
+
+// Número da carta como vem impresso nela (ex.: { numero: "211/193", codigo: "PAL PT" })
 function numeroCarta(c, k) {
-  var m = /^([A-Za-z]*)(\d+)$/.exec(k.numero), semZeros = SERIES_SEM_ZEROS.indexOf(c.serie) > -1;
+  var m = /^([A-Za-z]*)(\d+)$/.exec(k.numero),
+    semZeros = SERIES_SEM_ZEROS.indexOf(c.serie) > -1;
   var codigo = c.sigla ? c.sigla + ' ' + (k.idioma || 'pt').toUpperCase() : '';
-  if (!m || !c.oficial || (m[1] && SERIES_LETRAS_SEM_TOTAL.indexOf(c.serie) > -1)) return { numero: k.numero, codigo: codigo };
-  var letras = m[1], dig = semZeros ? String(+m[2]) : m[2], total = c.oficial;
-  if (letras) total = (ESTADO.cartas[c.id] || []).filter(function (x) { var y = /^([A-Za-z]*)\d+$/.exec(x.numero); return y && y[1] === letras; }).length || total;
+  if (!m || !c.oficial || (m[1] && SERIES_LETRAS_SEM_TOTAL.indexOf(c.serie) > -1)) return {
+    numero: k.numero,
+    codigo: codigo
+  };
+  var letras = m[1],
+    dig = semZeros ? String(+m[2]) : m[2],
+    total = c.oficial;
+  if (letras) total = (ESTADO.cartas[c.id] || []).filter(function (x) {
+    var y = /^([A-Za-z]*)\d+$/.exec(x.numero);
+    return y && y[1] === letras;
+  }).length || total;
   total = String(total);
-  if (!semZeros) while (total.length < dig.length) total = '0' + total;
-  return { numero: letras + dig + '/' + letras + total, codigo: codigo };
+  if (!semZeros)
+    while (total.length < dig.length) total = '0' + total;
+  return {
+    numero: letras + dig + '/' + letras + total,
+    codigo: codigo
+  };
 }
 
 // Lê dados/series.json e deixa séries e coleções em ordem de lançamento (mais novas primeiro)
 async function carregarSeries() {
-  var r = await fetch('dados/series.json'), d = await r.json();
+  var r = await fetch('dados/series.json'),
+    d = await r.json();
   ESTADO.series = d.series;
-  ESTADO.jogos = d.jogos || [{ id: 'pokemon', nome: 'Pokémon' }];
+  ESTADO.jogos = d.jogos || [{
+    id: 'pokemon',
+    nome: 'Pokémon'
+  }];
   ESTADO.series.forEach(function (s) {
-    s.colecoes.forEach(function (c) { c.serie = s.id; });
+    s.colecoes.forEach(function (c) {
+      c.serie = s.id;
+    });
     // mesma data (ex.: coleção + galeria de treinador): mantém a ordem do series.json
-    s.colecoes.sort(function (a, b) { return a.lancamento < b.lancamento ? 1 : a.lancamento > b.lancamento ? -1 : 0; });
+    s.colecoes.sort(function (a, b) {
+      return a.lancamento < b.lancamento ? 1 : a.lancamento > b.lancamento ? -1 : 0;
+    });
     s.lancamento = s.colecoes.length ? s.colecoes[s.colecoes.length - 1].lancamento : '';
   });
   // séries: pela data da primeira coleção, a série mais nova primeiro
-  ESTADO.series.sort(function (a, b) { return a.lancamento < b.lancamento ? 1 : -1; });
+  ESTADO.series.sort(function (a, b) {
+    return a.lancamento < b.lancamento ? 1 : -1;
+  });
 }
 
 // Descobre o id da coleção na TCGdex (pelo nome em inglês, ou pelo id informado)
@@ -71,7 +126,9 @@ async function idTcgdex(c) {
   if (c.busca) {
     try {
       var s = await (await fetch(API_TCGDEX + '/en/series/' + c.serie)).json();
-      var f = (s.sets || []).filter(function (x) { return x.name.toLowerCase() === c.busca.toLowerCase(); })[0];
+      var f = (s.sets || []).filter(function (x) {
+        return x.name.toLowerCase() === c.busca.toLowerCase();
+      })[0];
       if (f) id = f.id;
     } catch (e) {}
   }
@@ -85,14 +142,30 @@ async function idTcgdex(c) {
 async function carregarCartas(c) {
   if (ESTADO.cartas[c.id]) return ESTADO.cartas[c.id];
   var lista = null;
-  try { var r = await fetch('dados/cartas/' + c.serie + '/' + c.id + '.json'); if (r.ok) lista = await r.json(); } catch (e) {}
+  try {
+    var r = await fetch('dados/cartas/' + c.serie + '/' + c.id +
+      '.json');
+    if (r.ok) lista = await r.json();
+  } catch (e) {}
   if (!lista) {
-    var tid = await idTcgdex(c), s = null;
-    try { var r1 = await fetch(API_TCGDEX + '/pt/sets/' + tid); if (r1.ok) s = await r1.json(); } catch (e) {}
+    var tid = await idTcgdex(c),
+      s = null;
+    try {
+      var r1 = await fetch(API_TCGDEX + '/pt/sets/' + tid);
+      if (r1.ok) s = await r1.json();
+    } catch (e) {}
     if (!s || !(s.cards || []).length) s = await (await fetch(API_TCGDEX + '/en/sets/' + tid)).json();
     lista = (s.cards || []).map(function (x) {
       var base = x.image || 'https://assets.tcgdex.net/en/' + c.serie + '/' + tid + '/' + x.localId;
-      return { id: x.id, numero: x.localId, nome: x.name, mini: base + '/low.webp', imagem: base + '/high.webp', remoto: true, tid: tid };
+      return {
+        id: x.id,
+        numero: x.localId,
+        nome: x.name,
+        mini: base + '/low.webp',
+        imagem: base + '/high.webp',
+        remoto: true,
+        tid: tid
+      };
     });
   }
   ESTADO.cartas[c.id] = lista;
@@ -105,7 +178,12 @@ async function detalhesCarta(k) {
   try {
     var d = await (await fetch(API_TCGDEX + '/pt/cards/' + k.id)).json();
     if (!d || !d.name) d = await (await fetch(API_TCGDEX + '/en/cards/' + k.id)).json();
-    k.raridade = d.rarity; k.tipos = d.types; k.ps = d.hp; k.categoria = d.category; k.ilustrador = d.illustrator; k.detalhes = true;
+    k.raridade = d.rarity;
+    k.tipos = d.types;
+    k.ps = d.hp;
+    k.categoria = d.category;
+    k.ilustrador = d.illustrator;
+    k.detalhes = true;
   } catch (e) {}
   return k;
 }

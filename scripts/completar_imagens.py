@@ -16,9 +16,11 @@ Por último tenta a Limitless TCG, pela sigla da coleção (series.json) e o nú
 (mesma regra: miniatura sempre; a grande dentro do projeto ou com o endereço da Limitless).
 Carta que não existe em nenhuma das bases continua sem imagem (o site mostra o número).
 """
-import io, json, sys, time, urllib.request, urllib.error
+import io, json, sys
 from pathlib import Path
 from PIL import Image
+
+from comum import baixar  # download com novas tentativas (scripts/comum.py)
 
 RAIZ = Path(__file__).resolve().parent.parent
 IMG = 'https://images.pokemontcg.io'
@@ -28,19 +30,6 @@ LIMITLESS = 'https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/{0}/{0}_{
 MINI = (245, 337)  # mesmo tamanho das miniaturas da TCGdex
 
 
-def baixar(url, tentativas=3):
-    for i in range(tentativas):
-        try:
-            req = urllib.request.Request(url, headers={'User-Agent': 'CardDex (github.com/Neriival/carddex)'})
-            with urllib.request.urlopen(req, timeout=60) as r:
-                return r.read()
-        except urllib.error.HTTPError as e:
-            if e.code == 404:
-                return None
-        except Exception:
-            pass
-        time.sleep(1 + i)
-    return None
 
 
 def numeros(n):
@@ -60,7 +49,6 @@ def foto_tcgplayer(carta_id):
     d = baixar(TCGDEX + carta_id)
     if not d:
         return None
-    d = json.loads(d)
     ids = [v.get('thirdParty', {}).get('tcgplayer') for v in d.get('variants_detailed') or []]
     ids.append(((d.get('pricing') or {}).get('tcgplayer') or {}).get('productId'))
     pid = next((i for i in ids if i), None)
@@ -81,7 +69,7 @@ def main():
             achei = 0
             for k in faltam:
                 for n in numeros(k['numero']):
-                    pequena = baixar(f'{IMG}/{ptcg}/{n}.png')
+                    pequena = baixar(f'{IMG}/{ptcg}/{n}.png', binario=True)
                     if not pequena:
                         continue
                     destino = RAIZ / 'assets' / 'img' / 'cartas' / s['id'] / c['id'] / f"{k['numero']}-mini.webp"
@@ -93,10 +81,10 @@ def main():
                     break
                 else:
                     url = foto_tcgplayer(k['id'])
-                    foto = url and baixar(url)
+                    foto = url and baixar(url, binario=True)
                     if not foto and c.get('sigla') and k['numero'].isdigit():
                         url = LIMITLESS.format(c['sigla'], k['numero'].zfill(3))
-                        foto = baixar(url)
+                        foto = baixar(url, binario=True)
                     if not foto:
                         continue
                     pasta = RAIZ / 'assets' / 'img' / 'cartas' / s['id'] / c['id']
@@ -110,7 +98,8 @@ def main():
                         img.save(pasta / f"{k['numero']}.webp", 'WEBP', quality=88)
                         k['imagem'] = f"assets/img/cartas/{s['id']}/{c['id']}/{k['numero']}.webp"
                     achei += 1
-            arq.write_text(json.dumps(cartas, ensure_ascii=False, indent=1), encoding='utf-8')
+            if achei:  # só regrava o arquivo da coleção se alguma imagem foi completada
+                arq.write_text(json.dumps(cartas, ensure_ascii=False, indent=1), encoding='utf-8')
             print(f"{c['nome']}: {achei} de {len(faltam)} imagens que faltavam foram completadas")
 
 

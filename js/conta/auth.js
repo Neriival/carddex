@@ -22,31 +22,67 @@ function erroAuth(e) {
 }
 
 // Modo sem banco: guarda o "usuário" só no navegador
-function salvarSessaoLocal(u) { try { localStorage.setItem('carddex_sessao', JSON.stringify(u)); } catch (e) {} return u; }
+function salvarSessaoLocal(u) {
+  try {
+    localStorage.setItem('carddex_sessao',
+      JSON.stringify(u));
+  } catch (e) {}
+  return u;
+}
 
 var AUTH = {
-  _u: null,      // usuário conectado { id, email, nick, sexo, avatar, foto, vitrine, colecao_publica }
-  admin: false,  // true = pode abrir o painel adm (tabela "admins" no banco)
+  _u: null, // usuário conectado { id, email, nick, sexo, avatar, foto, vitrine, colecao_publica }
+  admin: false, // true = pode abrir o painel adm (tabela "admins" no banco)
 
-  usuario: function () { return sb ? AUTH._u : lerJSON('carddex_sessao'); },
-  convidado: function () { try { return localStorage.getItem('carddex_convidado') === '1'; } catch (e) { return false; } },
+  usuario: function () {
+    return sb ? AUTH._u : lerJSON('carddex_sessao');
+  },
+  convidado: function () {
+    try {
+      return localStorage.getItem('carddex_convidado') === '1';
+    } catch (e) {
+      return false;
+    }
+  },
 
   // Ao abrir o site: lê a sessão salva pelo Supabase e baixa as marcações da conta
   iniciar: async function () {
     if (!sb) return;
-    try { var r = await sb.auth.getSession(); await AUTH._usar(r.data.session && r.data.session.user); } catch (e) {}
+    try {
+      var r = await sb.auth.getSession();
+      await AUTH._usar(r.data.session && r.data.session.user);
+    } catch (e) {}
     if (AUTH._u) await nuvemPuxar(nuvemPendente());
   },
 
   // Guarda o usuário e lê o perfil dele e se é admin
   _usar: async function (user) {
-    AUTH._u = null; AUTH.admin = false;
+    AUTH._u = null;
+    AUTH.admin = false;
     if (!user) return;
-    var u = { id: user.id, email: user.email, nick: '', sexo: '', avatar: '', foto: '', vitrine: [], colecao_publica: false };
+    var u = {
+      id: user.id,
+      email: user.email,
+      nick: '',
+      sexo: '',
+      avatar: '',
+      foto: '',
+      vitrine: [],
+      colecao_publica: false
+    };
     try {
-      var r = await Promise.all([sb.from('perfis').select('nick,sexo,avatar,foto,vitrine,colecao_publica').eq('id', user.id).maybeSingle(), sb.rpc('eh_admin')]);
+      var r = await Promise.all([sb.from('perfis').select('nick,sexo,avatar,foto,vitrine,colecao_publica').eq('id',
+        user.id).maybeSingle(), sb.rpc('eh_admin')]);
       var p = r[0].data;
-      if (p) { u.nick = p.nick || ''; u.sexo = p.sexo || ''; u.avatar = p.avatar || ''; u.foto = p.foto || ''; u.vitrine = p.vitrine || []; u.colecao_publica = !!p.colecao_publica; }
+      if (p) {
+        u.nick = p.nick || '';
+        u.sexo = p.sexo || '';
+        u.avatar = p.avatar || '';
+        u.foto = p.foto ||
+          '';
+        u.vitrine = p.vitrine || [];
+        u.colecao_publica = !!p.colecao_publica;
+      }
       AUTH.admin = r[1].data === true;
     } catch (e) {}
     AUTH._u = u;
@@ -54,33 +90,73 @@ var AUTH = {
 
   // Entrar: as cartas marcadas sem conta são juntadas com as da conta
   entrar: async function (email, senha) {
-    if (!sb) return salvarSessaoLocal({ nick: email.split('@')[0], email: email, avatar: 'menino' });
-    var r = await sb.auth.signInWithPassword({ email: email, password: senha });
+    if (!sb) return salvarSessaoLocal({
+      nick: email.split('@')[0],
+      email: email,
+      avatar: 'menino'
+    });
+    var r = await sb.auth.signInWithPassword({
+      email: email,
+      password: senha
+    });
     if (r.error) throw new Error(erroAuth(r.error));
-    await AUTH._usar(r.data.user); await nuvemPuxar(true);
+    await AUTH._usar(r.data.user);
+    await nuvemPuxar(true);
     return AUTH._u;
   },
 
   // Criar conta. p = { nick, sexo, avatar, usarFoto, arquivo }.
   // Devolve { confirmar: true } se o Supabase pedir confirmação por e-mail antes do primeiro login.
   criar: async function (email, senha, p) {
-    if (!sb) return salvarSessaoLocal({ nick: p.nick, sexo: p.sexo, avatar: p.avatar, email: email });
-    var livre = await sb.rpc('nick_disponivel', { n: p.nick });
+    if (!sb) return salvarSessaoLocal({
+      nick: p.nick,
+      sexo: p.sexo,
+      avatar: p.avatar,
+      email: email
+    });
+    var livre = await sb.rpc('nick_disponivel', {
+      n: p.nick
+    });
     if (livre.data === false) throw new Error('O nick "' + p.nick + '" já está em uso. Escolha outro.');
-    var r = await sb.auth.signUp({ email: email, password: senha, options: { data: { nick: p.nick, sexo: p.sexo, avatar: p.avatar } } });
-    if (r.error) throw new Error(/database error/i.test(r.error.message) ? 'O nick "' + p.nick + '" acabou de ser escolhido por outra pessoa. Tente outro.' : erroAuth(r.error));
-    if (!r.data.session) return { confirmar: true };
-    await AUTH._usar(r.data.user); await nuvemPuxar(true);
+    var r = await sb.auth.signUp({
+      email: email,
+      password: senha,
+      options: {
+        data: {
+          nick: p.nick,
+          sexo: p.sexo,
+          avatar: p.avatar
+        }
+      }
+    });
+    if (r.error) throw new Error(/database error/i.test(r.error.message) ? 'O nick "' + p.nick +
+      '" acabou de ser escolhido por outra pessoa. Tente outro.' : erroAuth(r.error));
+    if (!r.data.session) return {
+      confirmar: true
+    };
+    await AUTH._usar(r.data.user);
+    await nuvemPuxar(true);
     // a foto só pode subir depois que a conta existe; se falhar, a conta continua com o personagem
-    if (p.usarFoto && p.arquivo) { try { await AUTH.salvarPerfil(p); } catch (e) {} }
+    if (p.usarFoto && p.arquivo) {
+      try {
+        await AUTH.salvarPerfil(p);
+      } catch (e) {}
+    }
     return AUTH._u;
   },
 
   // Troca nick, sexo, personagem, foto e se a coleção fica aberta (tela Meu perfil).
   // Foto nova sobe antes; a antiga é apagada depois.
   salvarPerfil: async function (p) {
-    var dados = { nick: p.nick, sexo: p.sexo, avatar: p.avatar };
-    if (!sb) { salvarSessaoLocal(Object.assign(lerJSON('carddex_sessao') || {}, dados)); return; }
+    var dados = {
+      nick: p.nick,
+      sexo: p.sexo,
+      avatar: p.avatar
+    };
+    if (!sb) {
+      salvarSessaoLocal(Object.assign(lerJSON('carddex_sessao') || {}, dados));
+      return;
+    }
     if ('colecao_publica' in p) dados.colecao_publica = !!p.colecao_publica;
     var antiga = AUTH._u.foto || '';
     if (p.usarFoto && p.arquivo) dados.foto = await enviarFoto(p.arquivo);
@@ -88,15 +164,27 @@ var AUTH = {
     var r = await sb.from('perfis').update(dados).eq('id', AUTH._u.id);
     if (r.error) {
       if (p.arquivo && dados.foto) apagarFoto(dados.foto);
-      throw new Error(r.error.code === '23505' ? 'O nick "' + p.nick + '" já está em uso. Escolha outro.' : 'Não foi possível salvar: ' + r.error.message);
+      throw new Error(r.error.code === '23505' ? 'O nick "' + p.nick +
+        '" já está em uso. Escolha outro.' : 'Não foi possível salvar: ' + r.error.message);
     }
     if ('foto' in dados && antiga && antiga !== dados.foto) apagarFoto(antiga);
-    Object.assign(AUTH._u, dados, { foto: 'foto' in dados ? dados.foto || '' : antiga });
+    Object.assign(AUTH._u, dados, {
+      foto: 'foto' in dados ? dados.foto || '' : antiga
+    });
   },
 
   // Sair: envia o que falta, e as marcações saem do navegador (continuam salvas na conta)
   sair: async function () {
-    if (sb) { await nuvemEnviar(); await sb.auth.signOut(); AUTH._u = null; AUTH.admin = false; limparMarcacoes(); }
-    try { localStorage.removeItem('carddex_sessao'); localStorage.removeItem('carddex_convidado'); } catch (e) {}
+    if (sb) {
+      await nuvemEnviar();
+      await sb.auth.signOut();
+      AUTH._u = null;
+      AUTH.admin = false;
+      limparMarcacoes();
+    }
+    try {
+      localStorage.removeItem('carddex_sessao');
+      localStorage.removeItem('carddex_convidado');
+    } catch (e) {}
   }
 };
