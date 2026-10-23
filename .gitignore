@@ -1,4 +1,13 @@
-   *.zip
-   __pycache__/
-   .DS_Store
-   Thumbs.db
+# Arquivos que o Git deve ignorar (não vão para o GitHub).
+# Atenção: cada regra precisa começar na margem, sem espaços antes.
+
+# arquivos temporários do Python
+__pycache__/
+*.pyc
+
+# cópias compactadas do projeto
+*.zip
+
+# arquivos que o Windows e o Mac criam sozinhos
+Thumbs.db
+.DS_Store
