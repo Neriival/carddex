@@ -8,6 +8,8 @@ Limites do plano grátis:
 - O Supabase só envia uns **2 e-mails por hora** (usados no "Esqueci minha senha") e o texto do e-mail fica em inglês.
   Para mais e-mails e texto em português, ligue um SMTP próprio (Resend, Brevo...) em Authentication → Emails.
 - Projeto sem acesso por 7 dias é **pausado**; é só entrar no painel do Supabase e clicar em Restore.
+  Para evitar isso, o robô diário de preços (`.github/workflows/precos.yml`) faz uma leitura pequena no banco
+  todo dia (passo "Manter o banco acordado").
 
 ## 1. Criar o projeto
 1. Entre em [supabase.com](https://supabase.com) e crie uma conta (dá para usar a do GitHub).

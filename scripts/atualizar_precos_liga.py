@@ -5,7 +5,9 @@ Uso (na pasta do projeto):
     python scripts/atualizar_precos_liga.py            # atualiza o que der no tempo limite
     python scripts/atualizar_precos_liga.py me01 sv01  # só essas coleções
 
-Roda sozinho no GitHub (.github/workflows/precos-liga.yml), mas também dá para rodar à mão.
+Rodar no computador de casa: no GitHub Actions a Liga bloqueia o acesso (o agendamento automático de
+.github/workflows/precos-liga.yml foi desligado em 23/10/2026; o botão "Run workflow" continua lá).
+Termina com erro quando nenhuma coleção é atualizada.
 
 Como funciona:
  1) A página de uma coleção na Liga (?view=cards/search&card=ed=<SIGLA>) já traz todas as cartas
@@ -164,6 +166,10 @@ def main():
         print(f'{col} ({SIGLAS[col]}): {com} de {len(cartas)} cartas com preço (a Liga listou {len(ordem)})', flush=True)
         feitas += 1
     print(f'Pronto! {feitas} coleções atualizadas.')
+    # nada salvo = algo deu errado (bloqueio da Liga, site mudou, sem internet): termina com erro,
+    # para o GitHub Actions marcar a rodada como falha em vez de "sucesso"
+    if fila and not feitas:
+        sys.exit('ERRO: nenhuma coleção foi atualizada. Veja as mensagens acima.')
 
 
 if __name__ == '__main__':

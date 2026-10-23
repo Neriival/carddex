@@ -1,6 +1,7 @@
 # Atualiza os preços das cartas (Cardmarket → real) todo dia, sozinho.
 # Roda scripts/atualizar_precos.py e, se os preços mudaram, salva dados/precos/ no repositório
 # (o GitHub Pages publica o site de novo em seguida).
+# Antes, dá um "toque" no banco (Supabase): o plano grátis pausa o projeto depois de ~7 dias sem uso.
 # Também dá para rodar na hora: GitHub → Actions → "Atualizar preços" → Run workflow.
 name: Atualizar preços
 
@@ -17,6 +18,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Manter o banco acordado (Supabase)
+        # faz uma leitura pequena e pública (a lista de parceiros), com o endereço e a chave pública do js/config.js;
+        # se o banco estiver fora do ar, avisa em amarelo mas não impede a atualização dos preços
+        continue-on-error: true
+        run: |
+          URL=$(grep -o "https://[a-z0-9]*\.supabase\.co" js/config.js | head -1)
+          CHAVE=$(grep -o "sb_publishable_[A-Za-z0-9_-]*" js/config.js | head -1)
+          curl -fsS --max-time 60 "$URL/rest/v1/parceiros?select=posicao&limit=1" -H "apikey: $CHAVE" -o /dev/null
+          echo "Banco respondeu."
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'

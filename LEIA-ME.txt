@@ -103,14 +103,18 @@ PREÇOS (em reais)
 Referência principal: Liga Pokémon (ligapokemon.com.br), o mercado brasileiro. O site mostra o preço MÉDIO
 (e o menor e o maior na carta grande).
 - scripts/atualizar_precos_liga.py abre a página de cada coleção na Liga (um acesso traz todas as cartas).
-  A Liga pede 6 minutos entre acessos, então as ~85 coleções levam ~8h30: o GitHub roda o script 2x por dia
-  (4h e 16h), por até ~5h cada, sempre começando pelas coleções há mais tempo sem atualizar.
-  Para rodar na hora: GitHub → Actions → "Preços da Liga" → Run workflow.
-  Só algumas coleções, no computador: python scripts/atualizar_precos_liga.py me01 sv01
+  A Liga pede 6 minutos entre acessos, então todas as coleções levam horas, sempre começando pelas
+  coleções há mais tempo sem atualizar.
+  ATENÇÃO: no GitHub a Liga bloqueia o acesso, então o agendamento automático foi DESLIGADO (23/10/2026).
+  Rode no computador de casa (depois rode "git pull", e então commit e push dos arquivos de dados/precos-liga):
+      python scripts/atualizar_precos_liga.py              (tudo; deixe rodando)
+      python scripts/atualizar_precos_liga.py me01 sv01    (só algumas coleções)
+  O script termina com ERRO quando não consegue atualizar nenhuma coleção.
 - Coleção nova: além do baixar_cartas.py, coloque a sigla dela na Liga em SIGLAS, no começo do
   atualizar_precos_liga.py (a sigla aparece em ligapokemon.com.br/?view=cards/edicoes).
 Reserva: Cardmarket (loja europeia), em euro convertido para real. Só é usado nas coleções que ainda não têm
-preço da Liga (por exemplo, se a Liga bloquear o acesso). Todo dia às 6h o GitHub roda scripts/atualizar_precos.py.
+preço da Liga. Todo dia às 6h o GitHub roda scripts/atualizar_precos.py (e, no mesmo robô, faz uma
+leitura pequena no Supabase para o banco não ser pausado por falta de uso).
 ATENÇÃO: como o robô salva os preços todo dia, rode "git pull" antes de publicar mudanças suas.
 
 BACKUP

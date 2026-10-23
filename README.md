@@ -6,7 +6,7 @@ Site para fãs de Pokémon TCG marcarem as cartas que já têm, organizado por *
 
 - Carta grande com efeito 3D, informações e arrastar para o lado
 - Marcar "tenho" e contar **repetidas** direto na grade
-- **Preços em reais** de cada carta e valor da coleção (preço médio da Liga Pokémon, atualizado todo dia)
+- **Preços em reais** de cada carta e valor da coleção (preço médio da Liga Pokémon; Cardmarket atualizado todo dia como reserva)
 - Imagem das cartas que faltam ou das repetidas para mandar no **WhatsApp**
 - **Conta** com nick e personagem ou foto; as cartas ficam salvas na conta (qualquer aparelho)
 - **Ranking** e **perfil público** com vitrine de 5 cartas (contas de admin ficam de fora)

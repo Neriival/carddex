@@ -1,14 +1,18 @@
-# Atualiza os preços das cartas pela Liga Pokémon (mercado brasileiro), sozinho, 2 vezes por dia.
+# Atualiza os preços das cartas pela Liga Pokémon (mercado brasileiro).
 # Roda scripts/atualizar_precos_liga.py e salva dados/precos-liga/ no repositório
 # (o GitHub Pages publica o site de novo em seguida).
 # A Liga pede 6 minutos entre acessos: cada rodada atualiza por até ~5h15 as coleções há mais tempo sem atualizar.
-# Também dá para rodar na hora: GitHub → Actions → "Preços da Liga" → Run workflow.
+#
+# AGENDAMENTO DESLIGADO (23/10/2026): de 08/10 a 23/10 todas as rodadas no GitHub terminaram sem salvar
+# nenhum preço (a Liga, protegida pela Cloudflare, provavelmente bloqueia os servidores do GitHub),
+# gastando ~10 h por dia à toa. Do computador de casa a Liga responde normalmente:
+#   python scripts/atualizar_precos_liga.py               (tudo; demora horas)
+#   python scripts/atualizar_precos_liga.py sv02 me01     (só algumas coleções)
+# Ainda dá para tentar aqui: GitHub → Actions → "Preços da Liga" → Run workflow.
+# Agora o script termina com ERRO quando não salva nada, então uma falha aparece em vermelho.
 name: Preços da Liga
 
 on:
-  schedule:
-    - cron: '0 7 * * *'    # 4h (horário de Brasília)
-    - cron: '0 19 * * *'   # 16h
   workflow_dispatch:
 
 permissions:
