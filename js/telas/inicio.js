@@ -2,7 +2,8 @@
 // TELAS DE NAVEGAÇÃO: Início (séries) → Série (coleções)
 // ============================================================
 // Início: destaque, números (com o valor da coleção), próximo lançamento com contagem regressiva,
-// coleção mais recente, "Continue sua coleção" e as séries com os anos de cada era.
+// coleção mais recente (sem lançamento marcado: com as 3 cartas mais valiosas saindo do cartão),
+// "Continue sua coleção" e as séries com os anos de cada era.
 // Com mais de um jogo com cartas, o Início mostra os jogos e cada jogo abre a tela das suas séries (telaJogo).
 // Cada tela é uma função que desenha o HTML dentro de <main id="app">.
 // A tela da coleção (as cartas) fica em js/telas/colecao.js.
@@ -77,10 +78,12 @@ function blocoDestaques() {
     }).sort(porData).pop();
 
   function cartao(c, cls, rotulo, lado) {
-    return '<button class="destaque ' + cls + '" onclick="telaColecao(\'' + c.id + '\')"><small>' + rotulo +
+    // é um <div> que funciona como link (e não um <button>) porque as cartas "mais raras" dentro dele são clicáveis
+    return '<div class="destaque ' + cls + '" role="link" tabindex="0" onclick="telaColecao(\'' + c.id + '\')"' +
+      ' onkeydown="if(event.key===\'Enter\')this.click()"><small>' + rotulo +
       '</small><img src="assets/img/colecoes/' + c.serie + '/' + c.id + '.webp" alt="" onerror="logoAlt(this)">' +
       '<div class="destaque-txt"><h3>' + esc(c.nome) + '</h3><span class="sub">' + esc(acharSerie(c.serie).nome) +
-      ' · ' + dataBR(c.lancamento) + '</span></div>' + lado + '</button>';
+      ' · ' + dataBR(c.lancamento) + '</span></div>' + lado + '</div>';
   }
   var html = '';
   if (proxima) {
@@ -91,10 +94,52 @@ function blocoDestaques() {
       '<b>Saiu!</b><span>cartas em breve</span>';
     html += cartao(proxima, 'proxima', 'Próximo lançamento', '<div class="contagem">' + contagem + '</div>');
   }
-  if (recente) html += cartao(recente, 'recente', 'Coleção mais recente', '<span class="destaque-ver">' +
-    recente.total +
-    ' cartas · Ver coleção →</span>');
+  // sem lançamento marcado, a coleção mais recente ocupa a linha toda e as cartas mais raras saem do cartão
+  // (o espaço .raras é preenchido depois, por preencherRaras, quando as cartas e os preços carregarem)
+  if (recente) html += cartao(recente, 'recente' + (proxima ? '' : ' com-raras'), 'Coleção mais recente',
+    '<span class="destaque-ver">' + recente.total + ' cartas · Ver coleção →</span>' +
+    (proxima ? '' : '<div class="raras" id="raras" data-col="' + recente.id + '"></div>'));
   return html ? '<div class="destaques">' + html + '</div>' : '';
+}
+
+// Peso da raridade (quanto mais rara, maior), para desempatar as cartas sem preço
+var RARIDADES_TOPO = ['rara', 'dupla', 'ultra', 'ilustração rara', 'especial', 'hiper'];
+
+// Peso da raridade de uma carta (0 = comum ou desconhecida)
+function pesoRaridade(k) {
+  var r = (k.raridade || '').toLowerCase(),
+    peso = 0;
+  RARIDADES_TOPO.forEach(function (t, i) {
+    if (r.indexOf(t) > -1) peso = i + 1;
+  });
+  return peso;
+}
+
+// AS MAIS RARAS: as 3 cartas mais valiosas da coleção mais recente, em leque, saindo de dentro do cartão.
+// A mais valiosa fica no meio, na frente. Clicar numa carta abre a carta grande.
+async function preencherRaras(box) {
+  var c = acharColecao(box.dataset.col),
+    lista = await carregarCartas(c).catch(function () {
+      return [];
+    });
+  await carregarPrecos(c.serie);
+  if (!document.body.contains(box)) return; // saiu da tela antes de terminar
+  var top = lista.filter(function (k) {
+    return k.mini || k.imagem;
+  }).sort(function (a, b) {
+    return valorCarta(c, b.id) - valorCarta(c, a.id) || pesoRaridade(b) - pesoRaridade(a);
+  }).slice(0, 3);
+  if (top.length < 3) { // coleção sem imagens: fica o cartão normal
+    box.parentNode.classList.remove('com-raras');
+    box.remove();
+    return;
+  }
+  box.innerHTML = [top[1], top[0], top[2]].map(function (k, i) {
+    var v = valorCarta(c, k.id);
+    return '<img class="rara-' + i + '" src="' + esc(k.mini || k.imagem) + '" alt="' + esc(k.nome) + '" title="' +
+      esc(k.nome) + (v ? ' · ' + reais(v) : '') + '" onclick="event.stopPropagation();abrirCarta(\'' + c.id +
+      '\',\'' + esc(k.id) + '\')">';
+  }).join('');
 }
 
 // CONTINUE SUA COLEÇÃO: as 3 coleções que a pessoa está mais perto de completar (só para quem marcou cartas)
@@ -162,6 +207,8 @@ function telaInicio(ir) {
     var el = document.getElementById('stat-valor');
     if (el) el.textContent = reais(valorTotal(cols));
   });
+  var raras = document.getElementById('raras');
+  if (raras) preencherRaras(raras);
   var alvo = ir && document.getElementById(ir);
   if (alvo) alvo.scrollIntoView({
     behavior: 'smooth'
