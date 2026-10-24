@@ -1,4 +1,4 @@
-/* css/telas/ranking.css – Ranking e Perfil público (com a vitrine de 5 cartas) */
+/* css/telas/ranking.css – Ranking e Perfil público (com a vitrine de até 10 cartas) */
 
 /* ===== CAIXA "SUA POSIÇÃO" / CONVITE (ranking e perfil público) ===== */
 .rank-eu {
@@ -207,7 +207,7 @@
   color: var(--gold);
 }
 
-/* ===== VITRINE (5 cartas) ===== */
+/* ===== VITRINE (até 10 cartas, 5 por fileira) ===== */
 .vitrine {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 190px));

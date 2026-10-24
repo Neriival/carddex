@@ -85,27 +85,7 @@
   color: var(--gold);
 }
 
-/* ===== PERSONAGEM OU FOTO ===== */
-.avatares {
-  border: 0;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-}
-
-.avatares.com-foto {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.avatares legend {
-  color: var(--mut);
-  font-size: .9rem;
-  padding: 0;
-  margin-bottom: 6px;
-}
-
+/* ===== PERSONAGEM OU FOTO (botões; a grade fica em TREINADORES DO ANIME, mais abaixo) ===== */
 .avatar-op {
   position: relative;
   display: flex;
@@ -127,8 +107,8 @@
 }
 
 .avatar-op img, .foto-prev, .foto-vazia {
-  width: 84px;
-  height: 84px;
+  width: 56px;
+  height: 56px;
 }
 
 .avatar-op:has(input:checked) {
@@ -160,7 +140,7 @@
   place-items: center;
   border: 2px dashed var(--line);
   color: var(--blue);
-  font-size: 2.4rem;
+  font-size: 1.8rem;
   font-weight: 300;
   line-height: 1;
 }
@@ -315,12 +295,7 @@
   border-radius: 12px;
 }
 
-.avatar-op.op-treinador img {
-  width: 56px;
-  height: 56px;
-}
-
-.op-treinador span {
+.op-treinador>span:last-child {
   font-size: .72rem;
   text-align: center;
   line-height: 1.1;
@@ -533,8 +508,8 @@
   }
 
   .avatar-op img, .foto-prev, .foto-vazia {
-    width: 64px;
-    height: 64px;
+    width: 48px;
+    height: 48px;
   }
 
   .perfil-previa {
@@ -545,10 +520,6 @@
     grid-template-columns: repeat(auto-fill, minmax(64px, 1fr));
   }
 
-  .avatar-op.op-treinador img {
-    width: 48px;
-    height: 48px;
-  }
 
   .banners {
     grid-template-columns: repeat(2, 1fr);

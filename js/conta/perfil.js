@@ -1,8 +1,8 @@
 // js/conta/perfil.js
 // TELA "MEU PERFIL" E OS CAMPOS DE PERFIL (usados também no cadastro)
 // ============================================================
-// Nick (público, aparece no ranking), sexo (só a pessoa e os admins veem), personagem (menino, menina
-// ou treinador do anime) ou foto, banner do perfil e quem pode ver a coleção (todo mundo, só amigos ou ninguém).
+// Nick (público, aparece no ranking), sexo (só a pessoa e os admins veem), personagem (treinador do anime)
+// ou foto, banner do perfil e quem pode ver a coleção (todo mundo, só amigos ou ninguém).
 // No topo, a prévia do perfil (banner + personagem com o anel de nível) muda na hora ao escolher.
 // Embaixo do formulário ficam "Meus amigos" (js/conta/amigos.js) e "Minha vitrine" (js/recursos/vitrine.js).
 // ============================================================
@@ -35,21 +35,19 @@ function opcaoAvatar(id, nome, atual, cls) {
     '</span></label>';
 }
 
-// Menino | Menina | Minha foto e, embaixo, os treinadores do anime.
-// atual = 'menino' | 'menina' | nome do treinador | 'foto'; foto = endereço da foto atual (se tiver)
+// Minha foto (primeiro botão) e os treinadores do anime, todos numa grade só.
+// atual = nome do treinador | 'foto' | '' (nada escolhido); foto = endereço da foto atual (se tiver)
 function escolhaAvatar(atual, foto) {
-  var ops = opcaoAvatar('menino', 'Menino', atual) + opcaoAvatar('menina', 'Menina', atual);
+  var ops = '';
   // "Minha foto" só existe com o banco ligado (a foto fica guardada no Supabase)
-  if (sb) ops += '<label class="avatar-op op-foto" onclick="escolherFoto(event,this)">' +
+  if (sb) ops += '<label class="avatar-op op-treinador op-foto" onclick="escolherFoto(event,this)">' +
     '<input type="radio" name="avatar" value="foto"' + (atual === 'foto' ? ' checked' : '') + '>' +
     (foto ? '<img class="foto-prev" src="' + esc(foto) + '" alt="">' : '<span class="foto-vazia">+</span>') + '<span>' +
     (foto ? 'Trocar foto' : 'Minha foto') + '</span></label>';
-  var treinadores = TREINADORES.map(function (t) {
+  ops += TREINADORES.map(function (t) {
     return opcaoAvatar(t[0], t[1], atual, ' op-treinador');
   }).join('');
-  return '<fieldset class="avatares' + (sb ? ' com-foto' : '') + '"><legend>Personagem ou foto</legend>' + ops +
-    '</fieldset>' +
-    '<fieldset class="treinadores"><legend>Ou um treinador do anime</legend>' + treinadores + '</fieldset>' +
+  return '<fieldset class="treinadores"><legend>Personagem ou foto</legend>' + ops + '</fieldset>' +
     (sb ? '<input type="file" name="arquivo" accept="image/*" hidden onchange="previaFoto(this)">' +
       '<small class="sub dica-foto">A foto aparece para todos no ranking. Escolha uma em que você esteja à vontade.</small>' :
       '');
@@ -94,8 +92,8 @@ function previaFoto(input) {
 function sugerirAvatar(sel) {
   var f = sel.form,
     a = {
-      masculino: 'menino',
-      feminino: 'menina'
+      masculino: 'ash',
+      feminino: 'misty'
     } [sel.value];
   if (a && !f.dataset.avatarEscolhido) f.elements.avatar.value = a;
   atualizarPrevia(f);
@@ -203,7 +201,7 @@ function lerPerfil(f) {
   if (!escolha) return 'Escolha seu personagem ou uma foto.';
   if (p.usarFoto) {
     if (!p.arquivo && !u.foto) return 'Escolha a sua foto (toque em "Minha foto").';
-    p.avatar = u.avatar || (p.sexo === 'feminino' ? 'menina' : 'menino');
+    p.avatar = u.avatar || (p.sexo === 'feminino' ? 'misty' : 'ash');
   }
   return p;
 }
@@ -220,7 +218,8 @@ function telaPerfil() {
     '<form class="login-card perfil-form" novalidate onsubmit="enviarPerfil(event)">' + previaPerfil(u) +
     '<h3>' + (u.nick ? 'Meu perfil' : 'Complete seu perfil') + '</h3><span class="sub">' +
     (u.nick ? esc(u.email) : 'Escolha um nick e um personagem para aparecer no ranking.') + '</span>' +
-    campoNick(u.nick) + campoSexo(u.sexo) + escolhaAvatar(u.foto ? 'foto' : u.avatar, u.foto) +
+    campoNick(u.nick) + campoSexo(u.sexo) + escolhaAvatar(u.foto ? 'foto' : u.avatar && avatarValido(u.avatar),
+      u.foto) +
     (nuvem ? escolhaBanner(u.banner) : '') +
     (nuvem && !AUTH.admin ? campoPrivacidade(u.privacidade) : '') +
     '<div class="erro" id="login-erro" role="alert"></div>' +

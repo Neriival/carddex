@@ -96,7 +96,7 @@ var AUTH = {
     if (!sb) return salvarSessaoLocal({
       nick: email.split('@')[0],
       email: email,
-      avatar: 'menino'
+      avatar: 'ash'
     });
     var r = await sb.auth.signInWithPassword({
       email: email,

@@ -49,7 +49,7 @@ ESTRUTURA
      carta-grande.js              carta grande (3D, arrastar, tenho, repetidas, vitrine)
      compartilhar.js              imagem das cartas que faltam / repetidas (WhatsApp)
      parceiros.js                 quadrados de parceiros
-     vitrine.js                   as 5 cartas do perfil
+     vitrine.js                   as até 10 cartas do perfil
    telas/                       uma por tela
      inicio.js (início, jogo, série)  colecao.js  minhas.js  ranking.js  perfil-publico.js
      colecao-de.js (coleção de outra pessoa)  admin.js
@@ -65,7 +65,6 @@ ESTRUTURA
  assets/img/colecoes/<serie>/<colecao>.webp
  assets/img/series/<serie>.webp
  assets/img/jogos/<jogo>.svg    ícones de Pokémon, Yu-Gi-Oh!, Dragon Ball
- assets/img/avatares/           menino.svg e menina.svg (pode trocar pelos seus, mesmo nome)
  assets/img/avatares/treinadores/  treinadores do anime (256x256 .webp). Para um novo: coloque <nome>.webp
                                 aqui e inclua ['nome', 'Nome'] em TREINADORES no js/conta/fotos.js
  assets/img/banners/            banners de tipo (1200x300 .webp), um por tipo; a lista fica em BANNERS no fotos.js
@@ -107,10 +106,10 @@ Quando não existe, o site usa o .svg da mesma pasta (nome da coleção no estil
 Para usar um logo seu, coloque <colecao>.webp na pasta: ele tem prioridade sobre o .svg.
 
 CONTAS, RANKING, PERFIS, PAINEL ADM E PARCEIROS (Supabase – projeto "carddex", já configurado)
-- Conta com nick, sexo e personagem (menino, menina ou treinador do anime) ou foto, e banner do perfil
+- Conta com nick, sexo e personagem (treinador do anime) ou foto, e banner do perfil
   (um por tipo de Pokémon ou imagem própria); as cartas marcadas e as repetidas ficam salvas na conta.
 - Nível do colecionador pelo total de cartas, mostrado no anel dourado em volta do personagem.
-- Ranking por total de cartas; clicando em alguém abre o perfil público (com a vitrine de 5 cartas).
+- Ranking por total de cartas; clicando em alguém abre o perfil público (com a vitrine de até 10 cartas).
 - Amigos: pedido pelo nick (Meu perfil) ou pelo botão no perfil público; o outro aceita ou recusa.
   Quem pode ver a coleção completa: Todo mundo, Só amigos ou Ninguém (Meu perfil).
 - O link "Admin" do menu aparece para quem estiver na tabela "admins": contas, números do site,

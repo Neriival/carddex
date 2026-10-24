@@ -1,8 +1,7 @@
 // js/conta/fotos.js
 // PERSONAGENS, FOTOS, BANNERS E NÍVEL DO PERFIL
 // ============================================================
-// Sem foto, a pessoa aparece com o personagem: menino, menina (assets/img/avatares/*.svg)
-// ou um treinador do anime (assets/img/avatares/treinadores/<nome>.webp).
+// Sem foto, a pessoa aparece com o personagem: um treinador do anime (assets/img/avatares/treinadores/<nome>.webp).
 // Banner: um dos banners de tipo (assets/img/banners/<tipo>.webp) ou uma imagem enviada pela pessoa.
 // Foto e banner enviados ficam no Supabase Storage (pastas "fotos/<id>/" e "banners/<id>/"),
 // e só a própria pessoa mexe neles. O anel em volta do personagem mostra o nível (pelo total de cartas).
@@ -66,17 +65,19 @@ function temId(lista, id) {
   });
 }
 
-// Endereço da imagem do personagem (nome desconhecido vira o menino)
+// Personagem que existe no site (nome desconhecido ou vazio vira o Ash)
+function avatarValido(a) {
+  return temId(TREINADORES, a) ? a : 'ash';
+}
+
+// Endereço da imagem do personagem
 function srcAvatar(a) {
-  if (a === 'menina') return 'assets/img/avatares/menina.svg';
-  if (temId(TREINADORES, a)) return 'assets/img/avatares/treinadores/' + a + '.webp';
-  return 'assets/img/avatares/menino.svg';
+  return 'assets/img/avatares/treinadores/' + avatarValido(a) + '.webp';
 }
 
 // Imagem do personagem
 function imgAvatar(a, cls) {
-  return '<img class="' + cls + (temId(TREINADORES, a) ? ' avatar-treinador' : '') + '" src="' + srcAvatar(a) +
-    '" alt="">';
+  return '<img class="' + cls + ' avatar-treinador" src="' + srcAvatar(a) + '" alt="">';
 }
 
 // Foto da pessoa (se tiver) ou o personagem. u = { avatar, foto }. Se a foto não carregar, volta o personagem.

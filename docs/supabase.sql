@@ -23,10 +23,12 @@ alter table public.perfis drop constraint if exists perfis_foto_check;
 alter table public.perfis add constraint perfis_foto_check check (foto is null or
   foto like 'https://fqynjcaiwmeprxkzfwed.supabase.co/storage/v1/object/public/fotos/' || id::text || '/%');
 
--- Personagem: menino, menina ou um treinador do anime (assets/img/avatares/treinadores/<nome>.webp).
--- O banco só confere o formato; o site mostra o menino se o nome não existir.
+-- Personagem: um treinador do anime (assets/img/avatares/treinadores/<nome>.webp).
+-- O banco só confere o formato; o site mostra o Ash se o nome não existir.
 alter table public.perfis drop constraint if exists perfis_avatar_check;
 alter table public.perfis add constraint perfis_avatar_check check (avatar ~ '^[a-z]{3,16}$');
+-- Os personagens antigos (menino e menina) saíram do site em 24/10/2026: viram Ash e Misty
+update public.perfis set avatar = case avatar when 'menina' then 'misty' else 'ash' end where avatar in ('menino', 'menina');
 
 -- Banner do perfil: um dos banners de tipo do site (ex.: "fogo", em assets/img/banners/) ou uma imagem
 -- da própria pessoa no Storage (pasta banners/<id da conta>/). Sem banner, o perfil usa o fundo padrão.
@@ -35,7 +37,7 @@ alter table public.perfis drop constraint if exists perfis_banner_check;
 alter table public.perfis add constraint perfis_banner_check check (banner is null or banner ~ '^[a-z]{3,12}$' or
   banner like 'https://fqynjcaiwmeprxkzfwed.supabase.co/storage/v1/object/public/banners/' || id::text || '/%');
 
--- Vitrine: até 5 cartas escolhidas para o perfil público. [{ "c": "me01", "k": "me01-001" }, ...]
+-- Vitrine: até 10 cartas escolhidas para o perfil público. [{ "c": "me01", "k": "me01-001" }, ...]
 alter table public.perfis add column if not exists vitrine jsonb not null default '[]'::jsonb;
 -- Quem pode ver a coleção completa (cartas e repetidas): todos | amigos | ninguem. Começa fechada.
 alter table public.perfis add column if not exists privacidade text not null default 'ninguem'
@@ -145,14 +147,14 @@ insert into public.perfis (id, nome, email, criado_em)
   select id, raw_user_meta_data ->> 'nome', email, created_at from auth.users
   on conflict (id) do nothing;
 
--- A vitrine só aceita até 5 cartas, sem repetir, e só cartas que a pessoa marcou como "tenho"
+-- A vitrine só aceita até 10 cartas, sem repetir, e só cartas que a pessoa marcou como "tenho"
 create or replace function public.validar_vitrine() returns trigger
 language plpgsql security definer set search_path = public as $$
 declare v jsonb; t jsonb;
 begin
   if new.vitrine is not distinct from old.vitrine then return new; end if;
-  if jsonb_typeof(new.vitrine) <> 'array' or jsonb_array_length(new.vitrine) > 5 then
-    raise exception 'vitrine: no máximo 5 cartas';
+  if jsonb_typeof(new.vitrine) <> 'array' or jsonb_array_length(new.vitrine) > 10 then
+    raise exception 'vitrine: no máximo 10 cartas';
   end if;
   if (select count(distinct x) from jsonb_array_elements(new.vitrine) x) <> jsonb_array_length(new.vitrine) then
     raise exception 'vitrine: carta repetida';

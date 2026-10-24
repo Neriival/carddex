@@ -16,7 +16,7 @@
 - [x] Marcações salvas na conta (qualquer aparelho)
 - [x] Nick, sexo e personagem no cadastro; foto de perfil opcional
 - [x] Ranking por total de cartas
-- [x] Perfil público com vitrine de 5 cartas e link para compartilhar
+- [x] Perfil público com vitrine (agora até 10 cartas) e link para compartilhar
 - [x] Cartas repetidas (na grade e na carta grande, filtro e imagem para o WhatsApp)
 - [x] Parceiros nas laterais, com cliques no painel adm
 - [x] Painel adm: contas, números do site, parceiros e moderação de fotos

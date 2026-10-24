@@ -1,11 +1,11 @@
 // js/recursos/vitrine.js
-// VITRINE: até 5 cartas que a pessoa escolhe para mostrar no perfil público
+// VITRINE: até 10 cartas que a pessoa escolhe para mostrar no perfil público
 // ============================================================
 // Botão "Pôr na vitrine" na carta grande; "Minha vitrine" no Meu perfil (com × para tirar).
 // O banco confere que só entram cartas marcadas como "tenho" (docs/supabase.sql).
 // A tela do perfil público fica em js/telas/perfil-publico.js.
 // ============================================================
-var VITRINE_MAX = 5;
+var VITRINE_MAX = 10; // o banco confere o mesmo limite (validar_vitrine)
 var vitrineAberta = null; // cartas da vitrine que está sendo vista (para navegar entre elas na carta grande)
 
 // Cartas da vitrine de quem está logado: [{ c: coleção, k: carta }]
