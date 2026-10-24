@@ -17,22 +17,28 @@
 
   <!-- ESTILOS (nesta ordem). ?v=... = versão dos arquivos: troque em TODAS as linhas (CSS e JS)
        a cada atualização, para o navegador e o app instalado baixarem tudo de novo -->
-  <link rel="stylesheet" href="css/base.css?v=20261024b">
-  <link rel="stylesheet" href="css/layout.css?v=20261024b">
-  <link rel="stylesheet" href="css/componentes/cartas.css?v=20261024b">
-  <link rel="stylesheet" href="css/componentes/carta-grande.css?v=20261024b">
-  <link rel="stylesheet" href="css/componentes/compartilhar.css?v=20261024b">
-  <link rel="stylesheet" href="css/componentes/parceiros.css?v=20261024b">
-  <link rel="stylesheet" href="css/telas/colecao.css?v=20261024b">
-  <link rel="stylesheet" href="css/telas/minhas.css?v=20261024b">
-  <link rel="stylesheet" href="css/telas/conta.css?v=20261024b">
-  <link rel="stylesheet" href="css/telas/ranking.css?v=20261024b">
-  <link rel="stylesheet" href="css/telas/colecao-de.css?v=20261024b">
-  <link rel="stylesheet" href="css/telas/admin.css?v=20261024b">
-  <link rel="stylesheet" href="css/responsivo.css?v=20261024b">
+  <link rel="stylesheet" href="css/base.css?v=20261024c">
+  <link rel="stylesheet" href="css/layout.css?v=20261024c">
+  <link rel="stylesheet" href="css/componentes/cartas.css?v=20261024c">
+  <link rel="stylesheet" href="css/componentes/carta-grande.css?v=20261024c">
+  <link rel="stylesheet" href="css/componentes/compartilhar.css?v=20261024c">
+  <link rel="stylesheet" href="css/componentes/parceiros.css?v=20261024c">
+  <link rel="stylesheet" href="css/componentes/abertura.css?v=20261024c">
+  <link rel="stylesheet" href="css/telas/colecao.css?v=20261024c">
+  <link rel="stylesheet" href="css/telas/minhas.css?v=20261024c">
+  <link rel="stylesheet" href="css/telas/conta.css?v=20261024c">
+  <link rel="stylesheet" href="css/telas/ranking.css?v=20261024c">
+  <link rel="stylesheet" href="css/telas/colecao-de.css?v=20261024c">
+  <link rel="stylesheet" href="css/telas/admin.css?v=20261024c">
+  <link rel="stylesheet" href="css/responsivo.css?v=20261024c">
 </head>
 
 <body>
+  <!-- animação de abertura: some quando o site termina de carregar (js/recursos/abertura.js) -->
+  <div id="abertura" class="abertura" aria-hidden="true">
+    <img src="assets/img/carddex-logo.png" alt="">
+  </div>
+
   <!-- página em 3 colunas: parceiros | site | parceiros (no celular os parceiros vão para o fim) -->
   <div class="pagina">
     <aside class="lado" id="parc-esq" aria-label="Parceiros"></aside>
@@ -71,33 +77,34 @@
   <!-- SCRIPTS (a ordem importa: cada arquivo usa funções dos que vêm antes) -->
   <!-- banco de dados (login, contas, ranking, parceiros) -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="js/config.js?v=20261024b"></script>
+  <script src="js/config.js?v=20261024c"></script>
   <!-- base: ajudantes, dados das cartas, marcações, preços e sincronização com a conta -->
-  <script src="js/base/util.js?v=20261024b"></script>
-  <script src="js/base/dados.js?v=20261024b"></script>
-  <script src="js/base/marcacoes.js?v=20261024b"></script>
-  <script src="js/base/precos.js?v=20261024b"></script>
-  <script src="js/base/nuvem.js?v=20261024b"></script>
+  <script src="js/base/util.js?v=20261024c"></script>
+  <script src="js/base/dados.js?v=20261024c"></script>
+  <script src="js/base/marcacoes.js?v=20261024c"></script>
+  <script src="js/base/precos.js?v=20261024c"></script>
+  <script src="js/base/nuvem.js?v=20261024c"></script>
   <!-- conta: login, perfil e fotos -->
-  <script src="js/conta/auth.js?v=20261024b"></script>
-  <script src="js/conta/fotos.js?v=20261024b"></script>
-  <script src="js/conta/login.js?v=20261024b"></script>
-  <script src="js/conta/perfil.js?v=20261024b"></script>
+  <script src="js/conta/auth.js?v=20261024c"></script>
+  <script src="js/conta/fotos.js?v=20261024c"></script>
+  <script src="js/conta/login.js?v=20261024c"></script>
+  <script src="js/conta/perfil.js?v=20261024c"></script>
   <!-- recursos usados em várias telas -->
-  <script src="js/recursos/carta-grande.js?v=20261024b"></script>
-  <script src="js/recursos/compartilhar.js?v=20261024b"></script>
-  <script src="js/recursos/parceiros.js?v=20261024b"></script>
-  <script src="js/recursos/vitrine.js?v=20261024b"></script>
+  <script src="js/recursos/carta-grande.js?v=20261024c"></script>
+  <script src="js/recursos/compartilhar.js?v=20261024c"></script>
+  <script src="js/recursos/parceiros.js?v=20261024c"></script>
+  <script src="js/recursos/vitrine.js?v=20261024c"></script>
+  <script src="js/recursos/abertura.js?v=20261024c"></script>
   <!-- telas -->
-  <script src="js/telas/inicio.js?v=20261024b"></script>
-  <script src="js/telas/colecao.js?v=20261024b"></script>
-  <script src="js/telas/minhas.js?v=20261024b"></script>
-  <script src="js/telas/ranking.js?v=20261024b"></script>
-  <script src="js/telas/perfil-publico.js?v=20261024b"></script>
-  <script src="js/telas/colecao-de.js?v=20261024b"></script>
-  <script src="js/telas/admin.js?v=20261024b"></script>
+  <script src="js/telas/inicio.js?v=20261024c"></script>
+  <script src="js/telas/colecao.js?v=20261024c"></script>
+  <script src="js/telas/minhas.js?v=20261024c"></script>
+  <script src="js/telas/ranking.js?v=20261024c"></script>
+  <script src="js/telas/perfil-publico.js?v=20261024c"></script>
+  <script src="js/telas/colecao-de.js?v=20261024c"></script>
+  <script src="js/telas/admin.js?v=20261024c"></script>
   <!-- começa o site -->
-  <script src="js/main.js?v=20261024b"></script>
+  <script src="js/main.js?v=20261024c"></script>
 </body>
 
 </html>

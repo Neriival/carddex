@@ -1,0 +1,80 @@
+/* css/componentes/abertura.css – animação leve ao abrir o site
+   O logo aparece crescendo com um brilho dourado; quando o site termina de carregar (js/recursos/abertura.js),
+   a tela de abertura some esmaecendo e o conteúdo entra subindo de leve.
+   Quem desativa animações no sistema não vê nada disso (regra no fim de css/responsivo.css). */
+
+/* ===== TELA DE ABERTURA ===== */
+.abertura {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  background: var(--bg);
+  transition: opacity .5s ease, visibility .5s;
+  /* segurança: se o site travar ao carregar, a abertura some sozinha depois de 6 s */
+  animation: abertura-some .5s 6s forwards;
+}
+
+.abertura img {
+  width: min(180px, 40vw);
+  height: min(180px, 40vw);
+  border-radius: 50%;
+  object-fit: cover;
+  animation: abertura-logo 1s cubic-bezier(.2, .9, .3, 1.2) both, abertura-brilho 1.6s .6s ease-in-out infinite;
+}
+
+/* some esmaecendo (classe colocada pelo js/recursos/abertura.js) */
+.abertura.saindo {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* ===== ENTRADA DO CONTEÚDO ===== */
+body.abriu .wrap {
+  animation: abertura-conteudo .6s ease-out both;
+}
+
+/* ===== ANIMAÇÕES ===== */
+@keyframes abertura-logo {
+  from {
+    opacity: 0;
+    transform: scale(.6) rotate(-10deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes abertura-brilho {
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px #ffc61a33;
+  }
+
+  50% {
+    box-shadow: 0 0 60px #ffc61a88;
+  }
+}
+
+@keyframes abertura-conteudo {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes abertura-some {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}

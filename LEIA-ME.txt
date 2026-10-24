@@ -43,6 +43,7 @@ ESTRUTURA
      login.js                     tela de login e botão da conta no menu
      perfil.js                    tela Meu perfil e campos de perfil
    recursos/                    peças usadas em várias telas
+     abertura.js                  animação de abertura do site
      carta-grande.js              carta grande (3D, arrastar, tenho, repetidas, vitrine)
      compartilhar.js              imagem das cartas que faltam / repetidas (WhatsApp)
      parceiros.js                 quadrados de parceiros

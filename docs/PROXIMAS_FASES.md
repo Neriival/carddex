@@ -28,6 +28,7 @@
 - [x] Promos Black Star (EV, EE, SL) e série XY completa
 - [x] Séries Preto e Branco, HeartGold SoulSilver e Platina completas; Promos ME e energias básicas EV/ME
 - [x] Número impresso da carta (ex.: PAL PT 211/193) na grade, na carta grande e na imagem de compartilhar
+- [x] Animação leve ao abrir o site (logo com brilho; respeita quem desativa animações)
 - [x] Botão "Desmarcar todas" em cada coleção (com confirmação e Desfazer)
 - [x] Cartas maiores (5 por fileira), menu da coleção centralizado e coleção "Em breve" (Delta Reign, 06/11/2026) baixada sozinha pelo robô quando sair
 - [x] Código organizado em pastas (css/ e js/ separados por base, componentes/recursos e telas)
