@@ -67,8 +67,9 @@ function diasAte(data) {
 // DESTAQUES da tela inicial: a coleção mais recente (com as cartas mais raras) e a próxima ("Em breve", com contagem)
 function blocoDestaques() {
   var cols = todasColecoes(),
+    // mesma data (ex.: coleção principal + coleção clássica que vem junto): a maior conta como a mais nova
     porData = function (a, b) {
-      return a.lancamento < b.lancamento ? -1 : a.lancamento > b.lancamento ? 1 : 0;
+      return a.lancamento < b.lancamento ? -1 : a.lancamento > b.lancamento ? 1 : a.total - b.total;
     };
   var proxima = cols.filter(function (c) {
       return c.emBreve;
@@ -86,12 +87,6 @@ function blocoDestaques() {
       ' · ' + dataBR(c.lancamento) + '</span></div>' + lado + '</div>';
   }
   var html = '';
-  // coleção mais recente, com as 3 cartas mais valiosas saindo do cartão
-  // (o espaço .raras é preenchido depois, por preencherRaras, quando as cartas e os preços carregarem)
-  if (recente) html += cartao(recente, 'recente com-raras', 'Coleção mais recente',
-    '<span class="destaque-ver">' + recente.total + ' cartas · Ver coleção →</span>' +
-    '<div class="raras" id="raras" data-col="' + recente.id + '"></div>');
-  // embaixo, a próxima coleção (se houver uma marcada como "Em breve") com a contagem regressiva
   if (proxima) {
     var d = diasAte(proxima.lancamento),
       // já passou da data, mas o robô ainda não achou as cartas: "Saiu! cartas em breve"
@@ -100,6 +95,11 @@ function blocoDestaques() {
       '<b>Saiu!</b><span>cartas em breve</span>';
     html += cartao(proxima, 'proxima', 'Próximo lançamento', '<div class="contagem">' + contagem + '</div>');
   }
+  // sem lançamento divulgado, a coleção mais recente ocupa a linha toda e as 5 cartas mais valiosas saem do cartão
+  // (o espaço .raras é preenchido depois, por preencherRaras, quando as cartas e os preços carregarem)
+  if (recente) html += cartao(recente, 'recente' + (proxima ? '' : ' com-raras'), 'Coleção mais recente',
+    '<span class="destaque-ver">' + recente.total + ' cartas · Ver coleção →</span>' +
+    (proxima ? '' : '<div class="raras" id="raras" data-col="' + recente.id + '"></div>'));
   return html ? '<div class="destaques">' + html + '</div>' : '';
 }
 
@@ -116,8 +116,9 @@ function pesoRaridade(k) {
   return peso;
 }
 
-// AS MAIS RARAS: as 3 cartas mais valiosas da coleção mais recente, em leque, saindo de dentro do cartão.
-// A mais valiosa fica no meio, na frente. Clicar numa carta abre a carta grande.
+// AS MAIS RARAS: as 5 cartas mais valiosas da coleção mais recente, em leque, saindo de dentro do cartão.
+// A mais valiosa fica no meio, na frente; as seguintes vão para os lados. Clicar numa carta abre a carta grande.
+// Os preços mudam todo dia (robô), então as cartas escolhidas também podem mudar.
 async function preencherRaras(box) {
   var c = acharColecao(box.dataset.col),
     lista = await carregarCartas(c).catch(function () {
@@ -129,13 +130,14 @@ async function preencherRaras(box) {
     return k.mini || k.imagem;
   }).sort(function (a, b) {
     return valorCarta(c, b.id) - valorCarta(c, a.id) || pesoRaridade(b) - pesoRaridade(a);
-  }).slice(0, 3);
-  if (top.length < 3) { // coleção sem imagens: fica o cartão normal
+  }).slice(0, 5);
+  if (top.length < 5) { // coleção sem imagens: fica o cartão normal
     box.parentNode.classList.remove('com-raras');
     box.remove();
     return;
   }
-  box.innerHTML = [top[1], top[0], top[2]].map(function (k, i) {
+  // da esquerda para a direita: 4ª, 2ª, 1ª (a mais valiosa, no meio), 3ª, 5ª
+  box.innerHTML = [top[3], top[1], top[0], top[2], top[4]].map(function (k, i) {
     var v = valorCarta(c, k.id);
     return '<img class="rara-' + i + '" src="' + esc(k.mini || k.imagem) + '" alt="' + esc(k.nome) + '" title="' +
       esc(k.nome) + (v ? ' · ' + reais(v) : '') + '" onclick="event.stopPropagation();abrirCarta(\'' + c.id +
@@ -153,9 +155,16 @@ function blocoContinuar() {
   }).sort(function (a, b) {
     return feito(b) - feito(a);
   }).slice(0, 3);
-  return l.length ? '<h2>Continue sua coleção</h2>' +
-    '<span class="sub">As coleções que você está mais perto de completar</span>' +
-    '<div class="colecoes">' + l.map(botaoColecao).join('') + '</div>' : '';
+  // versão enxuta: logo pequeno, nome, barra fina e a porcentagem (o resto fica na tela da coleção)
+  return l.length ? '<h3 class="continuar-titulo">Continue sua coleção</h3><div class="continuar">' +
+    l.map(function (c) {
+      var p = pct(qtdTenho(c.id), c.total);
+      return '<button class="continuar-item" onclick="telaColecao(\'' + c.id + '\')" title="Faltam ' +
+        (c.total - qtdTenho(c.id)) + ' cartas"><img src="assets/img/colecoes/' + c.serie + '/' + c.id +
+        '.webp" alt="" onerror="logoAlt(this)"><span class="continuar-txt"><b>' + esc(c.nome) + '</b>' +
+        barra(p) + '</span>' +
+        '<span class="continuar-pct">' + p + '%</span></button>';
+    }).join('') + '</div>' : '';
 }
 
 // Botão de um jogo (Pokémon, Yu-Gi-Oh!...). Ícones em assets/img/jogos/<id>.svg

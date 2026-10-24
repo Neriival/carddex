@@ -1,12 +1,12 @@
 /* css/telas/inicio.css – partes novas da tela inicial (js/telas/inicio.js)
-   Coleção mais recente (com as 3 cartas mais valiosas saindo do cartão), próximo lançamento (contagem
-   regressiva) e a faixa colorida de cada era nas séries.
+   Próximo lançamento (contagem regressiva), coleção mais recente (sem lançamento divulgado, com as 5 cartas
+   mais valiosas saindo do cartão), "Continue sua coleção" (enxuto) e a faixa colorida de cada era nas séries.
    O destaque do topo (hero) e os números ficam em css/layout.css e css/componentes/cartas.css. */
 
 /* ===== DESTAQUES: PRÓXIMO LANÇAMENTO E COLEÇÃO MAIS RECENTE ===== */
 .destaques {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 14px;
   margin-top: 20px;
 }
@@ -101,11 +101,11 @@
   outline-offset: 2px;
 }
 
-/* ===== AS MAIS RARAS (cartas saindo do cartão da coleção mais recente) ===== */
-/* deixa espaço em cima para as cartas saírem */
+/* ===== AS MAIS RARAS (quando não há lançamento divulgado) ===== */
+/* a coleção mais recente ocupa a linha toda e deixa espaço em cima para as cartas saírem */
 .destaque.com-raras {
   grid-column: 1/-1;
-  grid-template-columns: auto 1fr 320px;
+  grid-template-columns: auto 1fr 440px;
   margin-top: 60px;
 }
 
@@ -127,29 +127,55 @@
   clip-path: inset(-300px -80px -18px -80px);
 }
 
-/* --x e --r (posição e inclinação de cada carta) ficam em .rara-0, .rara-1 e .rara-2 */
+/* --x e --r (posição e inclinação de cada carta) ficam em .rara-0 a .rara-4 */
 .raras img {
   position: absolute;
-  left: 44%;
+  left: 50%;
   bottom: -12px;
-  width: 110px;
+  width: 100px;
   border-radius: 6px;
   box-shadow: 0 10px 24px #0009;
   cursor: zoom-in;
   transform-origin: 50% 100%;
-  transform: translateX(var(--x)) rotate(var(--r));
+  /* posição e inclinação ficam em "translate" e "rotate"; o "transform" fica livre para a animação e o mouse */
+  translate: var(--x) 0;
+  rotate: var(--r);
   transition: transform .25s;
   animation: sair-carta .8s cubic-bezier(.2, .9, .3, 1.2) backwards;
 }
 
+/* pontas do leque: 4ª e 5ª mais valiosas */
 .raras .rara-0 {
-  --x: -125%;
-  --r: -12deg;
-  animation-delay: .2s;
+  --x: calc(-50% - 160px);
+  --r: -16deg;
+  animation-delay: .15s;
+}
+
+.raras .rara-4 {
+  --x: calc(-50% + 160px);
+  --r: 16deg;
+  animation-delay: .55s;
+}
+
+/* do lado da do meio: 2ª e 3ª */
+.raras .rara-1 {
+  --x: calc(-50% - 84px);
+  --r: -8deg;
+  width: 112px;
+  z-index: 1;
+  animation-delay: .25s;
+}
+
+.raras .rara-3 {
+  --x: calc(-50% + 84px);
+  --r: 8deg;
+  width: 112px;
+  z-index: 1;
+  animation-delay: .45s;
 }
 
 /* a mais valiosa: no meio, maior e na frente */
-.raras .rara-1 {
+.raras .rara-2 {
   --x: -50%;
   --r: 0deg;
   width: 128px;
@@ -157,23 +183,85 @@
   animation-delay: .35s;
 }
 
-.raras .rara-2 {
-  --x: 25%;
-  --r: 12deg;
-  animation-delay: .5s;
-}
-
 .raras img:hover {
-  transform: translateX(var(--x)) translateY(-18px) rotate(var(--r)) scale(1.06);
+  transform: translateY(-18px) scale(1.06);
   z-index: 3;
 }
 
 /* a carta sobe de dentro do cartão, já abrindo o leque */
 @keyframes sair-carta {
   from {
-    transform: translateX(var(--x)) translateY(80%) rotate(0deg);
+    transform: translateY(80%);
     opacity: 0;
   }
+}
+
+/* ===== CONTINUE SUA COLEÇÃO (versão enxuta: logo, nome, barra fina e %) ===== */
+.continuar-titulo {
+  margin: 26px 0 10px;
+  font-size: 1.05rem;
+  color: var(--mut);
+  font-weight: 600;
+}
+
+.continuar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 10px;
+}
+
+.continuar-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color .2s, background .2s;
+}
+
+.continuar-item:hover {
+  border-color: var(--gold);
+  background: var(--p1);
+}
+
+.continuar-item img {
+  height: 28px;
+  width: 64px;
+  object-fit: contain;
+  flex: none;
+}
+
+.continuar-txt {
+  flex: 1;
+  min-width: 0;
+}
+
+.continuar-txt b {
+  display: block;
+  font-size: .9rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* a barra de progresso do site (base.css), mais fina e com o trilho um pouco mais claro */
+.continuar .barra {
+  height: 4px;
+  margin-top: 6px;
+  background: #ffffff14;
+}
+
+.continuar-pct {
+  color: var(--gold);
+  font-size: .85rem;
+  font-weight: 700;
 }
 
 /* ===== SÉRIES: FAIXA NA COR DE CADA ERA ===== */
@@ -245,6 +333,10 @@
     max-width: 96px;
   }
 
+  .destaques {
+    grid-template-columns: 1fr;
+  }
+
   .contagem b {
     font-size: 1.7rem;
   }
@@ -274,16 +366,22 @@
     bottom: -8px;
   }
 
-  /* leque mais fechado para a carta da direita não passar da borda da tela */
-  .raras .rara-0 {
-    --x: -112%;
+  /* no celular ficam as 3 do meio, mais juntas */
+  .raras .rara-0, .raras .rara-4 {
+    display: none;
   }
 
   .raras .rara-1 {
-    width: 78px;
+    --x: calc(-50% - 40px);
+    width: 66px;
+  }
+
+  .raras .rara-3 {
+    --x: calc(-50% + 40px);
+    width: 66px;
   }
 
   .raras .rara-2 {
-    --x: 12%;
+    width: 78px;
   }
 }
