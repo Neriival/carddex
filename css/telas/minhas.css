@@ -1,4 +1,6 @@
-/* css/telas/minhas.css – Minhas cartas: caixa de backup e cartas separadas por coleção */
+/* css/telas/minhas.css – Minhas cartas: resumo, filtros, coleções que abrem ao clicar e a caixa de backup */
+
+/* ===== BACKUP (no fim da página) ===== */
 .backup {
   background: var(--p1);
   border: 1px solid var(--line);
@@ -41,23 +43,196 @@
   display: none;
 }
 
-.minhas-col {
-  margin-top: 26px;
+/* ===== RESUMO (cartas, coleções e valor) ===== */
+.minhas-resumo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 12px 0 4px;
 }
 
-.minhas-col .voltar h3 {
-  margin: 0;
+.minhas-resumo div {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  padding: 10px 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--p1);
+}
+
+.minhas-resumo b {
   color: var(--gold);
   font-size: 1.3rem;
+}
+
+.minhas-resumo span {
+  color: var(--mut);
+  font-size: .85rem;
+}
+
+/* ===== FILTROS: SÉRIE (botões) E ORDEM ===== */
+.minhas-filtros {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 16px;
+  margin: 16px 0 6px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  background: var(--p1);
+  border: 1px solid var(--line);
+  color: var(--text);
+  border-radius: 999px;
+  min-height: 38px;
+  padding: 0 14px;
+  font: inherit;
+  font-size: .9rem;
+  cursor: pointer;
+}
+
+.chip:hover {
+  border-color: var(--gold);
+}
+
+.chip.on {
+  background: var(--gold);
+  color: #1a1200;
+  border-color: var(--gold);
+  font-weight: 700;
+}
+
+.minhas-ordem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--mut);
+  font-size: .9rem;
+}
+
+.minhas-ordem select {
+  min-height: 38px;
+  background: var(--p1);
+  border: 1px solid var(--line);
+  color: var(--text);
+  border-radius: 10px;
+  padding: 0 10px;
+  font: inherit;
+  cursor: pointer;
+}
+
+/* ===== COLEÇÕES (fechadas; abrem ao clicar) ===== */
+.minhas-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.minhas-col {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--p1);
+  overflow: hidden;
+}
+
+.minhas-col.aberta {
+  border-color: var(--gold);
+}
+
+.minhas-linha {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 16px;
+  background: none;
+  border: 0;
+  color: var(--text);
+  font: inherit;
   text-align: left;
+  cursor: pointer;
 }
 
-.minhas-col .grade {
-  margin-top: 10px;
+.minhas-linha:hover {
+  background: #ffffff08;
 }
 
-.minhas-col .valor {
+.minhas-linha img {
+  width: 90px;
+  height: 36px;
+  object-fit: contain;
+  flex: none;
+}
+
+.minhas-nome {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.minhas-nome b {
+  font-size: 1.05rem;
+}
+
+.minhas-nome small {
+  color: var(--mut);
+}
+
+/* a barra de progresso do site (base.css), mais fina */
+.minhas-nome .barra {
+  height: 5px;
+  margin-top: 6px;
+  max-width: 320px;
+}
+
+.minhas-valor {
   color: var(--gold);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* setinha: aponta para baixo (fechada) e para cima (aberta) */
+.seta {
+  color: var(--mut);
+  font-size: 1.1rem;
+  transition: transform .2s;
+}
+
+.minhas-col.aberta .seta {
+  transform: rotate(180deg);
+}
+
+.minhas-cartas {
+  padding: 4px 16px 16px;
+  border-top: 1px solid var(--line);
+  animation: abrir-colecao .25s ease-out;
+}
+
+.minhas-cartas .grade {
+  margin-top: 14px;
+}
+
+.minhas-cartas>.btn {
+  margin: 16px auto 0;
+  display: flex;
+}
+
+@keyframes abrir-colecao {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
 }
 
 @media(max-width:760px) {
@@ -68,5 +243,23 @@
   .backup-acoes .btn {
     flex: 1;
     min-width: 0;
+  }
+
+  .minhas-linha {
+    gap: 10px;
+    padding: 10px 12px;
+  }
+
+  .minhas-linha img {
+    width: 56px;
+    height: 28px;
+  }
+
+  .minhas-valor {
+    font-size: .85rem;
+  }
+
+  .minhas-cartas {
+    padding: 4px 10px 12px;
   }
 }
