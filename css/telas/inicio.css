@@ -15,7 +15,7 @@
 
 /* com lançamento divulgado: contagem num cartão estreito à esquerda e a coleção mais recente, maior, à direita */
 .destaques.com-proxima {
-  grid-template-columns: minmax(230px, 1fr) 2.7fr;
+  grid-template-columns: minmax(220px, 1fr) 3fr;
 }
 
 .destaque {
@@ -147,11 +147,10 @@
   clip-path: inset(-300px -80px -18px -80px);
 }
 
-/* ao lado da contagem o cartão é menor: sai o logo e o leque fica mais fechado.
-   Alinhado por baixo, ele fica mais baixo que a contagem e as cartas saem por cima dele */
+/* ao lado da contagem (na mesma altura dela) sai o logo; o leque fica mais fechado, com cartas grandes
+   o bastante para saírem por cima do cartão */
 .com-proxima .com-raras {
-  grid-template-columns: 1fr 360px;
-  align-self: end;
+  grid-template-columns: 1fr 420px;
 }
 
 .com-proxima .com-raras>img {
@@ -163,11 +162,11 @@
 }
 
 .com-proxima .raras {
-  --g1: 68px;
-  --g2: 128px;
-  --w0: 88px;
-  --w1: 98px;
-  --w2: 112px;
+  --g1: 60px;
+  --g2: 112px;
+  --w0: 128px;
+  --w1: 146px;
+  --w2: 172px;
   grid-column: 2;
 }
 
