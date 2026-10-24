@@ -6,6 +6,7 @@
 // Os dados vêm da função "ranking" do banco (docs/supabase.sql): top 50 + a sua posição.
 // ============================================================
 
+// TELA – Ranking: envia as marcações que faltam, lê o top 50 do banco e desenha
 async function telaRanking() {
   ESTADO.redesenhar = telaRanking;
   marcarMenu(3);

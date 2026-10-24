@@ -9,6 +9,7 @@
 // Os dados vêm da função "perfil_publico" do banco (docs/supabase.sql).
 // ============================================================
 
+// TELA – Perfil público do colecionador com esse nick (lê do banco e desenha)
 async function telaPerfilPublico(nick) {
   document.body.classList.remove('na-login');
   ESTADO.redesenhar = null;

@@ -51,6 +51,7 @@ def preco_tcgplayer(carta_id):
 
 
 def main():
+    """Baixa a cotação do dólar e o preço do TCGplayer de cada carta, e grava um arquivo por série."""
     series = json.loads((RAIZ / 'dados' / 'series.json').read_text(encoding='utf-8'))['series']
     cot = baixar(COTACAO)
     usd_brl = round(float(cot['USDBRL']['bid']), 4) if cot else None

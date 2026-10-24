@@ -56,6 +56,7 @@ def foto_tcgplayer(carta_id):
 
 
 def main():
+    """Nas coleções pedidas (ids na linha de comando), procura as cartas sem imagem e tenta outras fontes."""
     pedidas = sys.argv[1:]
     series = json.loads((RAIZ / 'dados' / 'series.json').read_text(encoding='utf-8'))['series']
     for s in series:

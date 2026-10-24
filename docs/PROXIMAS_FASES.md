@@ -1,7 +1,9 @@
 # Próximas fases
 
 ## Falta fazer
-- [ ] Cartas de Yu-Gi-Oh! e Dragon Ball (precisa de uma fonte de dados para cada jogo)
+- [ ] Domínio próprio (carddex.app.br) com aviso antes para quem usa sem conta
+- [ ] Imagens no Cloudflare R2 quando o site chegar perto de 1 GB (limite do GitHub Pages)
+- [ ] Cartas de Yu-Gi-Oh! (teste pronto no branch `yugioh`, com cartas do YGOPRODeck) e Dragon Ball
 - [ ] Séries mais antigas de Pokémon: próxima é Diamante e Pérola (dp1–dp7 e Promos DP na TCGdex; siglas da Liga DP, DPPR, MT, SW, GE, MD, LA, SF)
 - [ ] Estatísticas detalhadas
 - [ ] E-mails em português (o plano grátis do Supabase não deixa mudar o texto; precisa de um SMTP próprio, ex.: Resend ou Brevo)
@@ -11,7 +13,7 @@
 - [x] Filtros por raridade e tipo
 - [x] Mais séries (Espada e Escudo, Sol e Lua...)
 - [x] Exportar/importar coleção
-- [x] Tela de jogos (Pokémon, Yu-Gi-Oh!, Dragon Ball)
+- [x] Tela de jogos (aparece sozinha quando houver mais de um jogo com cartas; hoje só Pokémon)
 - [x] Login de verdade com banco de dados (Supabase) e "Esqueci minha senha"
 - [x] Marcações salvas na conta (qualquer aparelho)
 - [x] Nick, sexo e personagem no cadastro; foto de perfil opcional
@@ -32,3 +34,10 @@
 - [x] Botão "Desmarcar todas" em cada coleção (com confirmação e Desfazer)
 - [x] Cartas maiores (5 por fileira), menu da coleção centralizado e coleção "Em breve" (Delta Reign, 06/11/2026) baixada sozinha pelo robô quando sair
 - [x] Código organizado em pastas (css/ e js/ separados por base, componentes/recursos e telas)
+- [x] Perfil novo: 25 treinadores do anime, banner (um por tipo ou imagem própria), anel de nível, amigos
+      (pedido, aceitar, recusar) e privacidade em 3 níveis (todo mundo, só amigos, ninguém)
+- [x] Vitrine com até 10 cartas
+- [x] Tela inicial nova: só Pokémon, próximo lançamento com contagem, coleção mais recente com as cartas mais
+      valiosas em leque, "Continue sua coleção", valor da coleção e cor de cada era nas séries
+- [x] Minhas cartas com filtro por série, ordem e coleções que abrem ao clicar
+- [x] Preços conferidos: TCGplayer como "fiscal" da Liga e do Cardmarket (corrigiu ~480 cartas)

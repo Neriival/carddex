@@ -128,6 +128,7 @@ def pontos_e_virgulas(css):
 
 
 def formatar(caminho):
+    """Devolve (texto atual, texto no padrão do projeto) de um arquivo CSS ou JS."""
     texto = caminho.read_text(encoding='utf-8')
     if caminho.suffix == '.js':
         # repete até parar de mudar (às vezes o recuo só acerta na segunda passada)
@@ -145,10 +146,12 @@ def formatar(caminho):
 
 
 def arquivos_do_site():
+    """Todos os .css e .js do site (e o sw.js), em ordem."""
     return sorted(list((RAIZ / 'css').rglob('*.css')) + list((RAIZ / 'js').rglob('*.js')) + [RAIZ / 'sw.js'])
 
 
 def main():
+    """Formata (ou, com --conferir, só confere) todos os arquivos do site e mostra o resumo."""
     so_conferir = '--conferir' in sys.argv
     arquivos = arquivos_do_site()
     fora = 0

@@ -50,6 +50,7 @@ RARIDADES = {'Common': 'Comum', 'Uncommon': 'Incomum', 'Rare': 'Rara', 'Double r
 
 
 def salvar_imagem(url, destino):
+    """Baixa a imagem para o destino (pula se já existe). True se a imagem ficou salva."""
     if destino.exists() and destino.stat().st_size > 0:
         return True
     dados = baixar(url, binario=True)
@@ -60,6 +61,7 @@ def salvar_imagem(url, destino):
     return True
 
 def numero(n):
+    """Número da carta com 3 dígitos (7 → "007"); números com letras ficam como estão."""
     n = str(n)
     return n.zfill(3) if n.isdigit() else n
 
@@ -90,6 +92,7 @@ def numeracao(tid, col):
     return True
 
 def processar_carta(args):
+    """Baixa os detalhes e as imagens de uma carta e devolve a entrada dela para o .json da coleção."""
     serie_id, colecao, ref, so_mini = args
     cid = ref['id']
     d = baixar(f'{API}/pt/cards/{cid}')
@@ -129,6 +132,7 @@ def processar_carta(args):
     }
 
 def listar(serie_id):
+    """Mostra as coleções de uma série na TCGdex (id e nome), para preencher o series.json."""
     for idioma in ('pt', 'en'):
         s = baixar(f'{API}/{idioma}/series/{serie_id}')
         if s:
@@ -139,6 +143,7 @@ def listar(serie_id):
     print('Série não encontrada.')
 
 def main():
+    """Lê os argumentos (--listar, --numeracao, --em-breve ou ids) e baixa as coleções pedidas."""
     args = sys.argv[1:]
     if args and args[0] == '--listar':
         return listar(args[1] if len(args) > 1 else 'me')

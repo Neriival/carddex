@@ -56,6 +56,7 @@ def valor(p, sufixo=''):
 
 
 def main():
+    """Busca os números que faltam, baixa os preços e a cotação e grava um arquivo por série."""
     series = json.loads((RAIZ / 'dados' / 'series.json').read_text(encoding='utf-8'))['series']
     cartas = {}  # serie -> [ids]
     info = {}  # id -> (nome, raridade): para achar produtos ligados a cartas diferentes

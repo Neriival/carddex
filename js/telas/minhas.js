@@ -13,6 +13,7 @@ var MINHAS = {
   abertas: {} // coleções abertas: { me01: true }
 };
 
+// TELA – Minhas cartas: carrega as cartas e os preços das coleções da pessoa e desenha
 async function telaMinhas() {
   ESTADO.redesenhar = desenharMinhas;
   marcarMenu(2);

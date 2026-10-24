@@ -48,15 +48,16 @@ No ar em https://neriival.github.io/carddex/ (GitHub Pages, branch `main`, repos
   Verificação de 25/10/2026: a TCGdex liga ~430 cartas ao produto errado no Cardmarket (comum x full art x shiny);
   a média da Liga é distorcida por anúncios absurdos em promos.
   Robôs no GitHub Actions: `.github/workflows/precos.yml` (diário: "toque" no Supabase para não pausar,
-  `baixar_cartas.py --em-breve` para coleções `"emBreve": true` que a TCGdex já publicou, e preços do Cardmarket)
+  `baixar_cartas.py --em-breve` para coleções `"emBreve": true` que a TCGdex já publicou, preços do Cardmarket
+  e do TCGplayer)
   e `precos-liga.yml` (Liga: **só manual**; no GitHub a Liga bloqueia, então roda-se o script em casa).
   O robô diário faz commits no `main` → **sempre `git pull --rebase` antes de publicar**.
 
 ## Banco (Supabase, projeto `carddex`, ref `fqynjcaiwmeprxkzfwed`, plano grátis)
 - Login, perfis (nick, sexo, personagem/treinador/foto, banner, vitrine, privacidade todos|amigos|ninguem),
   amigos (tabela `amizades`, só por funções), cartas na conta, ranking, parceiros e painel adm.
-  `colecao_publica` é legado (sincronizado com `privacidade` por gatilho para o site antigo em cache). Tabelas, funções e regras de segurança (RLS): **`docs/supabase.sql`** é a
-  fonte da verdade (pode rodar de novo sem apagar nada). Passo a passo: `docs/SUPABASE.md`.
+  `colecao_publica` é legado (sincronizado com `privacidade` por gatilho para o site antigo em cache).
+  Tabelas, funções e regras de segurança (RLS): **`docs/supabase.sql`** é a fonte da verdade (pode rodar de novo sem apagar nada). Passo a passo: `docs/SUPABASE.md`.
 - No site só vai a chave **publishable** (pública de propósito). **Nunca** colocar a chave `secret`/`service_role`
   nem tokens (`sbp_...`) em arquivos ou commits.
 - Para mexer no banco: pedir ao dono um token do Supabase só do projeto carddex (24 h), usar só em comandos
@@ -66,6 +67,16 @@ No ar em https://neriival.github.io/carddex/ (GitHub Pages, branch `main`, repos
   não abre nem para admin (decisão do dono).
 - Nível do perfil: `nivel(total)` em js/base/util.js (do nível n para o n+1 são mais 25×n cartas).
 - Imagens de treinadores (anime) e banners de tipo (arte oficial) são da Nintendo/TPC: uso de fã, há risco de direitos.
+
+## Site hoje (25/10/2026)
+- Só Pokémon: a tela inicial mostra as séries direto. Teste de Yu-Gi-Oh! (YGOPRODeck, 15 boosters) guardado no
+  branch `yugioh` (o dono preferiu não seguir: ninguém para dizer o que o colecionador de Yu-Gi-Oh! quer).
+- Início: próximo lançamento (contagem) ao lado da coleção mais recente com as 5 cartas mais valiosas em leque;
+  sem lançamento divulgado, a coleção mais recente ocupa a linha toda. "Continue sua coleção" (até 6) e séries
+  com a cor da era. Minhas cartas: filtro por série, ordem e coleções que abrem ao clicar.
+- Planos do dono: domínio próprio (carddex.app.br, Registro.br) com DNS na Cloudflare; mais para frente, imagens
+  no Cloudflare R2 (grátis até ~10 GB, dividido com o projeto Tempestivo, na mesma conta). Supabase continua.
+  Antes de trocar o domínio: avisar quem usa sem conta (o que fica no navegador não passa para o endereço novo).
 
 ## Testes
 - Não há testes automáticos no repositório. Testar no Chrome sem janela (headless) via DevTools

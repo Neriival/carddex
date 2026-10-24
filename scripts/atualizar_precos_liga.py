@@ -84,6 +84,7 @@ def numero(n):
 
 
 def real(v):
+    """Texto ou número da Liga em real com 2 casas (None se não for um preço válido)."""
     try:
         v = round(float(v), 2)
         return v if v > 0 else None
@@ -117,6 +118,7 @@ def cartas_da_liga(sigla):
 
 
 def main():
+    """Atualiza as coleções há mais tempo sem preço, respeitando a espera da Liga, até o tempo limite."""
     series = json.loads((RAIZ / 'dados' / 'series.json').read_text(encoding='utf-8'))['series']
     colecoes = {}  # coleção → (série, [(id da carta, número)])
     for s in series:
