@@ -37,8 +37,19 @@
 /* foto da conta + "Remover foto" */
 .adm-foto {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 10px;
+}
+
+/* banner enviado pela pessoa (clique abre em tamanho real) */
+.adm-banner img {
+  display: block;
+  width: 120px;
+  aspect-ratio: 4/1;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid var(--line);
 }
 
 .adm-mini {

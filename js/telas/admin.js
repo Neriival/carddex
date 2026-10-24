@@ -1,7 +1,7 @@
 // js/telas/admin.js
 // TELA – PAINEL ADM
 // ============================================================
-// Contas criadas, números do site, coleções mais colecionadas, parceiros (com cliques) e moderação de fotos.
+// Contas criadas, números do site, coleções mais colecionadas, parceiros (com cliques) e moderação de fotos e banners.
 // Só aparece para quem está na tabela "admins" do Supabase (veja docs/SUPABASE.md).
 // O banco também confere isso: mesmo abrindo a tela por fora, quem não é admin não lê as contas nem muda nada.
 // ============================================================
@@ -70,9 +70,10 @@ async function carregarContas() {
   };
   var n = await Promise.all([contar(base()), contar(base().gte('criado_em', desde(7))), contar(base().gte('criado_em',
     desde(30)))]);
-  var lista = await sb.from('perfis').select('id,nick,nome,email,sexo,avatar,foto,criado_em').order('criado_em', {
-    ascending: false
-  }).limit(100);
+  var lista = await sb.from('perfis').select('id,nick,nome,email,sexo,avatar,foto,banner,criado_em').order(
+    'criado_em', {
+      ascending: false
+    }).limit(100);
   var st = document.getElementById('adm-stats'),
     box = document.getElementById('adm-contas');
   if (!st) return; // saiu da tela antes de terminar
@@ -87,7 +88,12 @@ async function carregarContas() {
     lista.data.map(function (c) {
       return '<tr><td class="adm-foto">' + avatarDe(c, 'adm-mini') +
         (c.foto ? '<button class="adm-remover" type="button" onclick="removerFotoAdm(this,\'' + c.id +
-          '\')">Remover foto</button>' : '') + '</td><td>' + esc(c.nick || c.nome || '–') + '</td><td>' + esc(c.email) +
+          '\')">Remover foto</button>' : '') +
+        (/^https:/.test(c.banner || '') ? '<a class="adm-banner" href="' + esc(c.banner) +
+          '" target="_blank" rel="noopener"><img src="' + esc(c.banner) + '" alt="Banner enviado"></a>' +
+          '<button class="adm-remover" type="button" onclick="removerBannerAdm(this,\'' + c.id +
+          '\')">Remover banner</button>' :
+          '') + '</td><td>' + esc(c.nick || c.nome || '–') + '</td><td>' + esc(c.email) +
         '</td><td>' + (NOMES_SEXO[c.sexo] || '–') + '</td><td>' + new Date(c.criado_em).toLocaleString(
           'pt-BR', {
             dateStyle: 'short',
@@ -249,5 +255,23 @@ async function removerFotoAdm(btn, id) {
   }
   apagarFoto(url);
   fotoQuebrada(img);
+  btn.remove();
+}
+
+// MODERAÇÃO: tira o banner enviado por alguém (o perfil volta ao fundo padrão) e apaga o arquivo
+async function removerBannerAdm(btn, id) {
+  var link = btn.previousElementSibling;
+  if (!confirm('Remover este banner? O perfil volta ao fundo padrão.')) return;
+  btn.disabled = true;
+  var r = await sb.rpc('remover_banner', {
+    alvo: id
+  });
+  if (r.error) {
+    btn.disabled = false;
+    alert('Não foi possível remover: ' + r.error.message);
+    return;
+  }
+  apagarFoto(link.getAttribute('href'));
+  link.remove();
   btn.remove();
 }

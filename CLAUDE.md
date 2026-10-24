@@ -47,16 +47,19 @@ No ar em https://neriival.github.io/carddex/ (GitHub Pages, branch `main`, repos
   O robô diário faz commits no `main` → **sempre `git pull --rebase` antes de publicar**.
 
 ## Banco (Supabase, projeto `carddex`, ref `fqynjcaiwmeprxkzfwed`, plano grátis)
-- Login, perfis (nick, sexo, personagem/foto, vitrine, coleção aberta), cartas na conta, ranking,
-  parceiros e painel adm. Tabelas, funções e regras de segurança (RLS): **`docs/supabase.sql`** é a
+- Login, perfis (nick, sexo, personagem/treinador/foto, banner, vitrine, privacidade todos|amigos|ninguem),
+  amigos (tabela `amizades`, só por funções), cartas na conta, ranking, parceiros e painel adm.
+  `colecao_publica` é legado (sincronizado com `privacidade` por gatilho para o site antigo em cache). Tabelas, funções e regras de segurança (RLS): **`docs/supabase.sql`** é a
   fonte da verdade (pode rodar de novo sem apagar nada). Passo a passo: `docs/SUPABASE.md`.
 - No site só vai a chave **publishable** (pública de propósito). **Nunca** colocar a chave `secret`/`service_role`
   nem tokens (`sbp_...`) em arquivos ou commits.
 - Para mexer no banco: pedir ao dono um token do Supabase só do projeto carddex (24 h), usar só em comandos
   (Management API), e lembrar de apagar depois. Testar com contas `@example.com` e apagá-las no fim.
 - Plano grátis: pausa após ~7 dias sem uso (Restore no painel), ~2 e-mails/hora, e-mails em inglês.
-- Contas de admin (tabela `admins`) ficam fora do ranking e sem perfil público; coleção fechada
+- Contas de admin (tabela `admins`) ficam fora do ranking, sem perfil público e sem amigos; coleção fechada
   não abre nem para admin (decisão do dono).
+- Nível do perfil: `nivel(total)` em js/base/util.js (do nível n para o n+1 são mais 25×n cartas).
+- Imagens de treinadores (anime) e banners de tipo (arte oficial) são da Nintendo/TPC: uso de fã, há risco de direitos.
 
 ## Testes
 - Não há testes automáticos no repositório. Testar no Chrome sem janela (headless) via DevTools

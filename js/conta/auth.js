@@ -31,7 +31,7 @@ function salvarSessaoLocal(u) {
 }
 
 var AUTH = {
-  _u: null, // usuário conectado { id, email, nick, sexo, avatar, foto, vitrine, colecao_publica }
+  _u: null, // usuário conectado { id, email, nick, sexo, avatar, foto, banner, vitrine, privacidade }
   admin: false, // true = pode abrir o painel adm (tabela "admins" no banco)
 
   usuario: function () {
@@ -67,11 +67,13 @@ var AUTH = {
       sexo: '',
       avatar: '',
       foto: '',
+      banner: '',
       vitrine: [],
-      colecao_publica: false
+      privacidade: 'ninguem'
     };
     try {
-      var r = await Promise.all([sb.from('perfis').select('nick,sexo,avatar,foto,vitrine,colecao_publica').eq('id',
+      var r = await Promise.all([sb.from('perfis').select('nick,sexo,avatar,foto,banner,vitrine,privacidade').eq(
+        'id',
         user.id).maybeSingle(), sb.rpc('eh_admin')]);
       var p = r[0].data;
       if (p) {
@@ -80,8 +82,9 @@ var AUTH = {
         u.avatar = p.avatar || '';
         u.foto = p.foto ||
           '';
+        u.banner = p.banner || '';
         u.vitrine = p.vitrine || [];
-        u.colecao_publica = !!p.colecao_publica;
+        u.privacidade = p.privacidade || 'ninguem';
       }
       AUTH.admin = r[1].data === true;
     } catch (e) {}
@@ -145,8 +148,8 @@ var AUTH = {
     return AUTH._u;
   },
 
-  // Troca nick, sexo, personagem, foto e se a coleção fica aberta (tela Meu perfil).
-  // Foto nova sobe antes; a antiga é apagada depois.
+  // Troca nick, sexo, personagem, foto, banner e quem vê a coleção (tela Meu perfil).
+  // Foto e banner novos sobem antes; os antigos são apagados depois.
   salvarPerfil: async function (p) {
     var dados = {
       nick: p.nick,
@@ -157,19 +160,34 @@ var AUTH = {
       salvarSessaoLocal(Object.assign(lerJSON('carddex_sessao') || {}, dados));
       return;
     }
-    if ('colecao_publica' in p) dados.colecao_publica = !!p.colecao_publica;
-    var antiga = AUTH._u.foto || '';
-    if (p.usarFoto && p.arquivo) dados.foto = await enviarFoto(p.arquivo);
-    else if (!p.usarFoto) dados.foto = null;
+    if ('privacidade' in p) dados.privacidade = p.privacidade;
+    var antiga = AUTH._u.foto || '',
+      bannerAntigo = AUTH._u.banner || '',
+      enviados = [];
+    try {
+      if (p.usarFoto && p.arquivo) enviados.push(dados.foto = await enviarImagemConta('fotos', p.arquivo));
+      else if (!p.usarFoto) dados.foto = null;
+      // banner: 'minha' = imagem enviada (nova ou a que já estava), '' = sem banner, ou o nome de um tipo
+      if ('banner' in p) {
+        if (p.banner !== 'minha') dados.banner = p.banner || null;
+        else if (p.arquivoBanner) enviados.push(dados.banner = await enviarImagemConta('banners', p.arquivoBanner));
+        else if (!/^https:/.test(bannerAntigo)) throw new Error('Escolha a sua imagem de banner.');
+      }
+    } catch (x) {
+      enviados.forEach(apagarFoto);
+      throw x;
+    }
     var r = await sb.from('perfis').update(dados).eq('id', AUTH._u.id);
     if (r.error) {
-      if (p.arquivo && dados.foto) apagarFoto(dados.foto);
+      enviados.forEach(apagarFoto);
       throw new Error(r.error.code === '23505' ? 'O nick "' + p.nick +
         '" já está em uso. Escolha outro.' : 'Não foi possível salvar: ' + r.error.message);
     }
     if ('foto' in dados && antiga && antiga !== dados.foto) apagarFoto(antiga);
+    if ('banner' in dados && bannerAntigo !== dados.banner) apagarFoto(bannerAntigo);
     Object.assign(AUTH._u, dados, {
-      foto: 'foto' in dados ? dados.foto || '' : antiga
+      foto: 'foto' in dados ? dados.foto || '' : antiga,
+      banner: 'banner' in dados ? dados.banner || '' : bannerAntigo
     });
   },
 
@@ -180,6 +198,8 @@ var AUTH = {
       await sb.auth.signOut();
       AUTH._u = null;
       AUTH.admin = false;
+      AMIGOS.lista = [];
+      AMIGOS.recebidos = 0;
       limparMarcacoes();
     }
     try {

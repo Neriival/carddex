@@ -125,27 +125,36 @@
 }
 
 /* ===== PERFIL PÚBLICO ===== */
+/* banner em cima; embaixo o personagem (subindo por cima do banner) e os dados */
 .perfil-pub {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 20px 28px;
   background: var(--p1);
   border: 1px solid var(--line);
   border-radius: 20px;
-  padding: 24px 28px;
+  overflow: hidden;
   margin-top: 4px;
+}
+
+.perfil-pub .perfil-capa {
+  max-height: 240px;
+  width: 100%;
+}
+
+.perfil-corpo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 16px 28px;
+  padding: 0 28px 24px;
+}
+
+.perfil-corpo .anel-nivel {
+  margin-top: -70px;
 }
 
 .perfil-avatar {
   width: 132px;
   height: 132px;
   border-radius: 50%;
-  flex: none;
-}
-
-.perfil-avatar.foto-perfil {
-  border-width: 4px;
 }
 
 .perfil-dados {
@@ -194,7 +203,7 @@
   display: none;
 }
 
-#msg-compartilhar a {
+#msg-compartilhar a, .perfil-dados .sub a {
   color: var(--gold);
 }
 
@@ -248,10 +257,18 @@ button.carta-vitrine:hover img {
     height: 40px;
   }
 
-  .perfil-pub {
-    padding: 18px;
+  .perfil-corpo {
+    padding: 0 18px 18px;
     justify-content: center;
     text-align: center;
+  }
+
+  .perfil-corpo .anel-nivel {
+    margin-top: -56px;
+  }
+
+  .perfil-pub .perfil-capa {
+    aspect-ratio: 5/2;
   }
 
   .perfil-avatar {

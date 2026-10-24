@@ -23,6 +23,7 @@ ESTRUTURA
      carta-grande.css             janela da carta grande (3D, repetidas, vitrine)
      compartilhar.css             janela da imagem para o WhatsApp
      parceiros.css                quadrados de parceiros
+     perfil.css                   banner, anel de nível e treinadores (perfil público e Meu perfil)
    telas/                       uma por tela
      colecao.css  minhas.css  conta.css (login e perfil)  ranking.css (ranking e perfil público)
      colecao-de.css (coleção de outra pessoa)  admin.css
@@ -39,9 +40,10 @@ ESTRUTURA
      nuvem.js                     envia/baixa as marcações da conta
    conta/
      auth.js                      entrar, criar conta, salvar perfil, sair
-     fotos.js                     personagens e foto de perfil
+     fotos.js                     personagens, treinadores, foto, banner e anel de nível
      login.js                     tela de login e botão da conta no menu
      perfil.js                    tela Meu perfil e campos de perfil
+     amigos.js                    pedidos de amizade, lista de amigos e bolinha de pedidos no menu
    recursos/                    peças usadas em várias telas
      abertura.js                  animação de abertura do site
      carta-grande.js              carta grande (3D, arrastar, tenho, repetidas, vitrine)
@@ -64,6 +66,9 @@ ESTRUTURA
  assets/img/series/<serie>.webp
  assets/img/jogos/<jogo>.svg    ícones de Pokémon, Yu-Gi-Oh!, Dragon Ball
  assets/img/avatares/           menino.svg e menina.svg (pode trocar pelos seus, mesmo nome)
+ assets/img/avatares/treinadores/  treinadores do anime (256x256 .webp). Para um novo: coloque <nome>.webp
+                                aqui e inclua ['nome', 'Nome'] em TREINADORES no js/conta/fotos.js
+ assets/img/banners/            banners de tipo (1200x300 .webp), um por tipo; a lista fica em BANNERS no fotos.js
  assets/img/app/                ícones do app instalado
  scripts/baixar_cartas.py       baixa cartas, imagens e logos
  scripts/completar_imagens.py   completa imagens que a TCGdex não tem (Pokémon TCG API, TCGplayer, Limitless)
@@ -102,10 +107,14 @@ Quando não existe, o site usa o .svg da mesma pasta (nome da coleção no estil
 Para usar um logo seu, coloque <colecao>.webp na pasta: ele tem prioridade sobre o .svg.
 
 CONTAS, RANKING, PERFIS, PAINEL ADM E PARCEIROS (Supabase – projeto "carddex", já configurado)
-- Conta com nick, sexo e personagem ou foto; as cartas marcadas e as repetidas ficam salvas na conta.
+- Conta com nick, sexo e personagem (menino, menina ou treinador do anime) ou foto, e banner do perfil
+  (um por tipo de Pokémon ou imagem própria); as cartas marcadas e as repetidas ficam salvas na conta.
+- Nível do colecionador pelo total de cartas, mostrado no anel dourado em volta do personagem.
 - Ranking por total de cartas; clicando em alguém abre o perfil público (com a vitrine de 5 cartas).
+- Amigos: pedido pelo nick (Meu perfil) ou pelo botão no perfil público; o outro aceita ou recusa.
+  Quem pode ver a coleção completa: Todo mundo, Só amigos ou Ninguém (Meu perfil).
 - O link "Admin" do menu aparece para quem estiver na tabela "admins": contas, números do site,
-  8 quadrados de parceiros (com cliques) e moderação de fotos.
+  8 quadrados de parceiros (com cliques) e moderação de fotos e banners.
 - Banco e regras de segurança: docs/supabase.sql. Passo a passo e limites do plano grátis: docs/SUPABASE.md.
 Sem o Supabase configurado o site funciona só no navegador e os quadrados mostram "Seja um parceiro".
 

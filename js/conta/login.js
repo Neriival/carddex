@@ -110,6 +110,7 @@ function entrarNoApp(convidado) {
   }
   document.body.classList.remove('na-login');
   atualizarConta();
+  carregarAmigos(); // bolinha de pedidos de amizade no menu
   var u = AUTH.usuario(),
     atalho = {
       '#admin': telaAdmin,
@@ -122,13 +123,17 @@ function entrarNoApp(convidado) {
   else telaInicio();
 }
 
-// Botão do menu: "Entrar" (visitante) ou personagem/foto + nick (logado). O link "Admin" só aparece para administradores.
+// Botão do menu: "Entrar" (visitante) ou personagem/foto + nick (logado), com uma bolinha quando há
+// pedidos de amizade esperando resposta. O link "Admin" só aparece para administradores.
 function atualizarConta() {
   var u = AUTH.usuario(),
-    b = document.getElementById('nav-conta');
-  b.innerHTML = u ? avatarDe(u, 'nav-avatar') + '<span>' + esc(u.nick || 'Meu perfil') + '</span>' : 'Entrar';
+    b = document.getElementById('nav-conta'),
+    pedidos = u && logadoNaNuvem() ? AMIGOS.recebidos : 0;
+  b.innerHTML = u ? avatarDe(u, 'nav-avatar') + '<span>' + esc(u.nick || 'Meu perfil') + '</span>' +
+    (pedidos ? '<b class="selo-pedidos">' + pedidos + '</b>' : '') : 'Entrar';
   b.classList.toggle('logado', !!u);
-  b.title = u ? 'Meu perfil (' + u.email + ')' : 'Entrar na sua conta';
+  b.title = u ? 'Meu perfil (' + u.email + ')' + (pedidos ? ' · ' + pedidos + ' pedido(s) de amizade' : '') :
+    'Entrar na sua conta';
   document.getElementById('nav-admin').hidden = !AUTH.admin;
 }
 

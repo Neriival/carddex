@@ -1,0 +1,60 @@
+/* css/componentes/perfil.css – peças do perfil usadas em mais de uma tela
+   Banner (faixa do topo), anel de nível em volta do personagem/foto e os treinadores do anime.
+   Aparecem no perfil público (css/telas/ranking.css) e na prévia do Meu perfil (css/telas/conta.css). */
+
+/* ===== BANNER ===== */
+/* sem banner escolhido, fica o degradê azul do site */
+.perfil-capa {
+  aspect-ratio: 4/1;
+  background: radial-gradient(circle at 80% 30%, #1b5fd6, transparent 60%), linear-gradient(120deg, var(--p2), var(--line));
+  overflow: hidden;
+}
+
+.perfil-capa img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right center;
+  display: block;
+}
+
+/* ===== ANEL DE NÍVEL ===== */
+/* --pct (colocado pelo js/conta/fotos.js) = quanto já andou no nível atual: o dourado enche o anel */
+.anel-nivel {
+  position: relative;
+  flex: none;
+  padding: 6px;
+  border-radius: 50%;
+  background: conic-gradient(var(--gold) var(--pct), var(--line) 0);
+  box-shadow: 0 0 18px #ffc61a33;
+}
+
+.anel-nivel>img, .anel-nivel>img.foto-perfil {
+  display: block;
+  border-radius: 50%;
+  border: 4px solid var(--p1);
+  background: var(--p1);
+}
+
+.selo-nivel {
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  transform: translateX(-50%);
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: var(--gold);
+  color: var(--bg);
+  font-weight: 800;
+  font-size: .85rem;
+  white-space: nowrap;
+  border: 2px solid var(--p1);
+}
+
+/* ===== TREINADORES DO ANIME ===== */
+/* as imagens são quadradas (com cenário): ficam redondas em qualquer lugar */
+.avatar-treinador {
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--p1);
+}

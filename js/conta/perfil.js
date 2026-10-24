@@ -1,9 +1,10 @@
 // js/conta/perfil.js
 // TELA "MEU PERFIL" E OS CAMPOS DE PERFIL (usados também no cadastro)
 // ============================================================
-// Nick (público, aparece no ranking), sexo (só a pessoa e os admins veem), personagem ou foto
-// e a opção de deixar a coleção aberta para os outros (começa fechada).
-// Embaixo do formulário fica a "Minha vitrine" (js/recursos/vitrine.js).
+// Nick (público, aparece no ranking), sexo (só a pessoa e os admins veem), personagem (menino, menina
+// ou treinador do anime) ou foto, banner do perfil e quem pode ver a coleção (todo mundo, só amigos ou ninguém).
+// No topo, a prévia do perfil (banner + personagem com o anel de nível) muda na hora ao escolher.
+// Embaixo do formulário ficam "Meus amigos" (js/conta/amigos.js) e "Minha vitrine" (js/recursos/vitrine.js).
 // ============================================================
 
 // CAMPOS DO FORMULÁRIO
@@ -27,27 +28,37 @@ function campoSexo(atual) {
     }).join('') + '</select></div>';
 }
 
-// Menino | Menina | Minha foto. atual = 'menino' | 'menina' | 'foto'; foto = endereço da foto atual (se tiver)
+// Uma opção de personagem (botão redondo com o nome embaixo)
+function opcaoAvatar(id, nome, atual, cls) {
+  return '<label class="avatar-op' + (cls || '') + '"><input type="radio" name="avatar" value="' + id + '"' +
+    (atual === id ? ' checked' : '') + ' onchange="avatarEscolhido(this)">' + imgAvatar(id, '') + '<span>' + nome +
+    '</span></label>';
+}
+
+// Menino | Menina | Minha foto e, embaixo, os treinadores do anime.
+// atual = 'menino' | 'menina' | nome do treinador | 'foto'; foto = endereço da foto atual (se tiver)
 function escolhaAvatar(atual, foto) {
-  var ops = [
-    ['menino', 'Menino'],
-    ['menina', 'Menina']
-  ].map(function (a) {
-    return '<label class="avatar-op"><input type="radio" name="avatar" value="' + a[0] + '"' +
-      (atual === a[0] ? ' checked' : '') +
-      ' onchange="this.form.dataset.avatarEscolhido=1"><img src="assets/img/avatares/' + a[0] +
-      '.svg" alt=""><span>' + a[1] + '</span></label>';
-  }).join('');
+  var ops = opcaoAvatar('menino', 'Menino', atual) + opcaoAvatar('menina', 'Menina', atual);
   // "Minha foto" só existe com o banco ligado (a foto fica guardada no Supabase)
   if (sb) ops += '<label class="avatar-op op-foto" onclick="escolherFoto(event,this)">' +
     '<input type="radio" name="avatar" value="foto"' + (atual === 'foto' ? ' checked' : '') + '>' +
     (foto ? '<img class="foto-prev" src="' + esc(foto) + '" alt="">' : '<span class="foto-vazia">+</span>') + '<span>' +
     (foto ? 'Trocar foto' : 'Minha foto') + '</span></label>';
+  var treinadores = TREINADORES.map(function (t) {
+    return opcaoAvatar(t[0], t[1], atual, ' op-treinador');
+  }).join('');
   return '<fieldset class="avatares' + (sb ? ' com-foto' : '') + '"><legend>Personagem ou foto</legend>' + ops +
     '</fieldset>' +
+    '<fieldset class="treinadores"><legend>Ou um treinador do anime</legend>' + treinadores + '</fieldset>' +
     (sb ? '<input type="file" name="arquivo" accept="image/*" hidden onchange="previaFoto(this)">' +
       '<small class="sub dica-foto">A foto aparece para todos no ranking. Escolha uma em que você esteja à vontade.</small>' :
       '');
+}
+
+// Escolheu um personagem: lembra a escolha (o sexo não troca mais) e atualiza a prévia
+function avatarEscolhido(radio) {
+  radio.form.dataset.avatarEscolhido = 1;
+  atualizarPrevia(radio.form);
 }
 
 // Clicar em "Minha foto" abre a escolha do arquivo.
@@ -57,6 +68,9 @@ function escolherFoto(e, op) {
   var radio = op.querySelector('[type=radio]');
   if (!radio.checked && op.querySelector('.foto-prev')) {
     op.closest('form').dataset.avatarEscolhido = 1;
+    setTimeout(function () {
+      atualizarPrevia(op.closest('form'));
+    });
     return;
   }
   e.preventDefault();
@@ -73,6 +87,7 @@ function previaFoto(input) {
   op.querySelector('.foto-prev,.foto-vazia').outerHTML = '<img class="foto-prev" src="' + URL.createObjectURL(arq) +
     '" alt="">';
   op.querySelector('span:last-child').textContent = 'Trocar foto';
+  atualizarPrevia(input.form);
 }
 
 // Ao escolher o sexo, já marca o personagem correspondente (se a pessoa ainda não escolheu um)
@@ -83,10 +98,90 @@ function sugerirAvatar(sel) {
       feminino: 'menina'
     } [sel.value];
   if (a && !f.dataset.avatarEscolhido) f.elements.avatar.value = a;
+  atualizarPrevia(f);
 }
 
-// Confere nick, sexo e personagem/foto do formulário.
-// Devolve { nick, sexo, avatar, usarFoto, arquivo } ou a mensagem de erro (texto).
+// BANNER: sem banner | um por tipo de Pokémon | minha imagem. atual = '' | tipo | endereço da imagem enviada
+function escolhaBanner(atual) {
+  var minha = /^https:\/\//.test(atual || '');
+
+  function op(valor, img, nome, cls) {
+    return '<label class="banner-op' + (cls || '') + '"' +
+      (valor === 'minha' ? ' onclick="escolherBanner(event,this)"' :
+        '') + '><input type="radio" name="banner" value="' + valor + '"' +
+      ((valor === 'minha' ? minha : !minha && (atual || '') === valor) ? ' checked' : '') +
+      ' onchange="atualizarPrevia(this.form)">' + img + '<span>' + nome + '</span></label>';
+  }
+  return '<fieldset class="banners"><legend>Banner do perfil</legend>' +
+    op('', '<span class="banner-vazio"></span>', 'Padrão') + BANNERS.map(function (b) {
+      return op(b[0], '<img src="assets/img/banners/' + b[0] + '.webp" alt="" loading="lazy">', b[1]);
+    }).join('') +
+    op('minha', minha ? '<img class="banner-prev" src="' + esc(atual) + '" alt="">' :
+      '<span class="banner-vazio foto-vazia">+</span>', minha ? 'Trocar imagem' : 'Minha imagem', ' op-minha') +
+    '</fieldset>' +
+    '<input type="file" name="arquivo_banner" accept="image/*" hidden onchange="previaBanner(this)">' +
+    '<small class="sub dica-foto">Sua imagem é cortada no formato do banner (bem largo, 4 por 1).</small>';
+}
+
+// Clicar em "Minha imagem" abre a escolha do arquivo (se já tem imagem, o 1º clique só volta para ela)
+function escolherBanner(e, op) {
+  if (e.target.type === 'radio') return;
+  var radio = op.querySelector('[type=radio]');
+  if (!radio.checked && op.querySelector('.banner-prev')) return;
+  e.preventDefault();
+  op.closest('form').elements.arquivo_banner.click();
+}
+
+// Mostra a imagem escolhida dentro da opção e marca "Minha imagem"
+function previaBanner(input) {
+  var arq = input.files[0],
+    op = input.form.querySelector('.op-minha');
+  if (!arq) return;
+  input.form.elements.banner.value = 'minha';
+  op.querySelector('.banner-prev,.banner-vazio').outerHTML = '<img class="banner-prev" src="' + URL.createObjectURL(
+    arq) + '" alt="">';
+  op.querySelector('span:last-child').textContent = 'Trocar imagem';
+  atualizarPrevia(input.form);
+}
+
+// QUEM PODE VER A COLEÇÃO: todo mundo | só amigos | ninguém
+function campoPrivacidade(atual) {
+  return '<fieldset class="privacidade">' +
+    '<legend>Quem pode ver minha coleção completa</legend>' + [
+      ['todos', 'Todo mundo', 'Qualquer pessoa que abrir seu perfil vê suas cartas e repetidas.'],
+      ['amigos', 'Só amigos', 'Só quem você aceitou como amigo.'],
+      ['ninguem', 'Ninguém', 'Os outros veem só a vitrine e o total de cartas.']
+    ].map(function (o) {
+      return '<label class="opcao"><input type="radio" name="privacidade" value="' + o[0] + '"' +
+        (atual === o[0] ? ' checked' : '') + '><span><b>' + o[1] + '</b><small>' + o[2] + '</small></span></label>';
+    }).join('') + '</fieldset>';
+}
+
+// PRÉVIA no topo do Meu perfil: banner + personagem/foto com o anel de nível, como os outros veem
+function previaPerfil(u) {
+  return '<div class="perfil-previa">' + bannerDe(u, 'perfil-capa') + avatarComNivel(u, totalTenho(), 'login-logo') +
+    '</div>';
+}
+
+// Redesenha a prévia com o que está escolhido no formulário (ainda sem salvar)
+function atualizarPrevia(f) {
+  var box = f.querySelector('.perfil-previa');
+  if (!box) return;
+  var u = AUTH.usuario() || {},
+    a = f.elements.avatar.value,
+    b = f.elements.banner ? f.elements.banner.value : u.banner,
+    arq = f.elements.arquivo && f.elements.arquivo.files[0],
+    arqB = f.elements.arquivo_banner && f.elements.arquivo_banner.files[0];
+  var p = {
+    avatar: a === 'foto' ? u.avatar : a,
+    foto: a === 'foto' ? (arq ? URL.createObjectURL(arq) : u.foto) : '',
+    banner: b === 'minha' ? (arqB ? URL.createObjectURL(arqB) : u.banner) : b
+  };
+  box.outerHTML = previaPerfil(p);
+}
+
+// Confere nick, sexo e personagem/foto do formulário (e banner e privacidade, no Meu perfil).
+// Devolve { nick, sexo, avatar, usarFoto, arquivo, banner, arquivoBanner, privacidade } ou a mensagem de erro (texto).
 // Com foto, o personagem continua guardado (aparece se a foto for removida).
 function lerPerfil(f) {
   var escolha = f.avatar.value,
@@ -98,7 +193,11 @@ function lerPerfil(f) {
     usarFoto: escolha === 'foto',
     arquivo: f.arquivo && f.arquivo.files[0]
   };
-  if (f.colecao_publica) p.colecao_publica = f.colecao_publica.checked;
+  if (f.privacidade) p.privacidade = f.privacidade.value || 'ninguem';
+  if (f.banner) {
+    p.banner = f.banner.value;
+    p.arquivoBanner = f.arquivo_banner && f.arquivo_banner.files[0];
+  }
   if (!NICK_OK.test(p.nick)) return 'O nick precisa ter de 3 a 16 letras, números, ponto ou _ (sem espaços).';
   if (!p.sexo) return 'Escolha o sexo (ou "Prefiro não dizer").';
   if (!escolha) return 'Escolha seu personagem ou uma foto.';
@@ -113,26 +212,27 @@ function lerPerfil(f) {
 function telaPerfil() {
   var u = AUTH.usuario();
   if (!u) return telaLogin();
+  var nuvem = logadoNaNuvem();
   document.body.classList.remove('na-login');
   ESTADO.redesenhar = null;
   marcarMenu(-1);
   app.innerHTML = '<section class="login">' +
-    '<form class="login-card" novalidate onsubmit="enviarPerfil(event)">' + avatarDe(u, 'login-logo') +
+    '<form class="login-card perfil-form" novalidate onsubmit="enviarPerfil(event)">' + previaPerfil(u) +
     '<h3>' + (u.nick ? 'Meu perfil' : 'Complete seu perfil') + '</h3><span class="sub">' +
     (u.nick ? esc(u.email) : 'Escolha um nick e um personagem para aparecer no ranking.') + '</span>' +
     campoNick(u.nick) + campoSexo(u.sexo) + escolhaAvatar(u.foto ? 'foto' : u.avatar, u.foto) +
-    (logadoNaNuvem() && !AUTH.admin ? '<label class="opcao"><input type="checkbox" name="colecao_publica"' +
-      (u.colecao_publica ? ' checked' : '') + '>' +
-      '<span><b>Deixar outras pessoas verem minha coleção</b>' +
-      '<small>Quem abrir seu perfil vê todas as cartas que você marcou e as suas repetidas.</small>' +
-      '</span></label>' : '') +
+    (nuvem ? escolhaBanner(u.banner) : '') +
+    (nuvem && !AUTH.admin ? campoPrivacidade(u.privacidade) : '') +
     '<div class="erro" id="login-erro" role="alert"></div>' +
     '<button class="btn" type="submit">Salvar</button>' +
     '<button class="btn btn-sec" type="button" onclick="sairDaConta(this)">Sair da conta</button>' +
     '</form>' +
-    (logadoNaNuvem() ? '<div class="login-card" id="minha-vitrine">' +
+    (nuvem && !AUTH.admin && u.nick ? '<div class="login-card perfil-form" id="meus-amigos">' +
+      '<p class="sub">Carregando amigos...</p></div>' : '') +
+    (nuvem ? '<div class="login-card perfil-form" id="minha-vitrine">' +
       '<p class="sub">Carregando vitrine...</p></div>' : '') + '</section>';
   if (u.avatar || u.foto) app.querySelector('form').dataset.avatarEscolhido = 1;
+  desenharMeusAmigos();
   desenharMinhaVitrine();
   window.scrollTo(0, 0);
 }
@@ -153,7 +253,7 @@ async function enviarPerfil(e) {
   try {
     await AUTH.salvarPerfil(p);
     atualizarConta();
-    e.target.querySelector('.login-logo').outerHTML = avatarDe(AUTH.usuario(), 'login-logo');
+    e.target.querySelector('.perfil-previa').outerHTML = previaPerfil(AUTH.usuario());
     erro.classList.add('ok');
     erro.textContent = 'Perfil salvo! Voltando para o início...';
     botao.textContent = '✓ Salvo';

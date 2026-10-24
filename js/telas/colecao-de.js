@@ -1,5 +1,5 @@
 // js/telas/colecao-de.js
-// TELA – COLEÇÃO DE OUTRA PESSOA (só aparece se ela deixou a coleção aberta no "Meu perfil")
+// TELA – COLEÇÃO DE OUTRA PESSOA (só aparece se a privacidade dela deixar: todo mundo, ou só amigos e você é amigo)
 // ============================================================
 // Mostra as cartas que a pessoa marcou, separadas por coleção, com as repetidas dela (+N)
 // e um selo nas cartas que VOCÊ ainda não tem. É só para ver: não dá para marcar nada aqui.

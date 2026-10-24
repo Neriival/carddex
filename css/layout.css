@@ -140,6 +140,20 @@ nav a:focus-visible {
   flex: none;
 }
 
+/* bolinha vermelha com o número de pedidos de amizade esperando resposta */
+.selo-pedidos {
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: #e5484d;
+  color: #fff;
+  font-size: .75rem;
+  line-height: 20px;
+  text-align: center;
+  flex: none;
+}
+
 /* ===== DESTAQUE DA TELA INICIAL ===== */
 .hero {
   margin-top: 16px;

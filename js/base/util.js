@@ -39,6 +39,22 @@ function progresso(n, t) {
     t + ' cartas</span><b>' + (completa ? '✓ Completa' : p + '%') + '</b></div>' + barra(p) + '</div>';
 }
 
+// Nível do colecionador pelo total de cartas: do nível n para o n+1 são mais 25×n cartas
+// (nível 2 = 25 cartas, 3 = 75, 4 = 150, 5 = 250, 10 = 1125...). pct = quanto já andou no nível atual.
+function nivel(total) {
+  var n = 1,
+    inicio = 0;
+  while (total >= inicio + 25 * n) {
+    inicio += 25 * n;
+    n++;
+  }
+  return {
+    n: n,
+    pct: Math.floor((total - inicio) / (25 * n) * 100),
+    falta: inicio + 25 * n - total
+  };
+}
+
 // '2026-05-22' → '22/05/2026'
 function dataBR(d) {
   var p = d.split('-');

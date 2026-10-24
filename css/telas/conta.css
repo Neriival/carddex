@@ -270,6 +270,254 @@
   border-color: var(--erro);
 }
 
+/* ===== MEU PERFIL: CARTÕES MAIS LARGOS E PRÉVIA NO TOPO ===== */
+.perfil-form {
+  width: min(640px, 100%);
+}
+
+/* banner colado no topo do cartão + personagem com anel de nível subindo por cima */
+.perfil-previa {
+  margin: -28px -24px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.perfil-previa .perfil-capa {
+  width: 100%;
+  border-radius: 20px 20px 0 0;
+}
+
+.perfil-previa .anel-nivel {
+  margin-top: -56px;
+}
+
+/* ===== TREINADORES DO ANIME (mesma escolha do personagem, em botões menores) ===== */
+.treinadores {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(76px, 1fr));
+  gap: 8px;
+}
+
+.treinadores legend {
+  color: var(--mut);
+  font-size: .9rem;
+  padding: 0;
+  margin-bottom: 6px;
+}
+
+.avatar-op.op-treinador {
+  padding: 8px 2px;
+  gap: 4px;
+  border-radius: 12px;
+}
+
+.avatar-op.op-treinador img {
+  width: 56px;
+  height: 56px;
+}
+
+.op-treinador span {
+  font-size: .72rem;
+  text-align: center;
+  line-height: 1.1;
+}
+
+/* ===== BANNER DO PERFIL ===== */
+.banners {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 8px;
+}
+
+.banners legend {
+  color: var(--mut);
+  font-size: .9rem;
+  padding: 0;
+  margin-bottom: 6px;
+}
+
+.banner-op {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 4px 4px 6px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--bg);
+  cursor: pointer;
+  font-size: .8rem;
+  text-align: center;
+}
+
+.banner-op input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.banner-op img, .banner-vazio {
+  width: 100%;
+  aspect-ratio: 4/1;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+}
+
+/* "Padrão" mostra o degradê do site; "Minha imagem" vazia mostra o + */
+.banner-vazio {
+  background: linear-gradient(120deg, var(--p2), var(--line));
+}
+
+.banner-vazio.foto-vazia {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  font-size: 1.4rem;
+  background: none;
+}
+
+.banner-op:has(input:checked) {
+  border-color: var(--gold);
+  box-shadow: 0 0 10px #ffc61a55;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.banner-op:has(input:focus-visible) {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+}
+
+/* ===== QUEM PODE VER MINHA COLEÇÃO ===== */
+.privacidade {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.privacidade legend {
+  color: var(--mut);
+  font-size: .9rem;
+  padding: 0;
+  margin-bottom: 6px;
+}
+
+/* ===== MEUS AMIGOS ===== */
+#meus-amigos h3 {
+  margin: 0;
+  color: var(--gold);
+}
+
+#meus-amigos h4 {
+  margin: 6px 0 0;
+}
+
+#meus-amigos h4 small {
+  color: var(--mut);
+  font-weight: 400;
+}
+
+#msg-amigos:empty {
+  display: none;
+}
+
+.amigo-novo {
+  display: flex;
+  gap: 8px;
+}
+
+.amigo-novo .campo {
+  flex: 1;
+  min-width: 0;
+}
+
+.login-card .amigo-novo .btn {
+  width: auto;
+  min-width: 0;
+  margin-top: 0;
+}
+
+.amigos {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.amigos li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--bg);
+}
+
+.amigo-nome {
+  flex: 1;
+  min-width: 170px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  border: 0;
+  padding: 0;
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.amigo-nome span {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.amigo-nome b {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.amigo-nome small {
+  color: var(--mut);
+}
+
+.amigo-nome:hover b {
+  color: var(--gold);
+}
+
+.amigo-acoes {
+  display: flex;
+  gap: 6px;
+  flex: none;
+}
+
+.login-card .amigo-acoes .btn {
+  width: auto;
+  min-width: 0;
+  margin-top: 0;
+  padding: 6px 12px;
+  min-height: 36px;
+  font-size: .85rem;
+}
+
 @media(max-width:760px) {
   .login-card {
     padding: 22px 18px;
@@ -287,5 +535,22 @@
   .avatar-op img, .foto-prev, .foto-vazia {
     width: 64px;
     height: 64px;
+  }
+
+  .perfil-previa {
+    margin: -22px -18px 0;
+  }
+
+  .treinadores {
+    grid-template-columns: repeat(auto-fill, minmax(64px, 1fr));
+  }
+
+  .avatar-op.op-treinador img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .banners {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
