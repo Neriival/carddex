@@ -2,6 +2,7 @@
 #  1) dá um "toque" no banco (Supabase): o plano grátis pausa o projeto depois de ~7 dias sem uso
 #  2) baixa as coleções "Em breve" que a TCGdex já publicou (scripts/baixar_cartas.py --em-breve)
 #  3) atualiza os preços (Cardmarket → real) com scripts/atualizar_precos.py
+#  4) atualiza o "fiscal" dos preços (TCGplayer → real) com scripts/atualizar_precos_tcgplayer.py
 # e salva o que mudou no repositório (o GitHub Pages publica o site de novo em seguida).
 # Também dá para rodar na hora: GitHub → Actions → "Atualizar preços" → Run workflow.
 name: Atualizar preços
@@ -37,11 +38,15 @@ jobs:
         run: python scripts/baixar_cartas.py --em-breve
       - name: Atualizar preços
         run: python scripts/atualizar_precos.py
+      - name: Preços do TCGplayer (fiscal)
+        # uns 10 minutos (um acesso à TCGdex por carta); se falhar, o site usa os do dia anterior
+        continue-on-error: true
+        run: python scripts/atualizar_precos_tcgplayer.py
       - name: Salvar no repositório
         run: |
           git config user.name "CardDex (preços automáticos)"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add dados/precos dados/cardmarket.json dados/series.json dados/cartas assets/img
+          git add dados/precos dados/precos-tcgplayer dados/cardmarket.json dados/series.json dados/cartas assets/img
           git diff --cached --quiet && exit 0
           if git diff --cached --name-only | grep -q "^dados/cartas/"; then
             MSG="Coleção nova e preços atualizados ($(date +%d/%m/%Y))"

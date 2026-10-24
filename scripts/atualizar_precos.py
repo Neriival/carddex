@@ -10,6 +10,9 @@ Como funciona:
  1) dados/cardmarket.json guarda o número de cada carta no Cardmarket ("idProduct"), que vem da TCGdex.
     Só as cartas que ainda não estão lá são buscadas (a primeira vez demora; depois, segundos).
     Coleção nova entra sozinha na próxima rodada. Carta sem número (0) é tentada de novo toda segunda-feira.
+    A TCGdex às vezes liga cartas diferentes ao mesmo produto (ex.: a versão comum e a full art, ou a comum e a
+    shiny). Quando um produto aparece em cartas com nome ou raridade diferentes, essas cartas ficam SEM preço do
+    Cardmarket: o site usa o do TCGplayer (scripts/atualizar_precos_tcgplayer.py).
  2) Baixa o arquivo público de preços do Cardmarket (um só arquivo com todos os produtos de Pokémon).
  3) Baixa a cotação do euro em real (AwesomeAPI).
  4) Grava dados/precos/<serie>.json, que o site lê (js/base/precos.js):
@@ -55,11 +58,14 @@ def valor(p, sufixo=''):
 def main():
     series = json.loads((RAIZ / 'dados' / 'series.json').read_text(encoding='utf-8'))['series']
     cartas = {}  # serie -> [ids]
+    info = {}  # id -> (nome, raridade): para achar produtos ligados a cartas diferentes
     for s in series:
         for c in s['colecoes']:
             arq = RAIZ / 'dados' / 'cartas' / s['id'] / f"{c['id']}.json"
             if arq.exists():
-                cartas.setdefault(s['id'], []).extend(k['id'] for k in json.loads(arq.read_text(encoding='utf-8')))
+                lista = json.loads(arq.read_text(encoding='utf-8'))
+                cartas.setdefault(s['id'], []).extend(k['id'] for k in lista)
+                info.update({k['id']: (k.get('nome'), k.get('raridade')) for k in lista})
 
     # 1) números do Cardmarket que faltam
     mapa = json.loads(MAPA.read_text(encoding='utf-8')) if MAPA.exists() else {}
@@ -76,6 +82,15 @@ def main():
                 if i % 500 == 0 or i == len(faltam):
                     print(f'  {i}/{len(faltam)}')
                     MAPA.write_text(json.dumps(mapa, sort_keys=True, separators=(',', ':')), encoding='utf-8')
+
+    # produto ligado a cartas com nome ou raridade diferentes: não dá para saber de qual delas é o preço
+    por_produto = {}
+    for k, idp in mapa.items():
+        if idp and k in info:
+            por_produto.setdefault(idp, []).append(k)
+    duvidosas = {k for ks in por_produto.values() if len({info[k] for k in ks}) > 1 for k in ks}
+    if duvidosas:
+        print(f'{len(duvidosas)} cartas sem preço do Cardmarket (produto ligado a cartas diferentes)')
 
     # 2) preços do Cardmarket e 3) cotação do euro
     guia = baixar(GUIA_CARDMARKET)
@@ -97,7 +112,7 @@ def main():
         precos = {}
         for k in ids:
             p = produtos.get(mapa.get(k))
-            if not p:
+            if not p or k in duvidosas:
                 continue
             normal, reverse = valor(p), valor(p, '-holo')
             if normal or reverse:

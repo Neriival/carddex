@@ -61,6 +61,7 @@ ESTRUTURA
  dados/cartas/<serie>/<colecao>.json
  dados/precos-liga/<serie>.json preços da Liga Pokémon (gerado pelo script da Liga, não editar)
  dados/precos/<serie>.json      preços do Cardmarket, reserva (gerado pelo script de preços, não editar)
+ dados/precos-tcgplayer/<serie>.json  preços do TCGplayer, o "fiscal" (gerado por atualizar_precos_tcgplayer.py)
  dados/cardmarket.json          número de cada carta no Cardmarket (gerado pelo script de preços)
  assets/img/cartas/<serie>/<colecao>/001.webp, 001-mini.webp ...
  assets/img/colecoes/<serie>/<colecao>.webp
@@ -74,6 +75,7 @@ ESTRUTURA
  scripts/completar_imagens.py   completa imagens que a TCGdex não tem (Pokémon TCG API, TCGplayer, Limitless)
  scripts/atualizar_precos.py    preços do Cardmarket (roda sozinho todo dia: .github/workflows/precos.yml)
  scripts/atualizar_precos_liga.py  preços da Liga Pokémon (rodar no computador de casa)
+ scripts/atualizar_precos_tcgplayer.py  preços do TCGplayer pela TCGdex, o "fiscal" (roda junto no robô diário)
  scripts/comum.py               funções usadas por mais de um script (download com novas tentativas)
  scripts/formatar_codigo.py     deixa todo o CSS e JS no padrão de organização (veja PADRÃO DE CÓDIGO)
  .editorconfig, .vscode/        fazem o editor seguir o padrão (2 espaços, UTF-8...)
@@ -135,6 +137,13 @@ Referência principal: Liga Pokémon (ligapokemon.com.br), o mercado brasileiro.
 Reserva: Cardmarket (loja europeia), em euro convertido para real. Só é usado nas coleções que ainda não têm
 preço da Liga. Todo dia às 6h o GitHub roda scripts/atualizar_precos.py (e, no mesmo robô, faz uma
 leitura pequena no Supabase para o banco não ser pausado por falta de uso).
+FISCAL: TCGplayer (loja dos EUA, pela TCGdex), em dólar convertido para real. A TCGdex liga cada carta ao TCGplayer
+separando a versão comum, a full art e a shiny. Quando o preço da Liga ou do Cardmarket de uma carta está mais de
+3 vezes acima ou abaixo do TCGplayer (e com mais de R$ 100 de diferença), o site usa o do TCGplayer naquela carta
+e avisa na carta grande. Isso corrige anúncios absurdos na Liga (um anúncio caro puxa a média) e cartas que a
+TCGdex liga ao produto errado no Cardmarket. Carta sem preço da Liga nem do Cardmarket também usa o TCGplayer.
+Cartas que dividem o mesmo produto do Cardmarket com outra carta de nome ou raridade diferente ficam sem preço
+do Cardmarket (atualizar_precos.py avisa quantas são) e usam o TCGplayer.
 ATENÇÃO: como o robô salva os preços todo dia, rode "git pull" antes de publicar mudanças suas.
 
 BACKUP

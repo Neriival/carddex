@@ -41,6 +41,10 @@ No ar em https://neriival.github.io/carddex/ (GitHub Pages, branch `main`, repos
 - Cartas e imagens: TCGdex (+ Pokémon TCG API/TCGplayer/Limitless para imagens que faltam).
   Séries "imagens: mini" guardam só a miniatura no projeto (limite de 1 GB do GitHub Pages).
 - Preços: Liga Pokémon (mercado brasileiro) quando a coleção tem; senão Cardmarket (euro → real).
+  Fiscal: TCGplayer (pela TCGdex, dólar → real, `dados/precos-tcgplayer/`): se Liga/Cardmarket estiver >3x acima
+  ou abaixo dele (e >R$100 de diferença), a carta usa o TCGplayer (`foraDoTcgplayer` em js/base/precos.js).
+  Verificação de 25/10/2026: a TCGdex liga ~430 cartas ao produto errado no Cardmarket (comum x full art x shiny);
+  a média da Liga é distorcida por anúncios absurdos em promos.
   Robôs no GitHub Actions: `.github/workflows/precos.yml` (diário: "toque" no Supabase para não pausar,
   `baixar_cartas.py --em-breve` para coleções `"emBreve": true` que a TCGdex já publicou, e preços do Cardmarket)
   e `precos-liga.yml` (Liga: **só manual**; no GitHub a Liga bloqueia, então roda-se o script em casa).

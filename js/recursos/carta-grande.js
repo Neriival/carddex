@@ -72,7 +72,7 @@ async function abrirCarta(colId, cartaId, dir, daVitrine) {
       esc(num.codigo) + '</span>' : '') + '</dd><dt>Série</dt><dd>' + esc(s.nome) + '</dd><dt>Raridade</dt><dd>' +
     esc(k.raridade || '—') + '</dd><dt>Tipo</dt><dd>' + esc(tipo) + '</dd><dt>PS</dt><dd>' + esc(k.ps || '—') +
     '</dd><dt>Ilustrador</dt><dd>' + esc(k.ilustrador || '—') + '</dd>' + linhaPreco + '</dl>' +
-    (preco ? '<p class="sub nota-preco">' + notaPreco(c.serie, colId) +
+    (preco ? '<p class="sub nota-preco">' + notaPreco(c, preco) +
       (aPartir ? ' "A partir de" é o anúncio mais barato: pode ser de carta danificada ou em outro idioma.' : '') +
       '</p>' : '') +
     (vit ? '<p class="sub">' + (y ? '✓ Você também tem esta carta.' : 'Você ainda não tem esta carta.') + '</p>' :
