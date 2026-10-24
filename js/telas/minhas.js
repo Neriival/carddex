@@ -9,17 +9,7 @@ async function telaMinhas() {
   ESTADO.redesenhar = desenharMinhas;
   marcarMenu(2);
   app.innerHTML = '<h2>Minhas cartas</h2><p class="sub">Carregando...</p>';
-  var cols = todasColecoes().filter(function (c) {
-    return qtdTenho(c.id);
-  });
-  var series = cols.map(function (c) {
-    return c.serie;
-  }).filter(function (s, i, l) {
-    return l.indexOf(s) === i;
-  });
-  await Promise.all(cols.map(function (c) {
-    return carregarCartas(c).catch(function () {});
-  }).concat(series.map(carregarPrecos)));
+  await carregarMinhasColecoes();
   if (ESTADO.redesenhar === desenharMinhas) desenharMinhas();
 }
 

@@ -25,6 +25,7 @@ ESTRUTURA
      parceiros.css                quadrados de parceiros
      perfil.css                   banner, anel de nível e treinadores (perfil público e Meu perfil)
    telas/                       uma por tela
+     inicio.css (próximo lançamento, coleção mais recente, cores das eras)
      colecao.css  minhas.css  conta.css (login e perfil)  ranking.css (ranking e perfil público)
      colecao-de.css (coleção de outra pessoa)  admin.css
    responsivo.css               adaptação da estrutura ao celular (cada arquivo também tem o seu no fim)
@@ -64,7 +65,7 @@ ESTRUTURA
  assets/img/cartas/<serie>/<colecao>/001.webp, 001-mini.webp ...
  assets/img/colecoes/<serie>/<colecao>.webp
  assets/img/series/<serie>.webp
- assets/img/jogos/<jogo>.svg    ícones de Pokémon, Yu-Gi-Oh!, Dragon Ball
+ assets/img/jogos/<jogo>.svg    ícone de cada jogo (hoje só o Pokémon)
  assets/img/avatares/treinadores/  treinadores do anime (256x256 .webp). Para um novo: coloque <nome>.webp
                                 aqui e inclua ['nome', 'Nome'] em TREINADORES no js/conta/fotos.js
  assets/img/banners/            banners de tipo (1200x300 .webp), um por tipo; a lista fica em BANNERS no fotos.js
@@ -95,10 +96,11 @@ Com "imagens": "mini" o script guarda só a miniatura no projeto e a carta grand
 Isso mantém o projeto abaixo de 1 GB, o limite do GitHub Pages (Escarlate e Violeta, Espada e Escudo
 e Sol e Lua usam esse modo; Mega Evolução guarda tudo).
 
-JOGOS (Pokémon, Yu-Gi-Oh!, Dragon Ball...)
-A lista fica em "jogos" no dados/series.json. Um jogo sem séries aparece como "Em breve".
-Para um jogo novo: inclua { "id": "...", "nome": "..." } em "jogos" e o ícone em assets/img/jogos/<id>.svg.
-As cartas de Yu-Gi-Oh! e Dragon Ball ainda não têm de onde vir: a TCGdex só tem Pokémon.
+JOGOS
+Hoje o site é só de Pokémon: a tela inicial mostra as séries direto (sem escolher o jogo).
+A lista fica em "jogos" no dados/series.json. Com mais de um jogo que tenha séries, a tela inicial volta
+a mostrar os jogos primeiro (ícone em assets/img/jogos/<id>.svg).
+Um teste com Yu-Gi-Oh! (15 boosters, cartas do YGOPRODeck) ficou guardado no branch "yugioh" do git.
 
 LOGOS DAS COLEÇÕES
 O script baixa o logo oficial quando existe (assets/img/colecoes/<serie>/<colecao>.webp).

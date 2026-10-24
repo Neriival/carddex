@@ -3,14 +3,6 @@
     {
       "id": "pokemon",
       "nome": "Pokémon"
-    },
-    {
-      "id": "yugioh",
-      "nome": "Yu-Gi-Oh!"
-    },
-    {
-      "id": "dragonball",
-      "nome": "Dragon Ball"
     }
   ],
   "series": [

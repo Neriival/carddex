@@ -1,6 +1,9 @@
 // js/telas/inicio.js
-// TELAS DE NAVEGAÇÃO: Início (jogos) → Jogo (séries) → Série (coleções)
+// TELAS DE NAVEGAÇÃO: Início (séries) → Série (coleções)
 // ============================================================
+// Início: destaque, números (com o valor da coleção), próximo lançamento com contagem regressiva,
+// coleção mais recente, "Continue sua coleção" e as séries com os anos de cada era.
+// Com mais de um jogo com cartas, o Início mostra os jogos e cada jogo abre a tela das suas séries (telaJogo).
 // Cada tela é uma função que desenha o HTML dentro de <main id="app">.
 // A tela da coleção (as cartas) fica em js/telas/colecao.js.
 // ============================================================
@@ -23,12 +26,90 @@ function botaoColecao(c) {
     '<span class="sub">Lançamento: ' + dataBR(c.lancamento) + '</span>' + progresso(n, c.total) + '</button>';
 }
 
-// Botão de uma série (tela do jogo e busca)
+// Anos da série ("2023 – 2025"); a série mais nova do jogo termina em "hoje"
+function anosSerie(s) {
+  var datas = s.colecoes.filter(function (c) {
+    return !c.emBreve;
+  }).map(function (c) {
+    return c.lancamento;
+  }).sort();
+  if (!datas.length) return '';
+  var inicio = datas[0].slice(0, 4),
+    fim = seriesDoJogo(s.jogo)[0] === s ? 'hoje' : datas[datas.length - 1].slice(0, 4);
+  return inicio === fim ? inicio : inicio + ' – ' + fim;
+}
+
+// Botão de uma série (tela inicial, tela do jogo e busca), com a faixa na cor da era (classe era-<id>)
 function botaoSerie(s) {
-  var r = resumoSerie(s);
-  return '<button class="colecao serie-btn" onclick="telaSerie(\'' + s.id + '\')"><img src="assets/img/series/' + s.id +
-    '.webp" alt="" onerror="this.remove()"><h3>' + esc(s.nome) + '</h3>' +
-    '<span class="sub">' + s.colecoes.length + ' coleções</span>' + progresso(r.tenho, r.total) + '</button>';
+  var r = resumoSerie(s),
+    anos = anosSerie(s);
+  return '<button class="colecao serie-btn era-' + s.id + '" onclick="telaSerie(\'' + s.id + '\')">' +
+    '<img src="assets/img/series/' + s.id + '.webp" alt="" onerror="this.remove()"><h3>' + esc(s.nome) + '</h3>' +
+    '<span class="sub">' + (anos ? anos + ' · ' : '') + s.colecoes.length + ' coleções</span>' +
+    progresso(r.tenho, r.total) + '</button>';
+}
+
+// true se o site tem mais de um jogo com cartas (aí a tela inicial mostra os jogos antes das séries)
+function variosJogos() {
+  return ESTADO.jogos.filter(function (j) {
+    return seriesDoJogo(j.id).length;
+  }).length > 1;
+}
+
+// Dias que faltam até a data "AAAA-MM-DD" (0 = hoje; negativo = já passou)
+function diasAte(data) {
+  var hoje = new Date();
+  hoje.setHours(0, 0, 0, 0);
+  return Math.round((new Date(data + 'T00:00:00') - hoje) / 864e5);
+}
+
+// DESTAQUES da tela inicial: a próxima coleção ("Em breve", com contagem regressiva) e a mais recente
+function blocoDestaques() {
+  var cols = todasColecoes(),
+    porData = function (a, b) {
+      return a.lancamento < b.lancamento ? -1 : a.lancamento > b.lancamento ? 1 : 0;
+    };
+  var proxima = cols.filter(function (c) {
+      return c.emBreve;
+    }).sort(porData)[0],
+    recente = cols.filter(function (c) {
+      return !c.emBreve;
+    }).sort(porData).pop();
+
+  function cartao(c, cls, rotulo, lado) {
+    return '<button class="destaque ' + cls + '" onclick="telaColecao(\'' + c.id + '\')"><small>' + rotulo +
+      '</small><img src="assets/img/colecoes/' + c.serie + '/' + c.id + '.webp" alt="" onerror="logoAlt(this)">' +
+      '<div class="destaque-txt"><h3>' + esc(c.nome) + '</h3><span class="sub">' + esc(acharSerie(c.serie).nome) +
+      ' · ' + dataBR(c.lancamento) + '</span></div>' + lado + '</button>';
+  }
+  var html = '';
+  if (proxima) {
+    var d = diasAte(proxima.lancamento),
+      // já passou da data, mas o robô ainda não achou as cartas: "Saiu! cartas em breve"
+      contagem = d > 1 ? '<span>chega em</span><b>' + d + '</b><span>dias</span>' : d === 1 ?
+      '<span>chega</span><b>amanhã</b>' : d === 0 ? '<span>chega</span><b>hoje</b>' :
+      '<b>Saiu!</b><span>cartas em breve</span>';
+    html += cartao(proxima, 'proxima', 'Próximo lançamento', '<div class="contagem">' + contagem + '</div>');
+  }
+  if (recente) html += cartao(recente, 'recente', 'Coleção mais recente', '<span class="destaque-ver">' +
+    recente.total +
+    ' cartas · Ver coleção →</span>');
+  return html ? '<div class="destaques">' + html + '</div>' : '';
+}
+
+// CONTINUE SUA COLEÇÃO: as 3 coleções que a pessoa está mais perto de completar (só para quem marcou cartas)
+function blocoContinuar() {
+  var feito = function (c) {
+    return qtdTenho(c.id) / c.total;
+  };
+  var l = todasColecoes().filter(function (c) {
+    return !c.emBreve && c.total && qtdTenho(c.id) && qtdTenho(c.id) < c.total;
+  }).sort(function (a, b) {
+    return feito(b) - feito(a);
+  }).slice(0, 3);
+  return l.length ? '<h2>Continue sua coleção</h2>' +
+    '<span class="sub">As coleções que você está mais perto de completar</span>' +
+    '<div class="colecoes">' + l.map(botaoColecao).join('') + '</div>' : '';
 }
 
 // Botão de um jogo (Pokémon, Yu-Gi-Oh!...). Ícones em assets/img/jogos/<id>.svg
@@ -59,18 +140,28 @@ function telaInicio(ir) {
     blocos = '<h2 id="series">Resultados da busca</h2>' + (ss.length || cs.length ? '<div class="colecoes">' +
       ss.map(botaoSerie).join('') + cs.map(botaoColecao).join('') + '</div>' :
       '<p class="sub">Nenhuma série ou coleção encontrada.</p>');
-  } else blocos = '<h2 id="series">Séries</h2><span class="sub">Escolha o jogo de cartas</span>' +
-    '<div class="colecoes jogos">' + ESTADO.jogos.map(botaoJogo).join('') + '</div>';
+  } else blocos = blocoDestaques() + blocoContinuar() + '<h2 id="series">Séries</h2>' + (variosJogos() ?
+    '<span class="sub">Escolha o jogo de cartas</span><div class="colecoes jogos">' +
+    ESTADO.jogos.map(botaoJogo).join('') + '</div>' : '<span class="sub">Da mais nova para a mais antiga</span>' +
+    '<div class="colecoes">' + ESTADO.series.map(botaoSerie).join('') + '</div>');
   app.innerHTML = '<section class="hero"><div><small>SEU ESPAÇO DE COLECIONADOR</small>' +
     '<h1>Seu álbum.<span>Suas conquistas.</span></h1>' +
     '<p>Explore as séries e marque as cartas que você já tem.</p>' +
     '<button class="btn" onclick="telaInicio(\'series\')">Explorar séries →</button>' +
     '</div><img src="assets/img/carddex-logo.png" alt=""></section>' +
-    '<div class="stats" id="stats"><div class="stat"><div>Séries disponíveis</div><b>' + pad(ESTADO.series.length, 2) +
-    '</b></div><div class="stat"><div>Coleções disponíveis</div><b>' + pad(todasColecoes().filter(function (c) {
+    '<div class="stats" id="stats"><div class="stat"><div>Coleções disponíveis</div>' +
+    '<b>' +
+    pad(todasColecoes().filter(function (c) {
       return !c.emBreve; // não conta as que ainda não saíram
     }).length, 2) + '</b></div>' +
-    '<div class="stat"><div>Cartas que você tem</div><b>' + totalTenho() + '</b></div></div>' + blocos;
+    '<div class="stat"><div>Cartas que você tem</div><b>' + totalTenho() + '</b></div>' +
+    '<div class="stat"><div>Valor da sua coleção</div><b id="stat-valor">' + (totalTenho() ? '...' : reais(0)) +
+    '</b></div></div>' + blocos;
+  // o valor precisa das cartas e dos preços das coleções da pessoa: aparece quando terminam de carregar
+  if (totalTenho()) carregarMinhasColecoes().then(function (cols) {
+    var el = document.getElementById('stat-valor');
+    if (el) el.textContent = reais(valorTotal(cols));
+  });
   var alvo = ir && document.getElementById(ir);
   if (alvo) alvo.scrollIntoView({
     behavior: 'smooth'
@@ -99,9 +190,12 @@ function telaSerie(id) {
     j = acharJogo(s.jogo) || ESTADO.jogos[0];
   ESTADO.redesenhar = null;
   marcarMenu(1);
-  app.innerHTML = '<h2><button class="voltar" onclick="telaJogo(\'' + j.id + '\')">← ' + esc(j.nome) +
-    '</button></h2><h2 class="titulo">' + esc(s.nome) + '</h2>' +
-    '<span class="sub">Coleções da mais nova para a mais antiga</span>' +
+  // com um jogo só, o "voltar" leva direto às séries da tela inicial
+  var volta = variosJogos() ? '<button class="voltar" onclick="telaJogo(\'' + j.id + '\')">← ' + esc(j.nome) +
+    '</button>' : '<button class="voltar" onclick="telaInicio(\'series\')">← Séries</button>';
+  app.innerHTML = '<h2>' + volta + '</h2><h2 class="titulo">' + esc(s.nome) + '</h2>' +
+    '<span class="sub">' + (anosSerie(s) ? anosSerie(s) + ' · ' : '') +
+    'Coleções da mais nova para a mais antiga</span>' +
     '<div class="colecoes">' + s.colecoes.map(botaoColecao).join('') + '</div>';
   window.scrollTo(0, 0);
 }

@@ -104,6 +104,31 @@ function valorColecao(c) {
   } : null;
 }
 
+// Coleções em que a pessoa marcou alguma carta, já com as cartas e os preços carregados
+// (usado em "Minhas cartas" e no valor da coleção da tela inicial)
+async function carregarMinhasColecoes() {
+  var cols = todasColecoes().filter(function (c) {
+    return qtdTenho(c.id);
+  });
+  var series = cols.map(function (c) {
+    return c.serie;
+  }).filter(function (s, i, l) {
+    return l.indexOf(s) === i;
+  });
+  await Promise.all(cols.map(function (c) {
+    return carregarCartas(c).catch(function () {});
+  }).concat(series.map(carregarPrecos)));
+  return cols;
+}
+
+// Valor de tudo que a pessoa tem, somando as coleções (contando as repetidas). 0 = sem preço
+function valorTotal(cols) {
+  return cols.reduce(function (soma, c) {
+    var v = valorColecao(c);
+    return soma + (v ? v.meu : 0);
+  }, 0);
+}
+
 // Texto curto da fonte, para ir entre parênteses: "preço médio da Liga Pokémon" ou "referência Cardmarket"
 function fontePreco(serie, col) {
   return usaLiga(serie,

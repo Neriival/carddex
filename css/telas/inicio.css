@@ -1,0 +1,174 @@
+/* css/telas/inicio.css – partes novas da tela inicial (js/telas/inicio.js)
+   Próximo lançamento (contagem regressiva), coleção mais recente e a faixa colorida de cada era nas séries.
+   O destaque do topo (hero) e os números ficam em css/layout.css e css/componentes/cartas.css. */
+
+/* ===== DESTAQUES: PRÓXIMO LANÇAMENTO E COLEÇÃO MAIS RECENTE ===== */
+.destaques {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.destaque {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 8px 16px;
+  padding: 16px 20px 18px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--p1);
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color .2s, transform .2s;
+}
+
+.destaque:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
+
+/* rótulo em cima ("PRÓXIMO LANÇAMENTO") ocupa a linha toda */
+.destaque small {
+  grid-column: 1/-1;
+  color: var(--gold);
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.destaque img {
+  height: 56px;
+  max-width: 130px;
+  object-fit: contain;
+}
+
+.destaque-txt {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.destaque-txt h3 {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+/* próximo lançamento: fundo com brilho dourado */
+.destaque.proxima {
+  background: radial-gradient(circle at 100% 0%, #ffc61a2e, transparent 60%), var(--p1);
+  border-color: #ffc61a66;
+}
+
+/* coleção mais recente: fundo com brilho azul */
+.destaque.recente {
+  background: radial-gradient(circle at 100% 0%, #4aa3ff2e, transparent 60%), var(--p1);
+}
+
+/* contagem regressiva: "chega em 13 dias" com o número grande */
+.contagem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.1;
+  color: var(--mut);
+  font-size: .8rem;
+  text-align: center;
+}
+
+.contagem b {
+  color: var(--gold);
+  font-size: 2.2rem;
+  line-height: 1.05;
+}
+
+/* "30 cartas · Ver coleção →" fica embaixo do nome (o nome da coleção ganha a largura toda) */
+.destaque-ver {
+  grid-column: 2/-1;
+  color: var(--gold);
+  font-weight: 700;
+  font-size: .85rem;
+}
+
+/* ===== SÉRIES: FAIXA NA COR DE CADA ERA ===== */
+.serie-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.serie-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 6px;
+  background: linear-gradient(90deg, var(--era1, var(--line)), var(--era2, var(--line)));
+}
+
+.serie-btn:hover {
+  border-color: var(--era1, var(--gold));
+}
+
+/* cores de cada era (as mesmas das caixas e logos dos jogos de cada geração) */
+.era-me {
+  --era1: #7b3fe4;
+  --era2: #f2b705;
+}
+
+.era-sv {
+  --era1: #d23c3c;
+  --era2: #7a3fb0;
+}
+
+.era-swsh {
+  --era1: #1f7ae0;
+  --era2: #d6304a;
+}
+
+.era-sm {
+  --era1: #f39c34;
+  --era2: #4359b0;
+}
+
+.era-xy {
+  --era1: #1d6fd1;
+  --era2: #d62b3c;
+}
+
+.era-bw {
+  --era1: #5a5a5a;
+  --era2: #e6e6e6;
+}
+
+.era-hgss {
+  --era1: #d4a73a;
+  --era2: #a9b3c2;
+}
+
+.era-pl {
+  --era1: #8a8fa8;
+  --era2: #5a4b8a;
+}
+
+@media(max-width:760px) {
+  .destaques {
+    grid-template-columns: 1fr;
+  }
+
+  .destaque {
+    padding: 14px 16px;
+  }
+
+  .destaque img {
+    height: 44px;
+    max-width: 96px;
+  }
+
+  .contagem b {
+    font-size: 1.7rem;
+  }
+}
