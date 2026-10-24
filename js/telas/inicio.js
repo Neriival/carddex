@@ -2,7 +2,7 @@
 // TELAS DE NAVEGAÇÃO: Início (séries) → Série (coleções)
 // ============================================================
 // Início: destaque, números (com o valor da coleção), próximo lançamento com contagem regressiva,
-// coleção mais recente (com as 3 cartas mais valiosas saindo do cartão),
+// coleção mais recente (com as 5 cartas mais valiosas saindo do cartão),
 // "Continue sua coleção" e as séries com os anos de cada era.
 // Com mais de um jogo com cartas, o Início mostra os jogos e cada jogo abre a tela das suas séries (telaJogo).
 // Cada tela é uma função que desenha o HTML dentro de <main id="app">.
@@ -64,7 +64,8 @@ function diasAte(data) {
   return Math.round((new Date(data + 'T00:00:00') - hoje) / 864e5);
 }
 
-// DESTAQUES da tela inicial: a coleção mais recente (com as cartas mais raras) e a próxima ("Em breve", com contagem)
+// DESTAQUES da tela inicial: a próxima coleção ("Em breve", com contagem regressiva, num cartão estreito)
+// e a mais recente, com as cartas mais valiosas saindo do cartão
 function blocoDestaques() {
   var cols = todasColecoes(),
     // mesma data (ex.: coleção principal + coleção clássica que vem junto): a maior conta como a mais nova
@@ -95,12 +96,12 @@ function blocoDestaques() {
       '<b>Saiu!</b><span>cartas em breve</span>';
     html += cartao(proxima, 'proxima', 'Próximo lançamento', '<div class="contagem">' + contagem + '</div>');
   }
-  // sem lançamento divulgado, a coleção mais recente ocupa a linha toda e as 5 cartas mais valiosas saem do cartão
-  // (o espaço .raras é preenchido depois, por preencherRaras, quando as cartas e os preços carregarem)
-  if (recente) html += cartao(recente, 'recente' + (proxima ? '' : ' com-raras'), 'Coleção mais recente',
-    '<span class="destaque-ver">' + recente.total + ' cartas · Ver coleção →</span>' +
-    (proxima ? '' : '<div class="raras" id="raras" data-col="' + recente.id + '"></div>'));
-  return html ? '<div class="destaques">' + html + '</div>' : '';
+  // a coleção mais recente, com as 5 cartas mais valiosas saindo do cartão: ao lado da contagem ou, sem
+  // lançamento divulgado, na linha toda (o espaço .raras é preenchido depois, por preencherRaras)
+  if (recente) html += cartao(recente, 'recente com-raras', 'Coleção mais recente', '<span class="destaque-ver">' +
+    recente.total + ' cartas · Ver coleção →</span><div class="raras" id="raras" data-col="' + recente.id +
+    '"></div>');
+  return html ? '<div class="destaques' + (proxima ? ' com-proxima' : '') + '">' + html + '</div>' : '';
 }
 
 // Peso da raridade (quanto mais rara, maior), para desempatar as cartas sem preço
@@ -145,7 +146,7 @@ async function preencherRaras(box) {
   }).join('');
 }
 
-// CONTINUE SUA COLEÇÃO: as 3 coleções que a pessoa está mais perto de completar (só para quem marcou cartas)
+// CONTINUE SUA COLEÇÃO: as 6 coleções que a pessoa está mais perto de completar (só para quem marcou cartas)
 function blocoContinuar() {
   var feito = function (c) {
     return qtdTenho(c.id) / c.total;
@@ -154,7 +155,7 @@ function blocoContinuar() {
     return !c.emBreve && c.total && qtdTenho(c.id) && qtdTenho(c.id) < c.total;
   }).sort(function (a, b) {
     return feito(b) - feito(a);
-  }).slice(0, 3);
+  }).slice(0, 6);
   // versão enxuta: logo pequeno, nome, barra fina e a porcentagem (o resto fica na tela da coleção)
   return l.length ? '<h3 class="continuar-titulo">Continue sua coleção</h3><div class="continuar">' +
     l.map(function (c) {

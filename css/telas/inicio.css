@@ -1,14 +1,21 @@
 /* css/telas/inicio.css – partes novas da tela inicial (js/telas/inicio.js)
-   Próximo lançamento (contagem regressiva), coleção mais recente (sem lançamento divulgado, com as 5 cartas
-   mais valiosas saindo do cartão), "Continue sua coleção" (enxuto) e a faixa colorida de cada era nas séries.
+   Coleção mais recente (com as 5 cartas mais valiosas saindo do cartão em leque), próximo lançamento
+   (contagem regressiva, num cartão estreito ao lado), "Continue sua coleção" (enxuto) e a faixa colorida
+   de cada era nas séries.
    O destaque do topo (hero) e os números ficam em css/layout.css e css/componentes/cartas.css. */
 
-/* ===== DESTAQUES: PRÓXIMO LANÇAMENTO E COLEÇÃO MAIS RECENTE ===== */
+/* ===== DESTAQUES: COLEÇÃO MAIS RECENTE (COM AS CARTAS) E PRÓXIMO LANÇAMENTO ===== */
+/* margem grande em cima: espaço para as cartas do leque saírem do cartão */
 .destaques {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: 1fr;
   gap: 14px;
-  margin-top: 20px;
+  margin-top: 76px;
+}
+
+/* com lançamento divulgado: contagem num cartão estreito à esquerda e a coleção mais recente, maior, à direita */
+.destaques.com-proxima {
+  grid-template-columns: minmax(230px, 1fr) 2.7fr;
 }
 
 .destaque {
@@ -30,6 +37,11 @@
 .destaque:hover {
   border-color: var(--gold);
   transform: translateY(-2px);
+}
+
+.destaque:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
 }
 
 /* rótulo em cima ("PRÓXIMO LANÇAMENTO") ocupa a linha toda */
@@ -60,35 +72,7 @@
   font-size: 1.15rem;
 }
 
-/* próximo lançamento: fundo com brilho dourado */
-.destaque.proxima {
-  background: radial-gradient(circle at 100% 0%, #ffc61a2e, transparent 60%), var(--p1);
-  border-color: #ffc61a66;
-}
-
-/* coleção mais recente: fundo com brilho azul */
-.destaque.recente {
-  background: radial-gradient(circle at 100% 0%, #4aa3ff2e, transparent 60%), var(--p1);
-}
-
-/* contagem regressiva: "chega em 13 dias" com o número grande */
-.contagem {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  line-height: 1.1;
-  color: var(--mut);
-  font-size: .8rem;
-  text-align: center;
-}
-
-.contagem b {
-  color: var(--gold);
-  font-size: 2.2rem;
-  line-height: 1.05;
-}
-
-/* "30 cartas · Ver coleção →" fica embaixo do nome (o nome da coleção ganha a largura toda) */
+/* "158 cartas · Ver coleção →" fica embaixo do nome */
 .destaque-ver {
   grid-column: 2/-1;
   color: var(--gold);
@@ -96,17 +80,46 @@
   font-size: .85rem;
 }
 
-.destaque:focus-visible {
-  outline: 2px solid var(--blue);
-  outline-offset: 2px;
+/* ===== PRÓXIMO LANÇAMENTO (cartão estreito, tudo centralizado) ===== */
+.destaque.proxima {
+  grid-template-columns: 1fr;
+  justify-items: center;
+  text-align: center;
+  gap: 6px;
+  background: radial-gradient(circle at 100% 0%, #ffc61a2e, transparent 60%), var(--p1);
+  border-color: #ffc61a66;
 }
 
-/* ===== AS MAIS RARAS (quando não há lançamento divulgado) ===== */
-/* a coleção mais recente ocupa a linha toda e deixa espaço em cima para as cartas saírem */
+.proxima>img {
+  height: 48px;
+}
+
+.proxima .destaque-txt {
+  align-items: center;
+}
+
+/* contagem regressiva numa linha só: "chega em 13 dias", com o número grande */
+.contagem {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  color: var(--mut);
+  font-size: .85rem;
+}
+
+.contagem b {
+  color: var(--gold);
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+/* ===== COLEÇÃO MAIS RECENTE COM AS 5 CARTAS MAIS VALIOSAS EM LEQUE ===== */
+.destaque.recente {
+  background: radial-gradient(circle at 100% 0%, #4aa3ff2e, transparent 60%), var(--p1);
+}
+
 .destaque.com-raras {
-  grid-column: 1/-1;
   grid-template-columns: auto 1fr 440px;
-  margin-top: 60px;
 }
 
 .com-raras small {
@@ -117,8 +130,15 @@
   grid-column: 2/3;
 }
 
-/* área das cartas, à direita. O corte na borda de baixo do cartão faz as cartas parecerem sair de dentro dele */
+/* área das cartas, à direita. O corte na borda de baixo do cartão faz as cartas parecerem sair de dentro dele.
+   Tamanhos do leque: --g1/--g2 = distância das cartas do lado e das pontas até o meio;
+   --w0/--w1/--w2 = largura das cartas das pontas, do lado e do meio */
 .raras {
+  --g1: 84px;
+  --g2: 160px;
+  --w0: 100px;
+  --w1: 112px;
+  --w2: 128px;
   grid-column: 3;
   grid-row: 1/4;
   align-self: stretch;
@@ -127,12 +147,36 @@
   clip-path: inset(-300px -80px -18px -80px);
 }
 
+/* ao lado da contagem o cartão é menor: sai o logo e o leque fica mais fechado.
+   Alinhado por baixo, ele fica mais baixo que a contagem e as cartas saem por cima dele */
+.com-proxima .com-raras {
+  grid-template-columns: 1fr 360px;
+  align-self: end;
+}
+
+.com-proxima .com-raras>img {
+  display: none;
+}
+
+.com-proxima .com-raras small, .com-proxima .com-raras .destaque-txt, .com-proxima .com-raras .destaque-ver {
+  grid-column: 1;
+}
+
+.com-proxima .raras {
+  --g1: 68px;
+  --g2: 128px;
+  --w0: 88px;
+  --w1: 98px;
+  --w2: 112px;
+  grid-column: 2;
+}
+
 /* --x e --r (posição e inclinação de cada carta) ficam em .rara-0 a .rara-4 */
 .raras img {
   position: absolute;
   left: 50%;
   bottom: -12px;
-  width: 100px;
+  width: var(--w0);
   border-radius: 6px;
   box-shadow: 0 10px 24px #0009;
   cursor: zoom-in;
@@ -146,30 +190,30 @@
 
 /* pontas do leque: 4ª e 5ª mais valiosas */
 .raras .rara-0 {
-  --x: calc(-50% - 160px);
+  --x: calc(-50% - var(--g2));
   --r: -16deg;
   animation-delay: .15s;
 }
 
 .raras .rara-4 {
-  --x: calc(-50% + 160px);
+  --x: calc(-50% + var(--g2));
   --r: 16deg;
   animation-delay: .55s;
 }
 
 /* do lado da do meio: 2ª e 3ª */
 .raras .rara-1 {
-  --x: calc(-50% - 84px);
+  --x: calc(-50% - var(--g1));
   --r: -8deg;
-  width: 112px;
+  width: var(--w1);
   z-index: 1;
   animation-delay: .25s;
 }
 
 .raras .rara-3 {
-  --x: calc(-50% + 84px);
+  --x: calc(-50% + var(--g1));
   --r: 8deg;
-  width: 112px;
+  width: var(--w1);
   z-index: 1;
   animation-delay: .45s;
 }
@@ -178,7 +222,7 @@
 .raras .rara-2 {
   --x: -50%;
   --r: 0deg;
-  width: 128px;
+  width: var(--w2);
   z-index: 2;
   animation-delay: .35s;
 }
@@ -333,18 +377,19 @@
     max-width: 96px;
   }
 
-  .destaques {
+  /* um embaixo do outro: a coleção mais recente (com as cartas) em cima e a contagem embaixo */
+  .destaques, .destaques.com-proxima {
     grid-template-columns: 1fr;
+    margin-top: 60px;
   }
 
-  .contagem b {
-    font-size: 1.7rem;
+  .destaque.proxima {
+    order: 2;
   }
 
   /* no celular, o logo sai para sobrar espaço para o leque de cartas */
-  .destaque.com-raras {
+  .destaque.com-raras, .com-proxima .com-raras {
     grid-template-columns: 1fr 150px;
-    margin-top: 48px;
   }
 
   .destaque.com-raras>img {
@@ -355,33 +400,20 @@
     grid-column: 1;
   }
 
-  .raras {
+  /* leque pequeno, só com as 3 cartas do meio */
+  .destaques .raras {
+    --g1: 40px;
+    --w1: 66px;
+    --w2: 78px;
     grid-column: 2;
     clip-path: inset(-300px -80px -14px -80px);
   }
 
   .raras img {
-    left: 50%;
-    width: 66px;
     bottom: -8px;
   }
 
-  /* no celular ficam as 3 do meio, mais juntas */
   .raras .rara-0, .raras .rara-4 {
     display: none;
-  }
-
-  .raras .rara-1 {
-    --x: calc(-50% - 40px);
-    width: 66px;
-  }
-
-  .raras .rara-3 {
-    --x: calc(-50% + 40px);
-    width: 66px;
-  }
-
-  .raras .rara-2 {
-    width: 78px;
   }
 }
