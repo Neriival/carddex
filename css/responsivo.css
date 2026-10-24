@@ -15,6 +15,11 @@
   .parceiros-faixa {
     display: block;
   }
+
+  /* tablet: 4 cartas por fileira */
+  .grade {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
 }
 
 /* Celular */

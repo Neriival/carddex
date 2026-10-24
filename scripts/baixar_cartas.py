@@ -7,6 +7,11 @@ Uso (na pasta do projeto):
     python scripts/baixar_cartas.py sv01 me05    # só algumas coleções
     python scripts/baixar_cartas.py --listar me  # mostra as coleções da série na TCGdex
     python scripts/baixar_cartas.py --numeracao  # só a sigla e o total impresso de cada coleção (rápido)
+    python scripts/baixar_cartas.py --em-breve   # só as coleções "emBreve": true que a TCGdex já publicou
+                                                 # (roda sozinho todo dia no robô de preços)
+
+Coleção que ainda não saiu: coloque no series.json com "emBreve": true, "total": 0 e a data de lançamento.
+O site mostra "Em breve" e, quando a TCGdex publicar as cartas, o --em-breve baixa tudo e tira o "emBreve".
 
 Gera:
     dados/cartas/<serie>/<colecao>.json
@@ -146,7 +151,13 @@ def main():
                 print(f"{col['id']:<10} {col.get('sigla', '?'):<6} {col.get('oficial', '-')}" + ('' if ok else '  (não encontrei na TCGdex)'))
         caminho.write_text(json.dumps(dados, ensure_ascii=False, indent=2), encoding='utf-8')
         return
+    # --em-breve: só as coleções que ainda não saíram ("emBreve": true no series.json)
+    so_em_breve = bool(args) and args[0] == '--em-breve'
+    if so_em_breve:
+        args = []
     for serie in dados['series']:
+        if so_em_breve and not any(c.get('emBreve') for c in serie['colecoes']):
+            continue
         # logo da série (português; se não existir, inglês)
         for idioma in ('pt', 'en'):
             s = baixar(f"{API}/{idioma}/series/{serie['id']}") or {}
@@ -154,6 +165,8 @@ def main():
                 break
         for col in serie['colecoes']:
             if args and serie['id'] not in args and col['id'] not in args:
+                continue
+            if so_em_breve and not col.get('emBreve'):
                 continue
             cid = col['id']
             print(f"\n== {serie['nome']} / {col['nome']} ==")
@@ -165,7 +178,10 @@ def main():
             if em_pt and conj.get('name') and not col.get('nomeFixo'):
                 col['nome'] = conj['name'].strip()  # nome oficial em português ("nomeFixo": true mantém o nome do series.json)
             if not conj:
-                print(f'  não encontrei "{tid}" na TCGdex. Veja: python scripts/baixar_cartas.py --listar {serie["id"]}')
+                if col.get('emBreve'):
+                    print('  ainda não está na TCGdex: continua como "Em breve"')
+                else:
+                    print(f'  não encontrei "{tid}" na TCGdex. Veja: python scripts/baixar_cartas.py --listar {serie["id"]}')
                 continue
             # logo da coleção: tenta o do conjunto em português; se não tiver, o em inglês
             logo = conj.get('logo') or (baixar(f'{API}/en/sets/{tid}') or {}).get('logo')
@@ -178,6 +194,9 @@ def main():
             if em_pt:
                 ids = {c['id'] for c in cartas}
                 cartas += [c for c in (baixar(f'{API}/en/sets/{tid}') or {}).get('cards', []) if c['id'] not in ids]
+            if col.get('emBreve') and not cartas:
+                print('  ainda sem cartas na TCGdex: continua como "Em breve"')
+                continue
             so_mini = serie.get('imagens') == 'mini'
             res = []
             with ThreadPoolExecutor(max_workers=6) as ex:
@@ -190,6 +209,7 @@ def main():
             saida.parent.mkdir(parents=True, exist_ok=True)
             saida.write_text(json.dumps(res, ensure_ascii=False, indent=1), encoding='utf-8')
             col['total'] = len(res)
+            col.pop('emBreve', None)  # a coleção saiu: deixa de ser "Em breve"
             numeracao(tid, col)
             print(f'  {len(res)} cartas salvas em {saida.relative_to(RAIZ)}')
     caminho.write_text(json.dumps(dados, ensure_ascii=False, indent=2), encoding='utf-8')

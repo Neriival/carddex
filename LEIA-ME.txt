@@ -78,6 +78,11 @@ Em dados/series.json, dentro da série, inclua:
   { "id": "me06", "nome": "Nome em português", "busca": "Nome em inglês", "lancamento": "AAAA-MM-DD", "total": 100 }
 Para ver os nomes/ids que a TCGdex usa:  python scripts/baixar_cartas.py --listar me
 O script atualiza o "total" sozinho depois de baixar.
+COLEÇÃO QUE AINDA NÃO SAIU: coloque com "total": 0 e "emBreve": true, por exemplo
+  { "id": "me06", "nome": "Delta Reign", "busca": "Delta Reign", "lancamento": "2026-11-06", "total": 0, "emBreve": true }
+O site mostra "Em breve" com a data. Todo dia o robô (precos.yml) roda  python scripts/baixar_cartas.py --em-breve:
+quando a TCGdex publicar as cartas, ele baixa tudo, tira o "emBreve" e a coleção aparece sozinha no site.
+Depois, se quiser preço da Liga, coloque a sigla da coleção em SIGLAS no atualizar_precos_liga.py.
 
 ADICIONAR UMA SÉRIE
 Crie outro bloco em "series" com o mesmo id usado na TCGdex (ex.: "swsh"), "jogo": "pokemon" e suas coleções.

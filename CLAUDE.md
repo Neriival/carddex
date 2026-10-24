@@ -41,8 +41,9 @@ No ar em https://neriival.github.io/carddex/ (GitHub Pages, branch `main`, repos
 - Cartas e imagens: TCGdex (+ Pokémon TCG API/TCGplayer/Limitless para imagens que faltam).
   Séries "imagens: mini" guardam só a miniatura no projeto (limite de 1 GB do GitHub Pages).
 - Preços: Liga Pokémon (mercado brasileiro) quando a coleção tem; senão Cardmarket (euro → real).
-  Robôs no GitHub Actions: `.github/workflows/precos.yml` (Cardmarket, diário, e "toque" no Supabase para
-  não pausar) e `precos-liga.yml` (Liga: **só manual**; no GitHub a Liga bloqueia, então roda-se o script em casa).
+  Robôs no GitHub Actions: `.github/workflows/precos.yml` (diário: "toque" no Supabase para não pausar,
+  `baixar_cartas.py --em-breve` para coleções `"emBreve": true` que a TCGdex já publicou, e preços do Cardmarket)
+  e `precos-liga.yml` (Liga: **só manual**; no GitHub a Liga bloqueia, então roda-se o script em casa).
   O robô diário faz commits no `main` → **sempre `git pull --rebase` antes de publicar**.
 
 ## Banco (Supabase, projeto `carddex`, ref `fqynjcaiwmeprxkzfwed`, plano grátis)

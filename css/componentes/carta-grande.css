@@ -82,13 +82,12 @@
   background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), #fff9, transparent 55%);
 }
 
+/* "Arraste para o lado": só em telas de toque (responsivo.css) */
 .dica {
   display: none;
   text-align: center;
   margin: 14px 0 0;
 }
-
-/* "Arraste para o lado": só em telas de toque (responsivo.css) */
 
 /* ===== INFORMAÇÕES ===== */
 .info {

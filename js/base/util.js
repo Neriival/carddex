@@ -7,9 +7,12 @@
 // Elemento onde todas as telas são desenhadas (<main id="app"> no index.html)
 var app = document.getElementById('app');
 
-// Completa com zeros à esquerda: pad(7) → '007', pad(4, 2) → '04'
+// Completa com zeros à esquerda: pad(7) → '007', pad(4, 2) → '04'.
+// Número maior que o tamanho fica inteiro: pad(112, 2) → '112' (antes virava '12').
 function pad(n, l) {
-  return ('0000' + n).slice(-(l || 3));
+  var t = String(n);
+  while (t.length < (l || 3)) t = '0' + t;
+  return t;
 }
 
 // Protege um texto antes de colocar no HTML (evita que nomes com < ou " quebrem a página)

@@ -174,6 +174,7 @@ nav a:focus-visible {
 }
 
 /* ===== GRADES ===== */
+/* cartões de números */
 .stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -181,7 +182,7 @@ nav a:focus-visible {
   margin-top: 20px;
 }
 
-/* cartões de números */
+/* jogos, séries e coleções */
 .colecoes {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -190,11 +191,9 @@ nav a:focus-visible {
   grid-auto-rows: 1fr;
 }
 
-/* jogos, séries e coleções */
+/* cartas: 5 por fileira no computador (4 no tablet e 3 no celular, em responsivo.css) */
 .grade {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
 }
-
-/* cartas */

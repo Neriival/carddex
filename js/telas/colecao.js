@@ -18,6 +18,14 @@ async function telaColecao(id) {
   marcarMenu(1);
   var volta = '<h2><button class="voltar" onclick="telaSerie(\'' + c.serie + '\')">← ' + esc(acharSerie(c.serie).nome) +
     '</button></h2>';
+  // coleção que ainda não saiu: as cartas aparecem aqui sozinhas quando forem divulgadas
+  if (c.emBreve) {
+    app.innerHTML = volta + '<h2 class="titulo">' + esc(c.nome) + '</h2>' +
+      '<div class="aviso">Esta coleção lança em <b>' + dataBR(c.lancamento) + '</b>. ' +
+      'As cartas aparecem aqui sozinhas assim que forem divulgadas.</div>';
+    window.scrollTo(0, 0);
+    return;
+  }
   app.innerHTML = volta + '<p class="sub">Carregando cartas...</p>';
   try {
     await Promise.all([carregarCartas(c), carregarPrecos(c.serie)]);

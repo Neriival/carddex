@@ -20,13 +20,13 @@
   font-size: .8rem;
 }
 
-/* ===== FILTROS PRINCIPAIS ===== */
+/* ===== FILTROS PRINCIPAIS (centralizados) ===== */
 .filtros {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 8px;
   max-width: 620px;
-  margin: 12px 0;
+  margin: 16px auto 12px;
 }
 
 .filtros button {
@@ -46,9 +46,10 @@
   border-color: var(--gold);
 }
 
-/* ===== RARIDADE E TIPO ===== */
+/* ===== RARIDADE, TIPO E ORDENAR (centralizados) ===== */
 .filtros-extra {
   display: flex;
+  justify-content: center;
   gap: 10px;
   flex-wrap: wrap;
   margin: 0 0 12px;
@@ -88,12 +89,13 @@
   border-color: var(--gold);
 }
 
-/* ===== BOTÕES DE COMPARTILHAR ===== */
+/* ===== BOTÕES DE COMPARTILHAR (centralizados) ===== */
 .compartilhar-acoes {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 10px;
-  margin: 0 0 14px;
+  margin: 0 0 18px;
 }
 
 .btn-compartilhar {

@@ -72,6 +72,7 @@
   color: var(--mut);
 }
 
+/* posição dos 3 primeiros: ouro, prata, bronze */
 .top1 .rank-pos {
   color: var(--gold);
 }
@@ -84,7 +85,7 @@
   color: #e0995e;
 }
 
-/* ouro, prata, bronze */
+/* brilho dourado no 1º lugar */
 .top1 {
   box-shadow: 0 0 18px #ffc61a33;
 }

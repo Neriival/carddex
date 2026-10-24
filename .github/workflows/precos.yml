@@ -1,7 +1,8 @@
-# Atualiza os preços das cartas (Cardmarket → real) todo dia, sozinho.
-# Roda scripts/atualizar_precos.py e, se os preços mudaram, salva dados/precos/ no repositório
-# (o GitHub Pages publica o site de novo em seguida).
-# Antes, dá um "toque" no banco (Supabase): o plano grátis pausa o projeto depois de ~7 dias sem uso.
+# Robô diário do CardDex, sozinho, todo dia:
+#  1) dá um "toque" no banco (Supabase): o plano grátis pausa o projeto depois de ~7 dias sem uso
+#  2) baixa as coleções "Em breve" que a TCGdex já publicou (scripts/baixar_cartas.py --em-breve)
+#  3) atualiza os preços (Cardmarket → real) com scripts/atualizar_precos.py
+# e salva o que mudou no repositório (o GitHub Pages publica o site de novo em seguida).
 # Também dá para rodar na hora: GitHub → Actions → "Atualizar preços" → Run workflow.
 name: Atualizar preços
 
@@ -30,11 +31,21 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Coleções novas (as marcadas como "Em breve")
+        # se a TCGdex ainda não publicou, não faz nada; se der erro, os preços são atualizados mesmo assim
+        continue-on-error: true
+        run: python scripts/baixar_cartas.py --em-breve
       - name: Atualizar preços
         run: python scripts/atualizar_precos.py
       - name: Salvar no repositório
         run: |
           git config user.name "CardDex (preços automáticos)"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add dados/precos dados/cardmarket.json
-          git diff --cached --quiet || (git commit -m "Preços atualizados ($(date +%d/%m/%Y))" && git pull --rebase && git push)
+          git add dados/precos dados/cardmarket.json dados/series.json dados/cartas assets/img
+          git diff --cached --quiet && exit 0
+          if git diff --cached --name-only | grep -q "^dados/cartas/"; then
+            MSG="Coleção nova e preços atualizados ($(date +%d/%m/%Y))"
+          else
+            MSG="Preços atualizados ($(date +%d/%m/%Y))"
+          fi
+          git commit -m "$MSG" && git pull --rebase && git push

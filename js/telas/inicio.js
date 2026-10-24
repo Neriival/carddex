@@ -6,9 +6,17 @@
 // ============================================================
 
 // Botão de uma coleção: logo, nome, data de lançamento e progresso
+// (coleção que ainda não saiu, "emBreve": true no series.json: mostra "Em breve" no lugar do progresso)
 function botaoColecao(c) {
   var n = qtdTenho(c.id),
     completa = c.total && n >= c.total;
+  if (c.emBreve) {
+    return '<button class="colecao em-breve" onclick="telaColecao(\'' + c.id + '\')">' +
+      '<img src="assets/img/colecoes/' + c.serie + '/' + c.id + '.webp" alt="" onerror="logoAlt(this)">' +
+      '<h3>' + esc(c.nome) + '</h3>' +
+      '<span class="sub">Lança em ' + dataBR(c.lancamento) + '</span>' +
+      '<span class="selo-em-breve">Em breve</span></button>';
+  }
   return '<button class="colecao' + (completa ? ' completa' : '') + '" onclick="telaColecao(\'' + c.id +
     '\')"><img src="assets/img/colecoes/' + c.serie + '/' + c.id + '.webp" alt="" onerror="logoAlt(this)"><h3>' +
     esc(c.nome) + '</h3>' +
@@ -59,7 +67,9 @@ function telaInicio(ir) {
     '<button class="btn" onclick="telaInicio(\'series\')">Explorar séries →</button>' +
     '</div><img src="assets/img/carddex-logo.png" alt=""></section>' +
     '<div class="stats" id="stats"><div class="stat"><div>Séries disponíveis</div><b>' + pad(ESTADO.series.length, 2) +
-    '</b></div><div class="stat"><div>Coleções disponíveis</div><b>' + pad(todasColecoes().length, 2) + '</b></div>' +
+    '</b></div><div class="stat"><div>Coleções disponíveis</div><b>' + pad(todasColecoes().filter(function (c) {
+      return !c.emBreve; // não conta as que ainda não saíram
+    }).length, 2) + '</b></div>' +
     '<div class="stat"><div>Cartas que você tem</div><b>' + totalTenho() + '</b></div></div>' + blocos;
   var alvo = ir && document.getElementById(ir);
   if (alvo) alvo.scrollIntoView({

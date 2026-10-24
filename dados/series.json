@@ -269,6 +269,14 @@
           "total": 30,
           "sigla": "30C",
           "semTotal": true
+        },
+        {
+          "id": "me06",
+          "nome": "Delta Reign",
+          "busca": "Delta Reign",
+          "lancamento": "2026-11-06",
+          "total": 0,
+          "emBreve": true
         }
       ]
     },

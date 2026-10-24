@@ -93,6 +93,21 @@
   box-shadow: 0 0 16px #ffc61a33;
 }
 
+/* coleção que ainda não saiu ("emBreve" no series.json) */
+.colecao.em-breve {
+  border-style: dashed;
+}
+
+.selo-em-breve {
+  margin-top: 10px;
+  padding: 4px 14px;
+  border-radius: 999px;
+  background: var(--gold);
+  color: #1a1200;
+  font-size: .85rem;
+  font-weight: 800;
+}
+
 .serie-btn {
   padding: 26px 18px;
 }
@@ -144,7 +159,7 @@
 
 .num-carta {
   text-align: center;
-  font-size: .72rem;
+  font-size: .85rem;
   color: var(--mut);
   letter-spacing: .02em;
   white-space: nowrap;
@@ -153,7 +168,7 @@
 
 .preco {
   text-align: center;
-  font-size: .85rem;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--gold);
   white-space: nowrap;
