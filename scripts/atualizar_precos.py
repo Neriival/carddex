@@ -14,7 +14,10 @@ Como funciona:
  3) Baixa a cotação do euro em real (AwesomeAPI).
  4) Grava dados/precos/<serie>.json, que o site lê (js/base/precos.js):
       { "atualizado": "2026-10-06", "eur_brl": 5.61, "fonte": "Cardmarket",
-        "precos": { "me01-001": [0.06, 0.2], ... } }      # [preço, preço da versão reverse holo] em euro
+        "precos": { "me01-001": [0.06, 0.2, 0.02], ... } }   # em euro:
+      [preço típico (tendência), preço da versão reverse holo (0 = não tem), menor anúncio]
+      (os dois últimos podem faltar; o menor anúncio costuma ser de carta danificada ou em outro idioma,
+       por isso o site usa o preço típico e mostra o menor só como "a partir de" na carta grande)
 """
 import json, sys, datetime
 from pathlib import Path
@@ -98,7 +101,8 @@ def main():
                 continue
             normal, reverse = valor(p), valor(p, '-holo')
             if normal or reverse:
-                precos[k] = [normal or 0] + ([reverse] if reverse else [])
+                menor = round(p['low'], 2) if p.get('low') else None  # anúncio mais barato (qualquer estado/idioma)
+                precos[k] = [normal or 0] + ([reverse or 0, menor] if menor else [reverse] if reverse else [])
         saida = {'atualizado': hoje, 'eur_brl': eur_brl, 'fonte': 'Cardmarket', 'precos': precos}
         (PASTA_PRECOS / f'{serie}.json').write_text(json.dumps(saida, separators=(',', ':')), encoding='utf-8')
         print(f'{serie}: {len(precos)} de {len(ids)} cartas com preço')

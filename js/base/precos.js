@@ -46,7 +46,9 @@ function usaLiga(serie, col) {
 
 // Preço da carta k (id) da coleção c ({ id, serie }) ou null se não tiver:
 //   Liga:       { fonte: 'liga', real: médio, menor, maior }
-//   Cardmarket: { fonte: 'cm', real, reverse }
+//   Cardmarket: { fonte: 'cm', real: tendência, reverse, menor: anúncio mais barato (0 = não informado) }
+// "real" (o preço típico) é o que aparece embaixo da carta e entra no valor da coleção;
+// o menor aparece só na carta grande, como "a partir de" (costuma ser de carta danificada ou em outro idioma).
 function precoCarta(c, k) {
   var d = PRECOS[c.serie],
     p;
@@ -64,7 +66,8 @@ function precoCarta(c, k) {
   return p ? {
     fonte: 'cm',
     real: p[0] * d.cm.eur_brl,
-    reverse: (p[1] || 0) * d.cm.eur_brl
+    reverse: (p[1] || 0) * d.cm.eur_brl,
+    menor: (p[2] || 0) * d.cm.eur_brl
   } : null;
 }
 

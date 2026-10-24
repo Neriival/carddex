@@ -48,10 +48,13 @@ async function abrirCarta(colId, cartaId, dir, daVitrine) {
   var tipo = (k.tipos || []).join(', ') || k.categoria || '—',
     preco = precoCarta(c, k.id),
     num = numeroCarta(c, k);
+  // preço: o típico em destaque e, embaixo, "A partir de" (o anúncio mais barato) e os outros valores
+  var aPartir = preco && preco.menor && preco.menor < (preco.real || Infinity) ?
+    '<small>A partir de: ' + reais(preco.menor) + '</small>' : '';
   var linhaPreco = !preco ? '' : preco.fonte === 'liga' ?
-    '<dt>Preço médio</dt><dd class="preco-info">' + reais(preco.real) + '<small>Menor: ' + reais(preco.menor) +
-    ' · Maior: ' + reais(preco.maior) + '</small></dd>' :
-    '<dt>Preço</dt><dd class="preco-info">' + (preco.real ? reais(preco.real) : '—') +
+    '<dt>Preço médio</dt><dd class="preco-info">' + reais(preco.real) + aPartir +
+    '<small>Maior: ' + reais(preco.maior) + '</small></dd>' :
+    '<dt>Preço</dt><dd class="preco-info">' + (preco.real ? reais(preco.real) : '—') + aPartir +
     (preco.reverse ? '<small>Reverse holo: ' + reais(preco.reverse) + '</small>' : '') + '</dd>';
   var animC = dir ? ' style="animation:' + (dir > 0 ? 'deslizarDir' : 'deslizarEsq') + ' .28s ease-out"' : '',
     animI = dir ? ' style="animation:none"' : '';
@@ -69,7 +72,9 @@ async function abrirCarta(colId, cartaId, dir, daVitrine) {
       esc(num.codigo) + '</span>' : '') + '</dd><dt>Série</dt><dd>' + esc(s.nome) + '</dd><dt>Raridade</dt><dd>' +
     esc(k.raridade || '—') + '</dd><dt>Tipo</dt><dd>' + esc(tipo) + '</dd><dt>PS</dt><dd>' + esc(k.ps || '—') +
     '</dd><dt>Ilustrador</dt><dd>' + esc(k.ilustrador || '—') + '</dd>' + linhaPreco + '</dl>' +
-    (preco ? '<p class="sub nota-preco">' + notaPreco(c.serie, colId) + '</p>' : '') +
+    (preco ? '<p class="sub nota-preco">' + notaPreco(c.serie, colId) +
+      (aPartir ? ' "A partir de" é o anúncio mais barato: pode ser de carta danificada ou em outro idioma.' : '') +
+      '</p>' : '') +
     (vit ? '<p class="sub">' + (y ? '✓ Você também tem esta carta.' : 'Você ainda não tem esta carta.') + '</p>' :
       '<button class="btn btn-tenho" onclick="alternarTenho()">' + (y ? '✓ Tenho esta carta' : 'Marcar como tenho') +
       '</button>' + contadorRepetidas(colId, k.id, y) + botaoVitrine(colId, k, y)) + '</div></div>';
