@@ -2,7 +2,7 @@
 // TELAS DE NAVEGAÇÃO: Início (séries) → Série (coleções)
 // ============================================================
 // Início: destaque, números (com o valor da coleção), próximo lançamento com contagem regressiva,
-// coleção mais recente (sem lançamento marcado: com as 3 cartas mais valiosas saindo do cartão),
+// coleção mais recente (com as 3 cartas mais valiosas saindo do cartão),
 // "Continue sua coleção" e as séries com os anos de cada era.
 // Com mais de um jogo com cartas, o Início mostra os jogos e cada jogo abre a tela das suas séries (telaJogo).
 // Cada tela é uma função que desenha o HTML dentro de <main id="app">.
@@ -64,7 +64,7 @@ function diasAte(data) {
   return Math.round((new Date(data + 'T00:00:00') - hoje) / 864e5);
 }
 
-// DESTAQUES da tela inicial: a próxima coleção ("Em breve", com contagem regressiva) e a mais recente
+// DESTAQUES da tela inicial: a coleção mais recente (com as cartas mais raras) e a próxima ("Em breve", com contagem)
 function blocoDestaques() {
   var cols = todasColecoes(),
     porData = function (a, b) {
@@ -86,6 +86,12 @@ function blocoDestaques() {
       ' · ' + dataBR(c.lancamento) + '</span></div>' + lado + '</div>';
   }
   var html = '';
+  // coleção mais recente, com as 3 cartas mais valiosas saindo do cartão
+  // (o espaço .raras é preenchido depois, por preencherRaras, quando as cartas e os preços carregarem)
+  if (recente) html += cartao(recente, 'recente com-raras', 'Coleção mais recente',
+    '<span class="destaque-ver">' + recente.total + ' cartas · Ver coleção →</span>' +
+    '<div class="raras" id="raras" data-col="' + recente.id + '"></div>');
+  // embaixo, a próxima coleção (se houver uma marcada como "Em breve") com a contagem regressiva
   if (proxima) {
     var d = diasAte(proxima.lancamento),
       // já passou da data, mas o robô ainda não achou as cartas: "Saiu! cartas em breve"
@@ -94,11 +100,6 @@ function blocoDestaques() {
       '<b>Saiu!</b><span>cartas em breve</span>';
     html += cartao(proxima, 'proxima', 'Próximo lançamento', '<div class="contagem">' + contagem + '</div>');
   }
-  // sem lançamento marcado, a coleção mais recente ocupa a linha toda e as cartas mais raras saem do cartão
-  // (o espaço .raras é preenchido depois, por preencherRaras, quando as cartas e os preços carregarem)
-  if (recente) html += cartao(recente, 'recente' + (proxima ? '' : ' com-raras'), 'Coleção mais recente',
-    '<span class="destaque-ver">' + recente.total + ' cartas · Ver coleção →</span>' +
-    (proxima ? '' : '<div class="raras" id="raras" data-col="' + recente.id + '"></div>'));
   return html ? '<div class="destaques">' + html + '</div>' : '';
 }
 

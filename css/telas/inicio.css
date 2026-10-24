@@ -1,12 +1,12 @@
 /* css/telas/inicio.css – partes novas da tela inicial (js/telas/inicio.js)
-   Próximo lançamento (contagem regressiva), coleção mais recente (sem lançamento marcado, com as 3 cartas
-   mais valiosas saindo do cartão) e a faixa colorida de cada era nas séries.
+   Coleção mais recente (com as 3 cartas mais valiosas saindo do cartão), próximo lançamento (contagem
+   regressiva) e a faixa colorida de cada era nas séries.
    O destaque do topo (hero) e os números ficam em css/layout.css e css/componentes/cartas.css. */
 
 /* ===== DESTAQUES: PRÓXIMO LANÇAMENTO E COLEÇÃO MAIS RECENTE ===== */
 .destaques {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: 1fr;
   gap: 14px;
   margin-top: 20px;
 }
@@ -101,8 +101,8 @@
   outline-offset: 2px;
 }
 
-/* ===== AS MAIS RARAS (quando não há lançamento marcado) ===== */
-/* a coleção mais recente ocupa a linha toda e deixa espaço em cima para as cartas saírem */
+/* ===== AS MAIS RARAS (cartas saindo do cartão da coleção mais recente) ===== */
+/* deixa espaço em cima para as cartas saírem */
 .destaque.com-raras {
   grid-column: 1/-1;
   grid-template-columns: auto 1fr 320px;
@@ -236,10 +236,6 @@
 }
 
 @media(max-width:760px) {
-  .destaques {
-    grid-template-columns: 1fr;
-  }
-
   .destaque {
     padding: 14px 16px;
   }
