@@ -5,6 +5,7 @@
 // e Ordenar (número, mais caras, mais baratas).
 // Cada carta da grade: clique na imagem abre a carta grande (js/recursos/carta-grande.js),
 // o círculo marca "tenho", a barra − N + conta as repetidas e embaixo fica o preço (js/base/precos.js).
+// Botões embaixo dos filtros: compartilhar (faltam / repetidas) e "Desmarcar todas" (com confirmação e Desfazer).
 // ============================================================
 
 // TELA – Coleção: carrega as cartas e desenha
@@ -14,6 +15,7 @@ async function telaColecao(id) {
   ESTADO.raridade = '';
   ESTADO.tipo = '';
   ESTADO.ordem = 'numero';
+  ESTADO.desfazer = null; // o "Desfazer" só vale enquanto a pessoa está na mesma coleção
   ESTADO.redesenhar = desenharColecao;
   marcarMenu(1);
   var volta = '<h2><button class="voltar" onclick="telaSerie(\'' + c.serie + '\')">← ' + esc(acharSerie(c.serie).nome) +
@@ -156,9 +158,69 @@ function desenharColecao() {
     '<div class="compartilhar-acoes">' +
     '<button class="btn btn-sec btn-compartilhar" onclick="abrirCompartilhar()">Compartilhar cartas que faltam</button>' +
     '<button class="btn btn-sec btn-compartilhar" onclick="abrirCompartilhar(\'repetidas\')">Compartilhar repetidas</button>' +
+    (qtdTenho(c.id) ? '<button class="btn btn-sec btn-compartilhar btn-perigo" onclick="desmarcarTodas()">' +
+      'Desmarcar todas</button>' : '') +
     '</div>' +
+    (ESTADO.desfazer && ESTADO.desfazer.col === c.id ? '<div class="aviso aviso-desfazer">' +
+      '<span>Todas as cartas desta coleção foram desmarcadas.</span>' +
+      '<button class="btn-link" onclick="desfazerDesmarcar()">Desfazer</button></div>' : '') +
     (html ? '<div class="grade">' + html + '</div>' : '<p class="sub">Nenhuma carta com esses filtros.</p>');
   atualizarProgresso();
+}
+
+// DESMARCAR TODAS: tira todas as cartas desta coleção, zera as repetidas dela e tira da vitrine as cartas dela.
+// Pede confirmação antes e guarda uma cópia para o botão "Desfazer".
+async function desmarcarTodas() {
+  var c = ESTADO.atual,
+    n = qtdTenho(c.id);
+  if (!n || !confirm('Desmarcar todas as ' + n + ' cartas de "' + c.nome + '"?\n\n' +
+      'As repetidas desta coleção também serão zeradas.')) return;
+  var vitrine = minhaVitrine().slice();
+  ESTADO.desfazer = {
+    col: c.id,
+    tenho: (ESTADO.tenho[c.id] || []).slice(),
+    repetidas: Object.assign({}, ESTADO.repetidas[c.id] || {}),
+    vitrine: vitrine
+  };
+  delete ESTADO.tenho[c.id];
+  delete ESTADO.repetidas[c.id];
+  salvarTenho();
+  salvarRepetidas();
+  desenharColecao();
+  // cartas desta coleção que estavam na vitrine saem dela (o banco não aceita vitrine com carta desmarcada)
+  if (logadoNaNuvem() && vitrine.some(function (v) {
+      return v.c === c.id;
+    })) {
+    try {
+      await salvarVitrine(vitrine.filter(function (v) {
+        return v.c !== c.id;
+      }));
+    } catch (e) {}
+  }
+}
+
+// Botão "Desfazer": devolve as cartas, as repetidas e a vitrine de antes.
+// Se a pessoa marcou alguma carta depois, ela continua marcada (junta as duas listas).
+async function desfazerDesmarcar() {
+  var d = ESTADO.desfazer;
+  if (!d) return;
+  var agora = ESTADO.tenho[d.col] || [];
+  ESTADO.tenho[d.col] = d.tenho.concat(agora.filter(function (k) {
+    return d.tenho.indexOf(k) < 0;
+  }));
+  Object.keys(d.repetidas).forEach(function (k) {
+    if (d.repetidas[k] > qtdRepetida(d.col, k))(ESTADO.repetidas[d.col] ||
+      (ESTADO.repetidas[d.col] = {}))[k] = d.repetidas[k];
+  });
+  ESTADO.desfazer = null;
+  salvarTenho();
+  salvarRepetidas();
+  desenharColecao();
+  if (logadoNaNuvem() && JSON.stringify(minhaVitrine()) !== JSON.stringify(d.vitrine)) {
+    try {
+      await salvarVitrine(d.vitrine);
+    } catch (e) {}
+  }
 }
 
 // Atualiza o progresso e o valor da coleção sem redesenhar a página

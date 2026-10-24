@@ -102,6 +102,42 @@
   margin: 0;
 }
 
+/* ===== DESMARCAR TODAS (ação que apaga: em vermelho) ===== */
+.btn-perigo {
+  border-color: var(--erro);
+  color: var(--erro);
+}
+
+.btn-perigo:hover,
+.btn-perigo:focus-visible {
+  background: var(--erro);
+  border-color: var(--erro);
+  color: #1a0000;
+}
+
+/* faixa "Todas as cartas foram desmarcadas. Desfazer" */
+.aviso-desfazer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px 16px;
+  margin: 0 0 16px;
+  text-align: center;
+}
+
+.btn-link {
+  background: none;
+  border: 0;
+  padding: 4px 8px;
+  min-height: 36px;
+  color: var(--gold);
+  font: inherit;
+  font-weight: 800;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 @media(max-width:760px) {
   .filtros {
     grid-template-columns: repeat(2, 1fr);

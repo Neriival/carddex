@@ -21,6 +21,7 @@ var ESTADO = {
   raridade: '',
   tipo: '', // filtros extras da coleção
   ordem: 'numero', // ordem da grade: numero | caras | baratas
+  desfazer: null, // cópia da coleção antes do "Desmarcar todas" (para o botão Desfazer)
   atual: null, // coleção aberta
   tid: {}, // id de cada coleção na TCGdex (cache)
   redesenhar: null // função da tela atual, chamada quando a carta grande fecha ou chegam dados novos
