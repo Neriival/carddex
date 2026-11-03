@@ -8,7 +8,8 @@
 // - 'logo': a abertura antiga, o logo crescendo com brilho dourado (guardada para comparar).
 // Para ver a outra sem mudar o site, abra o endereço com ?abertura=logo ou ?abertura=video
 // (ex.: https://neriival.github.io/carddex/?abertura=logo).
-// Quem desativa animações no sistema não vê o vídeo (fica o logo parado, que some logo).
+// O vídeo toca sempre, mesmo com as animações desligadas no celular (pedido do dono: tem o botão "Pular").
+// A <div id="abertura"> já começa preta e vazia no index.html, para o logo antigo não piscar antes do vídeo.
 // Quando a primeira tela fica pronta (js/main.js chama fecharAbertura) E o vídeo acabou,
 // a abertura some esmaecendo e o conteúdo entra subindo de leve.
 // Este arquivo é carregado logo depois da <div id="abertura">, antes dos outros scripts,
@@ -26,21 +27,22 @@ var ABERTURA_VIDEO = iniciarVideoAbertura(); // promessa que termina quando o v�
 // Qual abertura mostrar: a do endereço (?abertura=...) ou a de TIPO_ABERTURA
 function tipoAbertura() {
   var m = /[?&]abertura=(video|logo)\b/.exec(location.search);
-  var tipo = m ? m[1] : TIPO_ABERTURA;
-  if (tipo === 'video' && window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return 'logo';
-  return tipo;
+  return m ? m[1] : TIPO_ABERTURA;
 }
 
-// Troca o logo pelo vídeo e devolve uma promessa que termina quando o vídeo acaba, dá erro ou a pessoa pula
+// Liga o vídeo que já está na abertura (index.html) e devolve uma promessa que termina quando ele acaba,
+// dá erro ou a pessoa pula. Na abertura antiga ('logo') troca o vídeo pelo logo e devolve null.
 function iniciarVideoAbertura() {
   var el = document.getElementById('abertura');
-  if (!el || tipoAbertura() !== 'video') return null;
-  el.classList.add('com-video');
-  el.removeAttribute('aria-hidden');
-  el.innerHTML = '<video src="assets/video/abertura.mp4" autoplay muted playsinline preload="auto">' +
-    '</video>' +
-    '<button class="abertura-pular" type="button">Pular</button>';
-  var v = el.querySelector('video');
+  var v = el && el.querySelector('video');
+  if (!v) return null;
+  if (tipoAbertura() !== 'video') {
+    el.classList.remove('com-video');
+    el.setAttribute('aria-hidden', 'true');
+    el.innerHTML = '<img src="assets/img/carddex-logo.png" alt="">';
+    return null;
+  }
+  if (v.error) return Promise.resolve(); // o vídeo já falhou antes deste arquivo carregar
   return new Promise(function (terminou) {
     v.onended = terminou;
     v.onerror = terminou;

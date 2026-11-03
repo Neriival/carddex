@@ -27,10 +27,11 @@
 }
 
 /* ===== VÍDEO DE ABERTURA ===== */
-/* fundo preto igual às bordas do vídeo; a segurança dos 6 s não vale aqui (o js cuida, o vídeo tem 10 s) */
+/* fundo preto igual às bordas do vídeo; a segurança aqui é de 16 s (o vídeo tem ~8 s e precisa baixar;
+   o js também tira a abertura depois de 15 s) */
 .abertura.com-video {
   background: #000;
-  animation: none;
+  animation: abertura-some .5s 16s forwards;
   /* some mais devagar, emendando o fim do vídeo no site */
   transition: opacity .9s ease, visibility .9s;
 }
