@@ -111,13 +111,66 @@
   }
 }
 
-/* ===== TELA DE LOGIN: espalhadas pela página toda (em qualquer tela) ===== */
+/* ===== SÓ NA TELA DE LOGIN: mais 8 Pokémon ===== */
+.sombra.so-login {
+  display: none;
+}
+
+.s-bulbasaur {
+  --img: url(../../assets/img/sombras/bulbasaur.webp);
+  animation-delay: -0.5s;
+}
+
+.s-jigglypuff {
+  --img: url(../../assets/img/sombras/jigglypuff.webp);
+  animation-delay: -1.5s;
+}
+
+.s-dragonite {
+  --img: url(../../assets/img/sombras/dragonite.webp);
+  animation-delay: -2.5s;
+}
+
+.s-mew {
+  --img: url(../../assets/img/sombras/mew.webp);
+  animation-delay: -3.5s;
+}
+
+.s-squirtle {
+  --img: url(../../assets/img/sombras/squirtle.webp);
+  animation-delay: -4.5s;
+}
+
+.s-umbreon {
+  --img: url(../../assets/img/sombras/umbreon.webp);
+  animation-delay: -5.5s;
+}
+
+.s-lugia {
+  --img: url(../../assets/img/sombras/lugia.webp);
+  animation-delay: -6.5s;
+}
+
+.s-rayquaza {
+  --img: url(../../assets/img/sombras/rayquaza.webp);
+  animation-delay: -0.5s;
+}
+
+/* ===== TELA DE LOGIN: 16 sombras espalhadas pela página toda (em qualquer tela) ===== */
 /* o espaço de cada lado é o que sobra em volta da caixa de login; --x espalha cada uma dentro desse espaço
-   (0 = encostada na borda da tela, 1 = encostada na caixa) */
+   (0 = encostada na borda da tela, 1 = encostada na caixa) e --y é a altura na tela */
 .na-login .sombras {
   display: block;
   --lado: calc((100vw - 460px) / 2);
-  --tam: clamp(90px, min(calc(var(--lado) * .55), 24vh), 260px);
+  --tam: clamp(80px, min(calc(var(--lado) * .45), 17vh), 200px);
+}
+
+.na-login .sombra.so-login {
+  display: block;
+}
+
+.na-login .sombra {
+  top: var(--y);
 }
 
 .na-login .sombra.esq {
@@ -128,22 +181,82 @@
   right: max(8px, calc(var(--x) * (var(--lado) - var(--tam))));
 }
 
-.na-login .s-charizard,
-.na-login .s-eevee {
+.na-login .s-charizard {
   --x: .55;
+  --y: 7%;
 }
 
-.na-login .s-pikachu,
-.na-login .s-greninja {
-  --x: .1;
+.na-login .s-bulbasaur {
+  --x: .05;
+  --y: 19%;
 }
 
-.na-login .s-gengar,
-.na-login .s-mewtwo {
-  --x: .8;
+.na-login .s-pikachu {
+  --x: .85;
+  --y: 31%;
 }
 
-.na-login .s-snorlax,
-.na-login .s-lucario {
+.na-login .s-jigglypuff {
   --x: .3;
+  --y: 43%;
+}
+
+.na-login .s-gengar {
+  --x: .95;
+  --y: 55%;
+}
+
+.na-login .s-dragonite {
+  --x: .1;
+  --y: 67%;
+}
+
+.na-login .s-snorlax {
+  --x: .6;
+  --y: 79%;
+}
+
+.na-login .s-mew {
+  --x: .2;
+  --y: 91%;
+}
+
+.na-login .s-mewtwo {
+  --x: .3;
+  --y: 7%;
+}
+
+.na-login .s-squirtle {
+  --x: .9;
+  --y: 19%;
+}
+
+.na-login .s-eevee {
+  --x: .05;
+  --y: 31%;
+}
+
+.na-login .s-umbreon {
+  --x: .65;
+  --y: 43%;
+}
+
+.na-login .s-lucario {
+  --x: .2;
+  --y: 55%;
+}
+
+.na-login .s-lugia {
+  --x: .95;
+  --y: 67%;
+}
+
+.na-login .s-greninja {
+  --x: .45;
+  --y: 79%;
+}
+
+.na-login .s-rayquaza {
+  --x: .05;
+  --y: 91%;
 }

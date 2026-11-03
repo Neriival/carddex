@@ -2,7 +2,7 @@
    Duas opções (escolha em TIPO_ABERTURA, js/recursos/abertura.js):
    vídeo (assets/video/abertura.mp4) com botão "Pular", ou a antiga, guardada para comparar:
    o logo aparece crescendo com um brilho dourado. Quando o site termina de carregar (js/recursos/abertura.js),
-   a tela de abertura some esmaecendo e o conteúdo entra subindo de leve.
+   a tela de abertura some esmaecendo e o conteúdo aparece (depois do vídeo só esmaecendo; depois do logo, subindo de leve).
    Quem desativa animações no sistema não vê nada disso (regra no fim de css/responsivo.css). */
 
 /* ===== TELA DE ABERTURA ===== */
@@ -31,6 +31,13 @@
 .abertura.com-video {
   background: #000;
   animation: none;
+  /* some mais devagar, emendando o fim do vídeo no site */
+  transition: opacity .9s ease, visibility .9s;
+}
+
+/* depois do vídeo o conteúdo só aparece esmaecendo, sem subir (subir dava a sensação de "tremida") */
+body.abriu-video .wrap {
+  animation: abertura-esmaece .9s ease both;
 }
 
 /* o vídeo inteiro sempre aparece (no celular em pé sobram faixas pretas em cima e embaixo) */
@@ -92,6 +99,16 @@ body.abriu .wrap {
 
   50% {
     box-shadow: 0 0 60px #ffc61a88;
+  }
+}
+
+@keyframes abertura-esmaece {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }
 

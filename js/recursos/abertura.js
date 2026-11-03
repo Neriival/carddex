@@ -20,6 +20,7 @@ var TIPO_ABERTURA = 'video'; // 'video' ou 'logo'
 var ABERTURA_INICIO = Date.now();
 var TEMPO_MINIMO = 900; // milissegundos (abertura do logo)
 var VIDEO_LIMITE = 15000; // segurança: se o vídeo travar, a abertura some depois disso
+var ANTES_DO_FIM = 0.6; // segundos antes do fim do vídeo em que a abertura começa a sumir
 var ABERTURA_VIDEO = iniciarVideoAbertura(); // promessa que termina quando o vídeo acaba (ou null)
 
 // Qual abertura mostrar: a do endereço (?abertura=...) ou a de TIPO_ABERTURA
@@ -43,6 +44,10 @@ function iniciarVideoAbertura() {
   return new Promise(function (terminou) {
     v.onended = terminou;
     v.onerror = terminou;
+    // começa a sumir um pouco antes do fim, para o vídeo emendar no site sem parar no último quadro
+    v.ontimeupdate = function () {
+      if (v.duration && v.duration - v.currentTime < ANTES_DO_FIM) terminou();
+    };
     el.querySelector('button').onclick = function () {
       v.pause();
       terminou();
@@ -63,11 +68,11 @@ function fecharAbertura() {
     var espera = ABERTURA_VIDEO ? 0 : Math.max(0, TEMPO_MINIMO - (Date.now() - ABERTURA_INICIO));
     setTimeout(function () {
       el.classList.add('saindo');
-      document.body.classList.add('abriu');
+      document.body.classList.add(ABERTURA_VIDEO ? 'abriu-video' : 'abriu');
       // tira do HTML depois que terminar de esmaecer
       setTimeout(function () {
         el.remove();
-      }, 600);
+      }, 1000);
     }, espera);
   });
 }

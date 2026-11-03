@@ -17,22 +17,22 @@
 
   <!-- ESTILOS (nesta ordem). ?v=... = versão dos arquivos: troque em TODAS as linhas (CSS e JS)
        a cada atualização, para o navegador e o app instalado baixarem tudo de novo -->
-  <link rel="stylesheet" href="css/base.css?v=20261103b">
-  <link rel="stylesheet" href="css/layout.css?v=20261103b">
-  <link rel="stylesheet" href="css/componentes/cartas.css?v=20261103b">
-  <link rel="stylesheet" href="css/componentes/carta-grande.css?v=20261103b">
-  <link rel="stylesheet" href="css/componentes/compartilhar.css?v=20261103b">
-  <link rel="stylesheet" href="css/componentes/abertura.css?v=20261103b">
-  <link rel="stylesheet" href="css/componentes/sombras.css?v=20261103b">
-  <link rel="stylesheet" href="css/componentes/perfil.css?v=20261103b">
-  <link rel="stylesheet" href="css/telas/inicio.css?v=20261103b">
-  <link rel="stylesheet" href="css/telas/colecao.css?v=20261103b">
-  <link rel="stylesheet" href="css/telas/minhas.css?v=20261103b">
-  <link rel="stylesheet" href="css/telas/conta.css?v=20261103b">
-  <link rel="stylesheet" href="css/telas/ranking.css?v=20261103b">
-  <link rel="stylesheet" href="css/telas/colecao-de.css?v=20261103b">
-  <link rel="stylesheet" href="css/telas/admin.css?v=20261103b">
-  <link rel="stylesheet" href="css/responsivo.css?v=20261103b">
+  <link rel="stylesheet" href="css/base.css?v=20261103c">
+  <link rel="stylesheet" href="css/layout.css?v=20261103c">
+  <link rel="stylesheet" href="css/componentes/cartas.css?v=20261103c">
+  <link rel="stylesheet" href="css/componentes/carta-grande.css?v=20261103c">
+  <link rel="stylesheet" href="css/componentes/compartilhar.css?v=20261103c">
+  <link rel="stylesheet" href="css/componentes/abertura.css?v=20261103c">
+  <link rel="stylesheet" href="css/componentes/sombras.css?v=20261103c">
+  <link rel="stylesheet" href="css/componentes/perfil.css?v=20261103c">
+  <link rel="stylesheet" href="css/telas/inicio.css?v=20261103c">
+  <link rel="stylesheet" href="css/telas/colecao.css?v=20261103c">
+  <link rel="stylesheet" href="css/telas/minhas.css?v=20261103c">
+  <link rel="stylesheet" href="css/telas/conta.css?v=20261103c">
+  <link rel="stylesheet" href="css/telas/ranking.css?v=20261103c">
+  <link rel="stylesheet" href="css/telas/colecao-de.css?v=20261103c">
+  <link rel="stylesheet" href="css/telas/admin.css?v=20261103c">
+  <link rel="stylesheet" href="css/responsivo.css?v=20261103c">
 </head>
 
 <body>
@@ -41,7 +41,7 @@
     <img src="assets/img/carddex-logo.png" alt="">
   </div>
   <!-- carregado aqui (e não lá embaixo) para o vídeo começar logo; não usa nenhum outro arquivo -->
-  <script src="js/recursos/abertura.js?v=20261103b"></script>
+  <script src="js/recursos/abertura.js?v=20261103c"></script>
 
   <!-- sombras de Pokémon nas laterais (só decoração, em telas largas; css/componentes/sombras.css) -->
   <div class="sombras" aria-hidden="true">
@@ -53,6 +53,15 @@
     <i class="sombra dir s-eevee"></i>
     <i class="sombra dir s-lucario"></i>
     <i class="sombra dir s-greninja"></i>
+    <!-- estas só aparecem na tela de login -->
+    <i class="sombra esq so-login s-bulbasaur"></i>
+    <i class="sombra esq so-login s-jigglypuff"></i>
+    <i class="sombra esq so-login s-dragonite"></i>
+    <i class="sombra esq so-login s-mew"></i>
+    <i class="sombra dir so-login s-squirtle"></i>
+    <i class="sombra dir so-login s-umbreon"></i>
+    <i class="sombra dir so-login s-lugia"></i>
+    <i class="sombra dir so-login s-rayquaza"></i>
   </div>
 
   <div class="wrap">
@@ -83,33 +92,33 @@
   <!-- SCRIPTS (a ordem importa: cada arquivo usa funções dos que vêm antes) -->
   <!-- banco de dados (login, contas, ranking) -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="js/config.js?v=20261103b"></script>
+  <script src="js/config.js?v=20261103c"></script>
   <!-- base: ajudantes, dados das cartas, marcações, preços e sincronização com a conta -->
-  <script src="js/base/util.js?v=20261103b"></script>
-  <script src="js/base/dados.js?v=20261103b"></script>
-  <script src="js/base/marcacoes.js?v=20261103b"></script>
-  <script src="js/base/precos.js?v=20261103b"></script>
-  <script src="js/base/nuvem.js?v=20261103b"></script>
+  <script src="js/base/util.js?v=20261103c"></script>
+  <script src="js/base/dados.js?v=20261103c"></script>
+  <script src="js/base/marcacoes.js?v=20261103c"></script>
+  <script src="js/base/precos.js?v=20261103c"></script>
+  <script src="js/base/nuvem.js?v=20261103c"></script>
   <!-- conta: login, perfil e fotos -->
-  <script src="js/conta/auth.js?v=20261103b"></script>
-  <script src="js/conta/fotos.js?v=20261103b"></script>
-  <script src="js/conta/login.js?v=20261103b"></script>
-  <script src="js/conta/perfil.js?v=20261103b"></script>
-  <script src="js/conta/amigos.js?v=20261103b"></script>
+  <script src="js/conta/auth.js?v=20261103c"></script>
+  <script src="js/conta/fotos.js?v=20261103c"></script>
+  <script src="js/conta/login.js?v=20261103c"></script>
+  <script src="js/conta/perfil.js?v=20261103c"></script>
+  <script src="js/conta/amigos.js?v=20261103c"></script>
   <!-- recursos usados em várias telas -->
-  <script src="js/recursos/carta-grande.js?v=20261103b"></script>
-  <script src="js/recursos/compartilhar.js?v=20261103b"></script>
-  <script src="js/recursos/vitrine.js?v=20261103b"></script>
+  <script src="js/recursos/carta-grande.js?v=20261103c"></script>
+  <script src="js/recursos/compartilhar.js?v=20261103c"></script>
+  <script src="js/recursos/vitrine.js?v=20261103c"></script>
   <!-- telas -->
-  <script src="js/telas/inicio.js?v=20261103b"></script>
-  <script src="js/telas/colecao.js?v=20261103b"></script>
-  <script src="js/telas/minhas.js?v=20261103b"></script>
-  <script src="js/telas/ranking.js?v=20261103b"></script>
-  <script src="js/telas/perfil-publico.js?v=20261103b"></script>
-  <script src="js/telas/colecao-de.js?v=20261103b"></script>
-  <script src="js/telas/admin.js?v=20261103b"></script>
+  <script src="js/telas/inicio.js?v=20261103c"></script>
+  <script src="js/telas/colecao.js?v=20261103c"></script>
+  <script src="js/telas/minhas.js?v=20261103c"></script>
+  <script src="js/telas/ranking.js?v=20261103c"></script>
+  <script src="js/telas/perfil-publico.js?v=20261103c"></script>
+  <script src="js/telas/colecao-de.js?v=20261103c"></script>
+  <script src="js/telas/admin.js?v=20261103c"></script>
   <!-- começa o site -->
-  <script src="js/main.js?v=20261103b"></script>
+  <script src="js/main.js?v=20261103c"></script>
 </body>
 
 </html>
