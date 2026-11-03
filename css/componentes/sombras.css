@@ -1,0 +1,149 @@
+/* css/componentes/sombras.css – sombras de Pokémon nas laterais da página (só decoração)
+   As imagens ficam em assets/img/sombras/<nome>.webp (silhuetas brancas com fundo transparente);
+   a cor vem daqui (background), a imagem só dá o formato (mask).
+   Só aparecem em telas largas, onde sobra espaço dos lados do site (1400px ou mais).
+   Para trocar um Pokémon: coloque a silhueta nova na pasta e troque o nome em --img abaixo. */
+
+/* ===== CAMADA DAS SOMBRAS (atrás do site, não recebe cliques) ===== */
+.sombras {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  /* largura de cada lateral e tamanho de cada sombra */
+  --lado: calc((100vw - 1180px) / 2);
+  --tam: clamp(90px, min(calc(var(--lado) - 40px), 21vh), 200px);
+}
+
+.wrap {
+  z-index: 1;
+}
+
+.sombra {
+  position: absolute;
+  width: var(--tam);
+  height: var(--tam);
+  transform: translateY(-50%);
+  background: linear-gradient(180deg, var(--blue), var(--line));
+  opacity: .13;
+  -webkit-mask: var(--img) center / contain no-repeat;
+  mask: var(--img) center / contain no-repeat;
+  animation: sombra-flutua 7s ease-in-out infinite;
+}
+
+/* lado esquerdo: centralizadas na lateral */
+.sombra.esq {
+  left: calc((var(--lado) - var(--tam)) / 2);
+}
+
+/* lado direito: viradas para o meio da página */
+.sombra.dir {
+  right: calc((var(--lado) - var(--tam)) / 2);
+  scale: -1 1;
+}
+
+/* ===== CADA POKÉMON (altura na tela e imagem) ===== */
+.s-charizard {
+  top: 15%;
+  --img: url(../../assets/img/sombras/charizard.webp);
+}
+
+.s-pikachu {
+  top: 39%;
+  --img: url(../../assets/img/sombras/pikachu.webp);
+  animation-delay: -2s;
+}
+
+.s-gengar {
+  top: 63%;
+  --img: url(../../assets/img/sombras/gengar.webp);
+  animation-delay: -4s;
+}
+
+.s-snorlax {
+  top: 86%;
+  --img: url(../../assets/img/sombras/snorlax.webp);
+  animation-delay: -1s;
+}
+
+.s-mewtwo {
+  top: 15%;
+  --img: url(../../assets/img/sombras/mewtwo.webp);
+  animation-delay: -3s;
+}
+
+.s-eevee {
+  top: 39%;
+  --img: url(../../assets/img/sombras/eevee.webp);
+  animation-delay: -5s;
+}
+
+.s-lucario {
+  top: 63%;
+  --img: url(../../assets/img/sombras/lucario.webp);
+  animation-delay: -1.5s;
+}
+
+.s-greninja {
+  top: 86%;
+  --img: url(../../assets/img/sombras/greninja.webp);
+  animation-delay: -3.5s;
+}
+
+/* sobe e desce bem devagar (quem desativa animações não vê: regra no fim de css/responsivo.css) */
+@keyframes sombra-flutua {
+
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 -10px;
+  }
+}
+
+/* ===== SÓ EM TELA LARGA ===== */
+@media(min-width:1400px) {
+  .sombras {
+    display: block;
+  }
+}
+
+/* ===== TELA DE LOGIN: espalhadas pela página toda (em qualquer tela) ===== */
+/* o espaço de cada lado é o que sobra em volta da caixa de login; --x espalha cada uma dentro desse espaço
+   (0 = encostada na borda da tela, 1 = encostada na caixa) */
+.na-login .sombras {
+  display: block;
+  --lado: calc((100vw - 460px) / 2);
+  --tam: clamp(90px, min(calc(var(--lado) * .55), 24vh), 260px);
+}
+
+.na-login .sombra.esq {
+  left: max(8px, calc(var(--x) * (var(--lado) - var(--tam))));
+}
+
+.na-login .sombra.dir {
+  right: max(8px, calc(var(--x) * (var(--lado) - var(--tam))));
+}
+
+.na-login .s-charizard,
+.na-login .s-eevee {
+  --x: .55;
+}
+
+.na-login .s-pikachu,
+.na-login .s-greninja {
+  --x: .1;
+}
+
+.na-login .s-gengar,
+.na-login .s-mewtwo {
+  --x: .8;
+}
+
+.na-login .s-snorlax,
+.na-login .s-lucario {
+  --x: .3;
+}

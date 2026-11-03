@@ -20,8 +20,16 @@ Como funciona:
         "precos": { "me01-001": [0.12, 2.38, 60.0], ... } }      # [menor, médio, maior] em real
     Coleção que ainda não está em "colecoes" continua com o preço do Cardmarket no site.
 """
-import json, os, re, sys, time, datetime, urllib.request, urllib.parse
+import json, os, re, ssl, sys, time, datetime, urllib.request, urllib.parse
 from pathlib import Path
+
+# Certificados de segurança (https): no Windows o Python às vezes não acha os do sistema
+# ("CERTIFICATE_VERIFY_FAILED"); com o pacote certifi instalado (pip install certifi), usa a lista dele.
+try:
+    import certifi
+    SSL = ssl.create_default_context(cafile=certifi.where())
+except ImportError:
+    SSL = None
 
 RAIZ = Path(__file__).resolve().parent.parent
 PASTA = RAIZ / 'dados' / 'precos-liga'
@@ -86,7 +94,7 @@ def real(v):
 def cartas_da_liga(sigla):
     """Baixa a página da coleção e devolve ({ número normalizado: [menor, médio, maior] }, [preço de cada carta na ordem da Liga])."""
     req = urllib.request.Request(URL + urllib.parse.quote(sigla), headers={'User-Agent': UA, 'Accept-Language': 'pt-BR'})
-    with urllib.request.urlopen(req, timeout=90) as r:
+    with urllib.request.urlopen(req, timeout=90, context=SSL) as r:
         html = r.read().decode('utf-8', 'ignore')
     i = html.find('var cardsjson = ')
     if i < 0:

@@ -10,7 +10,13 @@
 // shiny de cada carta. Quando o preço da Liga ou do Cardmarket está mais de 3 vezes acima ou abaixo do TCGplayer
 // (anúncio absurdo na Liga, carta ligada ao produto errado no Cardmarket), ou a carta não tem preço, vale o TCGplayer.
 //   dados/precos-tcgplayer/<serie>.json – gerado por scripts/atualizar_precos_tcgplayer.py (mesmo robô diário)
+// SO_LIGA = true: o site mostra SÓ o preço da Liga Pokémon, igual ao do site deles (pedido de 03/11/2026,
+// ainda desligado: só 9 das 113 coleções têm preço da Liga). Carta ou coleção sem preço da Liga fica sem preço,
+// então antes de ligar rode a busca completa da Liga (scripts/atualizar_precos_liga.py, veja o LEIA-ME).
+// Com false (hoje), vale o esquema acima (Cardmarket de reserva e TCGplayer de fiscal).
 // ============================================================
+
+var SO_LIGA = false;
 
 var PRECOS = {}; // série → { liga: {...} ou null, cm: {...} ou null, tcgp: {...} ou null }
 var precosPedidos = {}; // série → leitura em andamento (para não baixar o mesmo arquivo duas vezes)
@@ -28,9 +34,10 @@ function lerJson(url) {
 function carregarPrecos(serie) {
   if (!precosPedidos[serie]) {
     var dia = new Date().toISOString().slice(0, 10);
+    // só com a Liga, nem baixa os arquivos do Cardmarket e do TCGplayer
     precosPedidos[serie] = Promise.all([lerJson('dados/precos-liga/' + serie + '.json?d=' + dia),
-        lerJson('dados/precos/' + serie + '.json?d=' + dia),
-        lerJson('dados/precos-tcgplayer/' + serie + '.json?d=' + dia)
+        SO_LIGA ? null : lerJson('dados/precos/' + serie + '.json?d=' + dia),
+        SO_LIGA ? null : lerJson('dados/precos-tcgplayer/' + serie + '.json?d=' + dia)
       ])
       .then(function (r) {
         PRECOS[serie] = {
@@ -94,6 +101,7 @@ function precoCarta(c, k) {
       menor: (p[2] || 0) * d.cm.eur_brl
     };
   }
+  if (SO_LIGA) return preco && preco.fonte === 'liga' ? preco : null;
   if (!preco) return tcgp;
   if (tcgp && foraDoTcgplayer(preco.real || preco.reverse, tcgp.real || tcgp.reverse)) {
     tcgp.trocado = true;
@@ -164,7 +172,7 @@ function valorTotal(cols) {
 // Texto curto da fonte, para ir entre parênteses: "preço médio da Liga Pokémon" ou "referência Cardmarket"
 // (algumas cartas podem usar o TCGplayer, quando o preço principal está fora do normal ou falta)
 function fontePreco(serie, col) {
-  return usaLiga(serie,
+  return SO_LIGA || usaLiga(serie,
     col) ? 'preço médio da Liga Pokémon' : 'referência Cardmarket';
 }
 
@@ -175,6 +183,7 @@ function fontePrecos(cols) {
     f[fontePreco(c.serie, c.id)] = 1;
   });
   f = Object.keys(f);
+  if (SO_LIGA) return 'preço médio da Liga Pokémon';
   return (f.length === 1 ? f[0] : 'preço médio da Liga Pokémon; Cardmarket nas coleções ainda sem preço da Liga') +
     '; TCGplayer nas cartas com preço fora do normal';
 }

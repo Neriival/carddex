@@ -22,6 +22,7 @@ ESTRUTURA
      cartas.css                   botões de jogo/série/coleção e as cartas da grade (com − N + das repetidas)
      carta-grande.css             janela da carta grande (3D, repetidas, vitrine)
      compartilhar.css             janela da imagem para o WhatsApp
+     sombras.css                  sombras de Pokémon nas laterais (telas largas)
      perfil.css                   banner, anel de nível e treinadores (perfil público e Meu perfil)
    telas/                       uma por tela
      inicio.css (próximo lançamento, coleção mais recente, cores das eras)
@@ -69,6 +70,7 @@ ESTRUTURA
                                 aqui e inclua ['nome', 'Nome'] em TREINADORES no js/conta/fotos.js
  assets/img/banners/            banners de tipo (1200x300 .webp), um por tipo; a lista fica em BANNERS no fotos.js
  assets/img/app/                ícones do app instalado
+ assets/img/sombras/            silhuetas dos Pokémon das laterais (brancas; a cor vem do sombras.css)
  assets/video/abertura.mp4      vídeo da abertura (só o logo, sem as letras caindo; sem som, ~1 MB)
  scripts/baixar_cartas.py       baixa cartas, imagens e logos
  scripts/completar_imagens.py   completa imagens que a TCGdex não tem (Pokémon TCG API, TCGplayer, Limitless)
@@ -121,6 +123,12 @@ CONTAS, RANKING, PERFIS, PAINEL ADM (Supabase – projeto "carddex", já configu
 Sem o Supabase configurado o site funciona só no navegador.
 
 PREÇOS (em reais)
+SÓ LIGA POKÉMON (pedido de 03/11/2026, AINDA DESLIGADO): no começo do js/base/precos.js, SO_LIGA = true
+faz o site mostrar só o preço da Liga. Carta ou coleção sem preço da Liga aparece sem preço, então antes
+de ligar faça a rodada completa da Liga (abaixo). Com SO_LIGA = false (hoje) vale o esquema descrito a seguir.
+Rodada completa da Liga (~110 coleções x 6 min = umas 11 horas; deixe o computador ligado):
+      PowerShell:  $env:TEMPO_LIMITE_MIN=900; python scripts/atualizar_precos_liga.py
+      (no Windows precisa do pacote certifi: pip install certifi)
 Referência principal: Liga Pokémon (ligapokemon.com.br), o mercado brasileiro. O site mostra o preço MÉDIO
 (e o menor e o maior na carta grande).
 - scripts/atualizar_precos_liga.py abre a página de cada coleção na Liga (um acesso traz todas as cartas).

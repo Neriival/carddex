@@ -141,7 +141,7 @@ nav a:focus-visible {
   margin-top: 16px;
   border: 1px solid var(--line);
   border-radius: 20px;
-  padding: 36px 40px;
+  padding: 24px 40px;
   display: grid;
   grid-template-columns: 1.1fr 1fr;
   gap: 20px;
@@ -161,9 +161,10 @@ nav a:focus-visible {
   max-width: 34ch;
 }
 
+/* logo de no máximo 300px: o destaque fica baixo e, ao abrir o site, já aparece a faixa de lançamentos */
 .hero img {
   width: 100%;
-  max-width: 440px;
+  max-width: 300px;
   justify-self: center;
   -webkit-mask-image: radial-gradient(closest-side, #000 62%, transparent 100%);
   mask-image: radial-gradient(closest-side, #000 62%, transparent 100%);

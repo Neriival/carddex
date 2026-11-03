@@ -40,6 +40,8 @@ No ar em https://neriival.github.io/carddex/ (GitHub Pages, branch `main`, repos
 ## Dados das cartas e preços
 - Cartas e imagens: TCGdex (+ Pokémon TCG API/TCGplayer/Limitless para imagens que faltam).
   Séries "imagens: mini" guardam só a miniatura no projeto (limite de 1 GB do GitHub Pages).
+- **Pedido de 03/11/2026: só Liga** (`SO_LIGA` em js/base/precos.js, hoje `false`): ligar só depois da rodada completa
+  da Liga (~11 h no PC de casa, precisa de `certifi` no Windows), senão ~104 coleções ficam sem preço. Hoje vale:
 - Preços: Liga Pokémon (mercado brasileiro) quando a coleção tem; senão Cardmarket (euro → real).
   Fiscal: TCGplayer (pela TCGdex, dólar → real, `dados/precos-tcgplayer/`): se Liga/Cardmarket estiver >3x acima
   ou abaixo dele (e >R$100 de diferença), a carta usa o TCGplayer (`foraDoTcgplayer` em js/base/precos.js).
