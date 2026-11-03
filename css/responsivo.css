@@ -1,20 +1,8 @@
 /* css/responsivo.css – adaptação da ESTRUTURA a telas menores (carregado por último).
    Ajustes de cada peça/tela ficam no fim do próprio arquivo (css/componentes e css/telas). */
 
-/* Sem espaço para as laterais: parceiros vão para a faixa no fim da página */
+/* Tablet */
 @media(max-width:1100px) {
-  .pagina {
-    display: block;
-    padding: 0;
-  }
-
-  .lado {
-    display: none;
-  }
-
-  .parceiros-faixa {
-    display: block;
-  }
 
   /* tablet: 4 cartas por fileira */
   .grade {

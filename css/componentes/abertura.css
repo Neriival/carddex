@@ -1,5 +1,7 @@
-/* css/componentes/abertura.css – animação leve ao abrir o site
-   O logo aparece crescendo com um brilho dourado; quando o site termina de carregar (js/recursos/abertura.js),
+/* css/componentes/abertura.css – abertura do site
+   Duas opções (escolha em TIPO_ABERTURA, js/recursos/abertura.js):
+   vídeo (assets/video/abertura.mp4) com botão "Pular", ou a antiga, guardada para comparar:
+   o logo aparece crescendo com um brilho dourado. Quando o site termina de carregar (js/recursos/abertura.js),
    a tela de abertura some esmaecendo e o conteúdo entra subindo de leve.
    Quem desativa animações no sistema não vê nada disso (regra no fim de css/responsivo.css). */
 
@@ -22,6 +24,39 @@
   border-radius: 50%;
   object-fit: cover;
   animation: abertura-logo 1s cubic-bezier(.2, .9, .3, 1.2) both, abertura-brilho 1.6s .6s ease-in-out infinite;
+}
+
+/* ===== VÍDEO DE ABERTURA ===== */
+/* fundo preto igual às bordas do vídeo; a segurança dos 6 s não vale aqui (o js cuida, o vídeo tem 10 s) */
+.abertura.com-video {
+  background: #000;
+  animation: none;
+}
+
+/* o vídeo inteiro sempre aparece (no celular em pé sobram faixas pretas em cima e embaixo) */
+.abertura video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.abertura-pular {
+  position: absolute;
+  right: 20px;
+  bottom: calc(20px + env(safe-area-inset-bottom));
+  padding: 8px 20px;
+  border: 1px solid #ffffff55;
+  border-radius: 999px;
+  background: #00000088;
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.abertura-pular:hover, .abertura-pular:focus-visible {
+  border-color: var(--gold);
+  color: var(--gold);
 }
 
 /* some esmaecendo (classe colocada pelo js/recursos/abertura.js) */

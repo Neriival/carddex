@@ -1,25 +1,7 @@
 /* css/layout.css – estrutura da página: colunas, menu, destaque (hero), números e grades
    As adaptações para celular e tablet ficam em css/responsivo.css. */
 
-/* ===== PÁGINA EM 3 COLUNAS: parceiros (esquerda) | site | parceiros (direita) ===== */
-.pagina {
-  display: grid;
-  grid-template-columns: 150px minmax(0, 1180px) 150px;
-  gap: 8px;
-  justify-content: center;
-  padding: 0 16px;
-}
-
-.lado {
-  position: sticky;
-  top: 0;
-  align-self: start;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  padding: 16px 0;
-}
-
+/* ===== PÁGINA (uma coluna centralizada) ===== */
 .wrap {
   position: relative;
   max-width: 1180px;

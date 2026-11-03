@@ -17,97 +17,86 @@
 
   <!-- ESTILOS (nesta ordem). ?v=... = versão dos arquivos: troque em TODAS as linhas (CSS e JS)
        a cada atualização, para o navegador e o app instalado baixarem tudo de novo -->
-  <link rel="stylesheet" href="css/base.css?v=20261025g">
-  <link rel="stylesheet" href="css/layout.css?v=20261025g">
-  <link rel="stylesheet" href="css/componentes/cartas.css?v=20261025g">
-  <link rel="stylesheet" href="css/componentes/carta-grande.css?v=20261025g">
-  <link rel="stylesheet" href="css/componentes/compartilhar.css?v=20261025g">
-  <link rel="stylesheet" href="css/componentes/parceiros.css?v=20261025g">
-  <link rel="stylesheet" href="css/componentes/abertura.css?v=20261025g">
-  <link rel="stylesheet" href="css/componentes/perfil.css?v=20261025g">
-  <link rel="stylesheet" href="css/telas/inicio.css?v=20261025g">
-  <link rel="stylesheet" href="css/telas/colecao.css?v=20261025g">
-  <link rel="stylesheet" href="css/telas/minhas.css?v=20261025g">
-  <link rel="stylesheet" href="css/telas/conta.css?v=20261025g">
-  <link rel="stylesheet" href="css/telas/ranking.css?v=20261025g">
-  <link rel="stylesheet" href="css/telas/colecao-de.css?v=20261025g">
-  <link rel="stylesheet" href="css/telas/admin.css?v=20261025g">
-  <link rel="stylesheet" href="css/responsivo.css?v=20261025g">
+  <link rel="stylesheet" href="css/base.css?v=20261103">
+  <link rel="stylesheet" href="css/layout.css?v=20261103">
+  <link rel="stylesheet" href="css/componentes/cartas.css?v=20261103">
+  <link rel="stylesheet" href="css/componentes/carta-grande.css?v=20261103">
+  <link rel="stylesheet" href="css/componentes/compartilhar.css?v=20261103">
+  <link rel="stylesheet" href="css/componentes/abertura.css?v=20261103">
+  <link rel="stylesheet" href="css/componentes/perfil.css?v=20261103">
+  <link rel="stylesheet" href="css/telas/inicio.css?v=20261103">
+  <link rel="stylesheet" href="css/telas/colecao.css?v=20261103">
+  <link rel="stylesheet" href="css/telas/minhas.css?v=20261103">
+  <link rel="stylesheet" href="css/telas/conta.css?v=20261103">
+  <link rel="stylesheet" href="css/telas/ranking.css?v=20261103">
+  <link rel="stylesheet" href="css/telas/colecao-de.css?v=20261103">
+  <link rel="stylesheet" href="css/telas/admin.css?v=20261103">
+  <link rel="stylesheet" href="css/responsivo.css?v=20261103">
 </head>
 
 <body>
-  <!-- animação de abertura: some quando o site termina de carregar (js/recursos/abertura.js) -->
+  <!-- abertura: vídeo ou logo animado (escolha em js/recursos/abertura.js); some quando o site termina de carregar -->
   <div id="abertura" class="abertura" aria-hidden="true">
     <img src="assets/img/carddex-logo.png" alt="">
   </div>
+  <!-- carregado aqui (e não lá embaixo) para o vídeo começar logo; não usa nenhum outro arquivo -->
+  <script src="js/recursos/abertura.js?v=20261103"></script>
 
-  <!-- página em 3 colunas: parceiros | site | parceiros (no celular os parceiros vão para o fim) -->
-  <div class="pagina">
-    <aside class="lado" id="parc-esq" aria-label="Parceiros"></aside>
+  <div class="wrap">
+    <!-- MENU -->
+    <nav>
+      <img class="mark" src="assets/img/carddex-logo.png" alt="CardDex">
+      <div class="brand">Card<b>Dex</b></div>
+      <div class="links">
+        <a href="#" class="on" onclick="telaInicio();return false">Início</a>
+        <a href="#" onclick="telaInicio('series');return false">Séries</a>
+        <a href="#" onclick="telaMinhas();return false">Minhas cartas</a>
+        <a href="#" onclick="telaRanking();return false">Ranking</a>
+        <a href="#" id="nav-admin" onclick="telaAdmin();return false" hidden>Admin</a>
+      </div>
+      <div class="sp"></div>
+      <input class="busca" id="busca" type="search" placeholder="Buscar séries ou coleções..."
+        aria-label="Buscar séries ou coleções" oninput="telaInicio('series')">
+      <button class="nav-btn" id="nav-conta" type="button" onclick="clicarConta()">Entrar</button>
+    </nav>
 
-    <div class="wrap">
-      <!-- MENU -->
-      <nav>
-        <img class="mark" src="assets/img/carddex-logo.png" alt="CardDex">
-        <div class="brand">Card<b>Dex</b></div>
-        <div class="links">
-          <a href="#" class="on" onclick="telaInicio();return false">Início</a>
-          <a href="#" onclick="telaInicio('series');return false">Séries</a>
-          <a href="#" onclick="telaMinhas();return false">Minhas cartas</a>
-          <a href="#" onclick="telaRanking();return false">Ranking</a>
-          <a href="#" id="nav-admin" onclick="telaAdmin();return false" hidden>Admin</a>
-        </div>
-        <div class="sp"></div>
-        <input class="busca" id="busca" type="search" placeholder="Buscar séries ou coleções..."
-          aria-label="Buscar séries ou coleções" oninput="telaInicio('series')">
-        <button class="nav-btn" id="nav-conta" type="button" onclick="clicarConta()">Entrar</button>
-      </nav>
-
-      <!-- as telas são desenhadas aqui (js/telas/...) -->
-      <main id="app"></main>
-
-      <!-- parceiros no celular/tablet -->
-      <section class="parceiros-faixa" id="parc-faixa" aria-label="Parceiros"></section>
-    </div>
-
-    <aside class="lado" id="parc-dir" aria-label="Parceiros"></aside>
+    <!-- as telas são desenhadas aqui (js/telas/...) -->
+    <main id="app"></main>
   </div>
 
   <!-- janela da carta grande e da imagem de compartilhar -->
   <div id="modal" class="modal" hidden></div>
 
   <!-- SCRIPTS (a ordem importa: cada arquivo usa funções dos que vêm antes) -->
-  <!-- banco de dados (login, contas, ranking, parceiros) -->
+  <!-- banco de dados (login, contas, ranking) -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="js/config.js?v=20261025g"></script>
+  <script src="js/config.js?v=20261103"></script>
   <!-- base: ajudantes, dados das cartas, marcações, preços e sincronização com a conta -->
-  <script src="js/base/util.js?v=20261025g"></script>
-  <script src="js/base/dados.js?v=20261025g"></script>
-  <script src="js/base/marcacoes.js?v=20261025g"></script>
-  <script src="js/base/precos.js?v=20261025g"></script>
-  <script src="js/base/nuvem.js?v=20261025g"></script>
+  <script src="js/base/util.js?v=20261103"></script>
+  <script src="js/base/dados.js?v=20261103"></script>
+  <script src="js/base/marcacoes.js?v=20261103"></script>
+  <script src="js/base/precos.js?v=20261103"></script>
+  <script src="js/base/nuvem.js?v=20261103"></script>
   <!-- conta: login, perfil e fotos -->
-  <script src="js/conta/auth.js?v=20261025g"></script>
-  <script src="js/conta/fotos.js?v=20261025g"></script>
-  <script src="js/conta/login.js?v=20261025g"></script>
-  <script src="js/conta/perfil.js?v=20261025g"></script>
-  <script src="js/conta/amigos.js?v=20261025g"></script>
+  <script src="js/conta/auth.js?v=20261103"></script>
+  <script src="js/conta/fotos.js?v=20261103"></script>
+  <script src="js/conta/login.js?v=20261103"></script>
+  <script src="js/conta/perfil.js?v=20261103"></script>
+  <script src="js/conta/amigos.js?v=20261103"></script>
   <!-- recursos usados em várias telas -->
-  <script src="js/recursos/carta-grande.js?v=20261025g"></script>
-  <script src="js/recursos/compartilhar.js?v=20261025g"></script>
-  <script src="js/recursos/parceiros.js?v=20261025g"></script>
-  <script src="js/recursos/vitrine.js?v=20261025g"></script>
-  <script src="js/recursos/abertura.js?v=20261025g"></script>
+  <script src="js/recursos/carta-grande.js?v=20261103"></script>
+  <script src="js/recursos/compartilhar.js?v=20261103"></script>
+  <script src="js/recursos/vitrine.js?v=20261103"></script>
   <!-- telas -->
-  <script src="js/telas/inicio.js?v=20261025g"></script>
-  <script src="js/telas/colecao.js?v=20261025g"></script>
-  <script src="js/telas/minhas.js?v=20261025g"></script>
-  <script src="js/telas/ranking.js?v=20261025g"></script>
-  <script src="js/telas/perfil-publico.js?v=20261025g"></script>
-  <script src="js/telas/colecao-de.js?v=20261025g"></script>
-  <script src="js/telas/admin.js?v=20261025g"></script>
+  <script src="js/telas/inicio.js?v=20261103"></script>
+  <script src="js/telas/colecao.js?v=20261103"></script>
+  <script src="js/telas/minhas.js?v=20261103"></script>
+  <script src="js/telas/ranking.js?v=20261103"></script>
+  <script src="js/telas/perfil-publico.js?v=20261103"></script>
+  <script src="js/telas/colecao-de.js?v=20261103"></script>
+  <script src="js/telas/admin.js?v=20261103"></script>
   <!-- começa o site -->
-  <script src="js/main.js?v=20261025g"></script>
+  <script src="js/main.js?v=20261103"></script>
 </body>
 
 </html>

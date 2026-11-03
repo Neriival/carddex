@@ -8,7 +8,6 @@
 // - primeira visita → tela de login
 // Com a primeira tela pronta (ou se der erro), some a animação de abertura (js/recursos/abertura.js).
 // ============================================================
-carregarParceiros();
 Promise.all([carregarSeries(), AUTH.iniciar()]).then(function () {
   atualizarConta();
   var perfil = /^#perfil\/(.+)$/.exec(location.hash);

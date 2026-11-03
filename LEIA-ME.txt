@@ -17,12 +17,11 @@ ESTRUTURA
 
  css/
    base.css                     cores (no topo), textos, botões e formulários
-   layout.css                   colunas da página, menu, destaque, grades
+   layout.css                   página, menu, destaque, grades
    componentes/                 peças usadas em várias telas
      cartas.css                   botões de jogo/série/coleção e as cartas da grade (com − N + das repetidas)
      carta-grande.css             janela da carta grande (3D, repetidas, vitrine)
      compartilhar.css             janela da imagem para o WhatsApp
-     parceiros.css                quadrados de parceiros
      perfil.css                   banner, anel de nível e treinadores (perfil público e Meu perfil)
    telas/                       uma por tela
      inicio.css (próximo lançamento, coleção mais recente, cores das eras)
@@ -31,7 +30,7 @@ ESTRUTURA
    responsivo.css               adaptação da estrutura ao celular (cada arquivo também tem o seu no fim)
 
  js/
-   config.js                    Supabase e contato de parceiros
+   config.js                    Supabase
    main.js                      começa o site (decide a primeira tela)
    base/                        o que o resto usa
      util.js                      ajudantes (esc, pad, barra, menu...)
@@ -46,10 +45,9 @@ ESTRUTURA
      perfil.js                    tela Meu perfil e campos de perfil
      amigos.js                    pedidos de amizade, lista de amigos e bolinha de pedidos no menu
    recursos/                    peças usadas em várias telas
-     abertura.js                  animação de abertura do site
+     abertura.js                  abertura do site (vídeo ou logo animado: TIPO_ABERTURA; teste com ?abertura=logo)
      carta-grande.js              carta grande (3D, arrastar, tenho, repetidas, vitrine)
      compartilhar.js              imagem das cartas que faltam / repetidas (WhatsApp)
-     parceiros.js                 quadrados de parceiros
      vitrine.js                   as até 10 cartas do perfil
    telas/                       uma por tela
      inicio.js (início, jogo, série)  colecao.js  minhas.js  ranking.js  perfil-publico.js
@@ -71,6 +69,7 @@ ESTRUTURA
                                 aqui e inclua ['nome', 'Nome'] em TREINADORES no js/conta/fotos.js
  assets/img/banners/            banners de tipo (1200x300 .webp), um por tipo; a lista fica em BANNERS no fotos.js
  assets/img/app/                ícones do app instalado
+ assets/video/abertura.mp4      vídeo da abertura (só o logo, sem as letras caindo; sem som, ~1 MB)
  scripts/baixar_cartas.py       baixa cartas, imagens e logos
  scripts/completar_imagens.py   completa imagens que a TCGdex não tem (Pokémon TCG API, TCGplayer, Limitless)
  scripts/atualizar_precos.py    preços do Cardmarket (roda sozinho todo dia: .github/workflows/precos.yml)
@@ -109,17 +108,17 @@ O script baixa o logo oficial quando existe (assets/img/colecoes/<serie>/<coleca
 Quando não existe, o site usa o .svg da mesma pasta (nome da coleção no estilo CardDex).
 Para usar um logo seu, coloque <colecao>.webp na pasta: ele tem prioridade sobre o .svg.
 
-CONTAS, RANKING, PERFIS, PAINEL ADM E PARCEIROS (Supabase – projeto "carddex", já configurado)
+CONTAS, RANKING, PERFIS, PAINEL ADM (Supabase – projeto "carddex", já configurado)
 - Conta com nick, sexo e personagem (treinador do anime) ou foto, e banner do perfil
   (um por tipo de Pokémon ou imagem própria); as cartas marcadas e as repetidas ficam salvas na conta.
 - Nível do colecionador pelo total de cartas, mostrado no anel dourado em volta do personagem.
 - Ranking por total de cartas; clicando em alguém abre o perfil público (com a vitrine de até 10 cartas).
 - Amigos: pedido pelo nick (Meu perfil) ou pelo botão no perfil público; o outro aceita ou recusa.
   Quem pode ver a coleção completa: Todo mundo, Só amigos ou Ninguém (Meu perfil).
-- O link "Admin" do menu aparece para quem estiver na tabela "admins": contas, números do site,
-  8 quadrados de parceiros (com cliques) e moderação de fotos e banners.
+- O link "Admin" do menu aparece para quem estiver na tabela "admins": contas, números do site
+  e moderação de fotos e banners.
 - Banco e regras de segurança: docs/supabase.sql. Passo a passo e limites do plano grátis: docs/SUPABASE.md.
-Sem o Supabase configurado o site funciona só no navegador e os quadrados mostram "Seja um parceiro".
+Sem o Supabase configurado o site funciona só no navegador.
 
 PREÇOS (em reais)
 Referência principal: Liga Pokémon (ligapokemon.com.br), o mercado brasileiro. O site mostra o preço MÉDIO
@@ -166,9 +165,9 @@ PADRÃO DE CÓDIGO (para tudo ficar organizado igual)
 
 ONDE MEXER
  Cores ................ css/base.css (variáveis no topo)
- Supabase e contato ... js/config.js
+ Supabase ............ js/config.js
  Uma tela ............. js/telas/<tela>.js e css/telas/<tela>.css
  Carta grande ......... js/recursos/carta-grande.js e css/componentes/carta-grande.css
  Imagem do WhatsApp ... js/recursos/compartilhar.js
  Dados das cartas ..... js/base/dados.js e dados/series.json
- Parceiros ............ js/recursos/parceiros.js (quadrados) e js/telas/admin.js (painel)
+ Abertura (vídeo) ..... js/recursos/abertura.js e css/componentes/abertura.css

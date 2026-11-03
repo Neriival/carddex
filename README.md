@@ -11,7 +11,7 @@ Site para fãs de Pokémon TCG marcarem as cartas que já têm, organizado por *
 - **Conta** com nick e personagem ou foto; as cartas ficam salvas na conta (qualquer aparelho)
 - **Ranking** e **perfil público** com vitrine de 5 cartas (contas de admin ficam de fora)
 - Ver a **coleção dos outros** (se a pessoa deixar), com as repetidas dela e o filtro "Pra trocar comigo"
-- **Painel adm**: contas, números do site, parceiros e moderação de fotos
+- **Painel adm**: contas, números do site e moderação de fotos
 - Funciona como **app instalável** (computador e celular)
 - Dados e imagens da [TCGdex](https://tcgdex.dev); preços da [Liga Pokémon](https://www.ligapokemon.com.br) (reserva: [Cardmarket](https://www.cardmarket.com)); contas no [Supabase](https://supabase.com)
 

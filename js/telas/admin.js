@@ -1,7 +1,7 @@
 // js/telas/admin.js
 // TELA – PAINEL ADM
 // ============================================================
-// Contas criadas, números do site, coleções mais colecionadas, parceiros (com cliques) e moderação de fotos e banners.
+// Contas criadas, números do site, coleções mais colecionadas e moderação de fotos e banners.
 // Só aparece para quem está na tabela "admins" do Supabase (veja docs/SUPABASE.md).
 // O banco também confere isso: mesmo abrindo a tela por fora, quem não é admin não lê as contas nem muda nada.
 // ============================================================
@@ -27,22 +27,18 @@ function telaAdmin() {
     return;
   }
   app.innerHTML = '<h2>Painel adm</h2>' +
-    '<span class="sub">Acompanhe as contas e cuide dos parceiros do site.</span>' +
+    '<span class="sub">Acompanhe as contas e os números do site.</span>' +
     '<div class="stats" id="adm-stats">' + statAdm('Contas criadas') + statAdm('Últimos 7 dias') +
     statAdm('Últimos 30 dias') + '</div>' +
     '<div class="stats" id="adm-site">' + statAdm('Cartas marcadas no site') + statAdm('Colecionadores ativos') +
     statAdm('Masculino / Feminino') + '</div>' +
     '<h2>Coleções mais colecionadas</h2><div id="adm-top">' +
     '<p class="sub">Carregando...</p></div>' +
-    '<h2>Parceiros</h2>' +
-    '<span class="sub">4 quadrados de cada lado. Use imagem quadrada (ex.: 300×300) em PNG, JPG ou WEBP, até 1 MB.</span>' +
-    '<div class="adm-parceiros">' + POSICOES.esq.concat(POSICOES.dir).map(formParceiro).join('') + '</div>' +
     '<h2>Últimas contas criadas</h2><div id="adm-contas">' +
     '<p class="sub">Carregando...</p></div>';
   window.scrollTo(0, 0);
   carregarContas();
   carregarResumo();
-  carregarCliques();
 }
 
 // Cartão de número (… enquanto carrega)
@@ -127,116 +123,6 @@ async function carregarResumo() {
       return '<tr><td>' + esc(c ? c.nome : t.colecao) + '</td><td>' + esc(s ? s.nome : '–') + '</td><td>' + t.pessoas +
         '</td><td>' + t.cartas + '</td></tr>';
     }).join('') + '</tbody></table></div>' : '<p class="sub">Ninguém marcou cartas ainda.</p>';
-}
-
-// CLIQUES: mostra em cada quadro de parceiro quantos cliques o parceiro atual recebeu
-var CLIQUES = [];
-// Lê os cliques de cada parceiro e mostra nos quadros
-async function carregarCliques() {
-  var r = await sb.rpc('cliques_resumo');
-  CLIQUES = r.data || [];
-  POSICOES.esq.concat(POSICOES.dir).forEach(mostrarCliques);
-}
-
-// Mostra os cliques do parceiro atual de um quadro
-function mostrarCliques(pos) {
-  var el = document.getElementById('cliques-' + pos),
-    p = PARCEIROS[pos];
-  if (!el) return;
-  var c = p && CLIQUES.filter(function (x) {
-    return x.posicao === pos && x.nome === p.nome;
-  })[0];
-  el.textContent = p ? (c ? c.mes + ' cliques nos últimos 30 dias · ' + c.total +
-    ' no total' : 'Nenhum clique ainda') : '';
-}
-
-// PARCEIROS: um formulário por quadrado
-function formParceiro(pos) {
-  var p = PARCEIROS[pos] || {};
-  return '<form class="adm-parc" onsubmit="salvarParceiro(event,\'' + pos + '\')"><div class="adm-topo">' +
-    '<div class="adm-prev">' + (p.imagem ? '<img src="' + esc(p.imagem) + '" alt="">' : '<span>Vago</span>') +
-    '</div><div><b>' + nomePosicao(pos) + '</b><span class="sub adm-cliques" id="cliques-' + pos +
-    '"></span></div></div>' +
-    campoAdm('nome', 'Nome do parceiro', 'text', p.nome) + campoAdm('link', 'Site (https://...)', 'url', p.link) +
-    '<div class="campo"><label>' + (p.imagem ? 'Trocar imagem' : 'Imagem') + '</label>' +
-    '<input name="arquivo" type="file" accept="image/png,image/jpeg,image/webp">' +
-    '</div>' +
-    '<p class="erro" role="status"></p><div class="adm-acoes">' +
-    '<button class="btn" type="submit">Salvar</button>' +
-    (p.posicao ? '<button class="btn btn-sec" type="button" onclick="removerParceiro(this,\'' + pos +
-      '\')">Remover</button>' : '') + '</div></form>';
-}
-
-// Campo de texto do formulário do parceiro
-function campoAdm(nome, rotulo, tipo, valor) {
-  return '<div class="campo"><label>' + rotulo + '</label><input name="' + nome + '" type="' + tipo + '" value="' +
-    esc(valor || '') + '"></div>';
-}
-
-// Salvar: envia a imagem nova (se tiver), grava o parceiro e apaga a imagem antiga
-async function salvarParceiro(e, pos) {
-  e.preventDefault();
-  var f = e.target,
-    el = f.elements,
-    msg = f.querySelector('.erro'),
-    arq = el.arquivo.files[0],
-    atual = PARCEIROS[pos] || {};
-  var nome = el.nome.value.trim(),
-    link = el.link.value.trim();
-
-  function erro(t) {
-    msg.classList.remove('ok');
-    msg.textContent = t;
-  }
-  if (!nome) return erro('Digite o nome do parceiro.');
-  if (!linkSeguro(link)) return erro('O site precisa começar com https://');
-  if (!arq && !atual.imagem) return erro('Escolha a imagem do parceiro.');
-  if (arq && arq.size > 1048576) return erro('A imagem passa de 1 MB. Diminua e tente de novo.');
-  msg.classList.add('ok');
-  msg.textContent = 'Salvando...';
-  var imagem = atual.imagem;
-  if (arq) {
-    var caminho = pos + '-' + Date.now() + '.' + (arq.name.split('.').pop() || 'png').toLowerCase();
-    var up = await sb.storage.from('parceiros').upload(caminho, arq, {
-      contentType: arq.type
-    });
-    if (up.error) return erro('Erro ao enviar a imagem: ' + up.error.message);
-    imagem = sb.storage.from('parceiros').getPublicUrl(caminho).data.publicUrl;
-  }
-  var r = await sb.from('parceiros').upsert({
-    posicao: pos,
-    nome: nome,
-    link: link,
-    imagem: imagem,
-    atualizado_em: new Date().toISOString()
-  });
-  if (r.error) return erro('Erro ao salvar: ' + r.error.message);
-  if (arq && atual.imagem) apagarImagem(atual.imagem);
-  await carregarParceiros();
-  f.outerHTML = formParceiro(pos);
-  mostrarCliques(pos);
-}
-
-// Remover: o quadrado volta a mostrar "Seja um parceiro"
-async function removerParceiro(btn, pos) {
-  var p = PARCEIROS[pos];
-  if (!p || !confirm('Remover o parceiro "' + p.nome + '" de ' + nomePosicao(pos) + '?')) return;
-  var r = await sb.from('parceiros').delete().eq('posicao', pos);
-  if (r.error) {
-    var m = btn.form.querySelector('.erro');
-    m.classList.remove('ok');
-    m.textContent = 'Erro ao remover: ' + r.error.message;
-    return;
-  }
-  apagarImagem(p.imagem);
-  await carregarParceiros();
-  btn.form.outerHTML = formParceiro(pos);
-}
-
-// Apaga do Storage a imagem antiga (só as que foram enviadas pelo painel)
-function apagarImagem(url) {
-  var m = /\/parceiros\/([^/?]+)$/.exec(url || '');
-  if (m) sb.storage.from('parceiros').remove([decodeURIComponent(m[1])]);
 }
 
 // MODERAÇÃO: tira a foto de alguém (a pessoa volta a aparecer com o personagem) e apaga o arquivo
