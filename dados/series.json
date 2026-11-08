@@ -264,11 +264,12 @@
         },
         {
           "id": "me06",
-          "nome": "Delta Reign",
+          "nome": "Reinado Delta",
           "busca": "Delta Reign",
           "lancamento": "2026-11-06",
-          "total": 0,
-          "emBreve": true
+          "total": 141,
+          "sigla": "DLR",
+          "oficial": 103
         }
       ]
     },

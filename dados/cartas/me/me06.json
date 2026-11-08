@@ -1,0 +1,2069 @@
+[
+ {
+  "id": "me06-001",
+  "numero": "001",
+  "nome": "Heracross",
+  "raridade": "Comum",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 130,
+  "categoria": "Pokémon",
+  "ilustrador": "Satoshi Ito",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-002",
+  "numero": "002",
+  "nome": "Surskit",
+  "raridade": "Comum",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 50,
+  "categoria": "Pokémon",
+  "ilustrador": "Gemi",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-003",
+  "numero": "003",
+  "nome": "Masquerain",
+  "raridade": "Comum",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 110,
+  "categoria": "Pokémon",
+  "ilustrador": "Kazumasa Yasukuni",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-004",
+  "numero": "004",
+  "nome": "Cacnea",
+  "raridade": "Comum",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Minato",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-005",
+  "numero": "005",
+  "nome": "Cacturne",
+  "raridade": "Rara",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 130,
+  "categoria": "Pokémon",
+  "ilustrador": "okayamatakatoshi",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-006",
+  "numero": "006",
+  "nome": "Combee",
+  "raridade": "Comum",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 50,
+  "categoria": "Pokémon",
+  "ilustrador": "nisimono",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-007",
+  "numero": "007",
+  "nome": "Vespiquen",
+  "raridade": "Comum",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 120,
+  "categoria": "Pokémon",
+  "ilustrador": "Masako Tomii",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-008",
+  "numero": "008",
+  "nome": "Shaymin",
+  "raridade": "Incomum",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "HYOGONOSUKE",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-009",
+  "numero": "009",
+  "nome": "Virizion",
+  "raridade": "Incomum",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 120,
+  "categoria": "Pokémon",
+  "ilustrador": "AKIRA EGAWA",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-010",
+  "numero": "010",
+  "nome": "Wimpod",
+  "raridade": "Comum",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Jerky",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-011",
+  "numero": "011",
+  "nome": "Mega Golisopod ex",
+  "raridade": "Rara Dupla",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 340,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-012",
+  "numero": "012",
+  "nome": "Sprigatito",
+  "raridade": "Comum",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Makura Tami",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-013",
+  "numero": "013",
+  "nome": "Floragato",
+  "raridade": "Incomum",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "Sanosuke Sakuma",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-014",
+  "numero": "014",
+  "nome": "Meowscarada ex",
+  "raridade": "Rara Dupla",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 320,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-015",
+  "numero": "015",
+  "nome": "Smoliv",
+  "raridade": "Comum",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Kanami Ogata",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-016",
+  "numero": "016",
+  "nome": "Dolliv",
+  "raridade": "Comum",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "Eri Kamei",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-017",
+  "numero": "017",
+  "nome": "Arboliva",
+  "raridade": "Incomum",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 150,
+  "categoria": "Pokémon",
+  "ilustrador": "Aliya Chen",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-018",
+  "numero": "018",
+  "nome": "Growlithe",
+  "raridade": "Comum",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "Teeziro",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-019",
+  "numero": "019",
+  "nome": "Arcanine",
+  "raridade": "Rara",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 150,
+  "categoria": "Pokémon",
+  "ilustrador": "Felicia Chen",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-020",
+  "numero": "020",
+  "nome": "Magmar",
+  "raridade": "Incomum",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "GOSSAN",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-021",
+  "numero": "021",
+  "nome": "Magmortar",
+  "raridade": "Rara",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 140,
+  "categoria": "Pokémon",
+  "ilustrador": "Ryuta Fuse",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-022",
+  "numero": "022",
+  "nome": "Torkoal",
+  "raridade": "Comum",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 130,
+  "categoria": "Pokémon",
+  "ilustrador": "Tonji Matsuno",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-023",
+  "numero": "023",
+  "nome": "Rotom Calor ex",
+  "raridade": "Rara Dupla",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 190,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-024",
+  "numero": "024",
+  "nome": "Heatmor",
+  "raridade": "Comum",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 110,
+  "categoria": "Pokémon",
+  "ilustrador": "Takeshi Nakamura",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-025",
+  "numero": "025",
+  "nome": "Mantine",
+  "raridade": "Comum",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 110,
+  "categoria": "Pokémon",
+  "ilustrador": "kodama",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-026",
+  "numero": "026",
+  "nome": "Kyogre",
+  "raridade": "Rara",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 150,
+  "categoria": "Pokémon",
+  "ilustrador": "Anderson",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-027",
+  "numero": "027",
+  "nome": "Frillish",
+  "raridade": "Comum",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "Mousho",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-028",
+  "numero": "028",
+  "nome": "Jellicent",
+  "raridade": "Incomum",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 120,
+  "categoria": "Pokémon",
+  "ilustrador": "Nurikabe",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-029",
+  "numero": "029",
+  "nome": "Wishiwashi ex",
+  "raridade": "Rara Dupla",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 260,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-030",
+  "numero": "030",
+  "nome": "Electabuzz",
+  "raridade": "Comum",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "kurumitsu",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-031",
+  "numero": "031",
+  "nome": "Electivire",
+  "raridade": "Incomum",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 140,
+  "categoria": "Pokémon",
+  "ilustrador": "hncl",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-032",
+  "numero": "032",
+  "nome": "Jolteon",
+  "raridade": "Incomum",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 110,
+  "categoria": "Pokémon",
+  "ilustrador": "hncl",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-033",
+  "numero": "033",
+  "nome": "Raikou ex",
+  "raridade": "Rara Dupla",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 200,
+  "categoria": "Pokémon",
+  "ilustrador": "aky CG Works",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-034",
+  "numero": "034",
+  "nome": "Rotom",
+  "raridade": "Comum",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "Yukiko Baba",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-035",
+  "numero": "035",
+  "nome": "Thundurus",
+  "raridade": "Incomum",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 120,
+  "categoria": "Pokémon",
+  "ilustrador": "Takumi Wada",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-036",
+  "numero": "036",
+  "nome": "Pincurchin",
+  "raridade": "Comum",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "OKUBO",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-037",
+  "numero": "037",
+  "nome": "Pawmi",
+  "raridade": "Comum",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "TOMATO MARKET",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-038",
+  "numero": "038",
+  "nome": "Pawmo",
+  "raridade": "Comum",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "Susumu Maeya",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-039",
+  "numero": "039",
+  "nome": "Pawmot",
+  "raridade": "Incomum",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 150,
+  "categoria": "Pokémon",
+  "ilustrador": "kirisAki",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-040",
+  "numero": "040",
+  "nome": "Wattrel",
+  "raridade": "Comum",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Yukihiro Tada",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-041",
+  "numero": "041",
+  "nome": "Kilowattrel",
+  "raridade": "Incomum",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 120,
+  "categoria": "Pokémon",
+  "ilustrador": "OKACHEKE",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-042",
+  "numero": "042",
+  "nome": "Miraidon",
+  "raridade": "Incomum",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 120,
+  "categoria": "Pokémon",
+  "ilustrador": "Atsushi Furusawa",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-043",
+  "numero": "043",
+  "nome": "Drowzee",
+  "raridade": "Comum",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "Hachinana",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-044",
+  "numero": "044",
+  "nome": "Hypno",
+  "raridade": "Comum",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 120,
+  "categoria": "Pokémon",
+  "ilustrador": "Yuta Kawazu",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-045",
+  "numero": "045",
+  "nome": "Giratina",
+  "raridade": "Rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 130,
+  "categoria": "Pokémon",
+  "ilustrador": "toriyufu",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-046",
+  "numero": "046",
+  "nome": "Golett",
+  "raridade": "Comum",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "Hideki Ishikawa",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-047",
+  "numero": "047",
+  "nome": "Mega Golurk ex",
+  "raridade": "Rara Dupla",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 350,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-048",
+  "numero": "048",
+  "nome": "Enamorus",
+  "raridade": "Incomum",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 120,
+  "categoria": "Pokémon",
+  "ilustrador": "Anesaki Dynamic",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-049",
+  "numero": "049",
+  "nome": "Sandshrew",
+  "raridade": "Comum",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Izucch",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-050",
+  "numero": "050",
+  "nome": "Sandslash",
+  "raridade": "Comum",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 110,
+  "categoria": "Pokémon",
+  "ilustrador": "aoki",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-051",
+  "numero": "051",
+  "nome": "Onix",
+  "raridade": "Comum",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 120,
+  "categoria": "Pokémon",
+  "ilustrador": "Kedamahadaitai Yawarakai",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-052",
+  "numero": "052",
+  "nome": "Steelix",
+  "raridade": "Rara",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 190,
+  "categoria": "Pokémon",
+  "ilustrador": "Shin Nagasawa",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-053",
+  "numero": "053",
+  "nome": "Groudon",
+  "raridade": "Rara",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 150,
+  "categoria": "Pokémon",
+  "ilustrador": "Nisota Niso",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-054",
+  "numero": "054",
+  "nome": "Landorus",
+  "raridade": "Incomum",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 130,
+  "categoria": "Pokémon",
+  "ilustrador": "Oku",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-055",
+  "numero": "055",
+  "nome": "Nidoran♀",
+  "raridade": "Comum",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "tayu",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-056",
+  "numero": "056",
+  "nome": "Nidorina",
+  "raridade": "Comum",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "Jiro Sasumo",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-057",
+  "numero": "057",
+  "nome": "Nidoqueen",
+  "raridade": "Rara",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 170,
+  "categoria": "Pokémon",
+  "ilustrador": "Aliya Chen",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-058",
+  "numero": "058",
+  "nome": "Spinarak",
+  "raridade": "Comum",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Apios",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-059",
+  "numero": "059",
+  "nome": "Ariados",
+  "raridade": "Comum",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 100,
+  "categoria": "Pokémon",
+  "ilustrador": "UKUMO uiti",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-060",
+  "numero": "060",
+  "nome": "Sableye",
+  "raridade": "Comum",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "Shinji Kanda",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-061",
+  "numero": "061",
+  "nome": "Carvanha",
+  "raridade": "Comum",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Julie Hang",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-062",
+  "numero": "062",
+  "nome": "Sharpedo",
+  "raridade": "Comum",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 120,
+  "categoria": "Pokémon",
+  "ilustrador": "Kazumasa Yasukuni",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-063",
+  "numero": "063",
+  "nome": "Darkrai",
+  "raridade": "Incomum",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 120,
+  "categoria": "Pokémon",
+  "ilustrador": "Anesaki Dynamic",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-064",
+  "numero": "064",
+  "nome": "Purrloin",
+  "raridade": "Comum",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Hachinana",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-065",
+  "numero": "065",
+  "nome": "Liepard",
+  "raridade": "Comum",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 110,
+  "categoria": "Pokémon",
+  "ilustrador": "Souichirou Gunjima",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-066",
+  "numero": "066",
+  "nome": "Zorua",
+  "raridade": "Comum",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "HYOGONOSUKE",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-067",
+  "numero": "067",
+  "nome": "Zoroark ex",
+  "raridade": "Rara Dupla",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 270,
+  "categoria": "Pokémon",
+  "ilustrador": "Keisuke Azuma",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-068",
+  "numero": "068",
+  "nome": "Inkay",
+  "raridade": "Comum",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "kawayoo",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-069",
+  "numero": "069",
+  "nome": "Mega Malamar ex",
+  "raridade": "Rara Dupla",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 320,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-070",
+  "numero": "070",
+  "nome": "Morpeko",
+  "raridade": "Incomum",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "kurumitsu",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-071",
+  "numero": "071",
+  "nome": "Zarude",
+  "raridade": "Incomum",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 130,
+  "categoria": "Pokémon",
+  "ilustrador": "Nisota Niso",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-072",
+  "numero": "072",
+  "nome": "Druddigon",
+  "raridade": "Incomum",
+  "tipos": [
+   "Dragão"
+  ],
+  "ps": 120,
+  "categoria": "Pokémon",
+  "ilustrador": "AKIRA EGAWA",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-073",
+  "numero": "073",
+  "nome": "Jangmo-o",
+  "raridade": "Comum",
+  "tipos": [
+   "Dragão"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "June",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-074",
+  "numero": "074",
+  "nome": "Hakamo-o",
+  "raridade": "Comum",
+  "tipos": [
+   "Dragão"
+  ],
+  "ps": 100,
+  "categoria": "Pokémon",
+  "ilustrador": "Scav",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-075",
+  "numero": "075",
+  "nome": "Kommo-o",
+  "raridade": "Rara",
+  "tipos": [
+   "Dragão"
+  ],
+  "ps": 160,
+  "categoria": "Pokémon",
+  "ilustrador": "Mitsuhiro Arita",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-076",
+  "numero": "076",
+  "nome": "Cyclizar",
+  "raridade": "Comum",
+  "tipos": [
+   "Dragão"
+  ],
+  "ps": 120,
+  "categoria": "Pokémon",
+  "ilustrador": "Saboteri",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-077",
+  "numero": "077",
+  "nome": "Tauros",
+  "raridade": "Comum",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 130,
+  "categoria": "Pokémon",
+  "ilustrador": "Uta",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-078",
+  "numero": "078",
+  "nome": "Eevee",
+  "raridade": "Comum",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "UKUMO uiti",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-079",
+  "numero": "079",
+  "nome": "Delibird",
+  "raridade": "Incomum",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "satoma",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-080",
+  "numero": "080",
+  "nome": "Azurill",
+  "raridade": "Comum",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 30,
+  "categoria": "Pokémon",
+  "ilustrador": "TOMATO MARKET",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-081",
+  "numero": "081",
+  "nome": "Swablu",
+  "raridade": "Comum",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 50,
+  "categoria": "Pokémon",
+  "ilustrador": "Shiburingaru",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-082",
+  "numero": "082",
+  "nome": "Altaria",
+  "raridade": "Rara",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 110,
+  "categoria": "Pokémon",
+  "ilustrador": "Atsushi Furusawa",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-083",
+  "numero": "083",
+  "nome": "Kecleon",
+  "raridade": "Comum",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "Akira Komayama",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-084",
+  "numero": "084",
+  "nome": "Mega Rayquaza ex",
+  "raridade": "Rara Dupla",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 280,
+  "categoria": "Pokémon",
+  "ilustrador": "takuyoa",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-085",
+  "numero": "085",
+  "nome": "Tornadus",
+  "raridade": "Incomum",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 110,
+  "categoria": "Pokémon",
+  "ilustrador": "Uta",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-086",
+  "numero": "086",
+  "nome": "Fletchling",
+  "raridade": "Comum",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "takashi shiraishi",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-087",
+  "numero": "087",
+  "nome": "Fletchinder",
+  "raridade": "Comum",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "Souichirou Gunjima",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-088",
+  "numero": "088",
+  "nome": "Talonflame ex",
+  "raridade": "Rara Dupla",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 280,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-089",
+  "numero": "089",
+  "nome": "Arão",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Sanosuke Sakuma",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-090",
+  "numero": "090",
+  "nome": "Lanterna de Aventura",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "inose yukie",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-091",
+  "numero": "091",
+  "nome": "Colete Customizado",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Toyste Beach",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-092",
+  "numero": "092",
+  "nome": "Hype da Emcee",
+  "raridade": "Comum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "DOM",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-093",
+  "numero": "093",
+  "nome": "Grisham",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Souichirou Gunjima",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-094",
+  "numero": "094",
+  "nome": "Tubo de Lava Lendário",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "akagi",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-095",
+  "numero": "095",
+  "nome": "Tubo de Lava Lendário",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "akagi",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-096",
+  "numero": "096",
+  "nome": "Pico Lendário",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "nagimiso",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-097",
+  "numero": "097",
+  "nome": "Pico Lendário",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "nagimiso",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-098",
+  "numero": "098",
+  "nome": "Abismo Lendário",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "danciao",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-099",
+  "numero": "099",
+  "nome": "Abismo Lendário",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "danciao",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-100",
+  "numero": "100",
+  "nome": "Chapéu de Mega Rayquaza",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "AYUMI ODASHIMA",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-101",
+  "numero": "101",
+  "nome": "Onigiri Saboroso",
+  "raridade": "Comum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "AYUMI ODASHIMA",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-102",
+  "numero": "102",
+  "nome": "Treinamento de Tate e Liza",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Yuu Nishida",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-103",
+  "numero": "103",
+  "nome": "Confiança da Zínia",
+  "raridade": "Incomum",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "GIDORA",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-104",
+  "numero": "104",
+  "nome": "Masquerain",
+  "raridade": "Ilustração Rara",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 110,
+  "categoria": "Pokémon",
+  "ilustrador": "REND",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-105",
+  "numero": "105",
+  "nome": "Sprigatito",
+  "raridade": "Ilustração Rara",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Jiro Sasumo",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-106",
+  "numero": "106",
+  "nome": "Growlithe",
+  "raridade": "Ilustração Rara",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "Yoshimoto Yoshimon",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-107",
+  "numero": "107",
+  "nome": "Magmortar",
+  "raridade": "Ilustração Rara",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 140,
+  "categoria": "Pokémon",
+  "ilustrador": "Taiga Kasai",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-108",
+  "numero": "108",
+  "nome": "Electivire",
+  "raridade": "Ilustração Rara",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 140,
+  "categoria": "Pokémon",
+  "ilustrador": "Rianti Hidayat",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-109",
+  "numero": "109",
+  "nome": "Pincurchin",
+  "raridade": "Ilustração Rara",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 80,
+  "categoria": "Pokémon",
+  "ilustrador": "Tetsu Kayama",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-110",
+  "numero": "110",
+  "nome": "Enamorus",
+  "raridade": "Ilustração Rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 120,
+  "categoria": "Pokémon",
+  "ilustrador": "Taira Akitsu",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-111",
+  "numero": "111",
+  "nome": "Groudon",
+  "raridade": "Ilustração Rara",
+  "tipos": [
+   "Lutador"
+  ],
+  "ps": 150,
+  "categoria": "Pokémon",
+  "ilustrador": "Ryota Murayama",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-112",
+  "numero": "112",
+  "nome": "Zorua",
+  "raridade": "Ilustração Rara",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "GOSSAN",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-113",
+  "numero": "113",
+  "nome": "Inkay",
+  "raridade": "Ilustração Rara",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 60,
+  "categoria": "Pokémon",
+  "ilustrador": "Rond",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-114",
+  "numero": "114",
+  "nome": "Eevee",
+  "raridade": "Ilustração Rara",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 70,
+  "categoria": "Pokémon",
+  "ilustrador": "Hideki Ishikawa",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-115",
+  "numero": "115",
+  "nome": "Azurill",
+  "raridade": "Ilustração Rara",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 30,
+  "categoria": "Pokémon",
+  "ilustrador": "Narumi Sato",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-116",
+  "numero": "116",
+  "nome": "Altaria",
+  "raridade": "Ilustração Rara",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 110,
+  "categoria": "Pokémon",
+  "ilustrador": "kodama",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-117",
+  "numero": "117",
+  "nome": "Kecleon",
+  "raridade": "Ilustração Rara",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 90,
+  "categoria": "Pokémon",
+  "ilustrador": "Tomokazu Komiya",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-118",
+  "numero": "118",
+  "nome": "Mega Golisopod ex",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 340,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-119",
+  "numero": "119",
+  "nome": "Rotom Calor ex",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": 190,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-120",
+  "numero": "120",
+  "nome": "Wishiwashi ex",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Água"
+  ],
+  "ps": 260,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-121",
+  "numero": "121",
+  "nome": "Raikou ex",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 200,
+  "categoria": "Pokémon",
+  "ilustrador": "aky CG Works",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-122",
+  "numero": "122",
+  "nome": "Mega Golurk ex",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 350,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-123",
+  "numero": "123",
+  "nome": "Mega Malamar ex",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Sombrio"
+  ],
+  "ps": 320,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-124",
+  "numero": "124",
+  "nome": "Talonflame ex",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 280,
+  "categoria": "Pokémon",
+  "ilustrador": "5ban Graphics",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-125",
+  "numero": "125",
+  "nome": "Arão",
+  "raridade": "Ultra Rara",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Sanosuke Sakuma",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-126",
+  "numero": "126",
+  "nome": "Lanterna de Aventura",
+  "raridade": "Ultra Rara",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "inose yukie",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-127",
+  "numero": "127",
+  "nome": "Colete Customizado",
+  "raridade": "Ultra Rara",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Toyste Beach",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-128",
+  "numero": "128",
+  "nome": "Hype da Emcee",
+  "raridade": "Ultra Rara",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "DOM",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-129",
+  "numero": "129",
+  "nome": "Pegador de Pokémon",
+  "raridade": "Ultra Rara",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Studio Bora Inc.",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-130",
+  "numero": "130",
+  "nome": "Treinamento de Tate e Liza",
+  "raridade": "Ultra Rara",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Yuu Nishida",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-131",
+  "numero": "131",
+  "nome": "Confiança da Zínia",
+  "raridade": "Ultra Rara",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "GIDORA",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-132",
+  "numero": "132",
+  "nome": "Energia Water Borbulhante",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Água"
+  ],
+  "ps": null,
+  "categoria": "Energia",
+  "ilustrador": "5ban Graphics",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-133",
+  "numero": "133",
+  "nome": "Energia Grass Crescente",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": null,
+  "categoria": "Energia",
+  "ilustrador": "5ban Graphics",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-134",
+  "numero": "134",
+  "nome": "Energia Fire Nitro",
+  "raridade": "Ultra Rara",
+  "tipos": [
+   "Fogo"
+  ],
+  "ps": null,
+  "categoria": "Energia",
+  "ilustrador": "5ban Graphics",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-135",
+  "numero": "135",
+  "nome": "Mega Golisopod ex",
+  "raridade": "Ilustração Rara Especial",
+  "tipos": [
+   "Planta"
+  ],
+  "ps": 340,
+  "categoria": "Pokémon",
+  "ilustrador": "nagimiso",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-136",
+  "numero": "136",
+  "nome": "Raikou ex",
+  "raridade": "Ilustração Rara Especial",
+  "tipos": [
+   "Elétrico"
+  ],
+  "ps": 200,
+  "categoria": "Pokémon",
+  "ilustrador": "Oku",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-137",
+  "numero": "137",
+  "nome": "Mega Golurk ex",
+  "raridade": "Ilustração Rara Especial",
+  "tipos": [
+   "Psíquico"
+  ],
+  "ps": 350,
+  "categoria": "Pokémon",
+  "ilustrador": "Takeshi Nakamura",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-138",
+  "numero": "138",
+  "nome": "Mega Rayquaza ex",
+  "raridade": "Ilustração Rara Especial",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 280,
+  "categoria": "Pokémon",
+  "ilustrador": "Kazuki Minami",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-139",
+  "numero": "139",
+  "nome": "Arão",
+  "raridade": "Ilustração Rara Especial",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Shimaris Yukichi",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-140",
+  "numero": "140",
+  "nome": "Confiança da Zínia",
+  "raridade": "Ilustração Rara Especial",
+  "tipos": [],
+  "ps": null,
+  "categoria": "Treinador",
+  "ilustrador": "Teeziro",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ },
+ {
+  "id": "me06-141",
+  "numero": "141",
+  "nome": "Mega Rayquaza ex",
+  "raridade": "Mega Hiper Raro",
+  "tipos": [
+   "Incolor"
+  ],
+  "ps": 280,
+  "categoria": "Pokémon",
+  "ilustrador": "takuyoa",
+  "idioma": "en",
+  "imagem": null,
+  "mini": null
+ }
+]
