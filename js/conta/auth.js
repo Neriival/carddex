@@ -18,6 +18,10 @@ function erroAuth(e) {
   if (/not confirmed/i.test(m)) return 'Confirme seu e-mail pelo link que enviamos antes de entrar.';
   if (/rate limit|too many/i.test(m)) return 'Muitas tentativas. Espere alguns minutos e tente de novo.';
   if (/weak|password should/i.test(m)) return 'Senha fraca. Use pelo menos 6 caracteres, misturando letras e números.';
+  // sem resposta do servidor (internet caiu ou o banco está fora do ar): o "Failed to fetch" do navegador
+  if (/failed to fetch|networkerror|load failed|network request/i.test(m)) return 'Não conseguimos falar com o ' +
+    'servidor agora. Confira sua internet e tente de novo em alguns minutos. Enquanto isso, dá para usar o site ' +
+    'como visitante.';
   return m || 'Não foi possível entrar. Tente de novo.';
 }
 

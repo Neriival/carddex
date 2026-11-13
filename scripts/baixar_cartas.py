@@ -8,10 +8,13 @@ Uso (na pasta do projeto):
     python scripts/baixar_cartas.py --listar me  # mostra as coleções da série na TCGdex
     python scripts/baixar_cartas.py --numeracao  # só a sigla e o total impresso de cada coleção (rápido)
     python scripts/baixar_cartas.py --em-breve   # só as coleções "emBreve": true que a TCGdex já publicou
+                                                 # e as lançadas nos últimos 60 dias com cartas sem imagem
                                                  # (roda sozinho todo dia no robô de preços)
 
 Coleção que ainda não saiu: coloque no series.json com "emBreve": true, "total": 0 e a data de lançamento.
 O site mostra "Em breve" e, quando a TCGdex publicar as cartas, o --em-breve baixa tudo e tira o "emBreve".
+Logo depois do lançamento a TCGdex às vezes publica as cartas antes das imagens: por isso o --em-breve também
+baixa de novo, por 60 dias, as coleções novas que ainda têm cartas sem imagem (as já baixadas são puladas).
 
 Gera:
     dados/cartas/<serie>/<colecao>.json
@@ -25,7 +28,7 @@ Uma "sigla" escrita à mão no series.json é mantida quando a TCGdex não tem a
 Fonte: TCGdex (https://tcgdex.dev). Sem tradução em português -> usa inglês nessa carta.
 Pode rodar de novo: arquivos já baixados são pulados.
 """
-import json, sys
+import json, sys, datetime
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
 
@@ -142,6 +145,15 @@ def listar(serie_id):
             return
     print('Série não encontrada.')
 
+def falta_imagem(serie_id, col):
+    """True se a coleção saiu nos últimos 60 dias e ainda tem carta sem imagem (a TCGdex pode ter publicado depois)."""
+    arq = RAIZ / 'dados' / 'cartas' / serie_id / f"{col['id']}.json"
+    limite = (datetime.date.today() - datetime.timedelta(days=60)).isoformat()
+    if col.get('emBreve') or col.get('lancamento', '') < limite or not arq.exists():
+        return False
+    return any(not k.get('mini') for k in json.loads(arq.read_text(encoding='utf-8')))
+
+
 def main():
     """Lê os argumentos (--listar, --numeracao, --em-breve ou ids) e baixa as coleções pedidas."""
     args = sys.argv[1:]
@@ -157,11 +169,12 @@ def main():
         caminho.write_text(json.dumps(dados, ensure_ascii=False, indent=2), encoding='utf-8')
         return
     # --em-breve: só as coleções que ainda não saíram ("emBreve": true no series.json)
+    # e as recém-lançadas com cartas sem imagem
     so_em_breve = bool(args) and args[0] == '--em-breve'
     if so_em_breve:
         args = []
     for serie in dados['series']:
-        if so_em_breve and not any(c.get('emBreve') for c in serie['colecoes']):
+        if so_em_breve and not any(c.get('emBreve') or falta_imagem(serie['id'], c) for c in serie['colecoes']):
             continue
         # logo da série (português; se não existir, inglês)
         for idioma in ('pt', 'en'):
@@ -171,7 +184,7 @@ def main():
         for col in serie['colecoes']:
             if args and serie['id'] not in args and col['id'] not in args:
                 continue
-            if so_em_breve and not col.get('emBreve'):
+            if so_em_breve and not (col.get('emBreve') or falta_imagem(serie['id'], col)):
                 continue
             cid = col['id']
             print(f"\n== {serie['nome']} / {col['nome']} ==")

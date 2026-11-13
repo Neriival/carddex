@@ -4,6 +4,44 @@
    de cada era nas séries.
    O destaque do topo (hero) e os números ficam em css/layout.css e css/componentes/cartas.css. */
 
+/* ===== CONVITE PARA O VISITANTE (sem conta) ===== */
+.visitante {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+  margin-top: 16px;
+  padding: 16px 20px;
+  border: 1px solid #ffc61a66;
+  border-radius: 16px;
+  background: radial-gradient(circle at 0% 0%, #ffc61a1f, transparent 60%), var(--p1);
+}
+
+.visitante>div:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  min-width: 240px;
+}
+
+.visitante b {
+  color: var(--gold);
+  font-size: 1.05rem;
+}
+
+.visitante-acoes {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.visitante-acoes .btn {
+  margin-top: 0;
+  min-width: 160px;
+}
+
 /* ===== DESTAQUES: COLEÇÃO MAIS RECENTE (COM AS CARTAS) E PRÓXIMO LANÇAMENTO ===== */
 /* margem grande em cima: espaço para as cartas do leque saírem do cartão */
 .destaques {
@@ -367,6 +405,17 @@
 }
 
 @media(max-width:760px) {
+
+  /* no celular, os botões ficam numa linha só deles, embaixo do texto */
+  .visitante-acoes {
+    width: 100%;
+  }
+
+  .visitante-acoes .btn {
+    flex: 1;
+    min-width: 0;
+  }
+
   .destaque {
     padding: 14px 16px;
   }

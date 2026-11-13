@@ -32,7 +32,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Coleções novas (as marcadas como "Em breve")
+      - name: Coleções novas (as "Em breve" e as recém-lançadas ainda sem imagem)
         # se a TCGdex ainda não publicou, não faz nada; se der erro, os preços são atualizados mesmo assim
         continue-on-error: true
         run: python scripts/baixar_cartas.py --em-breve

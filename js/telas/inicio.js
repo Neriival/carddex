@@ -176,6 +176,19 @@ function botaoJogo(j) {
     '<span class="sub">' + (series.length ? series.length + ' séries' : 'Em breve') + '</span></button>';
 }
 
+// CONVITE PARA O VISITANTE (quem está sem conta): o que ganha criando a conta e os botões Criar conta / Entrar
+function blocoVisitante() {
+  if (AUTH.usuario()) return '';
+  return '<div class="visitante"><div><b>Você está como visitante 👋</b>' +
+    '<span class="sub">Pode explorar e marcar ' +
+    'suas cartas à vontade: elas ficam salvas neste aparelho. Crie uma conta grátis para levar a coleção para ' +
+    'qualquer aparelho, aparecer no ranking e ter seu perfil com vitrine e amigos.</span>' +
+    '</div>' +
+    '<div class="visitante-acoes">' +
+    '<button class="btn" onclick="telaLogin(\'criar\')">Criar conta grátis</button>' +
+    '<button class="btn btn-sec" onclick="telaLogin()">Entrar</button></div></div>';
+}
+
 // TELA – Início: destaque, números e botões dos jogos.
 // 'ir' rola a página até um bloco (ex.: 'series'). Com algo na busca, mostra as séries e coleções encontradas.
 function telaInicio(ir) {
@@ -204,7 +217,7 @@ function telaInicio(ir) {
     '<h1>Seu álbum.<span>Suas conquistas.</span></h1>' +
     '<p>Explore as séries e marque as cartas que você já tem.</p>' +
     '<button class="btn" onclick="telaInicio(\'series\')">Explorar séries →</button>' +
-    '</div><img src="assets/img/carddex-logo.png" alt=""></section>' +
+    '</div><img src="assets/img/carddex-logo.png" alt=""></section>' + blocoVisitante() +
     '<div class="stats" id="stats"><div class="stat"><div>Coleções disponíveis</div>' +
     '<b>' +
     pad(todasColecoes().filter(function (c) {
